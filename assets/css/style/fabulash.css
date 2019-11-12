@@ -287,3 +287,9 @@ body {
     background-color: unset !important;
     color: #2739c1 !important;
 }
+
+.btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active, .show > .btn-success.dropdown-toggle {
+    color: #fff;
+    background-color: #278484;
+    border-color: #206f6f;
+}

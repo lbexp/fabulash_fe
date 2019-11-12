@@ -23,7 +23,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             processing: true,
             serverSide: false,
             ajax: {
-                url: '../source/treatment.json',
+                url: 'source/treatment.json',
                 type: 'POST',
                 data: {
                     // parameters for custom backend script demo
@@ -104,7 +104,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                         done : {'href': 'listTreatment_detail_paid.html'}
                     };
                     return `
-                    <a href="${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_admin/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -193,7 +193,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             searching: false,
             responsive: true,
             ajax: {
-                url: '../source/treatment_list.json',
+                url: 'source/treatment_list.json',
                 type: 'POST',
                 data: {
                     pagination: {
@@ -240,7 +240,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             processing: true,
             serverSide: false,
             ajax: {
-                url: '../source/treatment.json',
+                url: 'source/treatment.json',
                 type: 'POST',
                 data: {
                     // parameters for custom backend script demo
@@ -285,7 +285,147 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="listTreatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_admin/listTreatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                },
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5, 6, 7],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+        var filter = function() {
+            var val = $.fn.dataTable.util.escapeRegex($(this).val());
+            table.column($(this).data('col-index')).search(val ? val : '', false, false).draw();
+        };
+        var asdasd = function(value, index) {
+            var val = $.fn.dataTable.util.escapeRegex(value);
+            table.column(index).search(val ? val : '', false, true);
+        };
+        $('#kt_search_waktu').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            $('.kt-input').each(function() {
+                var i = $(this).data('col-index');
+                if (params[i]) {
+                    params[i] += '|' + $(this).val();
+                } else {
+                    params[i] = $(this).val();
+                }
+            });
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        });
+        $('#kt_search_all').on('keyup', function() {
+            table.search(this.value).draw();
+        });
+        $('#kt_reset').on('click', function(e) {
+            e.preventDefault();
+            $('.kt-input').each(function() {
+                $(this).val('');
+                table.column($(this).data('col-index')).search('', false, false);
+            });
+            table.table().draw();
+        });
+        $.fn.datepicker.dates['id'] = {
+            days: 'Minggu_Senin_Selasa_Rabu_Kamis_Jumat_Sabtu'.split('_'),
+            daysShort: 'Min_Sen_Sel_Rab_Kam_Jum_Sab'.split('_'),
+            daysMin: 'Mg_Sn_Sl_Rb_Km_Jm_Sb'.split('_'),
+            months: 'Januari_Februari_Maret_April_Mei_Juni_Juli_Agustus_September_Oktober_November_Desember'.split('_'),
+            monthsShort: 'Jan_Feb_Mar_Apr_Mei_Jun_Jul_Agt_Sep_Okt_Nov_Des'.split('_'),
+            today: "Hari ini",
+            clear: "Reset",
+            format: "dd MM yyyy",
+            titleFormat: "MM yyyy"
+        };
+        $('#kt_search_waktu').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        })
+        // Set current date
+        // .datepicker("setDate", new Date());
+    };
+
+    var initTableVoidTreatment = function() {
+        // begin first table
+        var table = $('#table_treatment_void').DataTable({
+            responsive: true,
+            // Pagination settings
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            // read more: https://datatables.net/examples/basic_init/dom.html
+            lengthMenu: [5, 10, 25, 50],
+            pageLength: 10,
+            language: {
+                'lengthMenu': 'Display _MENU_',
+            },
+            searchDelay: 500,
+            processing: true,
+            serverSide: false,
+            ajax: {
+                url: 'source/treatment.json',
+                type: 'POST',
+                data: {
+                    // parameters for custom backend script demo
+                    columnsDef: [
+                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                        'tanggal', 'status', 'aksi',
+                    ],
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                // title: 'No.',
+                orderable: false,
+            }, {
+                data: 'tanggal',
+                title: 'Tanggal',
+            }, {
+                data: 'no_pesanan',
+                title: 'No Pesanan',
+            }, {
+                data: 'no_pesanan',
+                title: 'No Pesanan',
+            }, {
+                data: 'treatment',
+                title: 'Treatment',
+            }, {
+                data: 'customer',
+                title: 'Customer',
+            }, {
+                data: 'therapist',
+                title: 'Therapist',
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 100,
+                render: function(data, type, full, meta) {
+                    return `
+                    <a href="user_admin/listTreatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -370,7 +510,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         table.DataTable({
             responsive: true,
             ajax: {
-                url: '../source/customer.json',
+                url: 'source/customer.json',
                 type: 'POST',
                 data: {
                     pagination: {
@@ -424,7 +564,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="customer_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_admin/customer_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }, ],
             columnDefs: [{
@@ -451,7 +591,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             processing: true,
             serverSide: false,
             ajax: {
-                url: '../source/customer_detail_treatment.json',
+                url: 'source/customer_detail_treatment.json',
                 type: 'POST',
                 data: {
                     // parameters for custom backend script demo
@@ -501,7 +641,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="listTreatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_admin/listTreatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -596,7 +736,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             processing: true,
             serverSide: false,
             ajax: {
-                url: '../source/pengeluaran.json',
+                url: 'source/pengeluaran.json',
                 type: 'POST',
                 data: {
                     // parameters for custom backend script demo
@@ -660,7 +800,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="finance_pengeluaran_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_admin/finance_pengeluaran_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -755,7 +895,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             processing: true,
             serverSide: false,
             ajax: {
-                url: '../source/pemasukan.json',
+                url: 'source/pemasukan.json',
                 type: 'POST',
                 data: {
                     // parameters for custom backend script demo
@@ -797,7 +937,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="finance_pengeluaran_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_admin/finance_pengeluaran_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -886,7 +1026,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             searching: false,
             responsive: true,
             ajax: {
-                url: '../source/pengeluaran_detail.json',
+                url: 'source/pengeluaran_detail.json',
                 type: 'POST',
                 data: {
                     pagination: {
@@ -926,6 +1066,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableActiveTreatment();
             initTableTreatmentDetail();
             initTableAllTreatment();
+            initTableVoidTreatment();
             initTableCustomer();
             initTableCustomerDetail();
             initTablePengeluaran();
@@ -960,7 +1101,7 @@ var KTDatatablesSearchOptionsAdvancedSearch3 = function() {
             processing: true,
             serverSide: false,
             ajax: {
-                url: '../source/inventory/inventory.json',
+                url: 'source/inventory/inventory.json',
                 type: 'POST',
                 data: {
                     // parameters for custom backend script demo
@@ -1094,7 +1235,7 @@ var KTDatatablesSearchOptionsAdvancedSearch3 = function() {
             processing: true,
             serverSide: false,
             ajax: {
-                url: '../source/inventory/inventory.json',
+                url: 'source/inventory/inventory.json',
                 type: 'POST',
                 data: {
                     // parameters for custom backend script demo
