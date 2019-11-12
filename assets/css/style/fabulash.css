@@ -293,3 +293,35 @@ body {
     background-color: #278484;
     border-color: #206f6f;
 }
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--here > .kt-menu__heading, .kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--here > .kt-menu__link {
+    background-color: #ffffff00;
+    background-image: unset;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--here > .kt-menu__heading .kt-menu__link-icon svg g [fill], .kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--here > .kt-menu__link .kt-menu__link-icon svg g [fill] {
+    fill: #585963;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--open > .kt-menu__heading, .kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--open > .kt-menu__link {
+    background-color: #ffffff00;
+    background-image: unset;
+}
+
+.side-logo-container {
+    padding: 0px 25px;
+}
+
+.sidebar-logo {
+    margin-bottom: 0px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: none;
+    color: #fff;
+}
+
+@media (max-width: 1024px) {
+    .sidebar-logo {
+        display: unset;
+    }
+}
