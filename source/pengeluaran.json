@@ -1,0 +1,79 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "tanggal": "29 Agustus 2019",
+        "no_pengeluaran": "123456",
+        "kategori": "Operational",
+        "deskripsi": "Beli Makanan",
+        "nominal": "Rp. 100.000,00",
+        "penerima": "Ka",
+        "user": "admin"
+    }, {
+        "no": 2,
+        "tanggal": "29 Agustus 2019",
+        "no_pengeluaran": "123456",
+        "kategori": "Operational",
+        "deskripsi": "Beli Makanan",
+        "nominal": "Rp. 100.000,00",
+        "penerima": "Ka",
+        "user": "inventory"
+    }, {
+        "no": 3,
+        "tanggal": "29 Agustus 2019",
+        "no_pengeluaran": "123456",
+        "kategori": "Operational",
+        "deskripsi": "Beli Makanan",
+        "nominal": "Rp. 100.000,00",
+        "penerima": "Ka",
+        "user": "admin"
+    }, {
+        "no": 4,
+        "tanggal": "29 Agustus 2019",
+        "no_pengeluaran": "123456",
+        "kategori": "Operational",
+        "deskripsi": "Beli Makanan",
+        "nominal": "Rp. 100.000,00",
+        "penerima": "Ka",
+        "user": "admin"
+    }, {
+        "no": 5,
+        "tanggal": "29 Agustus 2019",
+        "no_pengeluaran": "123456",
+        "kategori": "Operational",
+        "deskripsi": "Beli Makanan",
+        "nominal": "Rp. 100.000,00",
+        "penerima": "Ka",
+        "user": "admin"
+    }, {
+        "no": 6,
+        "tanggal": "29 Agustus 2019",
+        "no_pengeluaran": "123456",
+        "kategori": "Operational",
+        "deskripsi": "Beli Makanan",
+        "nominal": "Rp. 100.000,00",
+        "penerima": "Ka",
+        "user": "admin"
+    }, {
+        "no": 7,
+        "tanggal": "29 Agustus 2019",
+        "no_pengeluaran": "123456",
+        "kategori": "Operational",
+        "deskripsi": "Beli Makanan",
+        "nominal": "Rp. 100.000,00",
+        "penerima": "Ka",
+        "user": "admin"
+    }, {
+        "no": 8,
+        "tanggal": "29 Agustus 2019",
+        "no_pengeluaran": "123456",
+        "kategori": "Operational",
+        "deskripsi": "Beli Makanan",
+        "nominal": "Rp. 100.000,00",
+        "penerima": "Ka",
+        "user": "admin"
+    }]
+}

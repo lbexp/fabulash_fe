@@ -1,0 +1,71 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "nama": "Darnilla",
+        "alamat": "Citraland",
+        "no_hp": "081342497228",
+        "waktu_mulai": "08.00 WITA",
+        "tanggal_lahir": "09 April 1997",
+        "jumlah_treatment": "10"
+    }, {
+        "no": 2,
+        "nama": "Darnilla",
+        "alamat": "Citraland",
+        "no_hp": "081342497228",
+        "waktu_mulai": "08.00 WITA",
+        "tanggal_lahir": "09 April 1997",
+        "jumlah_treatment": "30"
+    }, {
+        "no": 3,
+        "nama": "Darnilla",
+        "alamat": "Citraland",
+        "no_hp": "081342497228",
+        "waktu_mulai": "08.00 WITA",
+        "tanggal_lahir": "09 April 1997",
+        "jumlah_treatment": "10"
+    }, {
+        "no": 4,
+        "nama": "Darnilla",
+        "alamat": "Citraland",
+        "no_hp": "081342497228",
+        "waktu_mulai": "08.00 WITA",
+        "tanggal_lahir": "09 April 1997",
+        "jumlah_treatment": "40"
+    }, {
+        "no": 5,
+        "nama": "Darnilla",
+        "alamat": "Citraland",
+        "no_hp": "081342497228",
+        "waktu_mulai": "08.00 WITA",
+        "tanggal_lahir": "09 April 1997",
+        "jumlah_treatment": "10"
+    }, {
+        "no": 6,
+        "nama": "Darnilla",
+        "alamat": "Citraland",
+        "no_hp": "081342497228",
+        "waktu_mulai": "08.00 WITA",
+        "tanggal_lahir": "09 April 1997",
+        "jumlah_treatment": "25"
+    }, {
+        "no": 7,
+        "nama": "Darnilla",
+        "alamat": "Citraland",
+        "no_hp": "081342497228",
+        "waktu_mulai": "08.00 WITA",
+        "tanggal_lahir": "09 April 1997",
+        "jumlah_treatment": "10"
+    }, {
+        "no": 8,
+        "nama": "Darnilla",
+        "alamat": "Citraland",
+        "no_hp": "081342497228",
+        "waktu_mulai": "08.00 WITA",
+        "tanggal_lahir": "09 April 1997",
+        "jumlah_treatment": "1"
+    }]
+}

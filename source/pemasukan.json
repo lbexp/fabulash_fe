@@ -1,0 +1,63 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "tanggal": "29 Agustus 2019",
+        "no_pesanan": "123456",
+        "tipe_pembayaran": "Cash",
+        "treatment": "Eyelash Extension",
+        "nominal": "Rp. 100.000,00"
+    }, {
+        "no": 2,
+        "tanggal": "29 Agustus 2019",
+        "no_pesanan": "123456",
+        "tipe_pembayaran": "Cash",
+        "treatment": "Eyelash Extension",
+        "nominal": "Rp. 100.000,00"
+    }, {
+        "no": 3,
+        "tanggal": "29 Agustus 2019",
+        "no_pesanan": "123456",
+        "tipe_pembayaran": "Cash",
+        "treatment": "Eyelash Extension",
+        "nominal": "Rp. 100.000,00"
+    }, {
+        "no": 4,
+        "tanggal": "29 Agustus 2019",
+        "no_pesanan": "123456",
+        "tipe_pembayaran": "Cash",
+        "treatment": "Eyelash Extension",
+        "nominal": "Rp. 100.000,00"
+    }, {
+        "no": 5,
+        "tanggal": "29 Agustus 2019",
+        "no_pesanan": "123456",
+        "tipe_pembayaran": "Cash",
+        "treatment": "Eyelash Extension",
+        "nominal": "Rp. 100.000,00"
+    }, {
+        "no": 6,
+        "tanggal": "29 Agustus 2019",
+        "no_pesanan": "123456",
+        "tipe_pembayaran": "Cash",
+        "treatment": "Eyelash Extension",
+        "nominal": "Rp. 100.000,00"
+    }, {
+        "no": 7,
+        "tanggal": "29 Agustus 2019",
+        "no_pesanan": "123456",
+        "tipe_pembayaran": "Cash",
+        "treatment": "Eyelash Extension",
+        "nominal": "Rp. 100.000,00"
+    }, {
+        "no": 8,
+        "tanggal": "29 Agustus 2019",
+        "no_pesanan": "123456",
+        "tipe_pembayaran": "Cash",
+        "treatment": "Eyelash Extension",
+        "nominal": "Rp. 100.000,00"
+    }]
+}
