@@ -419,11 +419,13 @@ License: You must have a valid license purchased only from themeforest(the above
 												</div>
 												<div class="form-group row">
 													<label for="example-text-input" class="col-4 col-form-label">Persetujuan</label>
-													<div class="col-6">
-														<input type="text" class="form-control" style="background-color:#17bdbd26;color:#17bdbd" value="Setuju" readonly>
+													<div class="col-5">
+														<input type="text" class="form-control" style="background-color: #5578eb1a; color: #5578eb;" value="Persetujuan" readonly>
+														<input type="text" class="form-control kt-hidden" style="background-color: #17bdbd26; color: #17bdbd" value="Setuju" readonly>
+														<input type="text" class="form-control kt-hidden" style="background-color: #fd397a1a; color: #fd397a;" value="Ditolak" readonly>
 													</div>
-													<div class="col-2">
-														<a class="btn btn-success" id="showtoast" style="color:#fff; cursor:pointer;">Send</a>
+													<div class="col-3">
+														<a class="btn btn-success" id="showtoast" style="color:#fff; cursor:pointer; width:100%;">Send</a>
 													</div>
 												</div>
 											</div>
@@ -614,7 +616,49 @@ License: You must have a valid license purchased only from themeforest(the above
 					"showMethod": "fadeIn",
 					"hideMethod": "fadeOut"
 				}
-				toastr.success("Persetujuan terkirim");
+				toastr.info("Persetujuan terkirim");
+			});
+
+			$('#showtoast').click(function() {
+				toastr.options = {
+					"closeButton": false,
+					"debug": false,
+					"newestOnTop": false,
+					"progressBar": false,
+					"positionClass": "toast-top-right",
+					"preventDuplicates": false,
+					"onclick": null,
+					"showDuration": "300",
+					"hideDuration": "1000",
+					"timeOut": "2500",
+					"extendedTimeOut": "1000",
+					"showEasing": "swing",
+					"hideEasing": "linear",
+					"showMethod": "fadeIn",
+					"hideMethod": "fadeOut"
+				}
+				toastr.success("Persetujuan diterima");
+			});
+
+			$('#showtoast').click(function() {
+				toastr.options = {
+					"closeButton": false,
+					"debug": false,
+					"newestOnTop": false,
+					"progressBar": false,
+					"positionClass": "toast-top-right",
+					"preventDuplicates": false,
+					"onclick": null,
+					"showDuration": "300",
+					"hideDuration": "1000",
+					"timeOut": "2500",
+					"extendedTimeOut": "1000",
+					"showEasing": "swing",
+					"hideEasing": "linear",
+					"showMethod": "fadeIn",
+					"hideMethod": "fadeOut"
+				}
+				toastr.error("Persetujuan ditolak");
 			});
 
 			$("#kt_form_1").validate({
