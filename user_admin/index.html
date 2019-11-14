@@ -297,18 +297,9 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="kt-container  kt-container--fluid ">
 								<div class="kt-subheader__main">
 									<h3 class="kt-subheader__title">
-										Tabbed Subheader </h3>
-									<span class="kt-subheader__separator kt-hidden"></span>
+										Form Treatment </h3>
 									<div class="kt-subheader__breadcrumbs">
-										<a href="#" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
-										<span class="kt-subheader__breadcrumbs-separator"></span>
-										<a href="" class="kt-subheader__breadcrumbs-link">
-											Subheaders </a>
-										<span class="kt-subheader__breadcrumbs-separator"></span>
-										<a href="" class="kt-subheader__breadcrumbs-link">
-											Classic </a>
-
-										<!-- <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span> -->
+										<a href="user_admin/index.html" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
 									</div>
 								</div>
 							</div>
@@ -516,6 +507,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Page Scripts(used by this page) -->
 
 		<script>
+			// Select2
 			function formatRepo(repo) {
 	            if (repo.loading) return repo.text;
 	            var markup = "<div class='select2-result-repository clearfix'>" +
@@ -576,6 +568,8 @@ License: You must have a valid license purchased only from themeforest(the above
 	            // templateResult: formatRepo, // omitted for brevity, see the source of this page
 	            // templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
 	        });
+
+			// Sweetalert
 			$('#kt_sweetalert_berhasil').click(function(e) {
 				swal.fire({
 					title: "Berhasil",
@@ -598,6 +592,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				});
 			});
 
+			// Toastr
 			$('#showtoast').click(function() {
 				toastr.options = {
 					"closeButton": false,
@@ -661,6 +656,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				toastr.error("Persetujuan ditolak");
 			});
 
+			// Form Validation
 			$("#kt_form_1").validate({
 	            // define validation rules
 	            rules: {
