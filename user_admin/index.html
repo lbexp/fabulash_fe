@@ -18,7 +18,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<head>
 		<base href="../">
 		<meta charset="utf-8" />
-		<title>Metronic | Dashboard</title>
+		<title>Form Treatment | Fabulash</title>
 		<meta name="description" content="Updates and statistics">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -59,7 +59,9 @@ License: You must have a valid license purchased only from themeforest(the above
 		<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
 			<div class="kt-header-mobile__logo">
 				<a href="index.html">
-					<img alt="Logo" src="assets/media/logos/logo-light.png" />
+					<div>
+						<h4 class="sidebar-logo">FABULASH</h4>
+					</div>
 				</a>
 			</div>
 			<div class="kt-header-mobile__toolbar">
@@ -339,7 +341,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											<form id="kt_form_1">
 												<div class="form-group">
 													<label class="form-control-label">Nama</label>
-													<select class="form-control kt-select2" id="kt_select2_treatment_customer_nama" name="treatment_customer_nama">
+													<input class="form-control kt-select2" id="kt_select2_treatment_customer_nama" name="treatment_customer_nama">
 														<option></option>
 													</select>
 												</div>
@@ -534,11 +536,12 @@ License: You must have a valid license purchased only from themeforest(the above
 	        }
 
 			$("#kt_select2_treatment_customer_nama").select2({
-	            placeholder: "Search for git repositories",
+	            placeholder: "Nama",
 	            allowClear: true,
 	            ajax: {
-	                url: "https://api.github.com/search/repositories",
+	                url: "source/customer.json",
 	                dataType: 'json',
+			        type: "GET",
 	                delay: 250,
 	                data: function(params) {
 	                    return {
@@ -553,21 +556,23 @@ License: You must have a valid license purchased only from themeforest(the above
 	                    // scrolling can be used
 	                    params.page = params.page || 1;
 
-	                    return {
-	                        results: data.items,
-	                        pagination: {
-	                            more: (params.page * 30) < data.total_count
-	                        }
-	                    };
+						return {
+			                results: $.map(data, function (item) {
+			                    return {
+			                        text: item.nama+', '+item.alamat,
+			                        id: item.no
+			                    }
+			                })
+			            };
 	                },
 	                cache: true
 	            },
 	            escapeMarkup: function(markup) {
 	                return markup;
 	            }, // let our custom formatter work
-	            minimumInputLength: 1,
-	            templateResult: formatRepo, // omitted for brevity, see the source of this page
-	            templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
+	            minimumInputLength: 1
+	            // templateResult: formatRepo, // omitted for brevity, see the source of this page
+	            // templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
 	        });
 			$('#kt_sweetalert_berhasil').click(function(e) {
 				swal.fire({
