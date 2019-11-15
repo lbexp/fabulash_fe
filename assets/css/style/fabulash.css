@@ -312,6 +312,18 @@ body {
     padding: 0px 25px;
 }
 
+
+.aside-logo {
+    margin-bottom: 0px;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: #fff;
+}
+
+.kt-aside--minimize .kt-aside__brand .kt-aside__brand-logo .aside-logo {
+    display: none;
+}
+
 .sidebar-logo {
     margin-bottom: 0px;
     font-weight: 700;
