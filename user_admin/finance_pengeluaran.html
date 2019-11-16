@@ -372,9 +372,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             </button>
                                         </div>
-                                        <div class="modal-body">
-                                            <h5 class="color-main-dark">#123456</h5>
-                                            <form>
+										<form id="kt_form_pengeluaran">
+	                                        <div class="modal-body">
+	                                            <h5 class="color-main-dark">#123456</h5>
                                                 <div class="form-group row">
                                                     <label for="example-text-input" class="col-2 col-form-label">Kategori</label>
                                                     <div class="col-10">
@@ -389,13 +389,17 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         </div>
                                                         <div class="row col-4 kt-margin-0" style="padding-left:0px">
                                                             <label for="example-text-input" class="col-4 col-form-label">Qty</label>
-                                                            <input type="text" class="form-control col-8" name="pengeluaran_jumlah" placeholder="Nominal">
+															<div class="col-8">
+	                                                            <input type="text" class="form-control" name="pengeluaran_jumlah" placeholder="Nominal">
+															</div>
                                                         </div>
                                                         <div class="row col-4 kt-margin-0" style="padding-left:0px">
                                                             <label for="example-text-input" class="col-4 col-form-label">Harga</label>
-                                                            <input type="text" class="form-control col-8" name="pengeluaran_harga" placeholder="Nominal">
+															<div class="col-8">
+	                                                            <input type="text" class="form-control" name="pengeluaran_harga" placeholder="Nominal">
+															</div>
                                                         </div>
-                                                            <button class="btn btn-success col-1">+</button>
+														<button type="button" class="btn btn-success btn-icon col-1"><i class="fa fa-plus"></i></button>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -409,7 +413,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="col-10">
                                                         <div class="kt-radio-inline">
                                                             <label class="kt-radio">
-                                                                <input type="radio" checked="checked" name="pengeluaran_jenis_pembayaran"> Cash
+                                                                <input type="radio" name="pengeluaran_jenis_pembayaran"> Cash
                                                                 <span></span>
                                                             </label>
                                                         </div>
@@ -433,14 +437,15 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 <span></span>
                                                             </label>
                                                         </div>
+														<span class="form-text text-muted kt-hidden"></span>
                                                     </div>
                                                 </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer" style="justify-content:center;">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-success">Submit</button>
-                                        </div>
+	                                        </div>
+	                                        <div class="modal-footer" style="justify-content:center;">
+	                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	                                            <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_modal">Submit</button>
+	                                        </div>
+										</form>
                                     </div>
                                 </div>
                             </div>
@@ -521,6 +526,54 @@ License: You must have a valid license purchased only from themeforest(the above
 
 		<!--begin::Page Scripts(used by this page) -->
         <script src="assets/js/script/ajax.js"></script>
+
+		<script>
+		   // Form Validation
+		   $("#kt_form_pengeluaran").validate({
+			   // define validation rules
+			   rules: {
+				   pengeluaran_kategori : {
+					   required: true
+				   },
+				   pengeluaran_nama : {
+					   required: true
+				   },
+				   pengeluaran_jumlah : {
+					   required: true
+				   },
+				   pengeluaran_harga : {
+					   required: true
+				   },
+				   pengeluaran_penerima : {
+					   required: true
+				   },
+				   pengeluaran_jenis_pembayaran : {
+					   required: true
+				   }
+			   },
+
+			   invalidHandler: function(event, validator) {
+				   KTUtil.scrollTop();
+			   },
+			   submitHandler: function(form) {
+				   //form[0].submit(); // submit the form
+			   }
+		   });
+
+		   // Sweetalert
+		   $('#kt_sweetalert_berhasil_modal').click(function(e) {
+			   swal.fire({
+				   title: "Berhasil",
+				   text: "Pengeluaran berhasil ditambahkan",
+				   type: "success",
+				   confirmButtonText: "Ok",
+				   confirmButtonClass: "btn btn-brand"
+			   }).then(function(result) {
+				   // location.reload();
+			   });
+		   });
+		</script>
+
 		<!--end::Page Scripts -->
 	</body>
 

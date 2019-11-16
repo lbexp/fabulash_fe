@@ -135,8 +135,8 @@ License: You must have a valid license purchased only from themeforest(the above
 								</svg></span><span class="kt-menu__link-text">List Treatment</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
 									<div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
 										<ul class="kt-menu__subnav">
-											<li class="kt-menu__item " aria-haspopup="true"><a href="user_admin/listTreatment_active.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Active Treatments</span></a></li>
-											<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="user_admin/listTreatment_all.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">All Treatments</span></a></li>
+											<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="user_admin/listTreatment_active.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Active Treatments</span></a></li>
+											<li class="kt-menu__item " aria-haspopup="true"><a href="user_admin/listTreatment_all.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">All Treatments</span></a></li>
 											<li class="kt-menu__item " aria-haspopup="true"><a href="user_admin/listTreatment_void.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Void Treatments</span></a></li>
 										</ul>
 									</div>
@@ -344,7 +344,7 @@ License: You must have a valid license purchased only from themeforest(the above
 															<button class="col-5 btn btn-warning" onclick="printFunction()">Print</button>
 														</div>
 														<div class="col-12" style="text-align: right;">
-															<button class="col-5 btn btn-danger">Void</button>
+															<button class="col-5 btn btn-danger" id="kt_sweetalert_void">Void</button>
 														</div>
 													</div>
 												</div>
@@ -375,7 +375,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
         									<!--end: Datatable -->
 											<div class="col-12 horizontal-centered" style="padding: 0px 0px" style="margin-bottom:0px;">
-												<button type="button" class="btn btn-link" style="padding-right:0px;" data-toggle="modal" data-target="#kt_modal_treatment_tambah"><i class="flaticon-add"></i>Tambah Treatment</button>
+												<button type="button" class="btn btn-link" style="padding-right:0px;"><i class="flaticon-add"></i>Tambah Treatment</button>
 											</div>
 											<div class="row" style="margin-top:50px;">
 												<div class="col-6" style="padding-right:0px;">
@@ -406,71 +406,6 @@ License: You must have a valid license purchased only from themeforest(the above
 							</div>
 
                             <!--begin::Modal-->
-                            <div class="modal fade" id="kt_modal_treatment_tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Tambah Pelanggan</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Nama</label>
-                                                    <div class="col-8">
-                                                        <input type="text" class="form-control" id="customer_nama">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Tanggal Lahir</label>
-                                                    <div class="col-8">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control" readonly="" placeholder="Select date" id="kt_datepicker_2">
-                                                            <div class="input-group-append">
-                                                                <span class="input-group-text">
-                                                                    <i class="la la-calendar-check-o"></i>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">No. Telepon</label>
-                                                    <div class="col-8">
-                                                        <input type="text" class="form-control" id="customer_nohp">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Email</label>
-                                                    <div class="col-8">
-                                                        <input type="email" class="form-control" id="customer-email">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Alamat</label>
-                                                    <div class="col-8">
-                                                        <input type="text" class="form-control" id="customer-alamat">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Persetujuan</label>
-                                                    <div class="col-6">
-                                                        <input type="text" class="form-control" style="background-color:#17bdbd26;color:#17bdbd" value="Setuju" readonly>
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <button class="btn btn-success">Send</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer" style="justify-content:center;">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-success">Submit</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
 							<div class="modal fade" id="kt_modal_treatment_bayar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -480,7 +415,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             </button>
                                         </div>
-										<form id="kt_form_1">
+										<form id="kt_form_pembayaran">
 	                                        <div class="modal-body">
 												<div class="justify-center kt-margin-b-10">
 													<h4 class="color-main-dark" name="pembayaran_nominal">Rp. 300.000,00</h4>
@@ -526,7 +461,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	                                        </div>
 	                                        <div class="modal-footer" style="justify-content:center;">
 	                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	                                            <button type="submit" class="btn btn-success" id="">Submit</button>
+	                                            <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_modal_2">Submit</button>
 	                                        </div>
 										</form>
                                     </div>
@@ -612,10 +547,140 @@ License: You must have a valid license purchased only from themeforest(the above
 		<script src="assets/js/script/ajax.js"></script>
 
 		<script>
-			function printFunction() {
-			window.print();
+			// Print function
+			var printFunction = function () {
+				window.print();
 			}
+
+			// Toastr
+			$('#showtoast_setuju').click(function() {
+				toastr.options = {
+					"closeButton": false,
+					"debug": false,
+					"newestOnTop": false,
+					"progressBar": false,
+					"positionClass": "toast-top-right",
+					"preventDuplicates": false,
+					"onclick": null,
+					"showDuration": "300",
+					"hideDuration": "1000",
+					"timeOut": "2500",
+					"extendedTimeOut": "1000",
+					"showEasing": "swing",
+					"hideEasing": "linear",
+					"showMethod": "fadeIn",
+					"hideMethod": "fadeOut"
+				}
+				toastr.info("Persetujuan terkirim");
+			});
+
+			$('#showtoast_setuju').click(function() {
+				toastr.options = {
+					"closeButton": false,
+					"debug": false,
+					"newestOnTop": false,
+					"progressBar": false,
+					"positionClass": "toast-top-right",
+					"preventDuplicates": false,
+					"onclick": null,
+					"showDuration": "300",
+					"hideDuration": "1000",
+					"timeOut": "2500",
+					"extendedTimeOut": "1000",
+					"showEasing": "swing",
+					"hideEasing": "linear",
+					"showMethod": "fadeIn",
+					"hideMethod": "fadeOut"
+				}
+				toastr.success("Persetujuan diterima");
+			});
+
+			$('#showtoast_setuju').click(function() {
+				toastr.options = {
+					"closeButton": false,
+					"debug": false,
+					"newestOnTop": false,
+					"progressBar": false,
+					"positionClass": "toast-top-right",
+					"preventDuplicates": false,
+					"onclick": null,
+					"showDuration": "300",
+					"hideDuration": "1000",
+					"timeOut": "2500",
+					"extendedTimeOut": "1000",
+					"showEasing": "swing",
+					"hideEasing": "linear",
+					"showMethod": "fadeIn",
+					"hideMethod": "fadeOut"
+				}
+				toastr.error("Persetujuan ditolak");
+			});
+
+			// Sweetalert
+			$('#kt_sweetalert_berhasil_modal').click(function(e) {
+				swal.fire({
+					title: "Berhasil",
+					text: "Treatment berhasil ditambahkan",
+					type: "success",
+					confirmButtonText: "Ok",
+					confirmButtonClass: "btn btn-brand"
+				}).then(function(result) {
+					// location.reload();
+				});
+			});
+
+			$('#kt_sweetalert_berhasil_modal_2').click(function(e) {
+				swal.fire({
+					title: "Berhasil",
+					text: "Pembayaran berhasil dilakukan",
+					type: "success",
+					confirmButtonText: "Ok",
+					confirmButtonClass: "btn btn-brand"
+				}).then(function(result) {
+					// location.reload();
+				});
+			});
+
+			$('#kt_sweetalert_void').click(function(e) {
+				swal.fire({
+					title: 'Tandai sebagai void treatment?',
+					text: "Tindakan ini tidak bisa diubah kembali!",
+					type: 'warning',
+					showCancelButton: true,
+					confirmButtonText: 'Ya, tandai!'
+				}).then(function(result) {
+					if (result.value) {
+						swal.fire(
+							'Ditandai sebagai void!',
+							'Treatment telah digolongkan sebagai void treatment.',
+							'success'
+						)
+					}
+				});
+			});
+
+			// Form Validation
+			$("#kt_form_pembayaran").validate({
+	            // define validation rules
+	            rules: {
+					pembayaran_jenis : {
+						required: true
+					},
+					pembayaran_diskon : {
+						required: false,
+						digits: true
+					}
+	            },
+
+	            invalidHandler: function(event, validator) {
+	                KTUtil.scrollTop();
+	            },
+	            submitHandler: function(form) {
+	                //form[0].submit(); // submit the form
+	            }
+        	});
 		</script>
+
 		<!--end::Page Scripts -->
 	</body>
 

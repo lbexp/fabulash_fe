@@ -356,7 +356,7 @@ License: You must have a valid license purchased only from themeforest(the above
 															<button class="col-5 btn btn-success">Foto</button>
 														</div>
 														<div class="col-12" style="text-align: right;">
-															<button class="col-5 btn btn-danger">Void</button>
+															<button class="col-5 btn btn-danger" id="kt_sweetalert_void">Void</button>
 														</div>
 													</div>
 												</div>
@@ -598,9 +598,29 @@ License: You must have a valid license purchased only from themeforest(the above
         <script src="assets/js/script/ajax.js"></script>
 
 		<script>
-			function printFunction() {
-			window.print();
+			// Print Function
+			var printFunction = function () {
+				window.print();
 			}
+
+			// Sweetalert
+			$('#kt_sweetalert_void').click(function(e) {
+				swal.fire({
+					title: 'Tandai sebagai void?',
+					text: "Tindakan ini tidak bisa diubah kembali!",
+					type: 'warning',
+					showCancelButton: true,
+					confirmButtonText: 'Ya, tandai!'
+				}).then(function(result) {
+					if (result.value) {
+						swal.fire(
+							'Ditandai sebagai void!',
+							'Pengeluaran telah digolongkan sebagai void.',
+							'success'
+						)
+					}
+				});
+			});
 		</script>
 
 		<!--end::Page Scripts -->
