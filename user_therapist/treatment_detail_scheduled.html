@@ -29,7 +29,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 		<!--begin::Page Vendors Styles(used by this page) -->
 		<link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css">
-		<link href="assets/style/croppie.css" rel="stylesheet" type="text/css">
+		<link href="assets/css/croppie.css" rel="stylesheet" type="text/css">
 
 		<!--end::Page Vendors Styles -->
 
@@ -407,8 +407,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <label for="example-text-input" class="col-4 col-form-label">Foto</label>
                                                     <div class="col-8">
 														<div class="custom-file">
-															<input type="file" class="custom-file-input" name="topic_picture" id="topic_picture" accept="image/*">
-															<label class="custom-file-label" for="topic_picture">Choose file</label>
+															<input type="file" class="custom-file-input" name="treatment_foto" id="treatment_foto" accept="image/*">
+															<label class="custom-file-label" for="treatment_foto">Choose file</label>
 														</div>
 														<span class="form-text"  style="margin: 1rem 0 1rem 0">Image preview :</span>
 														<div id="uploaded_image" align="center" class="image-cropper"></div>
@@ -438,7 +438,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													<div id="image_demo" style="width:80%; margin-top:30px"></div>
 												</div>
 												<div class="col-12">
-													<button class="btn btn-success crop_bg">Crop & Upload Image</button>
+													<button class="btn btn-success crop_foto">Crop & Upload Image</button>
 												</div>
 											</div>
 										</div>
@@ -534,7 +534,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					$('body').addClass('modal-open');
 				}
 			});
-			
+
 			// Add button
 			$('#treatment_add').click(function() {
 				document.querySelector('#treatment_list').insertAdjacentHTML (
@@ -547,17 +547,17 @@ License: You must have a valid license purchased only from themeforest(the above
 					</div>
 					<div class="form-group row">
 						<label for="example-text-input" class="col-4 col-form-label">Pemakaian</label>
-						<div class="row col-8 kt-margin-0">
+						<div class="row col-8 kt-margin-0" id=treatment_barang_list>
 							<div class="col-5" style="padding-left:0px">
 								<input type="text" class="form-control" name="treatment_barang" placeholder="Pemakaian">
 							</div>
-							<div class="row col-6 kt-margin-0" style="padding-left:0px">
-								<label for="example-text-input" class="col-4 col-form-label">Qty</label>
+							<div class="row col-7 kt-margin-0" style="padding:0px">
+								<label for="example-text-input" class="col-2 col-form-label">Qty</label>
 								<div class="col-8">
 									<input type="text" class="form-control" name="treatment_barang_jumlah" placeholder="Jumlah">
 								</div>
+								<button type="button" class="btn btn-success btn-icon col-2" id="treatment_barang_add"><i class="fa fa-plus"></i></button>
 							</div>
-							<button type="button" class="btn btn-success btn-icon col-1"><i class="fa fa-plus"></i></button>
 						</div>
 					</div>`
 				)
@@ -579,7 +579,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					}
 				});
 
-				$('#topic_picture').on('change', function(){
+				$('#treatment_foto').on('change', function(){
 					var reader = new FileReader();
 					reader.onload = function (event) {
 						$image_crop.croppie('bind', {
@@ -592,7 +592,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					$('#uploadimageModal').modal('show');
 				});
 
-				$('.crop_bg').click(function(event){
+				$('.crop_foto').click(function(event){
 					$image_crop.croppie('result', {
 						type: 'canvas',
 						size: 'viewport'
@@ -650,6 +650,9 @@ License: You must have a valid license purchased only from themeforest(the above
 						required: true
 					},
 					treatment_barang_jumlah : {
+						required: true
+					},
+					treatment_foto : {
 						required: true
 					}
 				},
