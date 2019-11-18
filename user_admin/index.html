@@ -378,7 +378,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													<label for="example-text-input" class="col-4 col-form-label">Tanggal Lahir</label>
 													<div class="col-8">
 														<div class="input-group date">
-															<input type="text" class="form-control" readonly="" placeholder="Tanggal" id="kt_datepicker_2" name="customer_lahir">
+															<input type="text" class="form-control" readonly="" placeholder="Tanggal" id="kt_search_tanggal" name="customer_lahir">
 															<div class="input-group-append">
 																<span class="input-group-text">
 																	<i class="la la-calendar-check-o"></i>
@@ -497,11 +497,11 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--end::Global Theme Bundle -->
 
 		<!--begin::Page Vendors(used by this page) -->
-		<script src="assets/js/pages/crud/forms/widgets/bootstrap-datepicker.js" type="text/javascript"></script>
 
 		<!--end::Page Vendors -->
 
 		<!--begin::Page Scripts(used by this page) -->
+		<script src="assets/js/custom/datepicker.js" type="text/javascript"></script>
 
 		<script>
 			// Select2
@@ -572,7 +572,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			$('#kt_sweetalert_berhasil').click(function(e) {
 				swal.fire({
 					title: "Berhasil",
-					text: "Pengisian form berhasil dilakukan",
+					text: "Treatment berhasil ditambahkan.",
 					type: "success",
 					confirmButtonText: "Ok",
 					confirmButtonClass: "btn btn-brand"
@@ -584,7 +584,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			$('#kt_sweetalert_berhasil_modal').click(function(e) {
 				swal.fire({
 					title: "Berhasil",
-					text: "Pengisian form berhasil dilakukan",
+					text: "Pelanggan berhasil ditambahkan.",
 					type: "success",
 					confirmButtonText: "Ok",
 					confirmButtonClass: "btn btn-brand"
