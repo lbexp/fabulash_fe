@@ -149,14 +149,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         $('#kt_search_all').on('keyup', function() {
             table.search(this.value).draw();
         });
-        $('#kt_reset').on('click', function(e) {
-            e.preventDefault();
-            $('.kt-input').each(function() {
-                $(this).val('');
-                table.column($(this).data('col-index')).search('', false, false);
-            });
-            table.table().draw();
-        });
     };
 
     var initTableAllTreatment = function() {
@@ -265,14 +257,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         $('#kt_search_all').on('keyup', function() {
             table.search(this.value).draw();
         });
-        $('#kt_reset').on('click', function(e) {
-            e.preventDefault();
-            $('.kt-input').each(function() {
-                $(this).val('');
-                table.column($(this).data('col-index')).search('', false, false);
-            });
-            table.table().draw();
-        });
     };
 
     var initTableVoidTreatment = function() {
@@ -380,14 +364,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
         $('#kt_search_all').on('keyup', function() {
             table.search(this.value).draw();
-        });
-        $('#kt_reset').on('click', function(e) {
-            e.preventDefault();
-            $('.kt-input').each(function() {
-                $(this).val('');
-                table.column($(this).data('col-index')).search('', false, false);
-            });
-            table.table().draw();
         });
     };
 
@@ -561,14 +537,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         $('#kt_search_all').on('keyup', function() {
             table.search(this.value).draw();
         });
-        $('#kt_reset').on('click', function(e) {
-            e.preventDefault();
-            $('.kt-input').each(function() {
-                $(this).val('');
-                table.column($(this).data('col-index')).search('', false, false);
-            });
-            table.table().draw();
-        });
     };
 
     var initTablePemasukan = function() {
@@ -673,14 +641,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
         $('#kt_search_all').on('keyup', function() {
             table.search(this.value).draw();
-        });
-        $('#kt_reset').on('click', function(e) {
-            e.preventDefault();
-            $('.kt-input').each(function() {
-                $(this).val('');
-                table.column($(this).data('col-index')).search('', false, false);
-            });
-            table.table().draw();
         });
     };
 
@@ -954,14 +914,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
         $('#kt_search_all').on('keyup', function() {
             table.search(this.value).draw();
-        });
-        $('#kt_reset').on('click', function(e) {
-            e.preventDefault();
-            $('.kt-input').each(function() {
-                $(this).val('');
-                table.column($(this).data('col-index')).search('', false, false);
-            });
-            table.table().draw();
         });
     };
 
