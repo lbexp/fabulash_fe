@@ -337,3 +337,18 @@ body {
         display: unset;
     }
 }
+
+
+@media (max-width: 575px) {
+    .margin-mobile-b-10 {
+        margin-bottom : 10px;
+    }
+
+    .margin-mobile-b-20 {
+        margin-bottom : 20px;
+    }
+
+    .margin-mobile-b-5 {
+        margin-bottom : 5px;
+    }
+}
