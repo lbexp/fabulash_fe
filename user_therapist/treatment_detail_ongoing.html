@@ -29,6 +29,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 		<!--begin::Page Vendors Styles(used by this page) -->
 		<link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css">
+		<link href="assets/css/croppie.css" rel="stylesheet" type="text/css">
 
 		<!--end::Page Vendors Styles -->
 
@@ -348,7 +349,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 												<div class="col-6 justify-end" style="padding-left:0px">
 													<div class="col-5" style="padding: 0px">
-														<button type="button" class="btn btn-success col-12" data-toggle="modal" data-target="#kt_modal_treatment_mulai">Selesai</buttton>
+														<button type="button" class="btn btn-success col-12" data-toggle="modal" data-target="#kt_modal_treatment_selesai">Selesai</buttton>
 													</div>
 												</div>
                                             </div>
@@ -362,66 +363,93 @@ License: You must have a valid license purchased only from themeforest(the above
 
 							<!--begin::Modal-->
 
-							<div class="modal fade" id="kt_modal_treatment_mulai" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
+							<div class="modal fade" id="kt_modal_treatment_selesai" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Treatment</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Treatment Selesai</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             </button>
                                         </div>
-										<form id="kt_form_treatment_mulai">
+										<form id="kt_form_treatment_selesai">
 	                                        <div class="modal-body">
-												<div class="justify-center kt-margin-b-10">
-													<h4 class="color-main-dark" name="pembayaran_nominal">Rp. 300.000,00</h4>
-												</div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-4">Jenis</label>
+												<div class="form-group row">
+                                                    <label for="example-text-input" class="col-4 col-form-label">No. Pesanan</label>
                                                     <div class="col-8">
-														<div class="kt-radio-inline">
-															<label class="kt-radio">
-																<input type="radio"  name="pembayaran_jenis"> Cash
-																<span></span>
-															</label>
-														</div>
-														<div class="kt-radio-inline">
-															<label class="col-6 kt-radio">
-																<input type="radio" name="pembayaran_jenis"> EDC Mandiri
-																<span></span>
-															</label>
-															<label class="col-5 kt-radio">
-																<input type="radio" name="pembayaran_jenis"> EDC BNI
-																<span></span>
-															</label>
-														</div>
-														<div class="kt-radio-inline">
-															<label class="col-6 kt-radio">
-																<input type="radio" name="pembayaran_jenis"> Transfer Mandiri
-																<span></span>
-															</label>
-															<label class="col-5 kt-radio">
-																<input type="radio" name="pembayaran_jenis"> Transfer BNI
-																<span></span>
-															</label>
-														</div>
-														<span class="form-text text-muted" style="margin:0px;"></span>
+                                                        <input type="text" class="form-control color-main-dark" name="treatment_nomor" value="#123456" readonly>
                                                     </div>
                                                 </div>
+												<div id="treatment_list">
+													<div class="form-group row">
+	                                                    <label for="example-text-input" class="col-4 col-form-label">Treatment</label>
+	                                                    <div class="col-8">
+	                                                        <input type="text" class="form-control" name="treatment_nama" placeholder="Treatment">
+	                                                    </div>
+	                                                </div>
+													<div class="form-group row">
+	                                                    <label for="example-text-input" class="col-4 col-form-label">Pemakaian</label>
+	                                                    <div class="row col-8 kt-margin-0" id=treatment_barang_list>
+	                                                        <div class="col-5" style="padding-left:0px">
+	                                                            <input type="text" class="form-control" name="treatment_barang" placeholder="Pemakaian">
+	                                                        </div>
+	                                                        <div class="row col-7 kt-margin-0" style="padding:0px">
+	                                                            <label for="example-text-input" class="col-2 col-form-label">Qty</label>
+																<div class="col-8">
+		                                                            <input type="text" class="form-control" name="treatment_barang_jumlah" placeholder="Jumlah">
+																</div>
+																<button type="button" class="btn btn-success btn-icon col-2" id="treatment_barang_add"><i class="fa fa-plus"></i></button>
+	                                                        </div>
+	                                                    </div>
+	                                                </div>
+												</div>
+												<div class="form-group justify-end">
+													<button type="button" class="btn btn-link" style="padding-right:0px;" id="treatment_add" onclick="addTreatment()"><i class="flaticon-add"></i>Tambah Treatment</button>
+												</div>
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Diskon</label>
+                                                    <label for="example-text-input" class="col-4 col-form-label">Foto</label>
                                                     <div class="col-8">
-                                                        <input type="text" class="form-control" name="pembayaran_diskon" placeholder="Diskon">
+														<div class="custom-file">
+															<input type="file" class="custom-file-input" name="treatment_foto" id="treatment_foto" accept="image/*">
+															<label class="custom-file-label" for="treatment_foto">Choose file</label>
+														</div>
+														<span class="form-text"  style="margin: 1rem 0 1rem 0">Image preview :</span>
+														<div id="uploaded_image" align="center" class="image-cropper"></div>
                                                     </div>
                                                 </div>
 	                                        </div>
 	                                        <div class="modal-footer" style="justify-content:center;">
 	                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	                                            <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_modal_2">Submit</button>
+	                                            <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_modal">Submit</button>
 	                                        </div>
 										</form>
                                     </div>
                                 </div>
                             </div>
+
+							<div id="uploadimageModal" class="modal" role="dialog">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Upload Image</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											</button>
+										</div>
+										<div class="modal-body">
+											<div align="center" class="row">
+												<div class="col-12">
+													<div id="image_demo" style="width:80%; margin-top:30px"></div>
+												</div>
+												<div class="col-12">
+													<button class="btn btn-success crop_foto">Crop & Upload Image</button>
+												</div>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
 
                             <!--end::Modal-->
 						</div>
@@ -494,11 +522,151 @@ License: You must have a valid license purchased only from themeforest(the above
 
 		<!--begin::Page Vendors(used by this page) -->
 		<script src="assets/plugins/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
+		<script src="assets/js/croppie.js"></script>
 
 		<!--end::Page Vendors -->
 
 		<!--begin::Page Scripts(used by this page) -->
 		<script src="assets/js/script/datatable_therapist.js"></script>
+
+		<script>
+			// Modal on top of modal fix
+			$(document).on('hidden.bs.modal', function (event) {
+				if ($('.modal:visible').length) {
+					$('body').addClass('modal-open');
+				}
+			});
+
+			// Add button
+			$('#treatment_add').click(function() {
+				document.querySelector('#treatment_list').insertAdjacentHTML (
+					'beforeend',
+					`<div class="form-group row">
+						<label for="example-text-input" class="col-4 col-form-label">Treatment</label>
+						<div class="col-8">
+							<input type="text" class="form-control" name="treatment_nama" placeholder="Treatment">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="example-text-input" class="col-4 col-form-label">Pemakaian</label>
+						<div class="row col-8 kt-margin-0" id=treatment_barang_list>
+							<div class="col-5" style="padding-left:0px">
+								<input type="text" class="form-control" name="treatment_barang" placeholder="Pemakaian">
+							</div>
+							<div class="row col-7 kt-margin-0" style="padding:0px">
+								<label for="example-text-input" class="col-2 col-form-label">Qty</label>
+								<div class="col-8">
+									<input type="text" class="form-control" name="treatment_barang_jumlah" placeholder="Jumlah">
+								</div>
+								<button type="button" class="btn btn-success btn-icon col-2" id="treatment_barang_add"><i class="fa fa-plus"></i></button>
+							</div>
+						</div>
+					</div>`
+				)
+			});
+
+			// Image Upload & Cropping
+			$(document).ready(function(){
+
+				$image_crop = $('#image_demo').croppie({
+					enableExif: true,
+					viewport: {
+						width:100,
+						height:100,
+						type:'circle'
+					},
+					boundary:{
+						width:100,
+						height:100
+					}
+				});
+
+				$('#treatment_foto').on('change', function(){
+					var reader = new FileReader();
+					reader.onload = function (event) {
+						$image_crop.croppie('bind', {
+							url: event.target.result
+						}).then(function(){
+							console.log('jQuery bind complete');
+						});
+					}
+					reader.readAsDataURL(this.files[0]);
+					$('#uploadimageModal').modal('show');
+				});
+
+				$('.crop_foto').click(function(event){
+					$image_crop.croppie('result', {
+						type: 'canvas',
+						size: 'viewport'
+					}).then(function(response){
+						$.ajax({
+							url:"assets/upload.php",
+							type: "POST",
+							data:{"image": response},
+							success:function(data)
+							{
+								$('#uploadimageModal').modal('hide');
+								$('#uploaded_image').html(data);
+							}
+						});
+					})
+				});
+			});
+
+			$('#treatment_barang_add').click(function() {
+				document.querySelector('#treatment_barang_list').insertAdjacentHTML (
+					'afterbegin',
+					`<div class="col-5" style="padding-left:0px; margin-bottom: 10px">
+						<input type="text" class="form-control" name="treatment_barang" placeholder="Pemakaian">
+					</div>
+					<div class="row col-7 kt-margin-0" style="padding:0px; margin-bottom: 10px">
+						<label for="example-text-input" class="col-2 col-form-label">Qty</label>
+						<div class="col-10" style="padding-right: 0px">
+							<input type="text" class="form-control" name="treatment_barang_jumlah" placeholder="Jumlah">
+						</div>
+					</div>`
+				)
+			});
+
+			// Sweetalert
+			$('#kt_sweetalert_berhasil_modal').click(function(e) {
+				swal.fire({
+					title: "Selesai!",
+					text: "Treatment telah selesai dilakukan.",
+					type: "success",
+					confirmButtonText: "Ok",
+					confirmButtonClass: "btn btn-brand"
+				}).then(function(result) {
+					// location.reload();
+				});
+			});
+
+			// Form Validation
+			$("#kt_form_treatment_selesai").validate({
+				// define validation rules
+				rules: {
+					treatment_nama : {
+						required: true
+					},
+					treatment_barang : {
+						required: true
+					},
+					treatment_barang_jumlah : {
+						required: true
+					},
+					treatment_foto : {
+						required: true
+					}
+				},
+
+				invalidHandler: function(event, validator) {
+					KTUtil.scrollTop();
+				},
+				submitHandler: function(form) {
+					//form[0].submit(); // submit the form
+				}
+			});
+		</script>
 
 		<!--end::Page Scripts -->
 	</body>
