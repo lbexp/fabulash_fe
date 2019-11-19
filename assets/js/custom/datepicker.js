@@ -13,17 +13,30 @@ var datepickerIndonesia = function () {
         titleFormat: "MM yyyy"
     };
 
-    $('#kt_datepicker').datepicker({
-        todayHighlight: true,
-        language: 'id',
-        rtl: KTUtil.isRTL(),
-        todayBtn: "linked",
-        clearBtn: true,
-        templates: {
-            leftArrow: '<i class="la la-angle-left"></i>',
-            rightArrow: '<i class="la la-angle-right"></i>',
-        },
-    }).datepicker("setDate", new Date());
+    // $('#kt_datepicker').datepicker({
+    //     todayHighlight: true,
+    //     language: 'id',
+    //     orientation: "bottom auto",
+    //     rtl: KTUtil.isRTL(),
+    //     todayBtn: "linked",
+    //     clearBtn: true,
+    //     templates: {
+    //         leftArrow: '<i class="la la-angle-left"></i>',
+    //         rightArrow: '<i class="la la-angle-right"></i>',
+    //     },
+    // }).datepicker("setDate", new Date());
+
+    // $('#kt_datepicker_2').datepicker({
+    //     todayHighlight: true,
+    //     language: 'id',
+    //     rtl: KTUtil.isRTL(),
+    //     todayBtn: true,
+    //     clearBtn: true,
+    //     templates: {
+    //         leftArrow: '<i class="la la-angle-left"></i>',
+    //         rightArrow: '<i class="la la-angle-right"></i>',
+    //     },
+    // }).datepicker("setDate", new Date());
 
     $('#kt_search_tanggal').datepicker({
         todayHighlight: true,
@@ -40,9 +53,37 @@ var datepickerIndonesia = function () {
     $('#kt_search_waktu').datepicker({
         todayHighlight: true,
         language: 'id',
+        orientation: "bottom auto",
         rtl: KTUtil.isRTL(),
         todayBtn: "linked",
         clearBtn: true,
+        templates: {
+            leftArrow: '<i class="la la-angle-left"></i>',
+            rightArrow: '<i class="la la-angle-right"></i>',
+        },
+    });
+
+    $('#kt_search_waktu_2').datepicker({
+        todayHighlight: true,
+        language: 'id',
+        orientation: "bottom auto",
+        rtl: KTUtil.isRTL(),
+        todayBtn: "linked",
+        clearBtn: true,
+        templates: {
+            leftArrow: '<i class="la la-angle-left"></i>',
+            rightArrow: '<i class="la la-angle-right"></i>',
+        },
+    });
+
+    $('#kt_search_month').datepicker({
+        todayHighlight: true,
+        language: 'id',
+        orientation: "bottom auto",
+        format: "MM yyyy",
+        viewMode: "months",
+        minViewMode: "months",
+        rtl: KTUtil.isRTL(),
         templates: {
             leftArrow: '<i class="la la-angle-left"></i>',
             rightArrow: '<i class="la la-angle-right"></i>',

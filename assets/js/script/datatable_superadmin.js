@@ -684,6 +684,463 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
+    var initTableDataTreatment = function() {
+        var table = $('#table_data_treatment');
+        // begin first table
+        table.DataTable({
+            info: true,
+            paging: true,
+            lengthChange: true,
+            searching: true,
+            responsive: true,
+            ajax: {
+                url: 'source/superadmin/data_treatment.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                // title: 'No.',
+                orderable: false,
+            }, {
+                data: 'treatment',
+                title: 'Treatment'
+            }, {
+                data: 'tipe',
+                title: 'Tipe'
+            }, {
+                data: 'harga',
+                title: 'Harga'
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 100,
+                render: function(data, type, full, meta) {
+                    return `
+                    <a href="user_superadmin/finance_pengeluaran_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                },
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+    };
+
+    var initTableDataComplaint = function() {
+        var table = $('#table_data_complaint');
+        // begin first table
+        table.DataTable({
+            info: true,
+            paging: true,
+            lengthChange: true,
+            searching: true,
+            responsive: true,
+            ajax: {
+                url: 'source/superadmin/data_complaint.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                // title: 'No.',
+                orderable: false,
+            }, {
+                data: 'complaint',
+                title: 'Complaint'
+            }, {
+                data: 'tipe',
+                title: 'Tipe'
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 100,
+                render: function(data, type, full, meta) {
+                    return `
+                    <a href="#.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                },
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+    };
+
+    var initTableKaryawan = function() {
+        var table = $('#table_karyawan');
+        // begin first table
+        table.DataTable({
+            info: true,
+            paging: true,
+            lengthChange: true,
+            searching: true,
+            responsive: true,
+            ajax: {
+                url: 'source/superadmin/karyawan.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                // title: 'No.',
+                orderable: false,
+            }, {
+                data: 'nama',
+                title: 'Nama'
+            }, {
+                data: 'bagian',
+                title: 'Bagian'
+            }, {
+                data: 'jumlahTreatment',
+                title: 'Jumlah Treatment',
+                render: function(data, type, full, meta) {
+                    return data + ` Treatment`;
+                }
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 100,
+                render: function(data, type, full, meta) {
+                    return `
+                    <a href="user_superadmin/hr_karyawan_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                },
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+    };
+
+    var initTableKaryawanTreatment = function() {
+        // begin first table
+        var table = $('#table_karyawan_treatment').DataTable({
+            responsive: true,
+            // Pagination settings
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            // read more: https://datatables.net/examples/basic_init/dom.html
+            lengthMenu: [5, 10, 25, 50],
+            pageLength: 10,
+            language: {
+                'lengthMenu': 'Display _MENU_',
+            },
+            searchDelay: 500,
+            processing: true,
+            serverSide: false,
+            ajax: {
+                url: 'source/superadmin/treatment.json',
+                type: 'POST',
+                data: {
+                    // parameters for custom backend script demo
+                    columnsDef: [
+                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                        'tanggal', 'status', 'aksi',
+                    ],
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                // title: 'No.',
+                orderable: false,
+            }, {
+                data: 'tanggal',
+                title: 'Tanggal'
+            }, {
+                data: 'no_pesanan',
+                title: 'No Pesanan'
+            }, {
+                data: 'waktu_mulai',
+                title: 'Waktu Mulai'
+            }, {
+                data: 'treatment',
+                title: 'Treatment'
+            }, {
+                data: 'customer',
+                title: 'Customer'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 100,
+                render: function(data, type, full, meta) {
+                    return `
+                    <a href="#" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                },
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5, 6, 7],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+        var filter = function() {
+            var val = $.fn.dataTable.util.escapeRegex($(this).val());
+            table.column($(this).data('col-index')).search(val ? val : '', false, false).draw();
+        };
+        var asdasd = function(value, index) {
+            var val = $.fn.dataTable.util.escapeRegex(value);
+            table.column(index).search(val ? val : '', false, true);
+        };
+        $('#kt_search_waktu').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            $('.kt-input').each(function() {
+                var i = $(this).data('col-index');
+                if (params[i]) {
+                    params[i] += '|' + $(this).val();
+                } else {
+                    params[i] = $(this).val();
+                }
+            });
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        });
+        $('#kt_search_all').on('keyup', function() {
+            table.search(this.value).draw();
+        });
+        $('#kt_reset').on('click', function(e) {
+            e.preventDefault();
+            $('.kt-input').each(function() {
+                $(this).val('');
+                table.column($(this).data('col-index')).search('', false, false);
+            });
+            table.table().draw();
+        });
+    };
+
+    var initTableKaryawanKehadiran = function() {
+        // begin first table
+        var table = $('#table_karyawan_kehadiran').DataTable({
+            responsive: true,
+            // Pagination settings
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            // read more: https://datatables.net/examples/basic_init/dom.html
+            lengthMenu: [5, 10, 25, 50],
+            pageLength: 10,
+            language: {
+                'lengthMenu': 'Display _MENU_',
+            },
+            searchDelay: 500,
+            processing: true,
+            serverSide: false,
+            ajax: {
+                url: 'source/superadmin/kehadiran.json',
+                type: 'POST',
+                data: {
+                    // parameters for custom backend script demo
+                    columnsDef: [
+                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                        'tanggal', 'status', 'aksi',
+                    ],
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                // title: 'No.',
+                orderable: false,
+            }, {
+                data: 'tanggal',
+                title: 'Tanggal'
+            }, {
+                data: 'waktu_masuk',
+                title: 'Waktu Masuk'
+            }, {
+                data: 'waktu_pulang',
+                title: 'Waktu Pulang'
+            }, {
+                data: 'keterlambatan',
+                title: 'Keterlambatan',
+                render: function(data, type, full, meta) {
+                    return data + ` Menit`;
+                }
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 100,
+                render: function(data, type, full, meta) {
+                    return `
+                    <a href="#" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                },
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+        var filter = function() {
+            var val = $.fn.dataTable.util.escapeRegex($(this).val());
+            table.column($(this).data('col-index')).search(val ? val : '', false, false).draw();
+        };
+        var asdasd = function(value, index) {
+            var val = $.fn.dataTable.util.escapeRegex(value);
+            table.column(index).search(val ? val : '', false, true);
+        };
+        $('#kt_search_waktu_2').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            $('.kt-input_2').each(function() {
+                var i = $(this).data('col-index');
+                if (params[i]) {
+                    params[i] += '|' + $(this).val();
+                } else {
+                    params[i] = $(this).val();
+                }
+            });
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        });
+    };
+
+    var initTableKaryawanPayroll = function() {
+        // begin first table
+        var table = $('#table_karyawan_payroll').DataTable({
+            responsive: true,
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            language: {
+                'lengthMenu': 'Display _MENU_',
+            },
+            searchDelay: 500,
+            processing: true,
+            serverSide: false,
+            ajax: {
+                url: 'source/superadmin/payroll.json',
+                type: 'POST',
+                data: {
+                    // parameters for custom backend script demo
+                    columnsDef: [
+                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                        'tanggal', 'status', 'aksi',
+                    ],
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                // title: 'No.',
+                orderable: false,
+            }, {
+                data: 'biaya',
+                title: 'Biaya'
+            }, {
+                data: 'nilai',
+                title: 'Nilai'
+            }, {
+                data: 'jumlah',
+                title: 'Jumlah'
+            }, {
+                data: 'subtotal',
+                title: 'Sub Total'
+            }, {
+                data: 'total',
+                title: 'Total'
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+        var filter = function() {
+            var val = $.fn.dataTable.util.escapeRegex($(this).val());
+            table.column($(this).data('col-index')).search(val ? val : '', false, false).draw();
+        };
+        var asdasd = function(value, index) {
+            var val = $.fn.dataTable.util.escapeRegex(value);
+            table.column(index).search(val ? val : '', false, true);
+        };
+        //monthpicker
+    };
+
     return {
         //main function to initiate the module
         init: function() {
@@ -693,6 +1150,12 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableTreatmentDetail();
             initTablePengeluaran();
             initTablePemasukan();
+            initTableDataTreatment();
+            initTableDataComplaint();
+            initTableKaryawan();
+            initTableKaryawanTreatment();
+            initTableKaryawanKehadiran();
+            initTableKaryawanPayroll();
         },
     };
 

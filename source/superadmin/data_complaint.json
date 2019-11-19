@@ -1,0 +1,39 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "complaint": "Gatal-gatal",
+        "tipe": "Nail"
+    }, {
+        "no": 2,
+        "complaint": "Gatal-gatal",
+        "tipe": "Nail"
+    }, {
+        "no": 3,
+        "complaint": "Gatal-gatal",
+        "tipe": "Nail"
+    }, {
+        "no": 4,
+        "complaint": "Gatal-gatal",
+        "tipe": "Nail"
+    }, {
+        "no": 5,
+        "complaint": "Gatal-gatal",
+        "tipe": "Nail"
+    }, {
+        "no": 6,
+        "complaint": "Gatal-gatal",
+        "tipe": "Nail"
+    }, {
+        "no": 7,
+        "complaint": "Gatal-gatal",
+        "tipe": "Nail"
+    }, {
+        "no": 8,
+        "complaint": "Gatal-gatal",
+        "tipe": "Nail"
+    }]
+}

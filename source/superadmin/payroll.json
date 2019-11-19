@@ -1,0 +1,28 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "biaya": "Gaji Pokok",
+        "nilai": "Rp. 50.000,00",
+        "jumlah": "",
+        "subtotal": "",
+        "total": "Rp. 3.500.000,00"
+    }, {
+        "no": 2,
+        "biaya": "Komisi",
+        "nilai": "Rp. 50.000,00",
+        "jumlah": "10",
+        "subtotal": "Rp 500.000",
+        "total": "Rp 500.000"
+    }, {
+        "no": 3,
+        "biaya": "Denda Keterlambatan",
+        "nilai": "Rp. 50.000,00",
+        "jumlah": "2",
+        "subtotal": "Rp 100.000",
+        "total": "Rp -100.000"
+    }]
+}

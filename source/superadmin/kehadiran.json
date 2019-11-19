@@ -1,0 +1,55 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "tanggal": "18 November 2019",
+        "waktu_masuk": "08.00 WITA",
+        "waktu_pulang": "16.00 WITA",
+        "keterlambatan": "5"
+    }, {
+        "no": 2,
+        "tanggal": "18 November 2019",
+        "waktu_masuk": "08.00 WITA",
+        "waktu_pulang": "16.00 WITA",
+        "keterlambatan": "5"
+    }, {
+        "no": 3,
+        "tanggal": "18 November 2019",
+        "waktu_masuk": "08.00 WITA",
+        "waktu_pulang": "16.00 WITA",
+        "keterlambatan": "5"
+    }, {
+        "no": 4,
+        "tanggal": "18 November 2019",
+        "waktu_masuk": "08.00 WITA",
+        "waktu_pulang": "16.00 WITA",
+        "keterlambatan": "5"
+    }, {
+        "no": 5,
+        "tanggal": "18 November 2019",
+        "waktu_masuk": "08.00 WITA",
+        "waktu_pulang": "16.00 WITA",
+        "keterlambatan": "5"
+    }, {
+        "no": 6,
+        "tanggal": "18 November 2019",
+        "waktu_masuk": "08.00 WITA",
+        "waktu_pulang": "16.00 WITA",
+        "keterlambatan": "5"
+    }, {
+        "no": 7,
+        "tanggal": "18 November 2019",
+        "waktu_masuk": "08.00 WITA",
+        "waktu_pulang": "16.00 WITA",
+        "keterlambatan": "5"
+    }, {
+        "no": 8,
+        "tanggal": "18 November 2019",
+        "waktu_masuk": "08.00 WITA",
+        "waktu_pulang": "16.00 WITA",
+        "keterlambatan": "5"
+    }]
+}
