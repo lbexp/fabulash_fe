@@ -23,7 +23,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             processing: true,
             serverSide: false,
             ajax: {
-                url: 'source/treatment.json',
+                url: 'source/superadmin/treatment.json',
                 type: 'POST',
                 data: {
                     // parameters for custom backend script demo
@@ -167,7 +167,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             processing: true,
             serverSide: false,
             ajax: {
-                url: 'source/treatment.json',
+                url: 'source/superadmin/treatment.json',
                 type: 'POST',
                 data: {
                     // parameters for custom backend script demo
@@ -275,7 +275,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             processing: true,
             serverSide: false,
             ajax: {
-                url: 'source/treatment.json',
+                url: 'source/superadmin/treatment.json',
                 type: 'POST',
                 data: {
                     // parameters for custom backend script demo
@@ -377,7 +377,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             searching: false,
             responsive: true,
             ajax: {
-                url: 'source/treatment_list.json',
+                url: 'source/superadmin/treatment_list.json',
                 type: 'POST',
                 data: {
                     pagination: {
@@ -539,6 +539,50 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
+    var initTablePengeluaranDetail = function() {
+        var table = $('#table_pengeluaran_detail');
+        // begin first table
+        table.DataTable({
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/admin/pengeluaran_detail.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 25,
+                orderable: false,
+            }, {
+                data: 'nama_pengeluaran',
+                title: 'Pengeluaran'
+            }, {
+                data: 'quantity',
+                title: 'Quantity'
+            }, {
+                data: 'harga',
+                title: 'Harga'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+    };
+
     var initTablePemasukan = function() {
         // begin first table
         var table = $('#table_finance_pemasukan').DataTable({
@@ -555,7 +599,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             processing: true,
             serverSide: false,
             ajax: {
-                url: 'source/pemasukan.json',
+                url: 'source/superadmin/pemasukan.json',
                 type: 'POST',
                 data: {
                     // parameters for custom backend script demo
@@ -597,7 +641,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_superadmin/finance_pengeluaran_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_superadmin/finance_pemasukan_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -688,7 +732,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_superadmin/finance_pengeluaran_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_superadmin/#.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }, ],
             columnDefs: [{
@@ -1101,6 +1145,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableVoidTreatment();
             initTableTreatmentDetail();
             initTablePengeluaran();
+            initTablePengeluaranDetail();
             initTablePemasukan();
             initTableDataTreatment();
             initTableDataComplaint();
