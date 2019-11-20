@@ -50,7 +50,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 200,
                 render: function(data, type, full, meta) {
                     return `
-                    <button class="btn btn-sm btn-success" style="color:white;border-radius:15px">Edit</button>&nbsp;<button class="btn btn-sm btn-danger" style="color:white;border-radius:15px">Delete</button>`;
+                    <button class="btn btn-sm btn-success" style="color:white;border-radius:15px">Edit</button>&nbsp;<button class="btn btn-sm btn-danger" onClick="swalHapus();" style="color:white;border-radius:15px">Delete</button>`;
                 },
             }],
             columnDefs: [{

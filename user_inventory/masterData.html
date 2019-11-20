@@ -430,6 +430,25 @@ License: You must have a valid license purchased only from themeforest(the above
 		<script src="assets/js/script/datatable_inventory.js"></script>
 
         <script>
+			// Sweetalert
+			function swalHapus() {
+				swal.fire({
+					title: 'Yakin untuk menghapus?',
+					text: "Tindakan ini tidak bisa diubah kembali!",
+					type: 'warning',
+					showCancelButton: true,
+					confirmButtonText: 'Ya, hapus!'
+				}).then(function(result) {
+					if (result.value) {
+						swal.fire(
+							'Terhapus!',
+							'Data berhasil dihapus.',
+							'success'
+						)
+					}
+				});
+			};
+
 			$('#kt_sweetalert_berhasil').click(function(e) {
 				swal.fire({
 					title: "Berhasil",
