@@ -97,11 +97,11 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     var status = {
-                        scheduled: {'href': 'listTreatment_detail_scheduled.html'},
-                        waiting: {'href': 'listTreatment_detail_unpaid.html'},
-                        ongoing : {'href': 'listTreatment_detail_unpaid.html'},
-                        unpaid : {'href': 'listTreatment_detail_unpaid.html'},
-                        done : {'href': 'listTreatment_detail_paid.html'}
+                        scheduled: {'href': 'treatment_detail_scheduled.html'},
+                        waiting: {'href': 'treatment_detail_unpaid.html'},
+                        ongoing : {'href': 'treatment_detail_unpaid.html'},
+                        unpaid : {'href': 'treatment_detail_unpaid.html'},
+                        done : {'href': 'treatment_detail_paid.html'}
                     };
                     return `
                     <a href="user_superadmin/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
@@ -207,7 +207,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_superadmin/listTreatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_superadmin/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -310,7 +310,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_superadmin/listTreatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_superadmin/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -1082,7 +1082,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 orderable: true,
             }],
         });
-        
+
         table.on('order.dt search.dt', function() {
             table.column(0, {
                 search: 'applied',
