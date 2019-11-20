@@ -99,16 +99,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
         }).draw();
 
-        var filter = function() {
-            var val = $.fn.dataTable.util.escapeRegex($(this).val());
-            table.column($(this).data('col-index')).search(val ? val : '', false, false).draw();
-        };
-
-        var asdasd = function(value, index) {
-            var val = $.fn.dataTable.util.escapeRegex(value);
-            table.column(index).search(val ? val : '', false, true);
-        };
-
         $('#kt_search_waktu').on('change', function(e) {
             e.preventDefault();
             var params = {};
@@ -209,16 +199,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
         }).draw();
 
-        var filter = function() {
-            var val = $.fn.dataTable.util.escapeRegex($(this).val());
-            table.column($(this).data('col-index')).search(val ? val : '', false, false).draw();
-        };
-
-        var asdasd = function(value, index) {
-            var val = $.fn.dataTable.util.escapeRegex(value);
-            table.column(index).search(val ? val : '', false, true);
-        };
-
         $('#kt_search_waktu').on('change', function(e) {
             e.preventDefault();
             var params = {};
@@ -318,16 +298,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 cell.innerHTML = i + 1;
             });
         }).draw();
-
-        var filter = function() {
-            var val = $.fn.dataTable.util.escapeRegex($(this).val());
-            table.column($(this).data('col-index')).search(val ? val : '', false, false).draw();
-        };
-
-        var asdasd = function(value, index) {
-            var val = $.fn.dataTable.util.escapeRegex(value);
-            table.column(index).search(val ? val : '', false, true);
-        };
 
         $('#kt_search_waktu').on('change', function(e) {
             e.preventDefault();
