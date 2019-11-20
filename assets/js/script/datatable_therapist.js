@@ -362,7 +362,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             searching: false,
             responsive: true,
             ajax: {
-                url: 'source/treatment_list.json',
+                url: 'source/therapist/treatment_list.json',
                 type: 'POST',
                 data: {
                     pagination: {
