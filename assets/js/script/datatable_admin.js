@@ -1,6 +1,5 @@
 "use strict";
 
-// begin: Admin Page
 var KTDatatablesSearchOptionsAdvancedSearch = function() {
 
     $.fn.dataTable.Api.register('column().title()', function() {
@@ -23,7 +22,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             processing: true,
             serverSide: false,
             ajax: {
-                url: 'source/treatment.json',
+                url: 'source/admin/treatment.json',
                 type: 'POST',
                 data: {
                     // parameters for custom backend script demo
@@ -39,7 +38,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                // title: 'No.',
+                width: 25,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -161,7 +160,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             searching: false,
             responsive: true,
             ajax: {
-                url: 'source/treatment_list.json',
+                url: 'source/admin/treatment_list.json',
                 type: 'POST',
                 data: {
                     pagination: {
@@ -175,7 +174,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                // title: 'No.',
+                width: 25,
                 orderable: false,
             }, {
                 data: 'treatment',
@@ -208,7 +207,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             processing: true,
             serverSide: false,
             ajax: {
-                url: 'source/treatment.json',
+                url: 'source/admin/treatment.json',
                 type: 'POST',
                 data: {
                     // parameters for custom backend script demo
@@ -224,7 +223,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                // title: 'No.',
+                width: 25,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -316,7 +315,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             processing: true,
             serverSide: false,
             ajax: {
-                url: 'source/treatment.json',
+                url: 'source/admin/treatment.json',
                 type: 'POST',
                 data: {
                     // parameters for custom backend script demo
@@ -332,7 +331,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                // title: 'No.',
+                width: 25,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -414,7 +413,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         table.DataTable({
             responsive: true,
             ajax: {
-                url: 'source/customer.json',
+                url: 'source/admin/customer.json',
                 type: 'POST',
                 data: {
                     pagination: {
@@ -428,7 +427,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                // title: 'No.',
+                width: 25,
                 orderable: false,
             }, {
                 data: 'nama',
@@ -495,7 +494,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             processing: true,
             serverSide: false,
             ajax: {
-                url: 'source/customer_detail_treatment.json',
+                url: 'source/admin/customer_detail_treatment.json',
                 type: 'POST',
                 data: {
                     // parameters for custom backend script demo
@@ -511,7 +510,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                // title: 'No.',
+                width: 25,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -608,7 +607,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             processing: true,
             serverSide: false,
             ajax: {
-                url: 'source/pengeluaran.json',
+                url: 'source/admin/pengeluaran.json',
                 type: 'POST',
                 data: {
                     // parameters for custom backend script demo
@@ -624,7 +623,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                // title: 'No.',
+                width: 25,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -735,7 +734,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             processing: true,
             serverSide: false,
             ajax: {
-                url: 'source/pemasukan.json',
+                url: 'source/admin/pemasukan.json',
                 type: 'POST',
                 data: {
                     // parameters for custom backend script demo
@@ -751,7 +750,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                // title: 'No.',
+                width: 25,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -834,7 +833,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             searching: false,
             responsive: true,
             ajax: {
-                url: 'source/pengeluaran_detail.json',
+                url: 'source/admin/pengeluaran_detail.json',
                 type: 'POST',
                 data: {
                     pagination: {
@@ -848,7 +847,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                // title: 'No.',
+                width: 25,
                 orderable: false,
             }, {
                 data: 'nama_pengeluaran',
@@ -884,232 +883,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     };
 
 }();
-// end: Admin Page
-
-// begin: Inventory
-var KTDatatablesSearchOptionsAdvancedSearch3 = function() {
-
-    $.fn.dataTable.Api.register('column().title()', function() {
-        return $(this.header()).text().trim();
-    });
-
-    var initTableMasterData = function() {
-        // begin first table
-        var table = $('#table_master_data').DataTable({
-            responsive: true,
-            // Pagination settings
-            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
-            // read more: https://datatables.net/examples/basic_init/dom.html
-            lengthMenu: [5, 10, 25, 50],
-            pageLength: 10,
-            language: {
-                'lengthMenu': 'Display _MENU_',
-            },
-            searchDelay: 500,
-            processing: true,
-            serverSide: false,
-            ajax: {
-                url: 'source/inventory/inventory.json',
-                type: 'POST',
-                data: {
-                    // parameters for custom backend script demo
-                    columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
-                    ],
-                },
-            },
-            columns: [{
-                data: 'null',
-                title: 'No',
-                render: function(data, type, row, meta) {
-                    return meta.row + meta.settings._iDisplayStart + 1;
-                },
-                // title: 'No.',
-                orderable: false,
-            }, {
-                data: 'barang',
-                title: 'Barang',
-            }, {
-                data: 'isi_satuan',
-                title: 'Isi Per Satuan',
-            }, {
-                data: 'satuan',
-                title: 'Satuan',
-            }, {
-                data: 'persediaan',
-                title: 'Persediaan',
-            },{
-                field: 'aksi',
-                title: 'Aksi',
-                responsivePriority: -1,
-                className: 'text-center',
-                orderable: false,
-                width: 200,
-                render: function(data, type, full, meta) {
-                    return `
-                    <button class="btn btn-sm btn-success" style="color:white;border-radius:15px">Edit</button>&nbsp;<button class="btn btn-sm btn-danger" style="color:white;border-radius:15px">Delete</button>`;
-                },
-            }],
-            columnDefs: [{
-                targets: [0, 1, 2, 3, 4, 5],
-                className: 'text-center',
-                orderable: true,
-            }],
-        });
-        table.on('order.dt search.dt', function() {
-            table.column(0, {
-                search: 'applied',
-                order: 'applied'
-            }).nodes().each(function(cell, i) {
-                cell.innerHTML = i + 1;
-            });
-        }).draw();
-        var filter = function() {
-            var val = $.fn.dataTable.util.escapeRegex($(this).val());
-            table.column($(this).data('col-index')).search(val ? val : '', false, false).draw();
-        };
-        var asdasd = function(value, index) {
-            var val = $.fn.dataTable.util.escapeRegex(value);
-            table.column(index).search(val ? val : '', false, true);
-        };
-        $('#kt_search_waktu').on('change', function(e) {
-            e.preventDefault();
-            var params = {};
-            $('.kt-input').each(function() {
-                var i = $(this).data('col-index');
-                if (params[i]) {
-                    params[i] += '|' + $(this).val();
-                } else {
-                    params[i] = $(this).val();
-                }
-            });
-            $.each(params, function(i, val) {
-                // apply search params to datatable
-                table.column(i).search(val ? val : '', false, false);
-            });
-            table.table().draw();
-        });
-        $('#kt_search_all').on('keyup', function() {
-            table.search(this.value).draw();
-        });
-    };
-
-    var initTableStock = function() {
-        // begin first table
-        var table = $('#table_stock').DataTable({
-            responsive: true,
-            // Pagination settings
-            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
-            // read more: https://datatables.net/examples/basic_init/dom.html
-            lengthMenu: [5, 10, 25, 50],
-            pageLength: 10,
-            language: {
-                'lengthMenu': 'Display _MENU_',
-            },
-            searchDelay: 500,
-            processing: true,
-            serverSide: false,
-            ajax: {
-                url: 'source/inventory/inventory.json',
-                type: 'POST',
-                data: {
-                    // parameters for custom backend script demo
-                    columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
-                    ],
-                },
-            },
-            columns: [{
-                data: 'null',
-                title: 'No',
-                render: function(data, type, row, meta) {
-                    return meta.row + meta.settings._iDisplayStart + 1;
-                },
-                // title: 'No.',
-                orderable: false,
-            }, {
-                data: 'barang',
-                title: 'Barang',
-            }, {
-                data: 'isi_satuan',
-                title: 'Isi Per Satuan',
-            }, {
-                data: 'satuan',
-                title: 'Satuan',
-            }, {
-                data: 'persediaan',
-                title: 'Persediaan',
-            },{
-                field: 'aksi',
-                title: 'Aksi',
-                responsivePriority: -1,
-                className: 'text-center',
-                orderable: false,
-                width: 200,
-                render: function(data, type, full, meta) {
-                    return `
-                    <button class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Tambah</button>&nbsp;<button class="btn btn-sm btn-danger" style="color:white;border-radius:15px">Delete</button>`;
-                },
-            }],
-            columnDefs: [{
-                targets: [0, 1, 2, 3, 4, 5],
-                className: 'text-center',
-                orderable: true,
-            }],
-        });
-        table.on('order.dt search.dt', function() {
-            table.column(0, {
-                search: 'applied',
-                order: 'applied'
-            }).nodes().each(function(cell, i) {
-                cell.innerHTML = i + 1;
-            });
-        }).draw();
-        var filter = function() {
-            var val = $.fn.dataTable.util.escapeRegex($(this).val());
-            table.column($(this).data('col-index')).search(val ? val : '', false, false).draw();
-        };
-        var asdasd = function(value, index) {
-            var val = $.fn.dataTable.util.escapeRegex(value);
-            table.column(index).search(val ? val : '', false, true);
-        };
-        $('#kt_search_waktu').on('change', function(e) {
-            e.preventDefault();
-            var params = {};
-            $('.kt-input').each(function() {
-                var i = $(this).data('col-index');
-                if (params[i]) {
-                    params[i] += '|' + $(this).val();
-                } else {
-                    params[i] = $(this).val();
-                }
-            });
-            $.each(params, function(i, val) {
-                // apply search params to datatable
-                table.column(i).search(val ? val : '', false, false);
-            });
-            table.table().draw();
-        });
-        $('#kt_search_all').on('keyup', function() {
-            table.search(this.value).draw();
-        });
-    };
-
-    return {
-        //main function to initiate the module
-        init: function() {
-            initTableMasterData();
-            initTableStock();
-        },
-    };
-
-}();
-// end: Inventory
 
 
 jQuery(document).ready(function() {
     KTDatatablesSearchOptionsAdvancedSearch.init();
-    KTDatatablesSearchOptionsAdvancedSearch3.init();
 });

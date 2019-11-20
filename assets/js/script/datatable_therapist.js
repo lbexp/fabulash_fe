@@ -39,7 +39,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                // title: 'No.',
+                width: 25,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -164,7 +164,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                // title: 'No.',
+                width: 25,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -274,7 +274,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                // title: 'No.',
+                width: 25,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -376,7 +376,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                // title: 'No.',
+                width: 25,
                 orderable: false,
             }, {
                 data: 'treatment',
