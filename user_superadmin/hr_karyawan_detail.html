@@ -543,24 +543,24 @@ License: You must have a valid license purchased only from themeforest(the above
 										<form id="kt_form_pembayaran">
 	                                        <div class="modal-body">
 												<div class="justify-center kt-margin-b-10">
-													<h4 class="color-main-dark" name="pembayaran_nominal">Rp. 300.000,00</h4>
+													<h4 class="color-main-dark" name="payroll_nominal">Rp. 300.000,00</h4>
 												</div>
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-4">Jenis Pembayaran</label>
                                                     <div class="col-8">
 														<div class="kt-radio-inline">
 															<label class="kt-radio">
-																<input type="radio"  name="pembayaran_jenis"> Cash
+																<input type="radio"  name="payroll_jenis"> Cash
 																<span></span>
 															</label>
 														</div>
 														<div class="kt-radio-inline">
 															<label class="col-6 kt-radio">
-																<input type="radio" name="pembayaran_jenis"> Transfer Mandiri
+																<input type="radio" name="payroll_jenis"> Transfer Mandiri
 																<span></span>
 															</label>
 															<label class="col-5 kt-radio">
-																<input type="radio" name="pembayaran_jenis"> Transfer BNI
+																<input type="radio" name="payroll_jenis"> Transfer BNI
 																<span></span>
 															</label>
 														</div>
@@ -571,8 +571,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <label for="example-text-input" class="col-4 col-form-label">Foto</label>
                                                     <div class="col-8">
 														<div class="custom-file">
-															<input type="file" class="custom-file-input" name="treatment_foto" id="treatment_foto" accept="image/*">
-															<label class="custom-file-label" for="treatment_foto">Choose file</label>
+															<input type="file" class="custom-file-input" name="payroll_foto" id="payroll_foto" accept="image/*">
+															<label class="custom-file-label" for="payroll_foto">Choose file</label>
 														</div>
 														<span class="form-text"  style="margin: 1rem 0 1rem 0">Image preview :</span>
 														<div id="uploaded_image" align="center" class="image-cropper"></div>
@@ -581,7 +581,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	                                        </div>
 	                                        <div class="modal-footer" style="justify-content:center;">
 	                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	                                            <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_modal_2">Submit</button>
+	                                            <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil">Submit</button>
 	                                        </div>
 										</form>
                                     </div>
@@ -717,7 +717,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					}
 				});
 
-				$('#treatment_foto').on('change', function(){
+				$('#payroll_foto').on('change', function(){
 					var reader = new FileReader();
 					reader.onload = function (event) {
 						$image_crop.croppie('bind', {
@@ -749,20 +749,38 @@ License: You must have a valid license purchased only from themeforest(the above
 				});
 			});
 
-			$('#treatment_barang_add').click(function() {
-				document.querySelector('#treatment_barang_list').insertAdjacentHTML (
-					'afterbegin',
-					`<div class="col-5" style="padding-left:0px; margin-bottom: 10px">
-						<input type="text" class="form-control" name="treatment_barang" placeholder="Pemakaian">
-					</div>
-					<div class="row col-7 kt-margin-0" style="padding:0px; margin-bottom: 10px">
-						<label for="example-text-input" class="col-2 col-form-label">Qty</label>
-						<div class="col-10" style="padding-right: 0px">
-							<input type="text" class="form-control" name="treatment_barang_jumlah" placeholder="Jumlah">
-						</div>
-					</div>`
-				)
+			// Sweetalert
+			$('#kt_sweetalert_berhasil').click(function(e) {
+				swal.fire({
+					title: "Berhasil",
+					text: "Gaji berhasil dibayar.",
+					type: "success",
+					confirmButtonText: "Ok",
+					confirmButtonClass: "btn btn-brand"
+				}).then(function(result) {
+					// location.reload();
+				});
 			});
+
+			// Form Validation
+			$("#kt_form_pembayaran").validate({
+	            // define validation rules
+	            rules: {
+					payroll_jenis : {
+						required: true
+					},
+					payroll_foto : {
+						required: true
+					}
+	            },
+
+	            invalidHandler: function(event, validator) {
+	                KTUtil.scrollTop();
+	            },
+	            submitHandler: function(form) {
+	                //form[0].submit(); // submit the form
+	            }
+        	});
 		</script>
 
 		<!--end::Page Scripts -->
