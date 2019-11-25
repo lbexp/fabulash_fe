@@ -352,3 +352,8 @@ body {
         margin-bottom : 5px;
     }
 }
+
+.uploaded_img {
+    width: 100%;
+    height: auto;
+}
