@@ -505,8 +505,6 @@ License: You must have a valid license purchased only from themeforest(the above
 
 		<script>
 			// Select2 ajax
-			var no_hp = null;
-
 			$('#kt_select2_treatment_customer_nama').select2({
 				multiple: true,
 				maximumSelectionLength: 1,
@@ -517,7 +515,13 @@ License: You must have a valid license purchased only from themeforest(the above
 					delay: 250,
 					processResults: function (data) {
 						return {
-							results: data
+							results: $.map(data, function(item) {
+								return {
+									text: item.text+' &  '+item.slug,
+									id: item.id
+								}
+							})
+							// results: data
 						}
 					},
 				}
