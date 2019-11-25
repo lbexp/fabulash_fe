@@ -302,6 +302,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: 'therapist',
                 title: 'Therapist',
             }, {
+                data: 'void',
+                title: 'Status',
+            }, {
                 field: 'aksi',
                 title: 'Aksi',
                 responsivePriority: -1,
