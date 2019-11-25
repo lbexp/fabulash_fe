@@ -336,7 +336,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												</div>
 												<div class="form-group">
 													<label class="form-control-label">No. Telepon</label>
-													<input type="text" class="form-control" type="text" name="treatment_customer_nohp" placeholder="No. Telepon">
+													<input type="text" class="form-control" type="text" id="treatment_customer_nohp" name="treatment_customer_nohp" placeholder="No. Telepon">
 													<div class="col-12" style="padding:0px;text-align:right;">
 														<button type="button" class="btn btn-link" style="padding-right:0px;" data-toggle="modal" data-target="#kt_modal_1"><i class="flaticon-add"></i>Tambah Pelanggan</button>
 													</div>
@@ -507,6 +507,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			// Select2 ajax
 			$('#kt_select2_treatment_customer_nama').select2({
 				multiple: true,
+				maximumSelectionSize: 1,
 				maximumSelectionLength: 1,
 				placeholder: 'Nama',
 				ajax: {
@@ -517,14 +518,19 @@ License: You must have a valid license purchased only from themeforest(the above
 						return {
 							results: $.map(data, function(item) {
 								return {
-									text: item.text+' &  '+item.slug,
+									text: item.text,
+									number: item.number,
 									id: item.id
 								}
 							})
-							// results: data
 						}
 					},
 				}
+			});
+
+			$('#kt_select2_treatment_customer_nama').change(function () {
+				var dataArray = $('#kt_select2_treatment_customer_nama').select2('data');
+				document.getElementById("treatment_customer_nohp").setAttribute('value',dataArray[0].number);
 			});
 
 			// Sweetalert

@@ -15,7 +15,7 @@ $result = $mysqli->query($sql);
 
 $json = [];
 while($row = $result->fetch_assoc()){
-     $json[] = ['id'=>$row['id'], 'text'=>$row['nama'], 'slug'=>$row['no_hp']];
+     $json[] = ['id'=>$row['id'], 'text'=>$row['nama'], 'number'=>$row['no_hp']];
 }
 
 echo json_encode($json);
