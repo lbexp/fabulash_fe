@@ -74,10 +74,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                             'title': 'Ongoing',
                             'class': 'btn-label-primary'
                         },
-                        unpaid: {
-                            'title': 'Unpaid',
-                            'class': 'btn-label-danger'
-                        },
                         done: {
                             'title': 'Done',
                             'class': 'btn-label-success'
@@ -100,7 +96,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                         scheduled: {'href': 'treatment_detail_scheduled.html'},
                         waiting: {'href': 'treatment_detail_unpaid.html'},
                         ongoing : {'href': 'treatment_detail_unpaid.html'},
-                        unpaid : {'href': 'treatment_detail_unpaid.html'},
                         done : {'href': 'treatment_detail_paid.html'}
                     };
                     return `

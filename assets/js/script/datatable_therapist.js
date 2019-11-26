@@ -55,11 +55,19 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                     var status = {
                         scheduled: {
                             'title': 'Scheduled',
-                            'class': 'btn-label-warning'
+                            'class': 'btn-label-dark'
                         },
                         ongoing: {
                             'title': 'Ongoing',
                             'class': 'btn-label-primary'
+                        },
+                        waiting: {
+                            'title': 'Waiting',
+                            'class': 'btn-label-warning'
+                        },
+                        done: {
+                            'title': 'Done',
+                            'class': 'btn-label-success'
                         },
                     };
                     if (typeof status[data] === 'undefined') {
@@ -78,6 +86,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                     var status = {
                         scheduled: {'href': 'treatment_detail_scheduled.html'},
                         ongoing : {'href': 'treatment_detail_ongoing.html'},
+                        waiting: {'href': 'treatment_detail_waiting.html'},
+                        done : {'href': 'treatment_detail_done.html'},
                     };
                     return `
                     <a href="user_therapist/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;

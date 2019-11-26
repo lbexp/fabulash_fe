@@ -42,7 +42,7 @@
         "treatment": "Eyelash Extension",
         "customer": "Darnilla",
         "therapist": "Ka",
-        "status": "unpaid"
+        "status": "done"
     }, {
         "no": 5,
         "tanggal": "29 Agustus 2019",
@@ -52,7 +52,7 @@
         "treatment": "Eyelash Extension",
         "customer": "Darnilla",
         "therapist": "Ka",
-        "status": "done"
+        "status": "waiting"
     }, {
         "no": 6,
         "tanggal": "29 Agustus 2019",
@@ -72,7 +72,7 @@
         "treatment": "Eyelash Extension",
         "customer": "Darnilla",
         "therapist": "Ka",
-        "status": "ongoing"
+        "status": "done"
     }, {
         "no": 8,
         "tanggal": "29 Agustus 2019",

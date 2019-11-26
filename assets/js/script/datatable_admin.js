@@ -73,10 +73,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                             'title': 'Ongoing',
                             'class': 'btn-label-primary'
                         },
-                        unpaid: {
-                            'title': 'Unpaid',
-                            'class': 'btn-label-danger'
-                        },
                         done: {
                             'title': 'Done',
                             'class': 'btn-label-success'
@@ -99,7 +95,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                         scheduled: {'href': 'listTreatment_detail_scheduled.html'},
                         waiting: {'href': 'listTreatment_detail_unpaid.html'},
                         ongoing : {'href': 'listTreatment_detail_unpaid.html'},
-                        unpaid : {'href': 'listTreatment_detail_unpaid.html'},
                         done : {'href': 'listTreatment_detail_paid.html'}
                     };
                     return `
@@ -786,7 +781,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
             table.table().draw();
         });
-        
+
         $('#kt_search_all').on('keyup', function() {
             table.search(this.value).draw();
         });

@@ -14,7 +14,7 @@
         "therapist": "Ka",
         "durasi": "1 Jam",
         "harga": "Rp. 350.000",
-        "status": "unpaid",
+        "status": "done",
         "void": "Request Void",
         "complaint": "Gatal-gatal"
     }, {
@@ -111,7 +111,7 @@
         "therapist": "Kiki",
         "durasi": "1 Jam",
         "harga": "Rp. 350.000",
-        "status": "unpaid",
+        "status": "ongoing",
         "void": "Request Void",
         "complaint": "Gatal-gatal"
     }]
