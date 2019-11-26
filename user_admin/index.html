@@ -318,7 +318,6 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="col-lg-8 col-xl-6">
 
 									<!--begin::Portlet-->
-
 									<div class="kt-portlet kt-portlet--mobile">
 										<div class="kt-portlet__head">
 											<div class="kt-portlet__head-label">
@@ -327,29 +326,28 @@ License: You must have a valid license purchased only from themeforest(the above
 												</h3>
 											</div>
 										</div>
-										<div class="kt-portlet__body">
-											<form id="kt_form_1">
+										<form id="kt_form_treatment">
+											<div class="kt-portlet__body">
 												<div class="form-group">
-													<label class="form-control-label">Nama</label>
-													<select class="form-control kt-select2" id="kt_select2_treatment_customer_nama" name="treatment_customer_nama"></select>
+													<label class="form-control-label">No. Telepon :</label>
+													<select class="form-control kt-select2" id="kt_select2_treatment_customer_nohp" name="treatment_customer_nohp"></select>
 													<span class="form-text text-muted kt-hidden" style="margin:0px;"></span>
 												</div>
 												<div class="form-group">
-													<label class="form-control-label">No. Telepon</label>
-													<input type="text" class="form-control" type="text" id="treatment_customer_nohp" name="treatment_customer_nohp" placeholder="No. Telepon">
-													<div class="col-12" style="padding:0px;text-align:right;">
-														<button type="button" class="btn btn-link" style="padding-right:0px;" data-toggle="modal" data-target="#kt_modal_1"><i class="flaticon-add"></i>Tambah Pelanggan</button>
-													</div>
+													<label class="form-control-label">Nama :</label>
+													<input type="text" class="form-control" type="text" id="treatment_customer_nama" name="treatment_customer_nama" placeholder="Nama" readonly>
 												</div>
-												<div class="form-group">
-													<label class="form-control-label">Catatan</label>
-													<textarea type="text" class="form-control" rows="3" name="treatment_catatan" placeholder="Catatan"></textarea>
+												<div class="" style="padding:0px;text-align:center;">
+													<button type="button" class="btn btn-link" style="padding-right:0px;" data-toggle="modal" data-target="#kt_modal_customer"><i class="flaticon-add"></i>Tambah Pelanggan</button>
 												</div>
-												<div class="col-12 horizontal-centered kt-margin-0" style="padding: 0px 0px">
-													<button type="submit" class="btn btn-success" style="width:25%;" id="kt_sweetalert_berhasil">Submit</buttton>
+											</div>
+											<div class="kt-portlet__foot">
+												<div class="horizontal-centered kt-margin-0" style="padding: 0px 0px;">
+													<button type="submit" class="btn btn-warning kt_sweetalert_berhasil" style="margin-right: 0.25rem">Jadwalkan</buttton>&nbsp;
+													<button type="submit" class="btn btn-brand kt_sweetalert_berhasil" style="margin-left: 0.25rem">Activate Session</buttton>
 												</div>
-											</form>
-										</div>
+											</div>
+										</form>
 									</div>
 
 									<!--end::Portlet-->
@@ -358,7 +356,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							</div>
 
 							<!--begin::Modal-->
-							<div class="modal fade" id="kt_modal_1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal fade" id="kt_modal_customer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 								<div class="modal-dialog" role="document">
 									<div class="modal-content">
 										<div class="modal-header">
@@ -366,17 +364,17 @@ License: You must have a valid license purchased only from themeforest(the above
 											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 											</button>
 										</div>
-										<form id="kt_form_2">
+										<form id="kt_form_customer">
 											<div class="modal-body">
 												<div class="form-group row">
-													<label for="example-text-input" class="col-4 col-form-label">Nama</label>
-													<div class="col-8">
+													<label class="col-sm-4 col-form-label">Nama :</label>
+													<div class="col-sm-8">
 														<input type="text" class="form-control" name="customer_nama" placeholder="Nama">
 													</div>
 												</div>
 												<div class="form-group row">
-													<label for="example-text-input" class="col-4 col-form-label">Tanggal Lahir</label>
-													<div class="col-8">
+													<label class="col-sm-4 col-form-label">Tanggal Lahir :</label>
+													<div class="col-sm-8">
 														<div class="input-group date">
 															<input type="text" class="form-control" readonly="" placeholder="Tanggal" id="kt_search_tanggal" name="customer_lahir">
 															<div class="input-group-append">
@@ -389,32 +387,32 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 												<div class="form-group row">
-													<label for="example-text-input" class="col-4 col-form-label">No. Telepon</label>
-													<div class="col-8">
+													<label class="col-sm-4 col-form-label">No. Telepon :</label>
+													<div class="col-sm-8">
 														<input type="text" class="form-control" name="customer_nohp" placeholder="No. Telepon">
 													</div>
 												</div>
 												<div class="form-group row">
-													<label for="example-text-input" class="col-4 col-form-label">Email</label>
-													<div class="col-8">
+													<label class="col-sm-4 col-form-label">Email :</label>
+													<div class="col-sm-8">
 														<input type="email" class="form-control" name="customer_email" placeholder="Email">
 													</div>
 												</div>
 												<div class="form-group row">
-													<label for="example-text-input" class="col-4 col-form-label">Alamat</label>
-													<div class="col-8">
+													<label class="col-sm-4 col-form-label">Alamat :</label>
+													<div class="col-sm-8">
 														<input type="text" class="form-control" name="customer_alamat" placeholder="Alamat">
 													</div>
 												</div>
 												<div class="form-group row">
-													<label for="example-text-input" class="col-4 col-form-label">Persetujuan</label>
-													<div class="col-5">
-														<input type="text" class="form-control" style="background-color: #5578eb1a; color: #5578eb;" value="Persetujuan" readonly>
-														<input type="text" class="form-control kt-hidden" style="background-color: #17bdbd26; color: #17bdbd" value="Setuju" readonly>
-														<input type="text" class="form-control kt-hidden" style="background-color: #fd397a1a; color: #fd397a;" value="Ditolak" readonly>
-													</div>
-													<div class="col-3">
-														<a class="btn btn-success" id="showtoast" style="color:#fff; cursor:pointer; width:100%;">Send</a>
+													<label class="col-sm-4 col-form-label">Persetujuan :</label>
+													<div class="col-sm-8">
+														<div class="input-group">
+															<input type="text" class="form-control form-label-brand input-group-child-normal kt-margin-r-5" value="Persetujuan" readonly>
+															<input type="text" class="form-control form-label-success input-group-child-normal kt-margin-r-5 kt-hidden" value="Setuju" readonly>
+															<input type="text" class="form-control form-label-danger input-group-child-normal kt-margin-r-5 kt-hidden" value="Ditolak" readonly>
+															<button type="button" class="btn btn-brand" id="showtoast" style="width:auto;">Send</button>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -505,11 +503,11 @@ License: You must have a valid license purchased only from themeforest(the above
 
 		<script>
 			// Select2 ajax
-			$('#kt_select2_treatment_customer_nama').select2({
+			$('#kt_select2_treatment_customer_nohp').select2({
 				multiple: true,
 				maximumSelectionSize: 1,
 				maximumSelectionLength: 1,
-				placeholder: 'Nama',
+				placeholder: 'No. Telepon',
 				ajax: {
 					url: 'source/admin/customer_select2.php',
 					dataType: 'json',
@@ -518,8 +516,8 @@ License: You must have a valid license purchased only from themeforest(the above
 						return {
 							results: $.map(data, function(item) {
 								return {
-									text: item.text,
-									number: item.number,
+									text: item.number,
+									nama: item.nama,
 									id: item.id
 								}
 							})
@@ -528,13 +526,13 @@ License: You must have a valid license purchased only from themeforest(the above
 				}
 			});
 
-			$('#kt_select2_treatment_customer_nama').change(function () {
-				var dataArray = $('#kt_select2_treatment_customer_nama').select2('data');
-				document.getElementById("treatment_customer_nohp").setAttribute('value',dataArray[0].number);
+			$('#kt_select2_treatment_customer_nohp').change(function () {
+				var dataArray = $('#kt_select2_treatment_customer_nohp').select2('data');
+				document.getElementById("treatment_customer_nama").setAttribute('value',dataArray[0].nama);
 			});
 
 			// Sweetalert
-			$('#kt_sweetalert_berhasil').click(function(e) {
+			$('.kt_sweetalert_berhasil').click(function(e) {
 				swal.fire({
 					title: "Berhasil",
 					text: "Treatment berhasil ditambahkan.",
@@ -621,7 +619,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			});
 
 			// Form Validation
-			$("#kt_form_1").validate({
+			$("#kt_form_treatment").validate({
 	            // define validation rules
 	            rules: {
 	                treatment_customer_nohp: {
@@ -641,7 +639,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	            }
         	});
 
-			$("#kt_form_2").validate({
+			$("#kt_form_customer").validate({
 	            // define validation rules
 	            rules: {
 					customer_nama : {
