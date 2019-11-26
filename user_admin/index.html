@@ -337,7 +337,27 @@ License: You must have a valid license purchased only from themeforest(the above
 													<label class="form-control-label">Nama :</label>
 													<input type="text" class="form-control" type="text" id="treatment_customer_nama" name="treatment_customer_nama" placeholder="Nama" readonly>
 												</div>
-												<div class="" style="padding:0px;text-align:center;">
+												<div class="form-group row">
+													<label class="col-4 col-form-label kt-margin-t-10">Opsi Treatment :</label>
+													<div class="col-8">
+														<div class="kt-checkbox-inline">
+															<label class="kt-checkbox kt-checkbox--brand kt-margin-t-10">
+																<input type="checkbox" name="treatment_type"> Nail Treatment
+																<span></span>
+															</label>
+															<label class="kt-checkbox kt-checkbox--brand kt-margin-t-10">
+																<input type="checkbox" name="treatment_type"> Eyelash Treatment
+																<span></span>
+															</label>
+														</div>
+														<span class="form-text text-muted"></span>
+														<label class="kt-checkbox kt-margin-t-10">
+															<input type="checkbox" name="treatment_place"> Home Service
+															<span></span>
+														</label>
+													</div>
+												</div>
+												<div style="padding:0px;text-align:center;">
 													<button type="button" class="btn btn-link" style="padding-right:0px;" data-toggle="modal" data-target="#kt_modal_customer"><i class="flaticon-add"></i>Tambah Pelanggan</button>
 												</div>
 											</div>
@@ -628,6 +648,12 @@ License: You must have a valid license purchased only from themeforest(the above
 	                },
 	                treatment_customer_nama: {
 	                    required: true
+	                },
+	                treatment_type: {
+	                    required: true
+	                },
+	                treatment_place: {
+	                    required: false
 	                }
 	            },
 
