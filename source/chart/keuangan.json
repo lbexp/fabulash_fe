@@ -1,0 +1,25 @@
+[{
+  "bulan": "Januari",
+  "pemasukan": 2100,
+  "pengeluaran": 2000
+}, {
+  "bulan": "Februari",
+  "pemasukan": 2700,
+  "pengeluaran": 2500
+}, {
+  "bulan": "Maret",
+  "pemasukan": 3000,
+  "pengeluaran": 2300
+}, {
+  "bulan": "April",
+  "pemasukan": 3200,
+  "pengeluaran": 1500
+}, {
+  "bulan": "Mei",
+  "pemasukan": 1500,
+  "pengeluaran": 1000
+}, {
+  "bulan": "Juni",
+  "pemasukan": 2000,
+  "pengeluaran": 1800
+}]
