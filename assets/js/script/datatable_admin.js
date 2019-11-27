@@ -93,9 +93,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, full, meta) {
                     var status = {
                         scheduled: {'href': 'listTreatment_detail_scheduled.html'},
-                        waiting: {'href': 'listTreatment_detail_unpaid.html'},
-                        ongoing : {'href': 'listTreatment_detail_unpaid.html'},
-                        done : {'href': 'listTreatment_detail_paid.html'}
+                        waiting: {'href': 'listTreatment_detail_waiting.html'},
+                        ongoing : {'href': 'listTreatment_detail_ongoing.html'},
+                        done : {'href': 'listTreatment_detail_done.html'}
                     };
                     return `
                     <a href="user_admin/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
