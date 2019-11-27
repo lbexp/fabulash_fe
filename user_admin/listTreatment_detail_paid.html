@@ -340,14 +340,14 @@ License: You must have a valid license purchased only from themeforest(the above
 												<div class="col-6">
 													<div class="row">
 														<div class="col-12" style="text-align: right; margin-bottom:5px;">
-															<button class="col-5 btn btn-warning" onclick="printFunction()">Print</button>
+															<button class="col-5 btn btn-warning no-print" onclick="printFunction()">Print</button>
 														</div>
 														<div class="col-12" style="text-align: right; margin-bottom:5px;">
-															<button class="col-5 btn btn-brand">Foto</button>
+															<button class="col-5 btn btn-brand no-print">Foto</button>
 														</div>
-														<div class="col-12" style="text-align: right;">
-															<button class="col-5 btn btn-danger" data-toggle="modal" data-target="#kt_modal_treatment_complaint">Complaint</button>
-														</div>
+														<!-- <div class="col-12" style="text-align: right;">
+															<button class="col-5 btn btn-danger no-print" data-toggle="modal" data-target="#kt_modal_treatment_complaint">Complaint</button>
+														</div> -->
 													</div>
 												</div>
                                             </div>
@@ -405,7 +405,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							</div>
 
                             <!--begin::Modal-->
-                            <div class="modal fade" id="kt_modal_treatment_complaint" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <!-- <div class="modal fade" id="kt_modal_treatment_complaint" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -449,7 +449,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</form>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <!--end::Modal-->
 
@@ -557,39 +557,39 @@ License: You must have a valid license purchased only from themeforest(the above
 		   });
 
 		   // Form Validation
-		   $("#kt_form_complaint").validate({
-			   // define validation rules
-			   rules: {
-				   complaint_tanggal : {
-					   required: true,
-	                   date: true
-				   },
-				   complaint_tipe : {
-					   required: true
-				   },
-				   complaint_text : {
-					   required: true
-				   }
-			   },
-
-			   invalidHandler: function(event, validator) {
-				   KTUtil.scrollTop();
-			   },
-			   submitHandler: function(form) {
-				   //form[0].submit(); // submit the form
-			   }
-		   });
+		   // $("#kt_form_complaint").validate({
+			//    // define validation rules
+			//    rules: {
+			// 	   complaint_tanggal : {
+			// 		   required: true,
+	       //             date: true
+			// 	   },
+			// 	   complaint_tipe : {
+			// 		   required: true
+			// 	   },
+			// 	   complaint_text : {
+			// 		   required: true
+			// 	   }
+			//    },
+		   //
+			//    invalidHandler: function(event, validator) {
+			// 	   KTUtil.scrollTop();
+			//    },
+			//    submitHandler: function(form) {
+			// 	   //form[0].submit(); // submit the form
+			//    }
+		   // });
 
 		   //Sweetalert
-		   $('#kt_sweetalert_berhasil_complaint').click(function(e) {
-			   swal.fire({
-				   title: "Berhasil",
-				   text: "Complaint berhasil ditambahkan",
-				   type: "success",
-				   confirmButtonText: "Ok",
-				   confirmButtonClass: "btn btn-brand"
-			   });
-		   });
+		   // $('#kt_sweetalert_berhasil_complaint').click(function(e) {
+			//    swal.fire({
+			// 	   title: "Berhasil",
+			// 	   text: "Complaint berhasil ditambahkan",
+			// 	   type: "success",
+			// 	   confirmButtonText: "Ok",
+			// 	   confirmButtonClass: "btn btn-brand"
+			//    });
+		   // });
 		</script>
 
 		<!--end::Page Scripts -->

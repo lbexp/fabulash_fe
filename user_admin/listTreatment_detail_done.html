@@ -340,10 +340,13 @@ License: You must have a valid license purchased only from themeforest(the above
 												<div class="col-6">
 													<div class="row">
 														<div class="col-12" style="text-align: right; margin-bottom:5px;">
-															<button class="col-5 btn btn-warning" onclick="printFunction()">Print</button>
+															<button class="col-5 btn btn-warning no-print" onclick="printFunction()">Print</button>
+														</div>
+														<div class="col-12" style="text-align: right; margin-bottom:5px;">
+															<button class="col-5 btn btn-danger no-print" id="kt_sweetalert_void">Void</button>
 														</div>
 														<div class="col-12" style="text-align: right;">
-															<button class="col-5 btn btn-danger" id="kt_sweetalert_void">Void</button>
+															<button class="col-5 btn btn-danger no-print" data-toggle="modal" data-target="#kt_modal_treatment_complaint">Complaint</button>
 														</div>
 													</div>
 												</div>
@@ -362,7 +365,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </table>
         									<table class="table table-striped- table-bordered table-hover table-checkable" id="table_treatment_detail"></table>
 											<div class="col-12 horizontal-centered" style="padding: 0px 0px" style="margin-bottom:0px;">
-												<button type="button" class="btn btn-link" style="padding-right:0px;"><i class="flaticon-add"></i>Tambah Treatment</button>
+												<button type="button" class="btn btn-link no-print" style="padding-right:0px;"><i class="flaticon-add"></i>Tambah Treatment</button>
 											</div>
 											<div class="row" style="margin-top:50px;">
 												<div class="col-6" style="padding-right:0px;">
@@ -380,7 +383,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		                                            </table>
 												</div>
 												<div class="col-6" style="padding-left:0px;text-align:right;">
-													<button class="col-5 btn btn-success" style="margin-top:5px;" data-toggle="modal" data-target="#kt_modal_treatment_bayar">Bayar</button>
+													<button class="col-5 btn btn-success no-print" style="margin-top:5px;" data-toggle="modal" data-target="#kt_modal_treatment_bayar">Bayar</button>
 												</div>
                                             </div>
 										</div>
@@ -392,6 +395,52 @@ License: You must have a valid license purchased only from themeforest(the above
 							</div>
 
                             <!--begin::Modal-->
+                            <div class="modal fade" id="kt_modal_treatment_complaint" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Complaint</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            </button>
+                                        </div>
+                                        <form id="kt_form_complaint">
+	                                        <div class="modal-body">
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-4 col-form-label">Tanggal</label>
+                                                    <div class="col-8">
+                                                        <div class="input-group date">
+                                                            <input type="text" name="complaint_tanggal" class="form-control" readonly="" placeholder="Tanggal" id="kt_datepicker_modal_complaint">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">
+                                                                    <i class="la la-calendar-check-o"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+														<span class="form-text text-muted kt-hidden">Select a date</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-4 col-form-label">Tipe</label>
+                                                    <div class="col-8">
+                                                        <input type="text" class="form-control" name="complaint_tipe" placeholder="Tipe">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-4 col-form-label">Complaint</label>
+                                                    <div class="col-8">
+                                                        <textarea class="form-control" id="exampleTextarea" rows="3" name="complaint_text" placeholder="Complaint..."></textarea>
+                                                    </div>
+                                                </div>
+	                                        </div>
+	                                        <div class="modal-footer" style="justify-content:center;">
+	                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	                                            <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_complaint">Submit</button>
+	                                        </div>
+										</form>
+                                    </div>
+                                </div>
+                            </div>
+
 							<div class="modal fade" id="kt_modal_treatment_bayar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -538,6 +587,16 @@ License: You must have a valid license purchased only from themeforest(the above
 			}
 
 			// Sweetalert
+			$('#kt_sweetalert_berhasil_complaint').click(function(e) {
+			  swal.fire({
+				  title: "Berhasil",
+				  text: "Complaint berhasil ditambahkan",
+				  type: "success",
+				  confirmButtonText: "Ok",
+				  confirmButtonClass: "btn btn-brand"
+			  });
+			});
+
 			$('#kt_sweetalert_berhasil_modal_2').click(function(e) {
 				swal.fire({
 					title: "Berhasil",
@@ -569,6 +628,28 @@ License: You must have a valid license purchased only from themeforest(the above
 			});
 
 			// Form Validation
+			$("#kt_form_complaint").validate({
+			  // define validation rules
+			  rules: {
+				  complaint_tanggal : {
+					  required: true,
+					  date: true
+				  },
+				  complaint_tipe : {
+					  required: true
+				  },
+				  complaint_text : {
+					  required: true
+				  }
+			  },
+
+			  invalidHandler: function(event, validator) {
+				  KTUtil.scrollTop();
+			  },
+			  submitHandler: function(form) {
+				  //form[0].submit(); // submit the form
+			  }
+		  	});
 			$("#kt_form_pembayaran").validate({
 	            // define validation rules
 	            rules: {

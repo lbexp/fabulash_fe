@@ -232,17 +232,20 @@ body {
 }
 
 @media print {
-  body * {
-    visibility: hidden;
-  }
-  #print-section, #print-section * {
-    visibility: visible;
-  }
-  #print-section {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
+    body * {
+        visibility: hidden;
+    }
+    #print-section, #print-section * {
+        visibility: visible;
+    }
+    .no-print {
+        visibility: hidden !important;
+    }
+    #print-section {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
 }
 
 .kt-widget14 .kt-widget14__header {

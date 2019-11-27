@@ -306,25 +306,26 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <div class="row" style="margin-bottom:20px;">
 												<div class="col-6">
 	                                                <h5 class="color-main-dark" name="nomor_pesanan">#123456</h5>
-		                                            <table style="margin-bottom:50px">
-		                                                <tr>
-		                                                    <th width="30%">Tanggal</th>
-		                                                    <th width="10%">:</th>
-		                                                    <th width="60%"style="font-weight:500;" name="treatment_hari">2 Oktober 2019</th>
-		                                                </tr>
-		                                            </table>
+	                                                <span class="kt-font-bold" name="customer_nama">Darnilla</span>&nbsp;<br>
 												</div>
 												<div class="col-6">
 													<div class="row">
 														<div class="col-12" style="text-align: right; margin-bottom:5px;">
-															<button class="col-5 btn btn-warning" onclick="printFunction()">Print</button>
+															<button class="col-5 btn btn-warning no-print" onclick="printFunction()">Print</button>
 														</div>
 														<div class="col-12" style="text-align: right;">
-															<button class="col-5 btn btn-danger" id="kt_sweetalert_void">Void</button>
+															<button class="col-5 btn btn-danger no-print" id="kt_sweetalert_void">Void</button>
 														</div>
 													</div>
 												</div>
                                             </div>
+											<table class="col-5" style="margin-bottom:50px">
+                                                <tr>
+                                                    <th width="30%">Tanggal</th>
+                                                    <th width="10%">:</th>
+                                                    <th width="60%"style="font-weight:500;" name="treatment_hari">2 Oktober 2019</th>
+                                                </tr>
+                                            </table>
         									<table class="table table-striped- table-bordered table-hover table-checkable" id="table_treatment_detail"></table>
 											<div class="col-12 horizontal-centered" style="padding: 0px 0px" style="margin-bottom:0px;">
 												<button type="button" class="btn btn-link" style="padding-right:0px;"><i class="flaticon-add"></i>Tambah Treatment</button>
@@ -345,7 +346,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		                                            </table>
 												</div>
 												<div class="col-6" style="padding-left:0px;text-align:right;">
-													<button class="col-5 btn btn-success" style="margin-top:5px;" data-toggle="modal" data-target="#kt_modal_treatment_bayar">Bayar</button>
+													<button class="col-5 btn btn-success no-print" style="margin-top:5px;" data-toggle="modal" data-target="#kt_modal_treatment_bayar">Bayar</button>
 												</div>
                                             </div>
 										</div>
@@ -495,6 +496,65 @@ License: You must have a valid license purchased only from themeforest(the above
 
 		<!--begin::Page Scripts(used by this page) -->
 		<script src="assets/js/script/datatable_therapist.js"></script>
+
+		<script>
+			// Print function
+			var printFunction = function () {
+				window.print();
+			}
+
+			// Sweetalert
+			$('#kt_sweetalert_berhasil_modal_2').click(function(e) {
+				swal.fire({
+					title: "Berhasil",
+					text: "Pembayaran berhasil dilakukan",
+					type: "success",
+					confirmButtonText: "Ok",
+					confirmButtonClass: "btn btn-brand"
+				}).then(function(result) {
+					// location.reload();
+				});
+			});
+
+			$('#kt_sweetalert_void').click(function(e) {
+				swal.fire({
+					title: 'Tandai sebagai void treatment?',
+					text: "Tindakan ini tidak bisa diubah kembali!",
+					type: 'warning',
+					showCancelButton: true,
+					confirmButtonText: 'Ya, tandai!'
+				}).then(function(result) {
+					if (result.value) {
+						swal.fire(
+							'Ditandai sebagai void!',
+							'Treatment telah digolongkan sebagai void treatment.',
+							'success'
+						)
+					}
+				});
+			});
+
+			// Form Validation
+			$("#kt_form_pembayaran").validate({
+	            // define validation rules
+	            rules: {
+					pembayaran_jenis : {
+						required: true
+					},
+					pembayaran_diskon : {
+						required: false,
+						digits: true
+					}
+	            },
+
+	            invalidHandler: function(event, validator) {
+	                KTUtil.scrollTop();
+	            },
+	            submitHandler: function(form) {
+	                //form[0].submit(); // submit the form
+	            }
+        	});
+		</script>
 
 		<!--end::Page Scripts -->
 	</body>
