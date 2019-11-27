@@ -306,44 +306,29 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <div class="row" style="margin-bottom:20px;">
 												<div class="col-6">
 	                                                <h5 class="color-main-dark" name="nomor_pesanan">#123456</h5>
+		                                            <table style="margin-bottom:50px">
+		                                                <tr>
+		                                                    <th width="30%">Tanggal</th>
+		                                                    <th width="10%">:</th>
+		                                                    <th width="60%"style="font-weight:500;" name="treatment_hari">2 Oktober 2019</th>
+		                                                </tr>
+		                                            </table>
 												</div>
 												<div class="col-6">
 													<div class="row">
 														<div class="col-12" style="text-align: right; margin-bottom:5px;">
 															<button class="col-5 btn btn-warning" onclick="printFunction()">Print</button>
 														</div>
-														<div class="col-12" style="text-align: right; margin-bottom:5px;">
-															<button class="col-5 btn btn-brand">Foto</button>
-														</div>
 														<div class="col-12" style="text-align: right;">
-															<button class="col-5 btn btn-danger" data-toggle="modal" data-target="#kt_modal_treatment_complaint">Complaint</button>
+															<button class="col-5 btn btn-danger" id="kt_sweetalert_void">Void</button>
 														</div>
 													</div>
 												</div>
                                             </div>
-                                            <table class="col-sm-12 col-md-8 col-lg-6" style="margin-bottom:50px">
-                                                <tr>
-                                                    <th width="30%">Tanggal</th>
-                                                    <th width="10%">:</th>
-                                                    <th width="60%"style="font-weight:500;" name="treatment_hari">2 Oktober 2019</th>
-                                                </tr>
-                                                <tr>
-                                                    <th>Therapist</th>
-                                                    <th>:</th>
-                                                    <th style="font-weight:500;" name="treatment_therapist">Ka</th>
-                                                </tr>
-                                            </table>
         									<table class="table table-striped- table-bordered table-hover table-checkable" id="table_treatment_detail"></table>
-                                            <div class="col-12 justify-end" style="padding: 0px 0px">
-                                                <div style="text-align:right;width:50%">
-                                                    <span class="kt-font-bold">Sub-Total :</span>&nbsp;
-    	                                            <span name="price_subTotal">Rp 550.000,00</span>&nbsp;<br>
-                                                    <span class="kt-font-bold">Diskon :</span>&nbsp;
-    	                                            <span name="price_diskon">Rp 50.000,00</span>&nbsp;<br>
-                                                    <span class="kt-font-bold">Total :</span>&nbsp;
-    	                                            <span name="price_total">Rp 500.000,00</span>&nbsp;
-                                                </div>
-                                            </div>
+											<div class="col-12 horizontal-centered" style="padding: 0px 0px" style="margin-bottom:0px;">
+												<button type="button" class="btn btn-link" style="padding-right:0px;"><i class="flaticon-add"></i>Tambah Treatment</button>
+											</div>
 											<div class="row" style="margin-top:50px;">
 												<div class="col-6" style="padding-right:0px;">
 													<table class="col-sm-24 col-md-16 col-lg-12" style="bottom: 0px; position: absolute;">
@@ -360,10 +345,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		                                            </table>
 												</div>
 												<div class="col-6" style="padding-left:0px;text-align:right;">
-	                                                <span class="kt-font-bold">Tipe Complaint :</span>&nbsp;<br>
-    	                                            <span name="complaint_tipe">Eyelash Extension</span>&nbsp;<br>
-	                                                <span class="kt-font-bold">Complaint :</span>&nbsp;<br>
-    	                                            <span name="complaint_text" style="word-wrap: break-word">nama saya fiqar aprialim, saya tidak terima dengan treatment yang diberikan untuk kuku dan bulu mata saya</span>&nbsp;<br>
+													<button class="col-5 btn btn-success" style="margin-top:5px;" data-toggle="modal" data-target="#kt_modal_treatment_bayar">Bayar</button>
 												</div>
                                             </div>
 										</div>
@@ -375,46 +357,61 @@ License: You must have a valid license purchased only from themeforest(the above
 							</div>
 
                             <!--begin::Modal-->
-                            <div class="modal fade" id="kt_modal_treatment_complaint" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal fade" id="kt_modal_treatment_bayar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Complaint</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Pembayaran</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             </button>
                                         </div>
-                                        <form id="kt_form_complaint">
+										<form id="kt_form_pembayaran">
 	                                        <div class="modal-body">
+												<div class="justify-center kt-margin-b-10">
+													<h4 class="color-main-dark" name="pembayaran_nominal">Rp. 300.000,00</h4>
+												</div>
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Tanggal</label>
+                                                    <label class="col-form-label col-4">Jenis</label>
                                                     <div class="col-8">
-                                                        <div class="input-group date">
-                                                            <input type="text" name="complaint_tanggal" class="form-control" readonly="" placeholder="Tanggal" id="kt_datepicker_modal_complaint">
-                                                            <div class="input-group-append">
-                                                                <span class="input-group-text">
-                                                                    <i class="la la-calendar-check-o"></i>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-														<span class="form-text text-muted kt-hidden">Select a date</span>
+														<div class="kt-radio-inline">
+															<label class="kt-radio">
+																<input type="radio"  name="pembayaran_jenis"> Cash
+																<span></span>
+															</label>
+														</div>
+														<div class="kt-radio-inline">
+															<label class="col-6 kt-radio">
+																<input type="radio" name="pembayaran_jenis"> EDC Mandiri
+																<span></span>
+															</label>
+															<label class="col-5 kt-radio">
+																<input type="radio" name="pembayaran_jenis"> EDC BNI
+																<span></span>
+															</label>
+														</div>
+														<div class="kt-radio-inline">
+															<label class="col-6 kt-radio">
+																<input type="radio" name="pembayaran_jenis"> Transfer Mandiri
+																<span></span>
+															</label>
+															<label class="col-5 kt-radio">
+																<input type="radio" name="pembayaran_jenis"> Transfer BNI
+																<span></span>
+															</label>
+														</div>
+														<span class="form-text text-muted" style="margin:0px;"></span>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Tipe</label>
+                                                    <label for="example-text-input" class="col-4 col-form-label">Diskon</label>
                                                     <div class="col-8">
-                                                        <input type="text" class="form-control" name="complaint_tipe" placeholder="Tipe">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Complaint</label>
-                                                    <div class="col-8">
-                                                        <textarea class="form-control" id="exampleTextarea" rows="3" name="complaint_text" placeholder="Complaint..."></textarea>
+                                                        <input type="text" class="form-control" name="pembayaran_diskon" placeholder="Diskon">
                                                     </div>
                                                 </div>
 	                                        </div>
 	                                        <div class="modal-footer" style="justify-content:center;">
 	                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	                                            <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_complaint">Submit</button>
+	                                            <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_modal_2">Submit</button>
 	                                        </div>
 										</form>
                                     </div>
