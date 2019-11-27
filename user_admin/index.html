@@ -460,7 +460,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													<label class="col-sm-4 col-form-label">Tanggal :</label>
 													<div class="col-sm-8">
 														<div class="input-group date">
-															<input type="text" class="form-control kt_search_tanggal" placeholder="Tanggal" name="customer_lahir" readonly>
+															<input type="text" class="form-control kt_search_tanggal" placeholder="Tanggal" name="jadwal_tanggal" readonly>
 															<div class="input-group-append">
 																<span class="input-group-text">
 																	<i class="la la-calendar-check-o"></i>
@@ -474,7 +474,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													<label class="col-sm-4 col-form-label">Waktu :</label>
 													<div class="col-sm-8">
 														<div class="input-group timepicker">
-															<input class="form-control" id="kt_timepicker_2" readonly placeholder="Select time" type="text" />
+															<input class="form-control" id="kt_timepicker_2" placeholder="Select time" type="text" name="jadwal_waktu" readonly/>
 															<div class="input-group-append">
 																<span class="input-group-text">
 																	<i class="la la-clock-o"></i>
@@ -487,7 +487,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 											<div class="modal-footer" style="justify-content:center;">
 												<button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
-												<button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_modal">Submit</button>
+												<button type="submit" class="btn btn-success kt_sweetalert_berhasil">Submit</button>
 											</div>
 										</div>
 									</form>
@@ -714,6 +714,18 @@ License: You must have a valid license purchased only from themeforest(the above
 	                //form[0].submit(); // submit the form
 	            }
         	});
+
+			$("#kt_form_jadwal").validate({
+				// define validation rules
+				rules : {
+					jadwal_tanggal : {
+						required: true
+					},
+					jadwal_waktu : {
+						required: true
+					}
+				}
+			});
 
 			$("#kt_form_customer").validate({
 	            // define validation rules

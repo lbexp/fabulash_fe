@@ -122,7 +122,6 @@ var timepicker = function () {
     //     dropdown: true,
     //     scrollbar: true
     //     });
-    // }();
 }();
 
 jQuery.ready(function() {
