@@ -50,6 +50,18 @@ var datepickerIndonesia = function () {
         },
     });
 
+    $('.kt_search_tanggal').datepicker({
+        todayHighlight: true,
+        language: 'id',
+        rtl: KTUtil.isRTL(),
+        todayBtn: "linked",
+        clearBtn: true,
+        templates: {
+            leftArrow: '<i class="la la-angle-left"></i>',
+            rightArrow: '<i class="la la-angle-right"></i>',
+        },
+    });
+
     $('#kt_search_waktu').datepicker({
         todayHighlight: true,
         language: 'id',
@@ -91,6 +103,29 @@ var datepickerIndonesia = function () {
     }).datepicker("setDate", new Date());
 }();
 
+var timepicker = function () {
+    $('#kt_timepicker_2, #kt_timepicker_2_modal').timepicker({
+        minuteStep: 15,
+        defaultTime: '',
+        showSeconds: false,
+        showMeridian: false,
+        snapToStep: true
+    });
+
+    // $('#kt_timepicker_2, #kt_timepicker_2_modal').timepicker({
+    //     timeFormat: 'HH.mm',
+    //     interval: 60,
+    //     minTime: '8',
+    //     maxTime: '16',
+    //     defaultTime: '8',
+    //     dynamic: true,
+    //     dropdown: true,
+    //     scrollbar: true
+    //     });
+    // }();
+}();
+
 jQuery.ready(function() {
     datepickerIndonesia.init();
+    timepicker.init();
 });
