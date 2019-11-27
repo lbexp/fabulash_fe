@@ -278,7 +278,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="kt-subheader__breadcrumbs">
 										<a href="user_therapist/index.html" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
 										<span class="kt-subheader__breadcrumbs-separator"></span>
-										<a href="user_therapist/treatment_detail_ongoing.html" class="kt-subheader__breadcrumbs-link">
+										<a href="user_therapist/treatment_detail_scheduled.html" class="kt-subheader__breadcrumbs-link">
 											Treatment details </a>
 									</div>
 								</div>
@@ -306,6 +306,9 @@ License: You must have a valid license purchased only from themeforest(the above
 										<div class="kt-portlet__body">
 											<div style="margin-bottom:20px;">
                                                 <h5 class="color-main-dark" name="nomor_pesanan">#123456</h5>
+                                                <span class="kt-font-bold" name="customer_nama">Darnilla</span>&nbsp;<br>
+                                                <span class="kt-font-bold" name="customer_nohp">081342497228</span>&nbsp;<br>
+                                                <span class="kt-font-bold" name="customer_alamat">Jl. Areopala 6</span>&nbsp;<br>
                                             </div>
                                             <table class="col-5" style="margin-bottom:50px">
                                                 <tr>
@@ -317,7 +320,7 @@ License: You must have a valid license purchased only from themeforest(the above
         									<table class="table table-striped- table-bordered table-hover table-checkable" id="table_treatment_detail"></table>
 											<div class="row" style="margin-top:50px;">
 												<div class="col-6" style="padding-right:0px; position: relative;">
-													<table class="col-sm-24 col-md-16 col-lg-12" style="bottom: 0px; position: absolute;">
+		                                            <table class="col-sm-24 col-md-16 col-lg-12" style="bottom: 0px; position: absolute;">
 		                                                <tr>
 		                                                    <th width="35%">Waktu Mulai</th>
 		                                                    <th width="10%">:</th>
@@ -326,13 +329,15 @@ License: You must have a valid license purchased only from themeforest(the above
 		                                                <tr>
 		                                                    <th>Waktu Selesai</th>
 		                                                    <th>:</th>
-		                                                    <th style="font-weight:500;" name="waktu-selesai">10.00 WITA</th>
+		                                                    <th style="font-weight:500;" name="waktu-selesai">-</th>
 		                                                </tr>
 		                                            </table>
 												</div>
+
 												<div class="col-6 justify-end" style="padding-left:0px">
 													<div class="col-5" style="padding: 0px">
-														<button type="button" class="btn btn-success col-12" data-toggle="modal" data-target="#kt_modal_treatment_selesai">Selesai</buttton>
+														<button type="button" class="btn btn-brand col-12" style="margin-bottom: 5px;" onclick="window.location.href='user_therapist/treatment_detail_ongoing.html'">Mulai</buttton>&nbsp;
+														<!-- <button type="button" class="btn btn-success col-12" data-toggle="modal" data-target="#kt_modal_treatment_selesai">Selesai</buttton> -->
 													</div>
 												</div>
                                             </div>
@@ -345,7 +350,6 @@ License: You must have a valid license purchased only from themeforest(the above
 							</div>
 
 							<!--begin::Modal-->
-
 							<div class="modal fade" id="kt_modal_treatment_selesai" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
