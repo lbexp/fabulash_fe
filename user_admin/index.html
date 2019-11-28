@@ -337,13 +337,13 @@ License: You must have a valid license purchased only from themeforest(the above
 												<div class="form-group">
 													<label class="form-control-label">No. Telepon :</label>
 													<div class="typeahead">
-														<input class="form-control" id="kt_typeahead_2" type="text" dir="ltr" placeholder="States of USA">
+														<input class="form-control" id="kt_typeahead_2" type="text" dir="ltr" placeholder="No. Telepon">
 													</div>
 													<span class="form-text text-muted kt-hidden" style="margin:0px;"></span>
 												</div>
 												<div class="form-group">
 													<label class="form-control-label">Nama :</label>
-													<input type="text" class="form-control" type="text" id="treatment_customer_nama" name="treatment_customer_nama" placeholder="Nama" readonly>
+													<input type="text" class="form-control" type="text" id="treatment_customer_nama" name="treatment_customer_nama" placeholder="Nama">
 												</div>
 												<div class="form-group row">
 													<label class="col-4 col-form-label kt-margin-t-10">Opsi Treatment :</label>
@@ -581,64 +581,56 @@ License: You must have a valid license purchased only from themeforest(the above
 
 		<script>
 			// Bloodhound
-			// var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-	        //     'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-	        //     'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-	        //     'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-	        //     'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-	        //     'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-	        //     'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-	        //     'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-	        //     'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-	        // ];
-			//
-			// var bloodhound = new Bloodhound({
-			// 	datumTokenizer: Bloodhound.tokenizers.whitespace,
-			// 	queryTokenizer: Bloodhound.tokenizers.whitespace,
-			// 	// `states` is an array of state names defined in "The Basics"
-			// 	local: states
-			// });
-			//
-			// $('#kt_typeahead_2, #kt_typeahead_2_modal').typeahead({
-			// 	hint: true,
-			// 	highlight: true,
-			// 	minLength: 1
-			// },
-			// {
-			// 	name: 'states',
-			// 	source: bloodhound
-			// });
+			var states = ['081342497228', '081223445666', '085678910111', '082345654212'
+	        ];
 
-			// instantiate the bloodhound suggestion engine
-			var countries = new Bloodhound({
-			  datumTokenizer: function(countries) {
-			      return Bloodhound.tokenizers.whitespace(countries.value);
-			  },
-			  queryTokenizer: Bloodhound.tokenizers.whitespace,
-			  remote: {
-			    url: "http://vocab.nic.in/rest.php/country/json",
-			    filter: function(response) {
-			      return response.countries;
-			    }
-			  }
+			var bloodhound = new Bloodhound({
+				datumTokenizer: Bloodhound.tokenizers.whitespace,
+				queryTokenizer: Bloodhound.tokenizers.whitespace,
+				// `states` is an array of state names defined in "The Basics"
+				local: states
 			});
 
-			// initialize the bloodhound suggestion engine
-			countries.initialize();
-
-			// instantiate the typeahead UI
-			$('#kt_typeahead_2').typeahead(
-			  { hint: true,
-			    highlight: true,
-			    minLength: 1
-			  },
-			  {
-			  name: 'countries',
-			  displayKey: function(countries) {
-			    return countries.country.country_name;
-			  },
-			  source: countries.ttAdapter()
+			$('#kt_typeahead_2, #kt_typeahead_2_modal').typeahead({
+				hint: true,
+				highlight: true,
+				minLength: 1
+			},
+			{
+				name: 'states',
+				source: bloodhound
 			});
+
+			// // instantiate the bloodhound suggestion engine
+			// var countries = new Bloodhound({
+			//   datumTokenizer: function(countries) {
+			//       return Bloodhound.tokenizers.whitespace(countries.value);
+			//   },
+			//   queryTokenizer: Bloodhound.tokenizers.whitespace,
+			//   remote: {
+			//     url: "http://vocab.nic.in/rest.php/country/json",
+			//     filter: function(response) {
+			//       return response.countries;
+			//     }
+			//   }
+			// });
+			//
+			// // initialize the bloodhound suggestion engine
+			// countries.initialize();
+			//
+			// // instantiate the typeahead UI
+			// $('#kt_typeahead_2').typeahead(
+			//   { hint: true,
+			//     highlight: true,
+			//     minLength: 1
+			//   },
+			//   {
+			//   name: 'countries',
+			//   displayKey: function(countries) {
+			//     return countries.country.country_name;
+			//   },
+			//   source: countries.ttAdapter()
+			// });
 
 			// Select2 ajax
 			$('#kt_select2_treatment_customer_nohp').select2({
