@@ -6,49 +6,57 @@
     "aaData": [{
         "no": 1,
         "tanggal": "12 November 2019",
-        "status": "Stock Keluar",
+        "barang": "Eyelash Size 12",
+        "satuan": "Box",
         "quantity": "12",
-        "harga": ""
+        "harga": "Rp. 250.000,00"
     }, {
         "no": 2,
         "tanggal": "12 November 2019",
-        "status": "Stock Masuk",
+        "barang": "Eyelash Size 12",
+        "satuan": "Box",
         "quantity": "11",
         "harga": "Rp. 250.000,00"
     }, {
         "no": 3,
         "tanggal": "12 November 2019",
-        "status": "Stock Keluar",
+        "barang": "Eyelash Size 12",
+        "satuan": "Box",
         "quantity": "12",
-        "harga": ""
+        "harga": "Rp. 250.000,00"
     }, {
         "no": 4,
         "tanggal": "12 November 2019",
-        "status": "Stock Masuk",
+        "barang": "Eyelash Size 12",
+        "satuan": "Box",
         "quantity": "12",
         "harga": "Rp. 250.000,00"
     }, {
         "no": 5,
         "tanggal": "12 November 2019",
-        "status": "Stock Keluar",
+        "barang": "Eyelash Size 12",
+        "satuan": "Box",
         "quantity": "5",
-        "harga": ""
+        "harga": "Rp. 250.000,00"
     }, {
         "no": 6,
         "tanggal": "12 November 2019",
-        "status": "Stock Masuk",
+        "barang": "Eyelash Size 12",
+        "satuan": "Box",
         "quantity": "12",
         "harga": "Rp. 250.000,00"
     }, {
         "no": 7,
         "tanggal": "12 November 2019",
-        "status": "Stock Keluar",
+        "barang": "Eyelash Size 12",
+        "satuan": "Box",
         "quantity": "12",
-        "harga": ""
+        "harga": "Rp. 250.000,00"
     }, {
         "no": 8,
         "tanggal": "12 November 2019",
-        "status": "Stock Masuk",
+        "barang": "Eyelash Size 12",
+        "satuan": "Box",
         "quantity": "12",
         "harga": "Rp. 250.000,00"
     }]

@@ -18,7 +18,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<head>
 		<base href="../">
 		<meta charset="utf-8" />
-		<title>Form Treatment | Therapist Fabulash</title>
+		<title>Detail Request Inventory | Therapist Fabulash</title>
 		<meta name="description" content="Updates and statistics">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -28,6 +28,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--end::Fonts -->
 
 		<!--begin::Page Vendors Styles(used by this page) -->
+		<link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css">
 
 		<!--end::Page Vendors Styles -->
 
@@ -111,14 +112,6 @@ License: You must have a valid license purchased only from themeforest(the above
 								<h4 class="sidebar-logo">THERAPIST PAGE</h4>
 							</div>
 							<ul class="kt-menu__nav ">
-								<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="user_therapist/form_treatment.html" class="kt-menu__link "><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-								    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-								        <polygon id="Shape" points="0 0 24 0 24 24 0 24"/>
-								        <path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" id="Combined-Shape" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
-								        <rect id="Rectangle" fill="#000000" x="6" y="11" width="9" height="2" rx="1"/>
-								        <rect id="Rectangle-Copy" fill="#000000" x="6" y="15" width="5" height="2" rx="1"/>
-								    </g>
-								</svg></span><span class="kt-menu__link-text">Form Treatment</span></a></li>
 								<li class="kt-menu__item " aria-haspopup="true"><a href="user_therapist/index.html" class="kt-menu__link "><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
 								    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 								        <rect x="0" y="0" width="24" height="24"/>
@@ -147,6 +140,13 @@ License: You must have a valid license purchased only from themeforest(the above
 								        <rect fill="#000000" x="11" y="16" width="2" height="2" rx="1"/>
 								    </g>
 								</svg></span><span class="kt-menu__link-text">Complaint</span></a></li>
+								<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="user_therapist/inventory.html" class="kt-menu__link "><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+										<rect id="bound" x="0" y="0" width="24" height="24" />
+										<path d="M4,9.67471899 L10.880262,13.6470401 C10.9543486,13.689814 11.0320333,13.7207107 11.1111111,13.740321 L11.1111111,21.4444444 L4.49070127,17.526473 C4.18655139,17.3464765 4,17.0193034 4,16.6658832 L4,9.67471899 Z M20,9.56911707 L20,16.6658832 C20,17.0193034 19.8134486,17.3464765 19.5092987,17.526473 L12.8888889,21.4444444 L12.8888889,13.6728275 C12.9050191,13.6647696 12.9210067,13.6561758 12.9368301,13.6470401 L20,9.56911707 Z" id="Combined-Shape" fill="#000000" />
+										<path d="M4.21611835,7.74669402 C4.30015839,7.64056877 4.40623188,7.55087574 4.5299008,7.48500698 L11.5299008,3.75665466 C11.8237589,3.60013944 12.1762411,3.60013944 12.4700992,3.75665466 L19.4700992,7.48500698 C19.5654307,7.53578262 19.6503066,7.60071528 19.7226939,7.67641889 L12.0479413,12.1074394 C11.9974761,12.1365754 11.9509488,12.1699127 11.9085461,12.2067543 C11.8661433,12.1699127 11.819616,12.1365754 11.7691509,12.1074394 L4.21611835,7.74669402 Z" id="Path" fill="#000000" opacity="0.3" />
+									</g>
+								</svg></span><span class="kt-menu__link-text">Inventory</span></a></li>
 								<li class="kt-menu__item" aria-haspopup="true"><a href="user_therapist/profile.html" class="kt-menu__link "><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
 								    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 								        <polygon id="Shape" points="0 0 24 0 24 24 0 24"/>
@@ -271,10 +271,13 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="kt-container  kt-container--fluid ">
 								<div class="kt-subheader__main">
 									<h3 class="kt-subheader__title">
-										Form Treatment </h3>
+										Inventory </h3>
 									<span class="kt-subheader__separator kt-hidden"></span>
 									<div class="kt-subheader__breadcrumbs">
-										<a href="user_therapist/form_treatment.html" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+										<a href="user_therapist/inventory.html" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+										<span class="kt-subheader__breadcrumbs-separator"></span>
+										<a href="user_therapist/inventory_detail_request.html" class="kt-subheader__breadcrumbs-link">
+											Detail request </a>
 									</div>
 								</div>
 							</div>
@@ -286,65 +289,80 @@ License: You must have a valid license purchased only from themeforest(the above
 
 						<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
 
-							<div class="row justify-content-center">
-								<h4 class="horizontal-centered">Form Treatment</h4>
-							</div>
+                            <div class="row justify-content-center">
 
-							<div class="row justify-content-center">
+								<div class="col-12">
 
-								<div class="col-lg-8 col-xl-6">
-
-									<!--begin::Portlet-->
-									<div class="kt-portlet kt-portlet--mobile">
+                                    <!--begin::Portlet-->
+									<div class="kt-portlet">
 										<div class="kt-portlet__head">
 											<div class="kt-portlet__head-label">
-												<h3 class="kt-portlet__head-title color-main-dark">
-													No. Pesanan <small class="color-main-dark" name="no_pesanan">#123456</small>
+												<span class="kt-portlet__head-icon">
+													<i class="flaticon2-cube-1"></i>
+												</span>
+												<h3 class="kt-portlet__head-title">
+													Detail Request
 												</h3>
 											</div>
 										</div>
-										<form id="kt_form_treatment">
-											<div class="kt-portlet__body">
-												<div class="form-group">
-													<label class="form-control-label">No. Telepon :</label>
-													<select class="form-control kt-select2" id="kt_select2_treatment_customer_nohp" name="treatment_customer_nohp"></select>
-													<span class="form-text text-muted kt-hidden" style="margin:0px;"></span>
+										<div class="kt-portlet__body">
+                                            <div class="row" style="margin-bottom: 50px;">
+                                                <h5 class="col-12 color-main-dark" name="kode_request" style="margin-bottom: 20px;">#123456</h5>
+												<div class="col-6" style="padding-right:0px;">
+	                                                <span class="kt-font-bold">Date Request : <span name="date_request">15 November 2019</span></span>
 												</div>
-												<div class="form-group">
-													<label class="form-control-label">Nama :</label>
-													<input type="text" class="form-control" type="text" id="treatment_customer_nama" name="treatment_customer_nama" placeholder="Nama" readonly>
+												<div class="col-6" style="padding-left:0px;text-align:right;">
+	                                                <span class="kt-font-bold">Date Approve : <span name="date_approve">-</span></span>
 												</div>
-												<div class="form-group row">
-													<label class="col-4 col-form-label kt-margin-t-10">Opsi Treatment :</label>
-													<div class="col-8">
-														<div class="kt-checkbox-inline">
-															<label class="kt-checkbox kt-checkbox--brand kt-margin-t-10">
-																<input type="checkbox" name="treatment_type"> Nail Treatment
-																<span></span>
-															</label>
-															<label class="kt-checkbox kt-checkbox--brand kt-margin-t-10">
-																<input type="checkbox" name="treatment_type"> Eyelash Treatment
-																<span></span>
-															</label>
-														</div>
-														<span class="form-text text-muted"></span>
-														<label class="kt-checkbox kt-margin-t-10">
-															<input type="checkbox" name="treatment_place"> Home Service
-															<span></span>
-														</label>
-													</div>
-												</div>
-												<div style="padding:0px;text-align:center;">
-													<button type="button" class="btn btn-link" style="padding-right:0px;" data-toggle="modal" data-target="#kt_modal_customer"><i class="flaticon-add"></i>Tambah Pelanggan</button>
-												</div>
-											</div>
-											<div class="kt-portlet__foot">
-												<div class="horizontal-centered kt-margin-0" style="padding: 0px 0px;">
-													<button type="submit" class="btn btn-warning kt_sweetalert_berhasil" style="margin-right: 0.25rem">Jadwalkan</buttton>&nbsp;
-													<button type="submit" class="btn btn-brand kt_sweetalert_berhasil" style="margin-left: 0.25rem">Activate Session</buttton>
-												</div>
-											</div>
-										</form>
+                                            </div>
+                                            <table class="table table-bordered table-hover well-align-table" role="grid">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th style="width: 5%">No</th>
+                                                        <th style="width: 15%">Alat/Bahan</th>
+                                                        <th style="width: 25%">Barang</th>
+                                                        <th style="width: 15%">Satuan</th>
+                                                        <th style="width: 12.5%">Request</th>
+                                                        <th style="width: 12.5%">Disetujui</th>
+                                                        <th style="width: 15%">Upload Foto</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="item_list">
+                                                    <tr role="row">
+                                                        <td>1</td>
+                                                        <td class="text-center">
+                                                            <select class="form-control" name="request_type" disabled>
+        														<option>Alat</option>
+        														<option>Bahan</option>
+        													</select>
+                                                        </td>
+														<td class="text-center">
+                                                            <select class="form-control" name="request_barang" disabled>
+        														<option>Eyelash Size 12</option>
+        														<option>Eyelash Size 12</option>
+        														<option>Eyelash Size 12</option>
+        													</select>
+                                                        </td>
+														<td class="text-center">
+                                                            <select class="form-control" name="request_satuan" disabled>
+        														<option>Box</option>
+        														<option>Box</option>
+        														<option>Box</option>
+        													</select>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <input type="number" class="form-control" name="request_jumlah_request" value="5" readonly>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <input type="number" class="form-control" name="request_jumlah_disetujui" value="" readonly>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <label for="request_foto"  class="btn btn-link" style="padding:0px;"><i class="flaticon2-photo-camera"></i>Preview</label>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+										</div>
 									</div>
 
 									<!--end::Portlet-->
@@ -352,77 +370,6 @@ License: You must have a valid license purchased only from themeforest(the above
 
 							</div>
 
-							<!--begin::Modal-->
-							<div class="modal fade" id="kt_modal_customer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-								<div class="modal-dialog" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5 class="modal-title" id="exampleModalLabel">Tambah Pelanggan</h5>
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-											</button>
-										</div>
-										<form id="kt_form_customer">
-											<div class="modal-body">
-												<div class="form-group row">
-													<label class="col-sm-4 col-form-label">Nama :</label>
-													<div class="col-sm-8">
-														<input type="text" class="form-control" name="customer_nama" placeholder="Nama">
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-4 col-form-label">Tanggal Lahir :</label>
-													<div class="col-sm-8">
-														<div class="input-group date">
-															<input type="text" class="form-control" readonly="" placeholder="Tanggal" id="kt_search_tanggal" name="customer_lahir">
-															<div class="input-group-append">
-																<span class="input-group-text">
-																	<i class="la la-calendar-check-o"></i>
-																</span>
-															</div>
-														</div>
-														<span class="form-text text-muted kt-hidden"></span>
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-4 col-form-label">No. Telepon :</label>
-													<div class="col-sm-8">
-														<input type="text" class="form-control" name="customer_nohp" placeholder="No. Telepon">
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-4 col-form-label">Email :</label>
-													<div class="col-sm-8">
-														<input type="email" class="form-control" name="customer_email" placeholder="Email">
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-4 col-form-label">Alamat :</label>
-													<div class="col-sm-8">
-														<input type="text" class="form-control" name="customer_alamat" placeholder="Alamat">
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-4 col-form-label">Persetujuan :</label>
-													<div class="col-sm-8">
-														<div class="input-group">
-															<input type="text" class="form-control form-label-brand input-group-child-normal kt-margin-r-5" value="Persetujuan" readonly>
-															<input type="text" class="form-control form-label-success input-group-child-normal kt-margin-r-5 kt-hidden" value="Setuju" readonly>
-															<input type="text" class="form-control form-label-danger input-group-child-normal kt-margin-r-5 kt-hidden" value="Ditolak" readonly>
-															<button type="button" class="btn btn-brand" id="showtoast" style="width:auto;">Send</button>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer" style="justify-content:center;">
-												<button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
-												<button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_modal">Submit</button>
-											</div>
-										</div>
-									</form>
-								</div>
-							</div>
-
-							<!--end::Modal-->
 						</div>
 
 						<!-- end:: Content -->
@@ -492,6 +439,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--end::Global Theme Bundle -->
 
 		<!--begin::Page Vendors(used by this page) -->
+		<script src="assets/plugins/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
 
 		<!--end::Page Vendors -->
 
@@ -499,41 +447,52 @@ License: You must have a valid license purchased only from themeforest(the above
 		<script src="assets/js/script/datatable_therapist.js"></script>
 		<script src="assets/js/custom/datepicker.js" type="text/javascript"></script>
 
-		<script>
-			// Select2 ajax
-			$('#kt_select2_treatment_customer_nohp').select2({
-				multiple: true,
-				maximumSelectionSize: 1,
-				maximumSelectionLength: 1,
-				placeholder: 'No. Telepon',
-				ajax: {
-					url: 'source/admin/customer_select2.php',
-					dataType: 'json',
-					delay: 250,
-					processResults: function (data) {
-						return {
-							results: $.map(data, function(item) {
-								return {
-									text: item.number,
-									nama: item.nama,
-									id: item.id
-								}
-							})
-						}
-					},
-				}
+        <script>
+            //Tambah item
+            $('#item_add').click(function() {
+				document.querySelector('#item_list').insertAdjacentHTML (
+					'beforeend',
+					`<tr role="row">
+                        <td tabindex="0">1</td>
+                        <td class="text-center">
+                            <select class="form-control">
+                                <option>Alat</option>
+                                <option>Bahan</option>
+                            </select>
+                        </td>
+                        <td class="text-center">
+                            <select class="form-control">
+                                <option>Eyelash Size 12</option>
+                                <option>Eyelash Size 12</option>
+                                <option>Eyelash Size 12</option>
+                            </select>
+                        </td>
+                        <td class="text-center">
+                            <select class="form-control">
+                                <option>Box</option>
+                                <option>Box</option>
+                                <option>Box</option>
+                            </select>
+                        </td>
+                        <td class="text-center">
+                            <input type="number" class="form-control">
+                        </td>
+                        <td class="text-center">
+                            <input type="number" class="form-control">
+                        </td>
+                        <td class="text-center">
+                            <input type="file" style="display: none; width:0; height: 0" accept="image/*" id="request_foto">
+                            <label for="request_foto"  class="btn btn-link" style="padding:0px;"><i class="flaticon2-photo-camera"></i>Foto</label>
+                        </td>
+                    </tr>`
+				)
 			});
 
-			$('#kt_select2_treatment_customer_nohp').change(function () {
-				var dataArray = $('#kt_select2_treatment_customer_nohp').select2('data');
-				document.getElementById("treatment_customer_nama").setAttribute('value',dataArray[0].nama);
-			});
-
-			// Sweetalert
-			$('.kt_sweetalert_berhasil').click(function(e) {
+            //Sweetalert
+            $('#kt_sweetalert_request_berhasil').click(function(e) {
 				swal.fire({
 					title: "Berhasil",
-					text: "Treatment berhasil ditambahkan.",
+					text: "Request berhasil dilakukan",
 					type: "success",
 					confirmButtonText: "Ok",
 					confirmButtonClass: "btn btn-brand"
@@ -542,137 +501,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				});
 			});
 
-			$('#kt_sweetalert_berhasil_modal').click(function(e) {
-				swal.fire({
-					title: "Berhasil",
-					text: "Pelanggan berhasil ditambahkan.",
-					type: "success",
-					confirmButtonText: "Ok",
-					confirmButtonClass: "btn btn-brand"
-				});
-			});
-
-			// Toastr
-			$('#showtoast').click(function() {
-				toastr.options = {
-					"closeButton": false,
-					"debug": false,
-					"newestOnTop": false,
-					"progressBar": false,
-					"positionClass": "toast-top-right",
-					"preventDuplicates": false,
-					"onclick": null,
-					"showDuration": "300",
-					"hideDuration": "1000",
-					"timeOut": "2500",
-					"extendedTimeOut": "1000",
-					"showEasing": "swing",
-					"hideEasing": "linear",
-					"showMethod": "fadeIn",
-					"hideMethod": "fadeOut"
-				}
-				toastr.info("Persetujuan terkirim");
-			});
-
-			$('#showtoast').click(function() {
-				toastr.options = {
-					"closeButton": false,
-					"debug": false,
-					"newestOnTop": false,
-					"progressBar": false,
-					"positionClass": "toast-top-right",
-					"preventDuplicates": false,
-					"onclick": null,
-					"showDuration": "300",
-					"hideDuration": "1000",
-					"timeOut": "2500",
-					"extendedTimeOut": "1000",
-					"showEasing": "swing",
-					"hideEasing": "linear",
-					"showMethod": "fadeIn",
-					"hideMethod": "fadeOut"
-				}
-				toastr.success("Persetujuan diterima");
-			});
-
-			$('#showtoast').click(function() {
-				toastr.options = {
-					"closeButton": false,
-					"debug": false,
-					"newestOnTop": false,
-					"progressBar": false,
-					"positionClass": "toast-top-right",
-					"preventDuplicates": false,
-					"onclick": null,
-					"showDuration": "300",
-					"hideDuration": "1000",
-					"timeOut": "2500",
-					"extendedTimeOut": "1000",
-					"showEasing": "swing",
-					"hideEasing": "linear",
-					"showMethod": "fadeIn",
-					"hideMethod": "fadeOut"
-				}
-				toastr.error("Persetujuan ditolak");
-			});
-
-			// Form Validation
-			$("#kt_form_treatment").validate({
-	            // define validation rules
-	            rules: {
-	                treatment_customer_nohp: {
-	                    required: true,
-	                    digits: true
-	                },
-	                treatment_customer_nama: {
-	                    required: true
-	                },
-	                treatment_type: {
-	                    required: true
-	                },
-	                treatment_place: {
-	                    required: false
-	                }
-	            },
-
-	            invalidHandler: function(event, validator) {
-	                KTUtil.scrollTop();
-	            },
-	            submitHandler: function(form) {
-	                //form[0].submit(); // submit the form
-	            }
-        	});
-
-			$("#kt_form_customer").validate({
-	            // define validation rules
-	            rules: {
-					customer_nama : {
-						required: true
-					},
-					customer_lahir : {
-						required: true
-					},
-					customer_nohp : {
-						required: true,
-						digits: true
-					},
-					customer_email : {
-						required: true,
-						email: true
-					},
-					customer_alamat : {
-						required: true
-					}
-	            },
-
-	            invalidHandler: function(event, validator) {
-	                KTUtil.scrollTop();
-	            },
-	            submitHandler: function(form) {
-	                //form[0].submit(); // submit the form
-	            }
-        	});
-		</script>
+        </script>
 
 		<!--end::Page Scripts -->
 	</body>

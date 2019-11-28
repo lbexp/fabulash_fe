@@ -388,6 +388,14 @@ body {
     color: #fd397a !important;
 }
 
+.well-align-table td {
+    vertical-align: middle;
+}
+
+.well-align-table th, td {
+    text-align: center !important;
+}
+
 /* .ui-timepicker-container {
       z-index: 3500 !important;
  } */
