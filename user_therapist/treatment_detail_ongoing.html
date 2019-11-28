@@ -549,6 +549,23 @@ License: You must have a valid license purchased only from themeforest(the above
 				)
 			});
 
+
+			$('#treatment_barang_add').click(function() {
+				document.querySelector('#treatment_barang_list').insertAdjacentHTML (
+					'afterbegin',
+					`<div class="col-5" style="padding-left:0px; margin-bottom: 10px">
+						<input type="text" class="form-control" name="treatment_barang" placeholder="Pemakaian">
+					</div>
+					<div class="row col-7 kt-margin-0" style="padding:0px; margin-bottom: 10px">
+						<label for="example-text-input" class="col-2 col-form-label">Qty</label>
+						<div class="col-10" style="padding-right: 0px">
+							<input type="text" class="form-control" name="treatment_barang_jumlah" placeholder="Jumlah">
+						</div>
+					</div>`
+				)
+			});
+
+
 			// Image Upload & Cropping
 			$(document).ready(function(){
 
@@ -595,21 +612,6 @@ License: You must have a valid license purchased only from themeforest(the above
 						});
 					})
 				});
-			});
-
-			$('#treatment_barang_add').click(function() {
-				document.querySelector('#treatment_barang_list').insertAdjacentHTML (
-					'afterbegin',
-					`<div class="col-5" style="padding-left:0px; margin-bottom: 10px">
-						<input type="text" class="form-control" name="treatment_barang" placeholder="Pemakaian">
-					</div>
-					<div class="row col-7 kt-margin-0" style="padding:0px; margin-bottom: 10px">
-						<label for="example-text-input" class="col-2 col-form-label">Qty</label>
-						<div class="col-10" style="padding-right: 0px">
-							<input type="text" class="form-control" name="treatment_barang_jumlah" placeholder="Jumlah">
-						</div>
-					</div>`
-				)
 			});
 
 			// Sweetalert
