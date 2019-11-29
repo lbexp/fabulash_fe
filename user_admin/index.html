@@ -337,7 +337,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<div class="form-group">
 													<label class="form-control-label">No. Telepon :</label>
 													<div class="typeahead">
-														<input class="form-control" id="kt_typeahead_2" type="text" dir="ltr" placeholder="No. Telepon">
+														<input class="form-control" id="kt_typehead" placeholder="No. Telepon">
 													</div>
 													<span class="form-text text-muted kt-hidden" style="margin:0px;"></span>
 												</div>
@@ -580,86 +580,83 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!-- <script src="assets/js/pages/crud/forms/widgets/typeahead.js" type="text/javascript"></script> -->
 
 		<script>
-			// Bloodhound
-			var states = ['081342497228', '081223445666', '085678910111', '082345654212'
-	        ];
+			// Bloodhound Remote
+			// var bloodhound = new Bloodhound({
+			// 	datumTokenizer: function(datum) {
+			// 		return Bloodhound.tokenizers.whitespace(datum.value);
+			// 	},
+			// 	queryTokenizer: Bloodhound.tokenizers.whitespace,
+			// 	remote: {
+			// 		wildcard: '%QUERY',
+			// 		url: 'http://api.themoviedb.org/3/search/movie?query=%QUERY&api_key=f22e6ce68f5e5002e71c20bcba477e7d',
+			// 		transform: function(response) {
+			// 			// Map the remote source JSON array to a JavaScript object array
+			// 			return $.map(response.results, function(movie) {
+			// 				return {
+			// 					value: movie.original_title
+			// 				};
+			// 			});
+			// 		}
+			// 	}
+			// });
 
 			var bloodhound = new Bloodhound({
-				datumTokenizer: Bloodhound.tokenizers.whitespace,
-				queryTokenizer: Bloodhound.tokenizers.whitespace,
-				// `states` is an array of state names defined in "The Basics"
-				local: states
-			});
+			   datumTokenizer: Bloodhound.tokenizers.whitespace,
+			   queryTokenizer: Bloodhound.tokenizers.whitespace,
+			   remote: {
+				   wildcard: '%QUERY',
+				   url: 'source/admin/customer_bloodhound.json',
+				   transform: function(response) {
+					   console.log(response);
+					   // Map the remote source JSON array to a JavaScript object array
+					   return $.map(response, function(customer) {
+						   return {
+							   no_hp: customer.no_hp,
+							   nama: customer.nama
+						   };
+					   });
+				   }
+			   }
+		   });
 
-			$('#kt_typeahead_2, #kt_typeahead_2_modal').typeahead({
-				hint: true,
-				highlight: true,
-				minLength: 1
-			},
-			{
-				name: 'states',
+			$('#kt_typehead').typeahead(null, {
+				display: 'no_hp',
 				source: bloodhound
-			});
-
-			// // instantiate the bloodhound suggestion engine
-			// var countries = new Bloodhound({
-			//   datumTokenizer: function(countries) {
-			//       return Bloodhound.tokenizers.whitespace(countries.value);
-			//   },
-			//   queryTokenizer: Bloodhound.tokenizers.whitespace,
-			//   remote: {
-			//     url: "http://vocab.nic.in/rest.php/country/json",
-			//     filter: function(response) {
-			//       return response.countries;
-			//     }
-			//   }
-			// });
-			//
-			// // initialize the bloodhound suggestion engine
-			// countries.initialize();
-			//
-			// // instantiate the typeahead UI
-			// $('#kt_typeahead_2').typeahead(
-			//   { hint: true,
-			//     highlight: true,
-			//     minLength: 1
-			//   },
-			//   {
-			//   name: 'countries',
-			//   displayKey: function(countries) {
-			//     return countries.country.country_name;
-			//   },
-			//   source: countries.ttAdapter()
-			// });
-
-			// Select2 ajax
-			$('#kt_select2_treatment_customer_nohp').select2({
-				multiple: true,
-				maximumSelectionSize: 1,
-				maximumSelectionLength: 1,
-				placeholder: 'No. Telepon',
-				ajax: {
-					url: 'source/admin/customer_select2.php',
-					dataType: 'json',
-					delay: 250,
-					processResults: function (data) {
-						return {
-							results: $.map(data, function(item) {
-								return {
-									text: item.number,
-									nama: item.nama,
-									id: item.id
-								}
-							})
-						}
-					},
-				}
 			});
 
 			$('#kt_select2_treatment_customer_nohp').change(function () {
 				var dataArray = $('#kt_select2_treatment_customer_nohp').select2('data');
 				document.getElementById("treatment_customer_nama").setAttribute('value',dataArray[0].nama);
 			});
+
+			// Select2 ajax
+			// $('#kt_select2_treatment_customer_nohp').select2({
+			// 	multiple: true,
+			// 	maximumSelectionSize: 1,
+			// 	maximumSelectionLength: 1,
+			// 	placeholder: 'No. Telepon',
+			// 	ajax: {
+			// 		url: 'source/admin/customer_select2.php',
+			// 		dataType: 'json',
+			// 		delay: 250,
+			// 		processResults: function (data) {
+			// 			return {
+			// 				results: $.map(data, function(item) {
+			// 					return {
+			// 						text: item.number,
+			// 						nama: item.nama,
+			// 						id: item.id
+			// 					}
+			// 				})
+			// 			}
+			// 		},
+			// 	}
+			// });
+			//
+			// $('#kt_select2_treatment_customer_nohp').change(function () {
+			// 	var dataArray = $('#kt_select2_treatment_customer_nohp').select2('data');
+			// 	document.getElementById("treatment_customer_nama").setAttribute('value',dataArray[0].nama);
+			// });
 
 			// Sweetalert
 			$('.kt_sweetalert_berhasil').click(function(e) {
