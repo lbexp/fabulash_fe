@@ -345,9 +345,9 @@ License: You must have a valid license purchased only from themeforest(the above
 														<div class="col-12" style="text-align: right; margin-bottom:5px;">
 															<button class="col-5 btn btn-brand no-print">Foto</button>
 														</div>
-														<!-- <div class="col-12" style="text-align: right;">
+														<div class="col-12" style="text-align: right;">
 															<button class="col-5 btn btn-danger no-print" data-toggle="modal" data-target="#kt_modal_treatment_complaint">Complaint</button>
-														</div> -->
+														</div>
 													</div>
 												</div>
                                             </div>
@@ -405,7 +405,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							</div>
 
                             <!--begin::Modal-->
-                            <!-- <div class="modal fade" id="kt_modal_treatment_complaint" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="kt_modal_treatment_complaint" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -441,6 +441,15 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <textarea class="form-control" id="exampleTextarea" rows="3" name="complaint_text" placeholder="Complaint..."></textarea>
                                                     </div>
                                                 </div>
+												<div class="form-group row">
+													<div class="col-8 offset-4">
+														<label class="kt-checkbox">
+															<input type="checkbox" name="complaint_garansi"> Gunakan garansi
+															<span></span>
+														</label><br>
+														<!-- <a href="#"><span class="form-test ">Syarat & ketentuan berlaku</span></a> -->
+													</div>
+												</div>
 	                                        </div>
 	                                        <div class="modal-footer" style="justify-content:center;">
 	                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -449,7 +458,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</form>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
 
                             <!--end::Modal-->
 
@@ -557,39 +566,39 @@ License: You must have a valid license purchased only from themeforest(the above
 		   });
 
 		   // Form Validation
-		   // $("#kt_form_complaint").validate({
-			//    // define validation rules
-			//    rules: {
-			// 	   complaint_tanggal : {
-			// 		   required: true,
-	       //             date: true
-			// 	   },
-			// 	   complaint_tipe : {
-			// 		   required: true
-			// 	   },
-			// 	   complaint_text : {
-			// 		   required: true
-			// 	   }
-			//    },
-		   //
-			//    invalidHandler: function(event, validator) {
-			// 	   KTUtil.scrollTop();
-			//    },
-			//    submitHandler: function(form) {
-			// 	   //form[0].submit(); // submit the form
-			//    }
-		   // });
+		   $("#kt_form_complaint").validate({
+			   // define validation rules
+			   rules: {
+				   complaint_tanggal : {
+					   required: true,
+	                   date: true
+				   },
+				   complaint_tipe : {
+					   required: true
+				   },
+				   complaint_text : {
+					   required: true
+				   }
+			   },
+
+			   invalidHandler: function(event, validator) {
+				   KTUtil.scrollTop();
+			   },
+			   submitHandler: function(form) {
+				   //form[0].submit(); // submit the form
+			   }
+		   });
 
 		   //Sweetalert
-		   // $('#kt_sweetalert_berhasil_complaint').click(function(e) {
-			//    swal.fire({
-			// 	   title: "Berhasil",
-			// 	   text: "Complaint berhasil ditambahkan",
-			// 	   type: "success",
-			// 	   confirmButtonText: "Ok",
-			// 	   confirmButtonClass: "btn btn-brand"
-			//    });
-		   // });
+		   $('#kt_sweetalert_berhasil_complaint').click(function(e) {
+			   swal.fire({
+				   title: "Berhasil",
+				   text: "Complaint berhasil ditambahkan",
+				   type: "success",
+				   confirmButtonText: "Ok",
+				   confirmButtonClass: "btn btn-brand"
+			   });
+		   });
 		</script>
 
 		<!--end::Page Scripts -->
