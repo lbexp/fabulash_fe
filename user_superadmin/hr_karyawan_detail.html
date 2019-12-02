@@ -28,8 +28,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--end::Fonts -->
 
 		<!--begin::Page Vendors Styles(used by this page) -->
-		<link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css">
-		<link href="assets/css/vendor/croppie/croppie.css" rel="stylesheet" type="text/css">
+		<link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css"
 
 		<!--end::Page Vendors Styles -->
 
@@ -569,8 +568,6 @@ License: You must have a valid license purchased only from themeforest(the above
 															<input type="file" class="custom-file-input" name="payroll_foto" id="payroll_foto" accept="image/*">
 															<label class="custom-file-label" for="payroll_foto">Choose file</label>
 														</div>
-														<span class="form-text"  style="margin: 1rem 0 1rem 0">Image preview :</span>
-														<div id="uploaded_image" align="center" class="image-cropper" style="width:auto; height: auto"></div>
                                                     </div>
                                                 </div>
 	                                        </div>
@@ -582,31 +579,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                 </div>
                             </div>
-
-							<div id="uploadimageModal" class="modal" role="dialog">
-								<div class="modal-dialog modal-lg">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5 class="modal-title" id="exampleModalLabel">Upload Image</h5>
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-											</button>
-										</div>
-										<div class="modal-body">
-											<div align="center" class="row">
-												<div class="col-12">
-													<div id="image_demo" style="width:100%; margin-top:30px"></div>
-												</div>
-												<div class="col-12">
-													<button class="btn btn-success crop_foto">Crop & Upload Image</button>
-												</div>
-											</div>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-										</div>
-									</div>
-								</div>
-							</div>
 
 							<!--end::Modal-->
 						</div>
@@ -679,7 +651,6 @@ License: You must have a valid license purchased only from themeforest(the above
 
 		<!--begin::Page Vendors(used by this page) -->
 		<script src="assets/plugins/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
-		<script src="assets/js/vendor/croppie/croppie.js"></script>
 
 		<!--end::Page Vendors -->
 
@@ -693,54 +664,6 @@ License: You must have a valid license purchased only from themeforest(the above
 				if ($('.modal:visible').length) {
 					$('body').addClass('modal-open');
 				}
-			});
-
-			// Image Upload & Cropping
-			$(document).ready(function(){
-
-				$image_crop = $('#image_demo').croppie({
-					enableExif: true,
-					viewport: {
-						width:640,
-						height:480,
-						type:'rectangle'
-					},
-					boundary:{
-						width:720,
-						height:540
-					}
-				});
-
-				$('#payroll_foto').on('change', function(){
-					var reader = new FileReader();
-					reader.onload = function (event) {
-						$image_crop.croppie('bind', {
-							url: event.target.result
-						}).then(function(){
-							console.log('jQuery bind complete');
-						});
-					}
-					reader.readAsDataURL(this.files[0]);
-					$('#uploadimageModal').modal('show');
-				});
-
-				$('.crop_foto').click(function(event){
-					$image_crop.croppie('result', {
-						type: 'canvas',
-						size: 'viewport'
-					}).then(function(response){
-						$.ajax({
-							url:"assets/upload.php",
-							type: "POST",
-							data:{"image": response},
-							success:function(data)
-							{
-								$('#uploadimageModal').modal('hide');
-								$('#uploaded_image').html(data);
-							}
-						});
-					})
-				});
 			});
 
 			// Sweetalert
