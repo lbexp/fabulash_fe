@@ -10,7 +10,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     var initTableMasterData = function() {
         var table = $('#table_master_data');
         // begin first table
-        table.DataTable({
+        var datatable = table.DataTable({
+            order: [],
             responsive: true,
             ajax: {
                 url: 'source/inventory/inventory.json',
@@ -27,7 +28,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'barang',
@@ -59,12 +60,22 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 orderable: true,
             }],
         });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
     };
 
     var initTableStock = function() {
         var table = $('#table_stock');
         // begin first table
-        table.DataTable({
+        var datatable = table.DataTable({
+            order: [],
             responsive: true,
             ajax: {
                 url: 'source/inventory/inventory.json',
@@ -81,7 +92,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'barang',
@@ -113,12 +124,22 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 orderable: true,
             }],
         });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
     };
 
     var initTableStockDetail = function() {
         var table = $('#table_stock_detail');
         // begin first table
-        table.DataTable({
+        var datatable = table.DataTable({
+            order: [],
             responsive: true,
             ajax: {
                 url: 'source/inventory/stock_detail.json',
@@ -135,7 +156,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -183,11 +204,21 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 orderable: true,
             }],
         });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
     };
 
     var initTableRequestIn = function() {
         // begin first table
         var table = $('#table_request_in').DataTable({
+            order: [],
             responsive: true,
             // Pagination settings
             dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
@@ -217,7 +248,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -306,6 +337,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     var initTableRequestOut = function() {
         // begin first table
         var table = $('#table_request_out').DataTable({
+            order: [],
             responsive: true,
             // Pagination settings
             dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
@@ -335,7 +367,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'tanggal',

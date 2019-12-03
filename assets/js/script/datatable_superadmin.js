@@ -10,6 +10,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     var initTableActiveTreatment = function() {
         // begin first table
         var table = $('#table_treatment_active').DataTable({
+            order: [],
             responsive: true,
             // Pagination settings
             dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
@@ -39,7 +40,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -144,6 +145,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     var initTableAllTreatment = function() {
         // begin first table
         var table = $('#table_treatment_all').DataTable({
+            order: [],
             responsive: true,
             // Pagination settings
             dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
@@ -173,7 +175,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -247,6 +249,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     var initTableVoidTreatment = function() {
         // begin first table
         var table = $('#table_treatment_void').DataTable({
+            order: [],
             responsive: true,
             // Pagination settings
             dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
@@ -276,7 +279,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -354,13 +357,14 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         var table = $('#table_treatment_detail');
         // begin first table
         table.DataTable({
+            order: [],
             info: false,
             paging: false,
             lengthChange: false,
             searching: false,
             responsive: true,
             ajax: {
-                url: 'source/superadmin/treatment_list.json',
+                url: 'source/superadmin/invoice.json',
                 type: 'POST',
                 data: {
                     pagination: {
@@ -374,7 +378,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'treatment',
@@ -386,7 +390,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             columnDefs: [{
                 targets: [0, 1, 2],
                 className: 'text-center',
-                orderable: true,
+                orderable: false,
             }],
         });
     };
@@ -394,6 +398,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     var initTablePengeluaran = function() {
         // begin first table
         var table = $('#table_finance_pengeluaran').DataTable({
+            order: [],
             responsive: true,
             // Pagination settings
             dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
@@ -423,7 +428,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -521,6 +526,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         var table = $('#table_pengeluaran_detail');
         // begin first table
         table.DataTable({
+            order: [],
             info: false,
             paging: false,
             lengthChange: false,
@@ -541,7 +547,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'nama_pengeluaran',
@@ -564,6 +570,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     var initTablePemasukan = function() {
         // begin first table
         var table = $('#table_finance_pemasukan').DataTable({
+            order: [],
             responsive: true,
             // Pagination settings
             dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
@@ -593,7 +600,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -664,7 +671,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     var initTableDataTreatment = function() {
         var table = $('#table_data_treatment');
         // begin first table
-        table.DataTable({
+        var datatable = table.DataTable({
+            order: [],
             info: true,
             paging: true,
             lengthChange: true,
@@ -685,7 +693,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'treatment',
@@ -714,12 +722,22 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 orderable: true,
             }],
         });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
     };
 
     var initTableDataComplaint = function() {
         var table = $('#table_data_complaint');
         // begin first table
-        table.DataTable({
+        var datatable = table.DataTable({
+            order: [],
             info: true,
             paging: true,
             lengthChange: true,
@@ -740,7 +758,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'complaint',
@@ -766,12 +784,22 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 orderable: true,
             }],
         });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
     };
 
     var initTableKaryawan = function() {
         var table = $('#table_karyawan');
         // begin first table
-        table.DataTable({
+        var datatable = table.DataTable({
+            order: [],
             info: true,
             paging: true,
             lengthChange: true,
@@ -792,7 +820,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'nama',
@@ -824,11 +852,21 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 orderable: true,
             }],
         });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
     };
 
     var initTableKaryawanTreatment = function() {
         // begin first table
         var table = $('#table_karyawan_treatment').DataTable({
+            order: [],
             responsive: true,
             // Pagination settings
             dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
@@ -858,7 +896,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -932,6 +970,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     var initTableKaryawanKehadiran = function() {
         // begin first table
         var table = $('#table_karyawan_kehadiran').DataTable({
+            order: [],
             responsive: true,
             // Pagination settings
             dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
@@ -961,7 +1000,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -1028,6 +1067,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     var initTableKaryawanPayroll = function() {
         // begin first table
         var table = $('#table_karyawan_payroll').DataTable({
+            order: [],
             responsive: true,
             info: false,
             paging: false,
@@ -1056,7 +1096,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'biaya',
@@ -1077,7 +1117,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             columnDefs: [{
                 targets: [0, 1, 2, 3, 4, 5],
                 className: 'text-center',
-                orderable: true,
+                orderable: false,
             }],
         });
 
@@ -1094,6 +1134,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     var initTableRequest = function() {
         // begin first table
         var table = $('#table_request').DataTable({
+            order: [],
             responsive: true,
             // Pagination settings
             dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
@@ -1123,7 +1164,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -1217,6 +1258,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     var initTablePembelian = function() {
         // begin first table
         var table = $('#table_pembelian').DataTable({
+            order: [],
             responsive: true,
             // Pagination settings
             dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
@@ -1246,7 +1288,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -1306,7 +1348,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     var initTableStock = function() {
         var table = $('#table_stock');
         // begin first table
-        table.DataTable({
+        var datatable = table.DataTable({
+            order: [],
             responsive: true,
             ajax: {
                 url: 'source/superadmin/stock.json',
@@ -1323,7 +1366,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'barang',
@@ -1355,12 +1398,22 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 orderable: true,
             }],
         });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
     };
 
     var initTableStockDetail = function() {
         var table = $('#table_stock_detail');
         // begin first table
-        table.DataTable({
+        var datatable = table.DataTable({
+            order: [],
             responsive: true,
             ajax: {
                 url: 'source/superadmin/stock_detail.json',
@@ -1377,7 +1430,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -1414,6 +1467,15 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 orderable: true,
             }],
         });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
     };
 
     return {

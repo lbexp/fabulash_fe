@@ -10,6 +10,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     var initTableActiveTreatment = function() {
         // begin first table
         var table = $('#table_treatment_active').DataTable({
+            order: [],
             responsive: true,
             // Pagination settings
             dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
@@ -39,7 +40,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -135,6 +136,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     var initTableListTreatment = function() {
         // begin first table
         var table = $('#table_treatment_list').DataTable({
+            order: [],
             responsive: true,
             // Pagination settings
             dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
@@ -164,7 +166,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -235,6 +237,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     var initTableComplaint = function() {
         // begin first table
         var table = $('#table_complaint').DataTable({
+            order: [],
             responsive: true,
             // Pagination settings
             dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
@@ -264,7 +267,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'tanggal',
@@ -336,13 +339,14 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         var table = $('#table_treatment_detail');
         // begin first table
         table.DataTable({
+            order: [],
             info: false,
             paging: false,
             lengthChange: false,
             searching: false,
             responsive: true,
             ajax: {
-                url: 'source/therapist/treatment_list.json',
+                url: 'source/therapist/invoice.json',
                 type: 'POST',
                 data: {
                     pagination: {
@@ -356,7 +360,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'treatment',
@@ -368,7 +372,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             columnDefs: [{
                 targets: [0, 1, 2],
                 className: 'text-center',
-                orderable: true,
+                orderable: false,
             }],
         });
     };
@@ -376,6 +380,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     var initTableInventory = function() {
         // begin first table
         var table = $('#table_inventory').DataTable({
+            order: [],
             responsive: true,
             // Pagination settings
             dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
@@ -405,7 +410,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return meta.row + meta.settings._iDisplayStart + 1;
                 },
-                width: 25,
+                width: 35,
                 orderable: false,
             }, {
                 data: 'tanggal',

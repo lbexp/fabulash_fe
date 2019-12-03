@@ -396,6 +396,10 @@ body {
     text-align: center !important;
 }
 
+.no-sort::after { display: none!important; }
+
+.no-sort { pointer-events: none!important; cursor: default!important; }
+
 /* .ui-timepicker-container {
       z-index: 3500 !important;
  } */
