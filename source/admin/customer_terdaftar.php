@@ -8,10 +8,9 @@ $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
 
 
 $sql = "SELECT customer.id, customer.nama, customer.no_hp FROM customer
-		WHERE no_hp LIKE '%".$_GET['q']."%'
+		WHERE no_hp LIKE '%".$_GET['query']."%'
 		LIMIT 10";
 $result = $mysqli->query($sql);
-
 
 $json = [];
 while($row = $result->fetch_assoc()){
