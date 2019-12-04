@@ -849,6 +849,105 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
+    var initTableSPK = function () {
+        var table = $('#table_spk');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/admin/spk.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kategori',
+                title: 'Kategori'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, {
+                data: 'sifat',
+                title: 'Sifat'
+            }, {
+                data: 'inventory',
+                title: 'Inventory'
+            }, {
+                data: 'complaint',
+                title: 'Complaint'
+            }, {
+                data: 'durasi',
+                title: 'Durasi'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTableInvoice = function () {
+        var table = $('#table_invoice');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/admin/invoice.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'treatment',
+                title: 'Treatment'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, {
+                data: 'harga',
+                title: 'Harga'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
     return {
         //main function to initiate the module
         init: function() {
@@ -861,6 +960,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTablePengeluaran();
             initTablePemasukan();
             initTablePengeluaranDetail();
+            initTableSPK();
+            initTableInvoice();
         },
     };
 

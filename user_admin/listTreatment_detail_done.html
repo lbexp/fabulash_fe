@@ -319,137 +319,161 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="row justify-content-center">
 
 								<div class="col-lg-8 col-xl-6">
-
-									<!--begin::Portlet-->
-									<div class="kt-portlet kt-portlet--mobile" id="print-section">
-										<div class="kt-portlet__head centered-content">
+									<div class="kt-portlet kt-portlet--mobile">
+										<div class="kt-portlet__head">
 											<div class="kt-portlet__head-label">
 												<h3 class="kt-portlet__head-title">
-													Treatment Details
+													Treatment Status : <span class="kt-portlet__head-title kt-font-success">Done</span>
 												</h3>
 											</div>
-										</div>
-										<div class="kt-portlet__body">
-                                            <div class="row" style="margin-bottom:20px;">
-												<div class="col-6">
-	                                                <h5 class="color-main-dark" name="nomor_pesanan">#123456</h5>
-	                                                <span class="kt-font-bold" name="customer_nama">Darnilla</span>&nbsp;<br>
-	                                                <span class="kt-font-bold" name="customer_nohp">081342497228</span>&nbsp;<br>
-	                                                <span class="kt-font-bold" name="customer_alamat">Jl. Areopala 6</span>&nbsp;<br>
-												</div>
-												<div class="col-6">
-													<div class="row">
-														<div class="col-12" style="text-align: right; margin-bottom:5px;">
-															<button class="col-5 btn btn-warning no-print" onclick="printFunction()">Print</button>
-														</div>
-														<div class="col-12" style="text-align: right; margin-bottom:5px;">
-															<button class="col-5 btn btn-danger no-print" id="kt_sweetalert_void">Void</button>
-														</div>
-														<div class="col-12" style="text-align: right;">
-															<button class="col-5 btn btn-danger no-print" data-toggle="modal" data-target="#kt_modal_treatment_complaint">Complaint</button>
-														</div>
-													</div>
-												</div>
-                                            </div>
-                                            <table class="col-sm-12 col-md-8 col-lg-6" style="margin-bottom:50px">
-                                                <tr>
-                                                    <th width="30%">Tanggal</th>
-                                                    <th width="10%">:</th>
-                                                    <th width="60%"style="font-weight:500;" name="treatment_hari">2 Oktober 2019</th>
-                                                </tr>
-                                                <!-- <tr>
-                                                    <th>Therapist</th>
-                                                    <th>:</th>
-                                                    <th style="font-weight:500;" name="treatment_therapist">Ka</th>
-                                                </tr> -->
-                                            </table>
-        									<table class="table table-bordered table-hover table-checkable" id="table_treatment_detail"></table>
-											<div class="col-12 horizontal-centered" style="padding: 0px 0px" style="margin-bottom:0px;">
-												<button type="button" class="btn btn-link no-print" style="padding-right:0px;"><i class="flaticon-add"></i>Tambah Treatment</button>
+											<div class="kt-portlet__head-toolbar">
+												<ul class="nav nav-pills" role="tablist">
+													<li class="nav-item">
+														<a class="nav-link active" data-toggle="tab" href="#tab-spk" role="tab" aria-selected="true">
+															SPK
+														</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" data-toggle="tab" href="#tab-invoice" role="tab" aria-selected="false">
+															Invoice
+														</a>
+													</li>
+												</ul>
 											</div>
-											<div class="row" style="margin-top:50px;">
-												<div class="col-6" style="padding-right:0px;">
-													<table class="col-sm-24 col-md-16 col-lg-12" style="bottom: 0px; position: absolute;">
-		                                                <tr>
-		                                                    <th width="35%">Waktu Mulai</th>
-		                                                    <th width="10%">:</th>
-		                                                    <th width="55%"style="font-weight:500;" name="waktu_mulai">08.00 WITA</th>
-		                                                </tr>
-		                                                <tr>
-		                                                    <th>Waktu Selesai</th>
-		                                                    <th>:</th>
-		                                                    <th style="font-weight:500;" name="waktu-selesai">10.00 WITA</th>
-		                                                </tr>
-		                                            </table>
-												</div>
-												<div class="col-6" style="padding-left:0px;text-align:right;">
-													<button class="col-5 btn btn-success no-print" style="margin-top:5px;" data-toggle="modal" data-target="#kt_modal_treatment_bayar">Bayar</button>
-												</div>
-                                            </div>
 										</div>
 									</div>
+								</div>
 
-									<!--end::Portlet-->
+								<div class="col-lg-8 col-xl-6">
+									<div class="tab-content">
+										<div class="tab-pane active" id="tab-spk" role="tabpanel">
+											<div class="kt-portlet kt-portlet--mobile" id="print-section">
+												<div class="kt-portlet__head centered-content">
+													<div class="kt-portlet__head-label">
+														<h3 class="kt-portlet__head-title">
+															Treatment Details
+														</h3>
+													</div>
+												</div>
+												<div class="kt-portlet__body">
+		                                            <div class="row" style="margin-bottom:20px;">
+														<div class="col-6">
+			                                                <h5 class="color-main-dark" name="nomor_pesanan">#123456</h5>
+			                                                <span class="kt-font-bold" name="customer_nama">Darnilla</span>&nbsp;<br>
+			                                                <span class="kt-font-bold" name="customer_nohp">081342497228</span>&nbsp;<br>
+			                                                <span class="kt-font-bold" name="customer_alamat">Jl. Areopala 6</span>&nbsp;<br>
+														</div>
+														<div class="col-6">
+															<div class="row">
+																<div class="col-12" style="text-align: right; margin-bottom:5px;">
+																	<button class="col-5 btn btn-warning no-print" onclick="printFunction()">Print</button>
+																</div>
+																<div class="col-12" style="text-align: right; margin-bottom:5px;">
+																	<button class="col-5 btn btn-danger no-print" id="kt_sweetalert_void">Void</button>
+																</div>
+															</div>
+														</div>
+		                                            </div>
+		                                            <table class="col-sm-12 col-md-8 col-lg-6" style="margin-bottom:50px">
+		                                                <tr>
+		                                                    <th width="30%">Tanggal</th>
+		                                                    <th width="10%">:</th>
+		                                                    <th width="60%"style="font-weight:500;" name="treatment_hari">2 Oktober 2019</th>
+		                                                </tr>
+		                                            </table>
+		        									<table class="table table-bordered table-hover table-checkable" id="table_spk"></table>
+													<div class="col-12 horizontal-centered" style="padding: 0px 0px" style="margin-bottom:0px;">
+														<button type="button" class="btn btn-link no-print" style="padding-right:0px;"><i class="flaticon-add"></i>Tambah Treatment</button>
+													</div>
+													<div class="row" style="margin-top:50px;">
+														<div class="col-6" style="padding-right:0px;">
+															<table class="col-sm-24 col-md-16 col-lg-12" style="bottom: 0px; position: absolute;">
+				                                                <tr>
+				                                                    <th width="35%">Waktu Mulai</th>
+				                                                    <th width="10%">:</th>
+				                                                    <th width="55%"style="font-weight:500;" name="waktu_mulai">08.00 WITA</th>
+				                                                </tr>
+				                                                <tr>
+				                                                    <th>Waktu Selesai</th>
+				                                                    <th>:</th>
+				                                                    <th style="font-weight:500;" name="waktu-selesai">10.00 WITA</th>
+				                                                </tr>
+				                                            </table>
+														</div>
+														<div class="col-6" style="padding-left:0px;text-align:right;">
+															<button class="col-5 btn btn-success no-print" style="margin-top:5px;" data-toggle="modal" data-target="#kt_modal_treatment_bayar">Bayar</button>
+														</div>
+		                                            </div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane" id="tab-invoice" role="tabpanel">
+											<div class="kt-portlet kt-portlet--mobile" id="print-section">
+												<div class="kt-portlet__head centered-content">
+													<div class="kt-portlet__head-label">
+														<h3 class="kt-portlet__head-title">
+															Treatment Details
+														</h3>
+													</div>
+												</div>
+												<div class="kt-portlet__body">
+		                                            <div class="row" style="margin-bottom:20px;">
+														<div class="col-6">
+			                                                <h5 class="color-main-dark" name="nomor_pesanan">#123456</h5>
+			                                                <span class="kt-font-bold" name="customer_nama">Darnilla</span>&nbsp;<br>
+			                                                <span class="kt-font-bold" name="customer_nohp">081342497228</span>&nbsp;<br>
+			                                                <span class="kt-font-bold" name="customer_alamat">Jl. Areopala 6</span>&nbsp;<br>
+														</div>
+														<div class="col-6">
+															<div class="row">
+																<div class="col-12" style="text-align: right; margin-bottom:5px;">
+																	<button class="col-5 btn btn-warning no-print" onclick="printFunction()">Print</button>
+																</div>
+																<div class="col-12" style="text-align: right; margin-bottom:5px;">
+																	<button class="col-5 btn btn-danger no-print" id="kt_sweetalert_void">Void</button>
+																</div>
+																<div class="col-12" style="text-align: right;">
+																	<button class="col-5 btn btn-danger no-print" data-toggle="modal" data-target="#kt_modal_treatment_complaint">Complaint</button>
+																</div>
+															</div>
+														</div>
+		                                            </div>
+		                                            <table class="col-sm-12 col-md-8 col-lg-6" style="margin-bottom:50px">
+		                                                <tr>
+		                                                    <th width="30%">Tanggal</th>
+		                                                    <th width="10%">:</th>
+		                                                    <th width="60%"style="font-weight:500;" name="treatment_hari">2 Oktober 2019</th>
+		                                                </tr>
+		                                            </table>
+		        									<table class="table table-bordered table-hover table-checkable" id="table_invoice"></table>
+													<div class="row" style="margin-top:50px;">
+														<div class="col-6" style="padding-right:0px;">
+															<table class="col-sm-24 col-md-16 col-lg-12" style="bottom: 0px; position: absolute;">
+				                                                <tr>
+				                                                    <th width="35%">Waktu Mulai</th>
+				                                                    <th width="10%">:</th>
+				                                                    <th width="55%"style="font-weight:500;" name="waktu_mulai">08.00 WITA</th>
+				                                                </tr>
+				                                                <tr>
+				                                                    <th>Waktu Selesai</th>
+				                                                    <th>:</th>
+				                                                    <th style="font-weight:500;" name="waktu-selesai">10.00 WITA</th>
+				                                                </tr>
+				                                            </table>
+														</div>
+														<div class="col-6" style="padding-left:0px;text-align:right;">
+															<button class="col-5 btn btn-success no-print" style="margin-top:5px;" data-toggle="modal" data-target="#kt_modal_treatment_bayar">Bayar</button>
+														</div>
+		                                            </div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 
 							</div>
 
                             <!--begin::Modal-->
-                            <div class="modal fade" id="kt_modal_treatment_complaint" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Complaint</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            </button>
-                                        </div>
-                                        <form id="kt_form_complaint">
-	                                        <div class="modal-body">
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Tanggal</label>
-                                                    <div class="col-8">
-                                                        <div class="input-group date">
-                                                            <input type="text" name="complaint_tanggal" class="form-control" readonly="" placeholder="Tanggal" id="kt_datepicker_modal_complaint">
-                                                            <div class="input-group-append">
-                                                                <span class="input-group-text">
-                                                                    <i class="la la-calendar-check-o"></i>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-														<span class="form-text text-muted kt-hidden">Select a date</span>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Tipe</label>
-                                                    <div class="col-8">
-                                                        <input type="text" class="form-control" name="complaint_tipe" placeholder="Tipe">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Complaint</label>
-                                                    <div class="col-8">
-                                                        <textarea class="form-control" id="exampleTextarea" rows="3" name="complaint_text" placeholder="Complaint..."></textarea>
-                                                    </div>
-                                                </div>
-												<div class="form-group row">
-													<div class="col-8 offset-4">
-														<label class="kt-checkbox">
-															<input type="checkbox" name="complaint_garansi"> Gunakan garansi
-															<span></span>
-														</label><br>
-														<!-- <a href="#"><span class="form-test ">Syarat & ketentuan berlaku</span></a> -->
-													</div>
-												</div>
-	                                        </div>
-	                                        <div class="modal-footer" style="justify-content:center;">
-	                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	                                            <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_complaint">Submit</button>
-	                                        </div>
-										</form>
-                                    </div>
-                                </div>
-                            </div>
-
 							<div class="modal fade" id="kt_modal_treatment_bayar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">

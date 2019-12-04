@@ -1,0 +1,23 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "kategori": "Eyelash",
+        "therapist": "Ica",
+        "sifat": "lorem ipsum",
+        "complaint": "lorem ipsum dolor sit amet",
+        "inventory": "lorem ipsum dolor sit amet",
+        "durasi": "5 Jam"
+    }, {
+        "no": 2,
+        "kategori": "Eyelash",
+        "therapist": "Ica",
+        "sifat": "lorem ipsum",
+        "complaint": "lorem ipsum dolor sit amet",
+        "inventory": "lorem ipsum dolor sit amet",
+        "durasi": "5 Jam"
+    }]
+}
