@@ -115,7 +115,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 200,
                 render: function(data, type, full, meta) {
                     return `
-                    <button class="btn btn-sm btn-warning" style="border-radius:15px">Tambah</button>&nbsp;<a href="user_inventory/stock_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <button class="btn btn-sm btn-warning" style="border-radius:15px">Tambah</button>&nbsp;<a href="user_supervisor_studio/stock_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -292,7 +292,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                         Disetujui: {'href': 'request_in_detail_disetujui.html'}
                     };
                     return `
-                    <a href="user_inventory/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_supervisor_studio/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -416,7 +416,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                         Diterima: {'href': 'request_out_detail_diterima.html'}
                     }
                     return `
-                    <a href="user_inventory/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_supervisor_studio/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }],
             columnDefs: [{
