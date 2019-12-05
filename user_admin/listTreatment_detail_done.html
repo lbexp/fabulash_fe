@@ -365,12 +365,12 @@ License: You must have a valid license purchased only from themeforest(the above
 														</div>
 														<div class="col-6">
 															<div class="row">
-																<div class="col-12" style="text-align: right; margin-bottom:5px;">
+																<!-- <div class="col-12" style="text-align: right; margin-bottom:5px;">
 																	<button class="col-5 btn btn-warning no-print" onclick="printFunction()">Print</button>
 																</div>
 																<div class="col-12" style="text-align: right; margin-bottom:5px;">
 																	<button class="col-5 btn btn-danger no-print" id="kt_sweetalert_void">Void</button>
-																</div>
+																</div> -->
 															</div>
 														</div>
 		                                            </div>
@@ -381,10 +381,10 @@ License: You must have a valid license purchased only from themeforest(the above
 		                                                    <th width="60%"style="font-weight:500;" name="treatment_hari">2 Oktober 2019</th>
 		                                                </tr>
 		                                            </table>
-		        									<table class="table table-bordered table-hover table-checkable" id="table_spk"></table>
-													<div class="col-12 horizontal-centered" style="padding: 0px 0px" style="margin-bottom:0px;">
+		        									<table class="table table-bordered table-hover table-checkable" id="table_spk_done"></table>
+													<!-- <div class="col-12 horizontal-centered" style="padding: 0px 0px" style="margin-bottom:0px;">
 														<button type="button" class="btn btn-link no-print" style="padding-right:0px;"><i class="flaticon-add"></i>Tambah Treatment</button>
-													</div>
+													</div> -->
 													<div class="row" style="margin-top:50px;">
 														<div class="col-6" style="padding-right:0px;">
 															<table class="col-sm-24 col-md-16 col-lg-12" style="bottom: 0px; position: absolute;">
@@ -400,9 +400,9 @@ License: You must have a valid license purchased only from themeforest(the above
 				                                                </tr>
 				                                            </table>
 														</div>
-														<div class="col-6" style="padding-left:0px;text-align:right;">
+														<!-- <div class="col-6" style="padding-left:0px;text-align:right;">
 															<button class="col-5 btn btn-success no-print" style="margin-top:5px;" data-toggle="modal" data-target="#kt_modal_treatment_bayar">Bayar</button>
-														</div>
+														</div> -->
 		                                            </div>
 												</div>
 											</div>
@@ -432,9 +432,9 @@ License: You must have a valid license purchased only from themeforest(the above
 																<div class="col-12" style="text-align: right; margin-bottom:5px;">
 																	<button class="col-5 btn btn-danger no-print" id="kt_sweetalert_void">Void</button>
 																</div>
-																<div class="col-12" style="text-align: right;">
+																<!-- <div class="col-12" style="text-align: right;">
 																	<button class="col-5 btn btn-danger no-print" data-toggle="modal" data-target="#kt_modal_treatment_complaint">Complaint</button>
-																</div>
+																</div> -->
 															</div>
 														</div>
 		                                            </div>
@@ -522,7 +522,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <div class="form-group row">
                                                     <label for="example-text-input" class="col-4 col-form-label">Diskon</label>
                                                     <div class="col-8">
-                                                        <input type="text" class="form-control" name="pembayaran_diskon" placeholder="Diskon">
+														<div class="input-group">
+		                                                    <input type="text" class="form-control kt-margin-r-5" name="pembayaran_diskon" placeholder="Diskon">
+															<button type="button" class="btn btn-success">Submit</button>
+														</div>
+														<span class="form-text text-muted">Potongan harga : <span class="kt-font-danger" name="pembayaran_diskon_nominal">Rp. 50.000,-</span></span>
                                                     </div>
                                                 </div>
 	                                        </div>

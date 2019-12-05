@@ -219,20 +219,17 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 35,
                 orderable: false,
             }, {
-                data: 'tanggal',
-                title: 'Tanggal',
-            }, {
                 data: 'no_pesanan',
                 title: 'No Pesanan',
-            }, {
-                data: 'no_pesanan',
-                title: 'No Pesanan',
-            }, {
-                data: 'treatment',
-                title: 'Treatment',
             }, {
                 data: 'customer',
                 title: 'Customer',
+            }, {
+                data: 'kategori',
+                title: 'Kategori',
+            }, {
+                data: 'treatment',
+                title: 'Treatment',
             }, {
                 data: 'therapist',
                 title: 'Therapist',
@@ -249,7 +246,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 },
             }],
             columnDefs: [{
-                targets: [0, 1, 2, 3, 4, 5, 6, 7],
+                targets: [0, 1, 2, 3, 4, 5, 6],
                 className: 'text-center',
                 orderable: true,
             }],
@@ -264,23 +261,23 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
         }).draw();
 
-        $('#kt_search_waktu').on('change', function(e) {
-            e.preventDefault();
-            var params = {};
-            $('.kt-input').each(function() {
-                var i = $(this).data('col-index');
-                if (params[i]) {
-                    params[i] += '|' + $(this).val();
-                } else {
-                    params[i] = $(this).val();
-                }
-            });
-            $.each(params, function(i, val) {
-                // apply search params to datatable
-                table.column(i).search(val ? val : '', false, false);
-            });
-            table.table().draw();
-        });
+        // $('#kt_search_waktu').on('change', function(e) {
+        //     e.preventDefault();
+        //     var params = {};
+        //     $('.kt-input').each(function() {
+        //         var i = $(this).data('col-index');
+        //         if (params[i]) {
+        //             params[i] += '|' + $(this).val();
+        //         } else {
+        //             params[i] = $(this).val();
+        //         }
+        //     });
+        //     $.each(params, function(i, val) {
+        //         // apply search params to datatable
+        //         table.column(i).search(val ? val : '', false, false);
+        //     });
+        //     table.table().draw();
+        // });
 
         $('#kt_search_all').on('keyup', function() {
             table.search(this.value).draw();
@@ -329,17 +326,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: 'no_pesanan',
                 title: 'No Pesanan',
             }, {
-                data: 'no_pesanan',
-                title: 'No Pesanan',
-            }, {
-                data: 'treatment',
-                title: 'Treatment',
-            }, {
                 data: 'customer',
                 title: 'Customer',
-            }, {
-                data: 'therapist',
-                title: 'Therapist',
             }, {
                 field: 'aksi',
                 title: 'Aksi',
@@ -353,7 +341,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 },
             }],
             columnDefs: [{
-                targets: [0, 1, 2, 3, 4, 5, 6, 7],
+                targets: [0, 1, 2, 3, 4],
                 className: 'text-center',
                 orderable: true,
             }],
@@ -849,8 +837,92 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
-    var initTableSPK = function () {
-        var table = $('#table_spk');
+    var initTableSPKScheduled = function () {
+        var table = $('#table_spk_scheduled');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/admin/spk.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kategori',
+                title: 'Kategori'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTableSPKWaiting = function () {
+        var table = $('#table_spk_waiting');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/admin/spk.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kategori',
+                title: 'Kategori'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTableSPKOngoing = function () {
+        var table = $('#table_spk_ongoing');
         // begin first table
         table.DataTable({
             order: [],
@@ -883,8 +955,101 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: 'therapist',
                 title: 'Therapist'
             }, {
-                data: 'sifat',
-                title: 'Sifat'
+                data: 'waktu_mulai',
+                title: 'Waktu Mulai'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTableSPKDone = function () {
+        var table = $('#table_spk_done');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/admin/spk.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kategori',
+                title: 'Kategori'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, {
+                data: 'inventory',
+                title: 'Inventory'
+            }, {
+                data: 'complaint',
+                title: 'Complaint'
+            }, {
+                data: 'durasi',
+                title: 'Durasi'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTableSPKPaid = function () {
+        var table = $('#table_spk_paid');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/admin/spk.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kategori',
+                title: 'Kategori'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
             }, {
                 data: 'inventory',
                 title: 'Inventory'
@@ -960,7 +1125,11 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTablePengeluaran();
             initTablePemasukan();
             initTablePengeluaranDetail();
-            initTableSPK();
+            initTableSPKScheduled();
+            initTableSPKWaiting();
+            initTableSPKOngoing();
+            initTableSPKDone();
+            initTableSPKPaid();
             initTableInvoice();
         },
     };
