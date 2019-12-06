@@ -101,6 +101,21 @@ var datepickerIndonesia = function () {
             rightArrow: '<i class="la la-angle-right"></i>',
         },
     }).datepicker("setDate", new Date());
+
+    $('.kt_multidatepicker').datepicker({
+        startDate: new Date(),
+        multidate: true,
+        todayHighlight: true,
+        language: 'id',
+        clearBtn: true,
+        daysOfWeekHighlighted: "6,0",
+        daysOfWeekDisabled: "6,0",
+        templates: {
+            leftArrow: '<i class="la la-angle-left"></i>',
+            rightArrow: '<i class="la la-angle-right"></i>',
+        },
+    });
+
 }();
 
 var timepicker = function () {
