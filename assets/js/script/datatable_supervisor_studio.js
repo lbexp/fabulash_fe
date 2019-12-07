@@ -112,10 +112,10 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 responsivePriority: -1,
                 className: 'text-center',
                 orderable: false,
-                width: 200,
+                width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <button class="btn btn-sm btn-warning" style="border-radius:15px">Tambah</button>&nbsp;<a href="user_supervisor_studio/stock_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_supervisor_studio/stock_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }],
             columnDefs: [{
