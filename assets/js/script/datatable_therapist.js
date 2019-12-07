@@ -293,7 +293,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_therapist/complaint_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_therapist/profile_complaint_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -377,9 +377,59 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
-    var initTableInventory = function() {
+    var initTableStock = function() {
+        var table = $('#table_inventory_stock');
         // begin first table
-        var table = $('#table_inventory').DataTable({
+        var datatable = table.DataTable({
+            order: [],
+            responsive: true,
+            ajax: {
+                url: 'source/therapist/stock.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'barang',
+                title: 'Barang'
+            }, {
+                data: 'jumlah',
+                title: 'Jumlah'
+            }, {
+                data: 'satuan',
+                title: 'Satuan'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    };
+
+    var initTableRequestInventory = function() {
+        // begin first table
+        var table = $('#table_inventory_request').DataTable({
             order: [],
             responsive: true,
             // Pagination settings
@@ -450,8 +500,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     var status = {
-                        Request: {'href': 'inventory_detail_request.html'},
-                        Disetujui: {'href': 'inventory_detail_disetujui.html'}
+                        Request: {'href': 'inventory_request_detail_request.html'},
+                        Disetujui: {'href': 'inventory_request_detail_disetujui.html'}
                     };
                     return `
                     <a href="user_therapist/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
@@ -613,6 +663,57 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
+    var initTableSPKComplaint = function () {
+        var table = $('#table_spk_complaint');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/therapist/spk.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kategori',
+                title: 'Kategori'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, {
+                data: 'inventory',
+                title: 'Inventory'
+            }, {
+                data: 'complaint',
+                title: 'Complaint'
+            }, {
+                data: 'durasi',
+                title: 'Durasi'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
     return {
         //main function to initiate the module
         init: function() {
@@ -620,11 +721,12 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableListTreatment();
             initTableComplaint();
             initTableTreatmentDetail();
-            initTableInventory();
+            initTableStock();
+            initTableRequestInventory();
             initTableKehadiran();
+            initTableSPKComplaint();
         },
     };
-
 }();
 
 

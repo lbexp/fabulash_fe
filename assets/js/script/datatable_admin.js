@@ -1251,7 +1251,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableKehadiran();
         },
     };
-
 }();
 
 

@@ -586,9 +586,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableKehadiran();
         },
     };
-
 }();
-// end: Inventory
 
 
 jQuery(document).ready(function() {
