@@ -1228,7 +1228,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         $('#kt_search_all').on('keyup', function() {
             table.search(this.value).draw();
         });
-    }
+    };
 
     return {
         //main function to initiate the module
