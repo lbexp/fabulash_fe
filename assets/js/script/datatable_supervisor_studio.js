@@ -136,18 +136,30 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     };
 
     var initTableStockDetail = function() {
-        var table = $('#table_stock_detail');
         // begin first table
-        var datatable = table.DataTable({
+        var table = $('#table_stock_detail').DataTable({
             order: [],
             responsive: true,
+            // Pagination settings
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            // read more: https://datatables.net/examples/basic_init/dom.html
+            lengthMenu: [5, 10, 25, 50],
+            pageLength: 10,
+            language: {
+                'lengthMenu': 'Display _MENU_',
+            },
+            searchDelay: 500,
+            processing: true,
+            serverSide: false,
             ajax: {
                 url: 'source/supervisor_studio/stock_detail.json',
                 type: 'POST',
                 data: {
-                    pagination: {
-                        perpage: 50,
-                    },
+                    // parameters for custom backend script demo
+                    columnsDef: [
+                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                        'tanggal', 'status', 'aksi',
+                    ],
                 },
             },
             columns: [{
@@ -205,14 +217,36 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }],
         });
 
-        datatable.on('order.dt search.dt', function() {
-            datatable.column(0, {
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
                 search: 'applied',
                 order: 'applied'
             }).nodes().each(function(cell, i) {
                 cell.innerHTML = i + 1;
             });
         }).draw();
+
+        $('#kt_search_month').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            $('.kt-input').each(function() {
+                var i = $(this).data('col-index');
+                if (params[i]) {
+                    params[i] += '|' + $(this).val();
+                } else {
+                    params[i] = $(this).val();
+                }
+            });
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        });
+
+        $('#kt_search_all').on('keyup', function() {
+            table.search(this.value).draw();
+        });
     };
 
     var initTableRequestIn = function() {
@@ -256,6 +290,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'kode_request',
                 title: 'Kode Request',
+            }, {
+                data: 'therapist',
+                title: 'Therapist',
             }, {
                 data: 'list_request',
                 title: 'List Request',

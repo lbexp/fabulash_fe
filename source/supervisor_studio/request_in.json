@@ -6,48 +6,56 @@
     "aaData": [{
         "no": 1,
         "kode_request": "#12345",
+        "therapist": "Ica",
         "tanggal": "12 November 2019",
         "list_request": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "status": "Request"
     }, {
         "no": 2,
         "kode_request": "#12345",
+        "therapist": "Ica",
         "tanggal": "12 November 2019",
         "list_request": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "status": "Disetujui"
     }, {
         "no": 3,
         "kode_request": "#12345",
+        "therapist": "Ica",
         "tanggal": "12 November 2019",
         "list_request": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "status": "Request"
     }, {
         "no": 4,
         "kode_request": "#12345",
+        "therapist": "Ica",
         "tanggal": "12 November 2019",
         "list_request": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "status": "Disetujui"
     }, {
         "no": 5,
         "kode_request": "#12345",
+        "therapist": "Ica",
         "tanggal": "12 November 2019",
         "list_request": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "status": "Request"
     }, {
         "no": 6,
         "kode_request": "#12345",
+        "therapist": "Ica",
         "tanggal": "12 November 2019",
         "list_request": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "status": "Disetujui"
     }, {
         "no": 7,
         "kode_request": "#12345",
+        "therapist": "Ica",
         "tanggal": "12 November 2019",
         "list_request": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "status": "Request"
     }, {
         "no": 8,
         "kode_request": "#12345",
+        "therapist": "Ica",
         "tanggal": "12 November 2019",
         "list_request": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "status": "Disetujui"
