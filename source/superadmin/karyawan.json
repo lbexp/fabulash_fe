@@ -6,42 +6,42 @@
     "aaData": [{
         "no": 1,
         "nama": "Ica",
-        "bagian": "Eyelash",
-        "jumlahTreatment": "30"
+        "jabatan": "Therapist",
+        "tanggal_masuk": "30 November 2019"
     }, {
         "no": 2,
-        "nama": "Ica",
-        "bagian": "Eyelash",
-        "jumlahTreatment": "30"
+        "nama": "Bella",
+        "jabatan": "Therapist",
+        "tanggal_masuk": "30 November 2019"
     }, {
         "no": 3,
-        "nama": "Ica",
-        "bagian": "Eyelash",
-        "jumlahTreatment": "30"
+        "nama": "Dina",
+        "jabatan": "Therapist",
+        "tanggal_masuk": "30 November 2019"
     }, {
         "no": 4,
-        "nama": "Ica",
-        "bagian": "Eyelash",
-        "jumlahTreatment": "30"
+        "nama": "Dona",
+        "jabatan": "Therapist",
+        "tanggal_masuk": "30 November 2019"
     }, {
         "no": 5,
-        "nama": "Ica",
-        "bagian": "Eyelash",
-        "jumlahTreatment": "30"
+        "nama": "Agnes",
+        "jabatan": "Therapist",
+        "tanggal_masuk": "30 November 2019"
     }, {
         "no": 6,
-        "nama": "Ica",
-        "bagian": "Eyelash",
-        "jumlahTreatment": "30"
+        "nama": "Lala",
+        "jabatan": "Therapist",
+        "tanggal_masuk": "30 November 2019"
     }, {
         "no": 7,
-        "nama": "Ica",
-        "bagian": "Eyelash",
-        "jumlahTreatment": "30"
+        "nama": "Putri",
+        "jabatan": "Therapist",
+        "tanggal_masuk": "30 November 2019"
     }, {
         "no": 8,
-        "nama": "Ica",
-        "bagian": "Eyelash",
-        "jumlahTreatment": "30"
+        "nama": "Tari",
+        "jabatan": "Therapist",
+        "tanggal_masuk": "30 November 2019"
     }]
 }

@@ -842,14 +842,11 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: 'nama',
                 title: 'Nama'
             }, {
-                data: 'bagian',
-                title: 'Bagian'
+                data: 'jabatan',
+                title: 'Jabatan'
             }, {
-                data: 'jumlahTreatment',
-                title: 'Jumlah Treatment',
-                render: function(data, type, full, meta) {
-                    return data + ` Treatment`;
-                }
+                data: 'tanggal_masuk',
+                title: 'Tanggal Masuk'
             }, {
                 field: 'aksi',
                 title: 'Aksi',
