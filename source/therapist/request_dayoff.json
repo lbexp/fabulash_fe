@@ -1,0 +1,63 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "tipe": "cuti",
+        "tanggal_request": "12 November 2019",
+        "notes": "Lorem ipsum, lorem ipsum, & lorem ipsum",
+        "tanggal_dayoff": "20 November 2019, 22 November 2019, 2 Desember 2019",
+        "foto": "#"
+    }, {
+        "no": 2,
+        "tipe": "sakit",
+        "tanggal_request": "12 November 2019",
+        "notes": "Lorem ipsum, lorem ipsum, & lorem ipsum",
+        "tanggal_dayoff": "20 November 2019, 22 November 2019, 2 Desember 2019",
+        "foto": "#"
+    }, {
+        "no": 3,
+        "tipe": "izin",
+        "tanggal_request": "12 November 2019",
+        "notes": "Lorem ipsum, lorem ipsum, & lorem ipsum",
+        "tanggal_dayoff": "20 November 2019, 22 November 2019, 2 Desember 2019",
+        "foto": "#"
+    }, {
+        "no": 4,
+        "tipe": "lain-lain",
+        "tanggal_request": "12 November 2019",
+        "notes": "Lorem ipsum, lorem ipsum, & lorem ipsum",
+        "tanggal_dayoff": "20 November 2019, 22 November 2019, 2 Desember 2019",
+        "foto": "#"
+    }, {
+        "no": 5,
+        "tipe": "cuti",
+        "tanggal_request": "12 November 2019",
+        "notes": "Lorem ipsum, lorem ipsum, & lorem ipsum",
+        "tanggal_dayoff": "20 November 2019, 22 November 2019, 2 Desember 2019",
+        "foto": "#"
+    }, {
+        "no": 6,
+        "tipe": "cuti",
+        "tanggal_request": "12 November 2019",
+        "notes": "Lorem ipsum, lorem ipsum, & lorem ipsum",
+        "tanggal_dayoff": "20 November 2019, 22 November 2019, 2 Desember 2019",
+        "foto": "#"
+    }, {
+        "no": 7,
+        "tipe": "cuti",
+        "tanggal_request": "12 November 2019",
+        "notes": "Lorem ipsum, lorem ipsum, & lorem ipsum",
+        "tanggal_dayoff": "20 November 2019, 22 November 2019, 2 Desember 2019",
+        "foto": "#"
+    }, {
+        "no": 8,
+        "tipe": "cuti",
+        "tanggal_request": "12 November 2019",
+        "notes": "Lorem ipsum, lorem ipsum, & lorem ipsum",
+        "tanggal_dayoff": "20 November 2019, 22 November 2019, 2 Desember 2019",
+        "foto": "#"
+    }]
+}

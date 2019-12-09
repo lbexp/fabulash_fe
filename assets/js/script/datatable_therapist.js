@@ -714,6 +714,84 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
+    var initTableRequestDayOff = function () {
+        var table = $('#table_kehadiran_request_dayoff');
+        // begin first table
+        table.DataTable({
+            order: [],
+            responsive: true,
+            ajax: {
+                url: 'source/therapist/request_dayoff.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'tanggal_request',
+                title: 'Tanggal Request'
+            }, {
+                data: 'tipe',
+                title: 'Tipe',
+                render: function (data, type, row, meta) {
+                    var status = {
+                        masuk: {
+                            'title': 'Masuk',
+                            'class': 'btn-label-success'
+                        },
+                        izin: {
+                            'title': 'Izin',
+                            'class': 'btn-label-warning'
+                        },
+                        cuti: {
+                            'title': 'Cuti',
+                            'class': 'btn-label-warning'
+                        },
+                        sakit: {
+                            'title': 'Sakit',
+                            'class': 'btn-label-warning'
+                        },
+                        "lain-lain": {
+                            'title': 'Lain-lain',
+                            'class': 'btn-label-danger'
+                        },
+                    };
+                    if (typeof status[data] === 'undefined') {
+                        return data;
+                    }
+                    return '<span style="width:100%" class="btn btn-bold btn-sm btn-font-sm ' + status[data].class + '">' + status[data].title + '</span>';
+                }
+            }, {
+                data: 'tanggal_dayoff',
+                title: 'Tanggal Day-Off'
+            }, {
+                data: 'notes',
+                title: 'Notes'
+            }, {
+                data: 'foto',
+                title: 'Foto',
+                render: function(data, type, row, meta) {
+                    return '<label for="request_foto"  class="btn btn-link" style="padding:0px;"><i class="flaticon2-photo-camera"></i>Foto</label>';
+                }
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
     return {
         //main function to initiate the module
         init: function() {
@@ -725,6 +803,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableRequestInventory();
             initTableKehadiran();
             initTableSPKComplaint();
+            initTableRequestDayOff();
         },
     };
 }();

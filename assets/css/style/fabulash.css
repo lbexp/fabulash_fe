@@ -400,6 +400,21 @@ body {
 
 .no-sort { pointer-events: none!important; cursor: default!important; }
 
+.btn-outline-success {
+    color: #17bdbd;
+    border-color: #17bdbd;
+}
+
+.btn-outline-success:hover {
+    background-color: #17bdbd;
+    border-color: #17bdbd;
+}
+
+.btn-outline-success:not(:disabled):not(.disabled):active, .btn-outline-success:not(:disabled):not(.disabled).active, .show > .btn-outline-success.dropdown-toggle {
+    background-color: #278484;
+    border-color: #278484;
+}
+
 /* .ui-timepicker-container {
       z-index: 3500 !important;
  } */
