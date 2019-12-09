@@ -181,9 +181,12 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: 'customer',
                 title: 'Customer',
             }, {
+                data: 'komisi',
+                title: 'Komisi'
+            }, {
                 data: 'durasi',
                 title: 'Durasi',
-            },{
+            }, {
                 field: 'aksi',
                 title: 'Aksi',
                 responsivePriority: -1,
@@ -196,7 +199,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 },
             }],
             columnDefs: [{
-                targets: [0, 1, 2, 3, 4, 5, 6],
+                targets: [0, 1, 2, 3, 4, 5, 6, 7],
                 className: 'text-center',
                 orderable: true,
             }],
