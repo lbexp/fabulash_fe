@@ -1,0 +1,71 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "tanggal": "20 November 2019",
+        "karyawan": "Ica",
+        "status": "masuk",
+        "waktu_masuk": "08.00 WITA",
+        "waktu_pulang": "16.00 WITA",
+        "keterlambatan": "10 Menit"
+    }, {
+        "no": 2,
+        "tanggal": "20 November 2019",
+        "karyawan": "Darnilla",
+        "status": "izin",
+        "waktu_masuk": "08.00 WITA",
+        "waktu_pulang": "16.00 WITA",
+        "keterlambatan": "10 Menit"
+    }, {
+        "no": 3,
+        "tanggal": "20 November 2019",
+        "karyawan": "Vega",
+        "status": "sakit",
+        "waktu_masuk": "08.00 WITA",
+        "waktu_pulang": "16.00 WITA",
+        "keterlambatan": "10 Menit"
+    }, {
+        "no": 4,
+        "tanggal": "20 November 2019",
+        "karyawan": "Mawar",
+        "status": "cuti",
+        "waktu_masuk": "08.00 WITA",
+        "waktu_pulang": "16.00 WITA",
+        "keterlambatan": "10 Menit"
+    }, {
+        "no": 5,
+        "tanggal": "20 November 2019",
+        "karyawan": "Azizah",
+        "status": "lain-lain",
+        "waktu_masuk": "08.00 WITA",
+        "waktu_pulang": "16.00 WITA",
+        "keterlambatan": "10 Menit"
+    }, {
+        "no": 6,
+        "tanggal": "20 November 2019",
+        "karyawan": "Ilmi",
+        "status": "masuk",
+        "waktu_masuk": "08.00 WITA",
+        "waktu_pulang": "16.00 WITA",
+        "keterlambatan": "10 Menit"
+    }, {
+        "no": 7,
+        "tanggal": "20 November 2019",
+        "karyawan": "Tari",
+        "status": "masuk",
+        "waktu_masuk": "08.00 WITA",
+        "waktu_pulang": "16.00 WITA",
+        "keterlambatan": "10 Menit"
+    }, {
+        "no": 8,
+        "tanggal": "20 November 2019",
+        "karyawan": "Putri",
+        "status": "masuk",
+        "waktu_masuk": "08.00 WITA",
+        "waktu_pulang": "16.00 WITA",
+        "keterlambatan": "10 Menit"
+    }]
+}

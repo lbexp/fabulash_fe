@@ -1,0 +1,47 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "barang": "Eyelash size 12",
+        "jumlah": "12",
+        "satuan": "Box"
+    }, {
+        "no": 2,
+        "barang": "Eyelash size 12",
+        "jumlah": "12",
+        "satuan": "Box"
+    }, {
+        "no": 3,
+        "barang": "Eyelash size 12",
+        "jumlah": "12",
+        "satuan": "Box"
+    }, {
+        "no": 4,
+        "barang": "Eyelash size 12",
+        "jumlah": "12",
+        "satuan": "Box"
+    }, {
+        "no": 5,
+        "barang": "Eyelash size 12",
+        "jumlah": "12",
+        "satuan": "Box"
+    }, {
+        "no": 6,
+        "barang": "Eyelash size 12",
+        "jumlah": "12",
+        "satuan": "Box"
+    }, {
+        "no": 7,
+        "barang": "Eyelash size 12",
+        "jumlah": "12",
+        "satuan": "Box"
+    }, {
+        "no": 8,
+        "barang": "Eyelash size 12",
+        "jumlah": "12",
+        "satuan": "Box"
+    }]
+}
