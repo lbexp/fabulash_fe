@@ -302,6 +302,22 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'void',
                 title: 'Status',
+                render: function(data, type, full, meta) {
+                    var statusVoid = {
+                        'Void' : {
+                            'title' : 'Void',
+                            'class' : 'btn-label-danger'
+                        },
+                        'Request Void' : {
+                            'title' : 'Request Void',
+                            'class' : 'btn-label-warning'
+                        }
+                    };
+                    if (typeof statusVoid[data] === 'undefined') {
+                        return data;
+                    }
+                    return '<span style="width:100%" class="btn btn-bold btn-sm btn-font-sm ' + statusVoid[data].class + '">' + statusVoid[data].title + '</span>';
+                }
             }, {
                 field: 'aksi',
                 title: 'Aksi',

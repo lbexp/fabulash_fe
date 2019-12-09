@@ -18,7 +18,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<head>
 		<base href="../">
 		<meta charset="utf-8" />
-		<title>Laporan Karyawan | Superadmin Fabulash</title>
+		<title>Request Day-Off | Superadmin Fabulash</title>
 		<meta name="description" content="Updates and statistics">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -28,6 +28,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--end::Fonts -->
 
 		<!--begin::Page Vendors Styles(used by this page) -->
+		<link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css">
 
 		<!--end::Page Vendors Styles -->
 
@@ -177,9 +178,9 @@ License: You must have a valid license purchased only from themeforest(the above
 								</svg></span><span class="kt-menu__link-text">Human Resources</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
 									<div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
 										<ul class="kt-menu__subnav">
-											<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="user_superadmin/hr_laporan.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Laporan Karyawan</span></a></li>
+											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/hr_laporan.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Laporan Karyawan</span></a></li>
 											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/hr_karyawan.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Daftar Karyawan</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/hr_request_dayoff.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Request Day-Off</span></a></li>
+											<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="user_superadmin/hr_request_dayoff.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Request Day-Off</span></a></li>
 										</ul>
 									</div>
 								</li>
@@ -327,10 +328,10 @@ License: You must have a valid license purchased only from themeforest(the above
 										Human resources </h3>
 									<span class="kt-subheader__separator kt-hidden"></span>
 									<div class="kt-subheader__breadcrumbs">
-										<a href="user_superadmin/hr_laporan.html" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+										<a href="user_superadmin/hr_request_dayoff.html" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
 										<span class="kt-subheader__breadcrumbs-separator"></span>
-										<a href="user_superadmin/hr_laporan.html" class="kt-subheader__breadcrumbs-link">
-											Laporan karyawan </a>
+										<a href="user_superadmin/hr_request_dayoff.html" class="kt-subheader__breadcrumbs-link">
+											Request day-off </a>
 									</div>
 								</div>
 							</div>
@@ -341,105 +342,31 @@ License: You must have a valid license purchased only from themeforest(the above
 						<!-- begin:: Content -->
 						<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
 
-                            <div class="row justify-space-between kt-margin-0">
-                                <h4 class="vertical-align" style="margin-bottom: 20px;">Laporan Karyawan</h4>
-                                <!-- <div class="col-lg-3 col-sm-4" style="padding:unset;margin-bottom: 20px;">
-                                    <div class="input-group date">
-										<input readonly type="text" class="form-control kt-input" name="start" placeholder="Pilih Tanggal" data-col-index="1" id="kt_search_waktu"/>
-										<div class="input-group-append">
-											<span class="input-group-text">
-												<i class="la la-calendar"></i>
-											</span>
+							<div class="row row-centered">
+
+								<div class="col-12">
+
+                                    <!--begin::Portlet-->
+									<div class="kt-portlet">
+										<div class="kt-portlet__head">
+											<div class="kt-portlet__head-label">
+												<span class="kt-portlet__head-icon">
+													<i class="flaticon2-cube-1"></i>
+												</span>
+												<h3 class="kt-portlet__head-title">
+													Request Day-Off
+												</h3>
+											</div>
 										</div>
-                                    </div>
-                                </div> -->
-							</div>
+										<div class="kt-portlet__body">
+                                            <!-- <table class="table table-bordered table-hover table-checkable" id="table_karyawan"></table> -->
+										</div>
+									</div>
 
-							<div class="row">
-
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="kt-portlet kt-portlet--height-fluid">
-                                    	<div class="kt-widget14">
-                                    		<div class="kt-widget14__header" style="margin-bottom:0px;">
-                                    			<h6>
-                                    				Ketepatan Waktu Masuk
-                                    			</h6>
-                                    			<h3 class="kt-widget14__desc kt-margin-t-5 color-main-dark">
-                                    				Ica
-                                    			</h3>
-                                    		</div>
-                                    	</div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="kt-portlet kt-portlet--height-fluid">
-                                    	<div class="kt-widget14">
-                                    		<div class="kt-widget14__header" style="margin-bottom:0px;">
-                                    			<h6>
-                                    				Keterlambatan Waktu Masuk
-                                    			</h6>
-                                    			<h3 class="kt-widget14__desc kt-margin-t-5 color-main-dark">
-                                    				Ica
-                                    			</h3>
-                                    		</div>
-                                    	</div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="kt-portlet kt-portlet--height-fluid">
-                                    	<div class="kt-widget14">
-                                    		<div class="kt-widget14__header" style="margin-bottom:0px;">
-                                    			<h6>
-                                    				Jumlah Treatment Tertinggi
-                                    			</h6>
-                                    			<h3 class="kt-widget14__desc kt-margin-t-5 color-main-dark">
-                                    				Ica
-                                    			</h3>
-                                    		</div>
-                                    	</div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="kt-portlet kt-portlet--height-fluid">
-                                    	<div class="kt-widget14">
-                                    		<div class="kt-widget14__header" style="margin-bottom:0px;">
-                                    			<h6>
-                                    				Jumlah Treatment Terendah
-                                    			</h6>
-                                    			<h3 class="kt-widget14__desc kt-margin-t-5 color-main-dark">
-                                    				Ica
-                                    			</h3>
-                                    		</div>
-                                    	</div>
-                                    </div>
-                                </div>
+									<!--end::Portlet-->
+								</div>
 
 							</div>
-
-                            <div class="kt-portlet kt-portlet--height-fluid">
-                                <div class="kt-portlet__body kt-portlet__body--fluid">
-                            		<div class="kt-widget12">
-                                        <div class="kt-widget14__header kt-margin-b-30">
-                                            <div class="row kt-margin-0 justify-space-between">
-                                    			<h5 class="vertical-align">
-                                    				Jumlah Treatment
-                                    			</h5>
-                                                <div class="col-lg-3 col-sm-4">
-                                                    <select class="form-control" name="chart_range">
-        												<option>Last 30 Days</option>
-        												<option>Last 14 Days</option>
-        												<option>Last 7 Days</option>
-        											</select>
-                                                </div>
-                                            </div>
-                                		</div>
-                            			<div class="chart-height" id="chart_treatment"></div>
-                            		</div>
-                            	</div>
-                            </div>
 
 						</div>
 
@@ -510,76 +437,13 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--end::Global Theme Bundle -->
 
 		<!--begin::Page Vendors(used by this page) -->
-		<script src="assets/js/vendor/amcharts/core.js" type="text/javascript"></script>
-		<script src="assets/js/vendor/amcharts/charts.js" type="text/javascript"></script>
-		<script src="assets/js/vendor/amcharts/animated.js" type="text/javascript"></script>
+		<script src="assets/plugins/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
 
 		<!--end::Page Vendors -->
 
 		<!--begin::Page Scripts(used by this page) -->
+		<script src="assets/js/script/datatable_superadmin.js"></script>
 		<script src="assets/js/custom/datepicker.js" type="text/javascript"></script>
-
-		<script>
-			am4core.ready(function() {
-
-			// Themes begin
-			am4core.useTheme(am4themes_animated);
-			// Themes end
-
-			/**
-			 * Chart design taken from Samsung health app
-			 */
-
-			var chart = am4core.create("chart_treatment", am4charts.XYChart);
-			chart.paddingRight = 20;
-			chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
-
-			chart.dataSource.url = "source/chart/treatment.json";
-
-			chart.dateFormatter.inputDateFormat = "YYYY-MM-dd";
-			chart.zoomOutButton.disabled = true;
-
-			var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-			dateAxis.renderer.grid.template.strokeOpacity = 0;
-			dateAxis.renderer.minGridDistance = 10;
-			dateAxis.dateFormats.setKey("day", "d");
-			dateAxis.tooltip.hiddenState.properties.opacity = 1;
-			dateAxis.tooltip.hiddenState.properties.visible = true;
-
-			var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-
-			var series = chart.series.push(new am4charts.ColumnSeries);
-			series.dataFields.valueY = "treatments";
-			series.dataFields.dateX = "date";
-			series.tooltipText = "Treatment : [bold]{valueY.value}";
-			series.tooltip.pointerOrientation = "vertical";
-			series.tooltip.hiddenState.properties.opacity = 1;
-			series.tooltip.hiddenState.properties.visible = true;
-
-			var columnTemplate = series.columns.template;
-			columnTemplate.width = 20;
-			columnTemplate.column.cornerRadiusTopLeft = 20;
-			columnTemplate.column.cornerRadiusTopRight = 20;
-			columnTemplate.strokeOpacity = 0;
-
-			columnTemplate.adapter.add("fill", function (fill, target) {
-				return am4core.color("#8cdbd7");
-			})
-
-			chart.cursor = new am4charts.XYCursor();
-			chart.cursor.behavior = "none";
-
-			cursor.events.on("cursorpositionchanged", updateTooltip);
-			dateAxis.events.on("datarangechanged", updateTooltip);
-
-			function updateTooltip() {
-				dateAxis.showTooltipAtPosition(0.5);
-				series.showTooltipAtPosition(0.5, 0);
-				series.tooltip.validate(); // otherwise will show other columns values for a second
-			}
-
-			}); // end am4core.ready()
-		</script>
 
 		<!--end::Page Scripts -->
 	</body>
