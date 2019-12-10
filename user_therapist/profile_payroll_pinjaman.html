@@ -18,7 +18,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<head>
 		<base href="../">
 		<meta charset="utf-8" />
-		<title>Payroll | Therapist Fabulash</title>
+		<title>Pinjaman | Therapist Fabulash</title>
 		<meta name="description" content="Updates and statistics">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -287,6 +287,9 @@ License: You must have a valid license purchased only from themeforest(the above
 										<span class="kt-subheader__breadcrumbs-separator"></span>
 										<a href="user_therapist/profile_payroll.html" class="kt-subheader__breadcrumbs-link">
 											Payroll </a>
+										<span class="kt-subheader__breadcrumbs-separator"></span>
+										<a href="user_therapist/profile_payroll_pinjaman.html" class="kt-subheader__breadcrumbs-link">
+											Pinjaman </a>
 									</div>
 								</div>
 							</div>
@@ -309,30 +312,79 @@ License: You must have a valid license purchased only from themeforest(the above
 													<i class="flaticon2-cube-1"></i>
 												</span>
 												<h3 class="kt-portlet__head-title">
-													Payroll
+													Pinjaman
 												</h3>
 											</div>
                                             <div class="kt-portlet__head-toolbar">
-												<a href="user_therapist/profile_payroll_pinjaman.html"><button type="button" class="btn btn-sm btn-success"><i class="flaticon2-list-3"></i> Pinjaman <i class="flaticon2-right-arrow" style="font-size: 0.6rem"></i></button></a>
+												<ul class="nav nav-pills" role="tablist">
+													<li class="nav-item">
+														<a class="nav-link active" data-toggle="tab" href="#tab-request" role="tab" aria-selected="true">
+															Request Pinjaman
+														</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" data-toggle="tab" href="#tab-list" role="tab" aria-selected="false">
+															List Request Pinjaman
+														</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" data-toggle="tab" href="#tab-current" role="tab" aria-selected="false">
+															Pinjaman Saat Ini
+														</a>
+													</li>
+												</ul>
 											</div>
 										</div>
 										<div class="kt-portlet__body">
-											<form class="kt-margin-b-10">
-    											<div class="row justify-space-between">
-													<div class="col-lg-4 col-sm-6 input-daterange input-group margin-mobile-b-5">
-														<input readonly type="text" class="form-control kt-input" name="start" placeholder="Pilih Tanggal" data-col-index="1" id="kt_search_waktu"/>
-														<div class="input-group-append">
-															<span class="input-group-text">
-																<i class="la la-calendar"></i>
-															</span>
-														</div>
-													</div>
-													<div class="col-lg-4 col-sm-6">
-	    												<input type="text" class="form-control kt-input" placeholder="Search" id="kt_search_all">
-													</div>
-    											</div>
-    										</form>
-                                            <table class="table table-bordered table-hover table-checkable" id="table_payroll"></table>
+											<div class="tab-content">
+												<div class="tab-pane active" id="tab-request" role="tabpanel">
+													<form id="kt_form_pinjaman">
+	                                                    <div class="row justify-content-center">
+															<div class="col-lg-8 kt-margin-b-10">
+	                                                            <div class="form-group row">
+	            													<label for="example-text-input" class="col-sm-3 col-form-label">Nama</label>
+	            													<div class="col-sm-9">
+	            														<input type="text" class="form-control" name="pinjaman_nama" placeholder="Nama">
+	            													</div>
+	            												</div>
+	                                                            <div class="form-group row">
+	            													<label for="example-text-input" class="col-sm-3 col-form-label">Nominal</label>
+	            													<div class="col-sm-9">
+	            														<input type="text" class="form-control" name="pinjaman_nominal" placeholder="Nominal">
+	            													</div>
+	            												</div>
+	                                                            <div class="form-group row">
+	            													<label for="example-text-input" class="col-sm-3 col-form-label">Termin Pembayaran</label>
+	            													<div class="col-sm-9">
+																		<div class="input-group">
+																			<input type="text" class="form-control" name="pinjaman_termin" placeholder="Termin Pembayaran">
+																			<div class="input-group-append"><span class="input-group-text">Bulan</span></div>
+																		</div>
+																		<span class="form-text text-muted kt-hidden" style="margin:0px;"></span>
+	            													</div>
+	            												</div>
+	                                                            <div class="form-group row">
+	            													<label for="example-text-input" class="col-sm-3 col-form-label">Notes</label>
+	            													<div class="col-sm-9">
+	            														<textarea class="form-control" rows="3" name="pinjaman_notes" placeholder="Notes"></textarea>
+	            													</div>
+	            												</div>
+	                                                        </div>
+	                                                        <div class="col-lg-12">
+	                                                            <div style="text-align: center;">
+	                                                                <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil">Submit</button>&nbsp;
+	                                                            </div>
+	                                                        </div>
+	                                                    </div>
+													</form>
+												</div>
+												<div class="tab-pane" id="tab-list" role="tabpanel">
+		                                            <table class="table table-bordered table-hover table-checkable" id="table_pinjaman_list_request"></table>
+												</div>
+												<div class="tab-pane" id="tab-current" role="tabpanel">
+													<table class="table table-bordered table-hover table-checkable" id="table_pinjaman_current"></table>
+												</div>
+											</div>
 										</div>
 									</div>
 
@@ -417,6 +469,42 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Page Scripts(used by this page) -->
 		<script src="assets/js/script/datatable_therapist.js"></script>
 		<script src="assets/js/custom/datepicker.js" type="text/javascript"></script>
+
+		<script>
+			// Form validation
+			$("#kt_form_pinjaman").validate({
+				// define validation rules
+				rules : {
+					pinjaman_nama : {
+						required: true
+					},
+					pinjaman_nominal : {
+						required: true,
+						digits: true
+					},
+					pinjaman_termin : {
+						required: true,
+						digits: true
+					},
+					pinjaman_notes : {
+						required: true
+					}
+				}
+			});
+
+			// Sweetalert
+			$('#kt_sweetalert_berhasil').click(function(e) {
+				swal.fire({
+					title: "Berhasil",
+					text: "Request pinjaman berhasil dilakukan.",
+					type: "success",
+					confirmButtonText: "Ok",
+					confirmButtonClass: "btn btn-brand"
+				}).then(function(result) {
+					// location.reload();
+				});
+			});
+		</script>
 
 		<!--end::Page Scripts -->
 	</body>

@@ -1,0 +1,39 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "bulan": "Januari",
+        "gaji": "Rp. 3.000.000,00"
+    }, {
+        "no": 2,
+        "bulan": "Desember",
+        "gaji": "Rp. 3.000.000,00"
+    }, {
+        "no": 3,
+        "bulan": "November",
+        "gaji": "Rp. 3.000.000,00"
+    }, {
+        "no": 4,
+        "bulan": "Oktober",
+        "gaji": "Rp. 3.000.000,00"
+    }, {
+        "no": 5,
+        "bulan": "September",
+        "gaji": "Rp. 3.000.000,00"
+    }, {
+        "no": 6,
+        "bulan": "Agustus",
+        "gaji": "Rp. 3.000.000,00"
+    }, {
+        "no": 7,
+        "bulan": "Juli",
+        "gaji": "Rp. 3.000.000,00"
+    }, {
+        "no": 8,
+        "bulan": "Juni",
+        "gaji": "Rp. 3.000.000,00"
+    }]
+}

@@ -1,0 +1,63 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "nama": "Ica",
+        "nominal": "Rp. 3.000.000,00",
+        "termin": "12",
+        "notes": "Lorem ipsum dolor sit amet",
+        "status": "approve"
+    }, {
+        "no": 2,
+        "nama": "Ica",
+        "nominal": "Rp. 3.000.000,00",
+        "termin": "12",
+        "notes": "Lorem ipsum dolor sit amet",
+        "status": "reject"
+    }, {
+        "no": 3,
+        "nama": "Ica",
+        "nominal": "Rp. 3.000.000,00",
+        "termin": "12",
+        "notes": "Lorem ipsum dolor sit amet",
+        "status": "approve"
+    }, {
+        "no": 4,
+        "nama": "Ica",
+        "nominal": "Rp. 3.000.000,00",
+        "termin": "12",
+        "notes": "Lorem ipsum dolor sit amet",
+        "status": "reject"
+    }, {
+        "no": 5,
+        "nama": "Ica",
+        "nominal": "Rp. 3.000.000,00",
+        "termin": "12",
+        "notes": "Lorem ipsum dolor sit amet",
+        "status": "approve"
+    }, {
+        "no": 6,
+        "nama": "Ica",
+        "nominal": "Rp. 3.000.000,00",
+        "termin": "12",
+        "notes": "Lorem ipsum dolor sit amet",
+        "status": "reject"
+    }, {
+        "no": 7,
+        "nama": "Ica",
+        "nominal": "Rp. 3.000.000,00",
+        "termin": "12",
+        "notes": "Lorem ipsum dolor sit amet",
+        "status": "approve"
+    }, {
+        "no": 8,
+        "nama": "Ica",
+        "nominal": "Rp. 3.000.000,00",
+        "termin": "12",
+        "notes": "Lorem ipsum dolor sit amet",
+        "status": "approve"
+    }]
+}
