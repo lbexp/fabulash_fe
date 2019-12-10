@@ -951,6 +951,118 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         }).draw();
     };
 
+    var initTableKaryawanInventoryPenggunaan = function () {
+        var table = $('#table_karyawan_inventory_penggunaan');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            responsive: true,
+            ajax: {
+                url: 'source/supervisor_studio/karyawan_inventory_penggunaan.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'tanggal',
+                title: 'Tanggal'
+            }, {
+                data: 'kode_spk',
+                title: 'Kode SPK'
+            }, {
+                data: 'barang',
+                title: 'Barang'
+            }, {
+                data: 'jumlah',
+                title: 'Jumlah'
+            }, {
+                data: 'satuan',
+                title: 'Satuan'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    };
+
+    var initTableKaryawanInventoryRequest = function () {
+        var table = $('#table_karyawan_inventory_request');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            responsive: true,
+            ajax: {
+                url: 'source/supervisor_studio/karyawan_inventory_penggunaan.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'tanggal',
+                title: 'Tanggal'
+            }, {
+                data: 'kode_spk',
+                title: 'Kode SPK'
+            }, {
+                data: 'barang',
+                title: 'Barang'
+            }, {
+                data: 'jumlah',
+                title: 'Jumlah'
+            }, {
+                data: 'satuan',
+                title: 'Satuan'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    };
+
     return {
         //main function to initiate the module
         init: function() {
@@ -964,6 +1076,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableKaryawanList();
             initTableKaryawanComplaint();
             initTableKaryawanInventory();
+            initTableKaryawanInventoryPenggunaan();
+            initTableKaryawanInventoryRequest();
         },
     };
 }();
