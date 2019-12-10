@@ -10,7 +10,7 @@
         "barang": "Eyelash Extension",
         "jumlah": "12",
         "satuan": "Box",
-        "status": "Request"
+        "treatment": "Eyelash Extension"
     }, {
         "no": 2,
         "kode_spk": "#12345",
@@ -18,7 +18,7 @@
         "barang": "Eyelash Extension",
         "jumlah": "12",
         "satuan": "Box",
-        "status": "Disetujui"
+        "treatment": "Eyelash Extension"
     }, {
         "no": 3,
         "kode_spk": "#12345",
@@ -26,7 +26,7 @@
         "barang": "Eyelash Extension",
         "jumlah": "12",
         "satuan": "Box",
-        "status": "Request"
+        "treatment": "Eyelash Extension"
     }, {
         "no": 4,
         "kode_spk": "#12345",
@@ -34,7 +34,7 @@
         "barang": "Eyelash Extension",
         "jumlah": "12",
         "satuan": "Box",
-        "status": "Disetujui"
+        "treatment": "Eyelash Extension"
     }, {
         "no": 5,
         "kode_spk": "#12345",
@@ -42,7 +42,7 @@
         "barang": "Eyelash Extension",
         "jumlah": "12",
         "satuan": "Box",
-        "status": "Request"
+        "treatment": "Eyelash Extension"
     }, {
         "no": 6,
         "kode_spk": "#12345",
@@ -50,7 +50,7 @@
         "barang": "Eyelash Extension",
         "jumlah": "12",
         "satuan": "Box",
-        "status": "Disetujui"
+        "treatment": "Eyelash Extension"
     }, {
         "no": 7,
         "kode_spk": "#12345",
@@ -58,7 +58,7 @@
         "barang": "Eyelash Extension",
         "jumlah": "12",
         "satuan": "Box",
-        "status": "Request"
+        "treatment": "Eyelash Extension"
     }, {
         "no": 8,
         "kode_spk": "#12345",
@@ -66,6 +66,6 @@
         "barang": "Eyelash Extension",
         "jumlah": "12",
         "satuan": "Box",
-        "status": "Disetujui"
+        "treatment": "Eyelash Extension"
     }]
 }

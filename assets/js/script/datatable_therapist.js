@@ -469,11 +469,17 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: 'tanggal',
                 title: 'Tanggal',
             }, {
-                data: 'kode_request',
-                title: 'Kode Request',
+                data: 'kode_spk',
+                title: 'SPK Inventory',
             }, {
-                data: 'list_request',
-                title: 'List Request',
+                data: 'barang',
+                title: 'Barang',
+            }, {
+                data: 'jumlah',
+                title: 'Jumlah',
+            }, {
+                data: 'satuan',
+                title: 'Satuan',
             }, {
                 data: 'status',
                 title: 'Status',
@@ -512,6 +518,99 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }],
             columnDefs: [{
                 targets: [0, 1, 2, 3, 4, 5],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+
+        $('#kt_search_waktu').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            $('.kt-input').each(function() {
+                var i = $(this).data('col-index');
+                if (params[i]) {
+                    params[i] += '|' + $(this).val();
+                } else {
+                    params[i] = $(this).val();
+                }
+            });
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        });
+
+        $('#kt_search_all').on('keyup', function() {
+            table.search(this.value).draw();
+        });
+    };
+
+    var initTablePemakaianInventory = function() {
+        // begin first table
+        var table = $('#table_inventory_pemakaian').DataTable({
+            order: [],
+            responsive: true,
+            // Pagination settings
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            // read more: https://datatables.net/examples/basic_init/dom.html
+            lengthMenu: [5, 10, 25, 50],
+            pageLength: 10,
+            language: {
+                'lengthMenu': 'Display _MENU_',
+            },
+            searchDelay: 500,
+            processing: true,
+            serverSide: false,
+            ajax: {
+                url: 'source/therapist/pemakaian.json',
+                type: 'POST',
+                data: {
+                    // parameters for custom backend script demo
+                    columnsDef: [
+                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                        'tanggal', 'status', 'aksi',
+                    ],
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'tanggal',
+                title: 'Tanggal',
+            }, {
+                data: 'kode_spk',
+                title: 'SPK Inventory',
+            }, {
+                data: 'treatment',
+                title: 'Treatment',
+            }, {
+                data: 'barang',
+                title: 'Barang',
+            }, {
+                data: 'jumlah',
+                title: 'Jumlah',
+            }, {
+                data: 'satuan',
+                title: 'Satuan',
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5, 6],
                 className: 'text-center',
                 orderable: true,
             }],
@@ -804,6 +903,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableTreatmentDetail();
             initTableStock();
             initTableRequestInventory();
+            initTablePemakaianInventory();
             initTableKehadiran();
             initTableSPKComplaint();
             initTableRequestDayOff();
