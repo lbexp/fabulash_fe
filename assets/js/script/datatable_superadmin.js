@@ -1753,6 +1753,223 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
+    var initTableKaryawanRequestDayoff = function () {
+        // begin first table
+        var table = $('#table_karyawan_dayoff').DataTable({
+            order: [],
+            responsive: true,
+            // Pagination settings
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            // read more: https://datatables.net/examples/basic_init/dom.html
+            lengthMenu: [5, 10, 25, 50],
+            pageLength: 10,
+            language: {
+                'lengthMenu': 'Display _MENU_',
+            },
+            searchDelay: 500,
+            processing: true,
+            serverSide: false,
+            ajax: {
+                url: 'source/superadmin/karyawan_dayoff.json',
+                type: 'POST',
+                data: {
+                    // parameters for custom backend script demo
+                    columnsDef: [
+                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                        'tanggal', 'status', 'aksi',
+                    ],
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'tanggal',
+                title: 'Tanggal'
+            }, {
+                data: 'karyawan',
+                title: 'Karyawan'
+            }, {
+                data: 'dayoff',
+                title: 'Day Off'
+            }, {
+                data: 'notes',
+                title: 'Notes'
+            }, {
+                data: 'foto',
+                title: 'Foto',
+                render: function(data, type, row, meta) {
+                    return `<button type="button" class="btn btn-link" style="padding:0px;" data-toggle="modal" data-target="#kt_modal_foto"><i class="flaticon2-photo-camera"></i>Foto</button>`;
+                }
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 50,
+                render: function(data, type, full, meta) {
+                    return `
+                    <button type="button" class="btn btn-clean btn-icon btn-sm btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="flaticon-more"></i>
+					</button>
+					<div style="min-width:9rem;padding:5px;" class="dropdown-menu dropdown-menu-right">
+					<button onClick="swalApprove();" class="dropdown-item btn btn-secondary kt-margin-b-5"> <i class="fa fa-check"></i> Approve</button>
+					<button onClick="swalReject();" class="dropdown-item btn btn-secondary"> <i class="fa fa-times"></i> Reject</button>
+                    </div>`;
+                },
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5, 6],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+
+        $('#kt_search_waktu').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            $('.kt-input').each(function() {
+                var i = $(this).data('col-index');
+                if (params[i]) {
+                    params[i] += '|' + $(this).val();
+                } else {
+                    params[i] = $(this).val();
+                }
+            });
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        });
+
+        $('#kt_search_all').on('keyup', function() {
+            table.search(this.value).draw();
+        });
+    };
+
+    var initTableKaryawanRequestPinjaman = function () {
+        // begin first table
+        var table = $('#table_karyawan_pinjaman').DataTable({
+            order: [],
+            responsive: true,
+            // Pagination settings
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            // read more: https://datatables.net/examples/basic_init/dom.html
+            lengthMenu: [5, 10, 25, 50],
+            pageLength: 10,
+            language: {
+                'lengthMenu': 'Display _MENU_',
+            },
+            searchDelay: 500,
+            processing: true,
+            serverSide: false,
+            ajax: {
+                url: 'source/superadmin/karyawan_pinjaman.json',
+                type: 'POST',
+                data: {
+                    // parameters for custom backend script demo
+                    columnsDef: [
+                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                        'tanggal', 'status', 'aksi',
+                    ],
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'tanggal',
+                title: 'Tanggal'
+            }, {
+                data: 'nama',
+                title: 'Nama'
+            }, {
+                data: 'nominal',
+                title: 'Nominal'
+            }, {
+                data: 'termin',
+                title: 'Termin Pembayaran'
+            }, {
+                data: 'notes',
+                title: 'Notes'
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 50,
+                render: function(data, type, full, meta) {
+                    return `
+                    <button type="button" class="btn btn-clean btn-icon btn-sm btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="flaticon-more"></i>
+					</button>
+					<div style="min-width:9rem;padding:5px;" class="dropdown-menu dropdown-menu-right">
+					<button onClick="swalApprove();" class="dropdown-item btn btn-secondary kt-margin-b-5"> <i class="fa fa-check"></i> Approve</button>
+					<button onClick="swalReject();" class="dropdown-item btn btn-secondary"> <i class="fa fa-times"></i> Reject</button>
+                    </div>`;
+                },
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+
+        $('#kt_search_waktu').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            $('.kt-input').each(function() {
+                var i = $(this).data('col-index');
+                if (params[i]) {
+                    params[i] += '|' + $(this).val();
+                } else {
+                    params[i] = $(this).val();
+                }
+            });
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        });
+
+        $('#kt_search_all').on('keyup', function() {
+            table.search(this.value).draw();
+        });
+    };
+
     return {
         //main function to initiate the module
         init: function() {
@@ -1776,6 +1993,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableKaryawanInventory();
             initTableKaryawanInventoryPenggunaan();
             initTableKaryawanInventoryRequest();
+            initTableKaryawanRequestDayoff();
+            initTableKaryawanRequestPinjaman();
         },
     };
 }();
