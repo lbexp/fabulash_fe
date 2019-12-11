@@ -823,7 +823,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             order: [],
             responsive: true,
             ajax: {
-                url: 'source/therapist/request_dayoff.json',
+                url: 'source/supervisor_studio/request_dayoff.json',
                 type: 'POST',
                 data: {
                     pagination: {
