@@ -1,0 +1,63 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "tanggal" : "15 November 2019",
+        "kode_spk": "#12345",
+        "barang": "Eyelash size 12",
+        "jumlah": "12",
+        "satuan": "Box"
+    }, {
+        "no": 2,
+        "tanggal" : "15 November 2019",
+        "kode_spk": "#12345",
+        "barang": "Eyelash size 12",
+        "jumlah": "12",
+        "satuan": "Box"
+    }, {
+        "no": 3,
+        "tanggal" : "15 November 2019",
+        "kode_spk": "#12345",
+        "barang": "Eyelash size 12",
+        "jumlah": "12",
+        "satuan": "Box"
+    }, {
+        "no": 4,
+        "tanggal" : "15 November 2019",
+        "kode_spk": "#12345",
+        "barang": "Eyelash size 12",
+        "jumlah": "12",
+        "satuan": "Box"
+    }, {
+        "no": 5,
+        "tanggal" : "15 November 2019",
+        "kode_spk": "#12345",
+        "barang": "Eyelash size 12",
+        "jumlah": "12",
+        "satuan": "Box"
+    }, {
+        "no": 6,
+        "tanggal" : "15 November 2019",
+        "kode_spk": "#12345",
+        "barang": "Eyelash size 12",
+        "jumlah": "12",
+        "satuan": "Box"
+    }, {
+        "no": 7,
+        "tanggal" : "15 November 2019",
+        "kode_spk": "#12345",
+        "barang": "Eyelash size 12",
+        "jumlah": "12",
+        "satuan": "Box"
+    }, {
+        "no": 8,
+        "tanggal" : "15 November 2019",
+        "kode_spk": "#12345",
+        "barang": "Eyelash size 12",
+        "jumlah": "12",
+        "satuan": "Box"
+    }]
+}
