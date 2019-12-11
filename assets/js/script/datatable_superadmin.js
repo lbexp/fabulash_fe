@@ -1970,6 +1970,64 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
+    var initTableFinancePayroll = function () {
+        var table = $('#table_finance_payroll');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            responsive: true,
+            ajax: {
+                url: 'source/superadmin/finance_payroll.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'karyawan',
+                title: 'Karyawan'
+            }, {
+                data: 'nominal',
+                title: 'Nominal'
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 50,
+                render: function(data, type, full, meta) {
+                    return `
+                    <a href="user_superadmin/finance_payroll_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                },
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    };
+
     return {
         //main function to initiate the module
         init: function() {
@@ -1995,6 +2053,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableKaryawanInventoryRequest();
             initTableKaryawanRequestDayoff();
             initTableKaryawanRequestPinjaman();
+            initTableFinancePayroll();
         },
     };
 }();

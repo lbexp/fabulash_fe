@@ -1,0 +1,39 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "karyawan": "Ica",
+        "nominal": "Rp 3.000.000,00"
+    }, {
+        "no": 2,
+        "karyawan": "Bella",
+        "nominal": "Rp 3.000.000,00"
+    }, {
+        "no": 3,
+        "karyawan": "Dina",
+        "nominal": "Rp 3.000.000,00"
+    }, {
+        "no": 4,
+        "karyawan": "Dona",
+        "nominal": "Rp 3.000.000,00"
+    }, {
+        "no": 5,
+        "karyawan": "Agnes",
+        "nominal": "Rp 3.000.000,00"
+    }, {
+        "no": 6,
+        "karyawan": "Lala",
+        "nominal": "Rp 3.000.000,00"
+    }, {
+        "no": 7,
+        "karyawan": "Putri",
+        "nominal": "Rp 3.000.000,00"
+    }, {
+        "no": 8,
+        "karyawan": "Tari",
+        "nominal": "Rp 3.000.000,00"
+    }]
+}

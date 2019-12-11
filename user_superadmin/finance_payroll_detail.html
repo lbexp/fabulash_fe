@@ -18,7 +18,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<head>
 		<base href="../">
 		<meta charset="utf-8" />
-		<title>Finance Payroll | Superadmin Fabulash</title>
+		<title>Detail Payroll | Superadmin Fabulash</title>
 		<meta name="description" content="Updates and statistics">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -333,6 +333,9 @@ License: You must have a valid license purchased only from themeforest(the above
 										<span class="kt-subheader__breadcrumbs-separator"></span>
 										<a href="user_superadmin/finance_payroll.html" class="kt-subheader__breadcrumbs-link">
 											Payroll </a>
+										<span class="kt-subheader__breadcrumbs-separator"></span>
+										<a href="user_superadmin/finance_payroll_detail.html" class="kt-subheader__breadcrumbs-link">
+											Detail payroll </a>
 									</div>
 								</div>
 							</div>
@@ -355,12 +358,67 @@ License: You must have a valid license purchased only from themeforest(the above
 													<i class="flaticon2-cube-1"></i>
 												</span>
 												<h3 class="kt-portlet__head-title">
-													Payroll
+													Detail Payroll
 												</h3>
 											</div>
 										</div>
-										<div class="kt-portlet__body">
-                                            <table class="table table-bordered table-hover table-checkable" id="table_finance_payroll"></table>
+                                        <div class="kt-portlet__body">
+                                            <span class="kt-font-bold kt-margin-b-20">Tanggal Pembayaran : <span name="tanggal_pembayaran">25 November 2019</span></span>
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered table-hover well-align-table" role="grid">
+                                                    <thead class="thead-light">
+                                                        <tr role="row">
+                                                            <th style="width: 25%">Tipe</th>
+                                                            <th style="width: 50%">Keterangan</th>
+                                                            <th style="width: 25%">Nominal</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr role="row">
+                                                            <td class="text-center">Gaji Pokok</td>
+                                                            <td class="text-center" name="gaji_keterangan"></td>
+                                                            <td class="text-center" name="gaji_nominal">Rp 3.000.000,00</td>
+                                                        </tr>
+                                                        <tr role="row">
+                                                            <td class="text-center">Komisi</td>
+                                                            <td class="text-center" name="komisi_keterangan">4 Treatment</td>
+                                                            <td class="text-center" name="komisi_nominal">Rp 500.000,00</td>
+                                                        </tr>
+                                                        <tr role="row">
+                                                            <td class="text-center">BPJS</td>
+                                                            <td class="text-center" name="bpjs_keterangan"></td>
+                                                            <td class="text-center" name="bpjs_nominal">Rp 80.000,00</td>
+                                                        </tr>
+                                                        <tr role="row">
+                                                            <td class="text-center">Bonus</td>
+                                                            <td class="text-center" name="bonus_keterangan"><input type="text" class="form-control"></td>
+                                                            <td class="text-center"><input type="number" style="text-align: center" class="form-control" name="bonus_nominal" placeholder="Rp 200.000,00"></td>
+                                                        </tr>
+                                                        <tr role="row">
+                                                            <td class="text-center">Pinjaman</td>
+                                                            <td class="text-center" name="pinjaman_keterangan">Pinjaman Liburan Akhir Tahun</td>
+                                                            <td class="text-center"><input type="number" style="text-align: center" class="form-control" name="pinjaman_nominal" placeholder="Rp 200.000,00"></td>
+                                                        </tr>
+                                                        <tr role="row">
+                                                            <td class="text-center">Pinjaman</td>
+                                                            <td class="text-center" name="pinjaman_keterangan">Pinjaman Liburan Akhir Tahun</td>
+                                                            <td class="text-center"><input type="number" style="text-align: center" class="form-control" name="pinjaman_nominal" placeholder="Rp 200.000,00"></td>
+                                                        </tr>
+                                                        <tr role="row">
+                                                            <td class="text-center">Pinjaman</td>
+                                                            <td class="text-center" name="pinjaman_keterangan">Pinjaman Liburan Akhir Tahun</td>
+                                                            <td class="text-center"><input type="number" style="text-align: center" class="form-control" name="pinjaman_nominal" placeholder="Rp 200.000,00"></td>
+                                                        </tr>
+                                                        <tr role="row">
+                                                            <td class="text-center kt-font-bold" colspan="2">Total</td>
+                                                            <td class="text-center kt-font-bold color-main-dark" name="total_gaji">Rp 3.580.000,00</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div style="text-align: center; margin-top: 20px">
+                                                <button type="submit" class="btn btn-success" id="kt_sweetalert_request_berhasil">Submit</button>
+                                            </div>
 										</div>
 									</div>
 
