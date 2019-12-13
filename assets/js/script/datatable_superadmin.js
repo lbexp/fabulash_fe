@@ -1920,7 +1920,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableKaryawanTreatment();
             initTableKaryawanKehadiran();
             initTableKaryawanPayroll();
-            initTableRequest();
             initTablePembelian();
             initTableStock();
             initTableStockDetail();
