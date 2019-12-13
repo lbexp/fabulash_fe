@@ -335,9 +335,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
-    var initTablePembelian = function() {
+    var initTableStockHistoryIn = function () {
         // begin first table
-        var table = $('#table_pembelian').DataTable({
+        var table = $('#table_stock_history_in').DataTable({
             order: [],
             responsive: true,
             // Pagination settings
@@ -352,7 +352,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             processing: true,
             serverSide: false,
             ajax: {
-                url: 'source/gudang/pembelian.json',
+                url: 'source/gudang/stock_history.json',
                 type: 'POST',
                 data: {
                     // parameters for custom backend script demo
@@ -372,22 +372,27 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 orderable: false,
             }, {
                 data: 'tanggal',
-                title: 'Tanggal'
+                title: 'Tanggal',
+            }, {
+                data: 'no_spk',
+                title: 'No. Pembelian',
             }, {
                 data: 'barang',
-                title: 'Nama Barang'
+                title: 'Barang',
             }, {
-                data: 'satuan',
-                title: 'Satuan'
-            }, {
-                data: 'quantity',
-                title: 'Jumlah'
-            }, {
-                data: 'harga',
-                title: 'Harga'
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 100,
+                render: function(data, type, full, meta) {
+                    return `
+                    <a href="user_gudang/pembelian_barang_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                },
             }],
             columnDefs: [{
-                targets: [0, 1, 2, 3, 4, 5],
+                targets: [0, 1, 2, 3],
                 className: 'text-center',
                 orderable: true,
             }],
@@ -425,19 +430,31 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
-    var initTableStockDetail = function() {
-        var table = $('#table_stock_detail');
+    var initTableStockHistoryOut = function () {
         // begin first table
-        var datatable = table.DataTable({
+        var table = $('#table_stock_history_out').DataTable({
             order: [],
             responsive: true,
+            // Pagination settings
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            // read more: https://datatables.net/examples/basic_init/dom.html
+            lengthMenu: [5, 10, 25, 50],
+            pageLength: 10,
+            language: {
+                'lengthMenu': 'Display _MENU_',
+            },
+            searchDelay: 500,
+            processing: true,
+            serverSide: false,
             ajax: {
-                url: 'source/gudang/stock_detail.json',
+                url: 'source/gudang/stock_history.json',
                 type: 'POST',
                 data: {
-                    pagination: {
-                        perpage: 50,
-                    },
+                    // parameters for custom backend script demo
+                    columnsDef: [
+                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                        'tanggal', 'status', 'aksi',
+                    ],
                 },
             },
             columns: [{
@@ -450,49 +467,64 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 orderable: false,
             }, {
                 data: 'tanggal',
-                title: 'Tanggal'
+                title: 'Tanggal',
             }, {
-                data: 'status',
-                title: 'Status',
-                render: function(data, type, row, meta) {
-                    var status = {
-                        "Stock Masuk": {
-                            'title': 'Stock Masuk',
-                            'class': 'kt-font-success'
-                        },
-                        "Stock Keluar": {
-                            'title': 'Stock Keluar',
-                            'class': 'kt-font-danger'
-                        },
-                    };
-                    if (typeof status[data] === 'undefined') {
-                        return data;
-                    }
-                    return '<span class="' + status[data].class + '">' + status[data].title + '</span>';
+                data: 'no_spk',
+                title: 'No. Request',
+            }, {
+                data: 'barang',
+                title: 'Barang',
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 100,
+                render: function(data, type, full, meta) {
+                    return `
+                    <a href="user_gudang/request_stock_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
-            }, {
-                data: 'quantity',
-                title: 'Quantity'
-            }, {
-                data: 'harga',
-                title: 'Harga'
-            }, ],
+            }],
             columnDefs: [{
-                targets: [0, 1, 2, 3, 4],
+                targets: [0, 1, 2, 3],
                 className: 'text-center',
                 orderable: true,
             }],
         });
 
-        datatable.on('order.dt search.dt', function() {
-            datatable.column(0, {
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
                 search: 'applied',
                 order: 'applied'
             }).nodes().each(function(cell, i) {
                 cell.innerHTML = i + 1;
             });
         }).draw();
+
+        $('#kt_search_waktu').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            $('.kt-input').each(function() {
+                var i = $(this).data('col-index');
+                if (params[i]) {
+                    params[i] += '|' + $(this).val();
+                } else {
+                    params[i] = $(this).val();
+                }
+            });
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        });
+
+        $('#kt_search_all').on('keyup', function() {
+            table.search(this.value).draw();
+        });
     };
+
 
     return {
         //main function to initiate the module
@@ -501,10 +533,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableStock();
             initTableStockBarangKeluar();
             initTableStockBarangMasuk();
-
-            initTableRequest();
-            initTablePembelian();
-            initTableStockDetail();
+            initTableStockHistoryIn();
+            initTableStockHistoryOut();
         },
     };
 }();
