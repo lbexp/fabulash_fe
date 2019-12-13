@@ -612,7 +612,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
-    var initTableKaryawanDayOff = function () {
+    var initTableKehadiranDayOff = function () {
         var table = $('#table_kehadiran_request_dayoff');
         // begin first table
         table.DataTable({
@@ -1250,8 +1250,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableRequestIn();
             initTableRequestOut();
             initTableKehadiran();
+            initTableKehadiranDayOff();
             initTableKaryawanKehadiran();
-            initTableKaryawanDayOff();
             initTableKaryawanList();
             initTableKaryawanComplaint();
             initTableKaryawanInventory();
