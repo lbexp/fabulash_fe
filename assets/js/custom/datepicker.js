@@ -103,7 +103,7 @@ var datepickerIndonesia = function () {
     }).datepicker("setDate", new Date());
 
     $('.kt_multidatepicker').datepicker({
-        startDate: new Date(),
+        // startDate: new Date(),
         multidate: true,
         todayHighlight: true,
         language: 'id',
