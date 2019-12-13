@@ -1,0 +1,55 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "tanggal": "20 November 2019",
+        "no_spk": "#12345",
+        "jumlah": "15",
+        "studio": "Cabang Hasanuddin"
+    }, {
+        "no": 2,
+        "tanggal": "20 November 2019",
+        "no_spk": "#12345",
+        "jumlah": "15",
+        "studio": "Cabang Hasanuddin"
+    }, {
+        "no": 3,
+        "tanggal": "20 November 2019",
+        "no_spk": "#12345",
+        "jumlah": "15",
+        "studio": "Cabang Hasanuddin"
+    }, {
+        "no": 4,
+        "tanggal": "20 November 2019",
+        "no_spk": "#12345",
+        "jumlah": "15",
+        "studio": "Cabang Hasanuddin"
+    }, {
+        "no": 5,
+        "tanggal": "20 November 2019",
+        "no_spk": "#12345",
+        "jumlah": "15",
+        "studio": "Cabang Hasanuddin"
+    }, {
+        "no": 6,
+        "tanggal": "20 November 2019",
+        "no_spk": "#12345",
+        "jumlah": "15",
+        "studio": "Cabang Hasanuddin"
+    }, {
+        "no": 7,
+        "tanggal": "20 November 2019",
+        "no_spk": "#12345",
+        "jumlah": "15",
+        "studio": "Cabang Hasanuddin"
+    }, {
+        "no": 8,
+        "tanggal": "20 November 2019",
+        "no_spk": "#12345",
+        "jumlah": "15",
+        "studio": "Cabang Hasanuddin"
+    }]
+}
