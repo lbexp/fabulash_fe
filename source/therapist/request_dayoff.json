@@ -9,55 +9,63 @@
         "tanggal_request": "12 November 2019",
         "notes": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "tanggal_dayoff": "20 November 2019, 22 November 2019, 2 Desember 2019",
-        "foto": "#"
+        "foto": "#",
+        "status": "approved"
     }, {
         "no": 2,
         "tipe": "sakit",
         "tanggal_request": "12 November 2019",
         "notes": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "tanggal_dayoff": "20 November 2019, 22 November 2019, 2 Desember 2019",
-        "foto": "#"
+        "foto": "#",
+        "status": "waiting"
     }, {
         "no": 3,
         "tipe": "izin",
         "tanggal_request": "12 November 2019",
         "notes": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "tanggal_dayoff": "20 November 2019, 22 November 2019, 2 Desember 2019",
-        "foto": "#"
+        "foto": "#",
+        "status": "rejected"
     }, {
         "no": 4,
         "tipe": "lain-lain",
         "tanggal_request": "12 November 2019",
         "notes": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "tanggal_dayoff": "20 November 2019, 22 November 2019, 2 Desember 2019",
-        "foto": "#"
+        "foto": "#",
+        "status": "approved"
     }, {
         "no": 5,
         "tipe": "cuti",
         "tanggal_request": "12 November 2019",
         "notes": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "tanggal_dayoff": "20 November 2019, 22 November 2019, 2 Desember 2019",
-        "foto": "#"
+        "foto": "#",
+        "status": "approved"
     }, {
         "no": 6,
         "tipe": "cuti",
         "tanggal_request": "12 November 2019",
         "notes": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "tanggal_dayoff": "20 November 2019, 22 November 2019, 2 Desember 2019",
-        "foto": "#"
+        "foto": "#",
+        "status": "approved"
     }, {
         "no": 7,
         "tipe": "cuti",
         "tanggal_request": "12 November 2019",
         "notes": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "tanggal_dayoff": "20 November 2019, 22 November 2019, 2 Desember 2019",
-        "foto": "#"
+        "foto": "#",
+        "status": "approved"
     }, {
         "no": 8,
         "tipe": "cuti",
         "tanggal_request": "12 November 2019",
         "notes": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "tanggal_dayoff": "20 November 2019, 22 November 2019, 2 Desember 2019",
-        "foto": "#"
+        "foto": "#",
+        "status": "approved"
     }]
 }

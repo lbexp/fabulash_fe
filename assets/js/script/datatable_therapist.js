@@ -823,7 +823,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             order: [],
             responsive: true,
             ajax: {
-                url: 'source/supervisor_studio/request_dayoff.json',
+                url: 'source/therapist/request_dayoff.json',
                 type: 'POST',
                 data: {
                     pagination: {
@@ -846,7 +846,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: 'tipe',
                 title: 'Tipe',
                 render: function (data, type, row, meta) {
-                    var status = {
+                    var tipe = {
                         masuk: {
                             'title': 'Masuk',
                             'class': 'btn-label-success'
@@ -868,10 +868,10 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                             'class': 'btn-label-danger'
                         },
                     };
-                    if (typeof status[data] === 'undefined') {
+                    if (typeof tipe[data] === 'undefined') {
                         return data;
                     }
-                    return '<span style="width:100%" class="btn btn-bold btn-sm btn-font-sm ' + status[data].class + '">' + status[data].title + '</span>';
+                    return '<span style="width:100%" class="btn btn-bold btn-sm btn-font-sm ' + tipe[data].class + '">' + tipe[data].title + '</span>';
                 }
             }, {
                 data: 'tanggal_dayoff',
@@ -885,9 +885,32 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, row, meta) {
                     return '<label for="request_foto"  class="btn btn-link" style="padding:0px;"><i class="flaticon2-photo-camera"></i>Foto</label>';
                 }
-            }, ],
+            }, {
+                data: 'status',
+                title: 'Status',
+                render: function(data, type, row, meta) {
+                    var status = {
+                        approved: {
+                            'title': 'Approved',
+                            'class': 'btn-label-success'
+                        },
+                        waiting: {
+                            'title': 'Waiting',
+                            'class': 'btn-label-warning'
+                        },
+                        rejected: {
+                            'title': 'Rejected',
+                            'class': 'btn-label-danger'
+                        }
+                    }
+                    if (typeof status[data] === 'undefined') {
+                        return data;
+                    }
+                    return '<span style="width:100%" class="btn btn-bold btn-sm btn-font-sm ' + status[data].class + '">' + status[data].title + '</span>';
+                }
+            }],
             columnDefs: [{
-                targets: [0, 1, 2, 3, 4, 5],
+                targets: [0, 1, 2, 3, 4, 5, 6],
                 className: 'text-center',
                 orderable: false,
             }],

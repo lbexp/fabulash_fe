@@ -529,11 +529,17 @@ License: You must have a valid license purchased only from themeforest(the above
                 // define validation rules
 	            rules: {
 	                dayoff_tanggal: {
-	                    required: true,
+	                    required: true
 	                },
 	                dayoff_status: {
 	                    required: true
-	                }
+	                },
+					dayoff_notes: {
+						required: true
+					},
+					dayoff_foto: {
+						required: true
+					}
 	            },
 
 	            invalidHandler: function(event, validator) {
