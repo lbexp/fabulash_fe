@@ -18,7 +18,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<head>
 		<base href="../">
 		<meta charset="utf-8" />
-		<title>Request Stock | Gudang Fabulash</title>
+		<title>Detail Request Stock | Gudang Fabulash</title>
 		<meta name="description" content="Updates and statistics">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -284,11 +284,14 @@ License: You must have a valid license purchased only from themeforest(the above
 						<div class="kt-subheader  kt-grid__item" id="kt_subheader">
 							<div class="kt-container  kt-container--fluid ">
 								<div class="kt-subheader__main">
-									<h3 class="kt-subheader__title">
+                                    <h3 class="kt-subheader__title">
 										Request Stock </h3>
 									<span class="kt-subheader__separator kt-hidden"></span>
 									<div class="kt-subheader__breadcrumbs">
 										<a href="user_gudang/request_stock.html" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+										<span class="kt-subheader__breadcrumbs-separator"></span>
+										<a href="user_gudang/request_stock_detail_diterima.html" class="kt-subheader__breadcrumbs-link">
+											Detail request stock </a>
 									</div>
 								</div>
 							</div>
@@ -311,27 +314,72 @@ License: You must have a valid license purchased only from themeforest(the above
 													<i class="flaticon2-cube-1"></i>
 												</span>
 												<h3 class="kt-portlet__head-title">
-													Request Stock
+													New Request
 												</h3>
 											</div>
 										</div>
 										<div class="kt-portlet__body">
-											<form class="kt-form kt-form--fit kt-margin-b-10">
-    											<div class="row justify-space-between">
-													<div class="col-lg-4 col-sm-6 input-daterange input-group margin-mobile-b-5">
-														<input readonly type="text" class="form-control kt-input" name="start" placeholder="Pilih Tanggal" data-col-index="1" id="kt_search_waktu"/>
-														<div class="input-group-append">
-															<span class="input-group-text">
-																<i class="la la-calendar"></i>
-															</span>
-														</div>
-													</div>
-													<div class="col-lg-4 col-sm-6">
-	    												<input type="text" class="form-control kt-input" placeholder="Search" id="kt_search_all">
-													</div>
-    											</div>
-    										</form>
-                                            <table class="table table-bordered table-hover table-checkable" id="table_request_stock"></table>
+                                            <div class="row" style="margin-bottom: 50px;">
+                                                <h5 class="col-12 color-main-dark" name="kode_request" style="margin-bottom: 20px;">#123456</h5>
+												<div class="col-4" style="padding-right:0px;">
+	                                                <span class="kt-font-bold">Date Request : <span name="date_request">15 November 2019</span></span>
+												</div>
+												<div class="col-4" style="padding-left:0px; padding-right:0px; text-align:center;">
+	                                                <span class="kt-font-bold">Date Terkirim : <span name="date_approve">15 November 2019</span></span>
+												</div>
+												<div class="col-4" style="padding-left:0px;text-align:right;">
+	                                                <span class="kt-font-bold">Date Diterima : <span name="date_approve">15 November 2019</span></span>
+												</div>
+                                            </div>
+                                            <div class="justify-center kt-margin-b-20">
+                                                <span class="kt-margin-10 kt-font-bold kt-font-brand">Request</span><i class="flaticon2-next" style="padding: 10px 0px;"></i>
+                                                <span class="kt-margin-10 kt-font-bold kt-font-brand">Terkirim</span><i class="flaticon2-next" style="padding: 10px 0px;"></i>
+                                                <span class="kt-margin-10 kt-font-bold kt-font-brand">Diterima</span>
+                                            </div>
+                                            <table class="table table-bordered table-hover well-align-table" role="grid">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th style="width: 5%">No</th>
+                                                        <th style="width: 25%">Nama Barang</th>
+                                                        <th style="width: 15%">Satuan</th>
+                                                        <th style="width: 12.5%">Request</th>
+                                                        <th style="width: 12.5%">Terkirim</th>
+                                                        <th style="width: 12.5%">Diterima</th>
+                                                        <th style="width: 17.5%">Margin Hilang</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="item_list">
+                                                    <tr role="row">
+                                                        <td>1</td>
+                                                        <td class="text-center">
+                                                            <select class="form-control" name="request_barang" disabled>
+        														<option>Eyelash Size 12</option>
+        														<option>Eyelash Size 12</option>
+        														<option>Eyelash Size 12</option>
+        													</select>
+                                                        </td>
+														<td class="text-center">
+                                                            <select class="form-control" name="request_satuan" disabled>
+        														<option>Box</option>
+        														<option>Box</option>
+        														<option>Box</option>
+        													</select>
+                                                        </td>
+														<td class="text-center">
+                                                            <input type="number" class="form-control" name="request_jumlah_request" value="5" readonly>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <input type="number" class="form-control" name="request_jumlah_terkirim" value="3" readonly>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <input type="number" class="form-control" name="request_jumlah_diterima" value="3" readonly>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <input type="number" class="form-control" name="request_margin" value="2" readonly>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
 										</div>
 									</div>
 
