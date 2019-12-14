@@ -137,6 +137,18 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         $('#search_treatment_active').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#datepicker_treatment_active').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTableTreatmentDetail = function() {
@@ -339,6 +351,18 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         $('#search_treatment_void').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#datepicker_treatment_void').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTableCustomer = function() {
@@ -527,6 +551,18 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         $('#search_customer_detail').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#datepicker_customer_detail').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTablePengeluaran = function() {
@@ -648,6 +684,18 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         $('#search_finance_pengeluaran').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#datepicker_finance_pengeluaran').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTablePemasukan = function() {
@@ -747,6 +795,18 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         $('#search_finance_pemasukan').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#datepicker_finance_pemasukan').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTablePengeluaranDetail = function() {
@@ -1184,6 +1244,18 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         $('#search_kehadiran').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#datepicker_kehadiran').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     return {

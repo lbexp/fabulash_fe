@@ -103,7 +103,7 @@ var datepickerIndonesia = function () {
         },
     });
 
-    $('#kt-monthpicker').datepicker({
+    $('.kt-monthpicker').datepicker({
         todayHighlight: true,
         language: 'id',
         orientation: "bottom auto",
@@ -134,7 +134,7 @@ var datepickerIndonesia = function () {
 }();
 
 var timepicker = function () {
-    $('#kt_timepicker_2, #kt_timepicker_2_modal').timepicker({
+    $('.kt-timepicker').timepicker({
         minuteStep: 15,
         defaultTime: '',
         showSeconds: false,
