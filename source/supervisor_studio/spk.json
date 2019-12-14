@@ -1,0 +1,27 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "tanggal": "2 Desember 2019",
+        "kategori": "Eyelash",
+        "therapist": "Ica",
+        "sifat": "lorem ipsum",
+        "complaint": "lorem ipsum dolor sit amet",
+        "inventory": "lorem ipsum dolor sit amet",
+        "waktu_mulai": "08.00 WITA",
+        "durasi": "5 Jam"
+    }, {
+        "no": 2,
+        "tanggal": "2 Desember 2019",
+        "kategori": "Eyelash",
+        "therapist": "Ica",
+        "sifat": "lorem ipsum",
+        "complaint": "lorem ipsum dolor sit amet",
+        "inventory": "lorem ipsum dolor sit amet",
+        "waktu_mulai": "08.00 WITA",
+        "durasi": "5 Jam"
+    }]
+}

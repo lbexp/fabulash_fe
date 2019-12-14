@@ -7,14 +7,151 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         return $(this.header()).text().trim();
     });
 
-    var initTableMasterData = function() {
-        var table = $('#table_master_data');
+    var initTableActiveTreatment = function() {
         // begin first table
-        var datatable = table.DataTable({
+        var table = $('#table_treatment_active').DataTable({
             order: [],
             responsive: true,
+            // Pagination settings
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            // read more: https://datatables.net/examples/basic_init/dom.html
+            lengthMenu: [5, 10, 25, 50],
+            pageLength: 10,
+            language: {
+                'lengthMenu': 'Display _MENU_',
+            },
+            searchDelay: 500,
+            processing: true,
+            serverSide: false,
             ajax: {
-                url: 'source/supervisor_studio/inventory.json',
+                url: 'source/supervisor_studio/treatment.json',
+                type: 'POST',
+                data: {
+                    // parameters for custom backend script demo
+                    columnsDef: [
+                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                        'tanggal', 'status', 'aksi',
+                    ],
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'tanggal',
+                title: 'Tanggal',
+            }, {
+                data: 'durasi',
+                title: 'Durasi',
+            }, {
+                data: 'treatment',
+                title: 'Treatment',
+            }, {
+                data: 'customer',
+                title: 'Customer',
+            }, {
+                data: 'therapist',
+                title: 'Therapist',
+            }, {
+                data: 'status',
+                title: 'Status',
+                // width: 70,
+                render: function(data, type, full, meta) {
+                    var status = {
+                        scheduled: {
+                            'title': 'Scheduled',
+                            'class': 'btn-label-dark'
+                        },
+                        waiting: {
+                            'title': 'Waiting',
+                            'class': 'btn-label-warning'
+                        },
+                        ongoing: {
+                            'title': 'Ongoing',
+                            'class': 'btn-label-primary'
+                        },
+                        done: {
+                            'title': 'Done',
+                            'class': 'btn-label-success'
+                        },
+                    };
+                    if (typeof status[data] === 'undefined') {
+                        return data;
+                    }
+                    return '<span style="width:100%" class="btn btn-bold btn-sm btn-font-sm ' + status[data].class + '">' + status[data].title + '</span>';
+                },
+            },{
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 100,
+                render: function(data, type, full, meta) {
+                    var status = {
+                        scheduled: {'href': 'treatment_detail_scheduled.html'},
+                        waiting: {'href': 'treatment_detail_waiting.html'},
+                        ongoing : {'href': 'treatment_detail_ongoing.html'},
+                        done : {'href': 'treatment_detail_done.html'}
+                    };
+                    return `
+                    <a href="user_supervisor_studio/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                },
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5, 6, 7],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+
+        $('#datepicker_treatment_active').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        });
+
+        $('#search_treatment_active').on('keyup', function() {
+            table.search(this.value).draw();
+        });
+    };
+
+    var initTableTreatmentDetail = function() {
+        var table = $('#table_treatment_detail');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/supervisor_studio/invoice.json',
                 type: 'POST',
                 data: {
                     pagination: {
@@ -31,31 +168,72 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 35,
                 orderable: false,
             }, {
-                data: 'barang',
-                title: 'Barang',
+                data: 'treatment',
+                title: 'Treatment'
             }, {
-                data: 'isi_satuan',
-                title: 'Isi Per Satuan',
+                data: 'harga',
+                title: 'Harga'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTableAllTreatment = function() {
+        var table = $('#table_treatment_all');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            responsive: true,
+            ajax: {
+                url: 'source/supervisor_studio/treatment.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
             }, {
-                data: 'satuan',
-                title: 'Satuan',
+                data: 'no_pesanan',
+                title: 'No Pesanan',
             }, {
-                data: 'persediaan',
-                title: 'Persediaan',
-            },{
+                data: 'customer',
+                title: 'Customer',
+            }, {
+                data: 'kategori',
+                title: 'Kategori',
+            }, {
+                data: 'treatment',
+                title: 'Treatment',
+            }, {
+                data: 'therapist',
+                title: 'Therapist',
+            }, {
                 field: 'aksi',
                 title: 'Aksi',
                 responsivePriority: -1,
                 className: 'text-center',
                 orderable: false,
-                width: 200,
+                width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <button class="btn btn-sm btn-success" style="color:white;border-radius:15px" data-toggle="modal" data-target="#kt_modal_edit_barang">Edit</button>&nbsp;<button class="btn btn-sm btn-danger" onClick="swalHapus();" style="color:white;border-radius:15px">Delete</button>`;
+                    <a href="user_supervisor_studio/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }],
             columnDefs: [{
-                targets: [0, 1, 2, 3, 4],
+                targets: [0, 1, 2, 3, 4, 5, 6],
                 className: 'text-center',
                 orderable: true,
             }],
@@ -69,6 +247,375 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 cell.innerHTML = i + 1;
             });
         }).draw();
+    };
+
+    var initTableVoidTreatment = function() {
+        // begin first table
+        var table = $('#table_treatment_void').DataTable({
+            order: [],
+            responsive: true,
+            // Pagination settings
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            // read more: https://datatables.net/examples/basic_init/dom.html
+            lengthMenu: [5, 10, 25, 50],
+            pageLength: 10,
+            language: {
+                'lengthMenu': 'Display _MENU_',
+            },
+            searchDelay: 500,
+            processing: true,
+            serverSide: false,
+            ajax: {
+                url: 'source/supervisor_studio/treatment.json',
+                type: 'POST',
+                data: {
+                    // parameters for custom backend script demo
+                    columnsDef: [
+                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                        'tanggal', 'status', 'aksi',
+                    ],
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'tanggal',
+                title: 'Tanggal',
+            }, {
+                data: 'no_pesanan',
+                title: 'No Pesanan',
+            }, {
+                data: 'customer',
+                title: 'Customer',
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 100,
+                render: function(data, type, full, meta) {
+                    return `
+                    <a href="user_supervisor_studio/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                },
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+
+        $('#datepicker_treatment_void').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        });
+
+        $('#search_treatment_void').on('keyup', function() {
+            table.search(this.value).draw();
+        });
+    };
+
+    var initTableSPKScheduled = function () {
+        var table = $('#table_spk_scheduled');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/supervisor_studio/spk.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kategori',
+                title: 'Kategori'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTableSPKWaiting = function () {
+        var table = $('#table_spk_waiting');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/supervisor_studio/spk.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kategori',
+                title: 'Kategori'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTableSPKOngoing = function () {
+        var table = $('#table_spk_ongoing');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/supervisor_studio/spk.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kategori',
+                title: 'Kategori'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, {
+                data: 'waktu_mulai',
+                title: 'Waktu Mulai'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTableSPKDone = function () {
+        var table = $('#table_spk_done');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/supervisor_studio/spk.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kategori',
+                title: 'Kategori'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, {
+                data: 'inventory',
+                title: 'Inventory'
+            }, {
+                data: 'complaint',
+                title: 'Complaint'
+            }, {
+                data: 'durasi',
+                title: 'Durasi'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTableSPKPaid = function () {
+        var table = $('#table_spk_paid');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/supervisor_studio/spk.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kategori',
+                title: 'Kategori'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, {
+                data: 'inventory',
+                title: 'Inventory'
+            }, {
+                data: 'complaint',
+                title: 'Complaint'
+            }, {
+                data: 'durasi',
+                title: 'Durasi'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTableInvoice = function () {
+        var table = $('#table_invoice');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/admin/invoice.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'treatment',
+                title: 'Treatment'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, {
+                data: 'harga',
+                title: 'Harga'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
     };
 
     var initTableStock = function() {
@@ -1267,7 +1814,16 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     return {
         //main function to initiate the module
         init: function() {
-            initTableMasterData();
+            initTableActiveTreatment();
+            initTableTreatmentDetail();
+            initTableAllTreatment();
+            initTableVoidTreatment();
+            initTableSPKScheduled();
+            initTableSPKWaiting();
+            initTableSPKOngoing();
+            initTableSPKDone();
+            initTableSPKPaid();
+            initTableInvoice();
             initTableStock();
             initTableStockDetail();
             initTableRequestIn();
