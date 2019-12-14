@@ -115,7 +115,7 @@ var datepickerIndonesia = function () {
             leftArrow: '<i class="la la-angle-left"></i>',
             rightArrow: '<i class="la la-angle-right"></i>',
         },
-    }).datepicker("setDate", new Date());
+    });
 
     $('.kt-multidatepicker').datepicker({
         // startDate: new Date(),

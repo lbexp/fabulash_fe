@@ -138,6 +138,18 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         $('#search_treatment_active').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#datepicker_treatment_active').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTableTreatmentDetail = function() {
@@ -340,6 +352,18 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         $('#search_treatment_void').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#datepicker_treatment_void').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTableSPKScheduled = function () {
@@ -773,17 +797,15 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
         }).draw();
 
-        $('#kt_search_month').on('change', function(e) {
+        $('#monthpicker_stock_detail').on('change', function(e) {
             e.preventDefault();
             var params = {};
-            $('.kt-input').each(function() {
-                var i = $(this).data('col-index');
-                if (params[i]) {
-                    params[i] += '|' + $(this).val();
-                } else {
-                    params[i] = $(this).val();
-                }
-            });
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
             $.each(params, function(i, val) {
                 // apply search params to datatable
                 table.column(i).search(val ? val : '', false, false);
@@ -791,9 +813,23 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             table.table().draw();
         });
 
-        $('#kt_search_all').on('keyup', function() {
+        $('#search_stock_detail').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#monthpicker_stock_detail').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            orientation: "bottom auto",
+            format: "MM yyyy",
+            viewMode: "months",
+            minViewMode: "months",
+            rtl: KTUtil.isRTL(),
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTableRequestIn = function() {
@@ -895,10 +931,10 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
         }).draw();
 
-        $('#kt_search_waktu').on('change', function(e) {
+        $('#monthpicker_request_in').on('change', function(e) {
             e.preventDefault();
             var params = {};
-            $('.kt-input').each(function() {
+            $('#monthpicker_request_in').each(function() {
                 var i = $(this).data('col-index');
                 if (params[i]) {
                     params[i] += '|' + $(this).val();
@@ -913,9 +949,23 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             table.table().draw();
         });
 
-        $('#kt_search_all').on('keyup', function() {
+        $('#search_request_in').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#monthpicker_request_in').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            orientation: "bottom auto",
+            format: "MM yyyy",
+            viewMode: "months",
+            minViewMode: "months",
+            rtl: KTUtil.isRTL(),
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTableRequestOut = function() {
@@ -1019,17 +1069,15 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
         }).draw();
 
-        $('#kt_search_waktu').on('change', function(e) {
+        $('#monthpicker_request_out').on('change', function(e) {
             e.preventDefault();
             var params = {};
-            $('.kt-input').each(function() {
-                var i = $(this).data('col-index');
-                if (params[i]) {
-                    params[i] += '|' + $(this).val();
-                } else {
-                    params[i] = $(this).val();
-                }
-            });
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
             $.each(params, function(i, val) {
                 // apply search params to datatable
                 table.column(i).search(val ? val : '', false, false);
@@ -1037,9 +1085,23 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             table.table().draw();
         });
 
-        $('#kt_search_all').on('keyup', function() {
+        $('#search_request_out').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#monthpicker_request_out').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            orientation: "bottom auto",
+            format: "MM yyyy",
+            viewMode: "months",
+            minViewMode: "months",
+            rtl: KTUtil.isRTL(),
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTableKehadiran = function () {
@@ -1137,32 +1199,45 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
         }).draw();
 
-        $('#kt_search_waktu').on('change', function(e) {
+        $('#monthpicker_kehadiran').on('change', function(e) {
             e.preventDefault();
             var params = {};
-            $('.kt-input').each(function() {
-                var i = $(this).data('col-index');
-                if (params[i]) {
-                    params[i] += '|' + $(this).val();
-                } else {
-                    params[i] = $(this).val();
-                }
-            });
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
             $.each(params, function(i, val) {
                 // apply search params to datatable
                 table.column(i).search(val ? val : '', false, false);
             });
             table.table().draw();
         });
-        $('#kt_search_all').on('keyup', function() {
+
+        $('#search_kehadiran').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#monthpicker_kehadiran').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            orientation: "bottom auto",
+            format: "MM yyyy",
+            viewMode: "months",
+            minViewMode: "months",
+            rtl: KTUtil.isRTL(),
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTableKehadiranDayOff = function () {
         var table = $('#table_kehadiran_request_dayoff');
         // begin first table
-        table.DataTable({
+        var datatable = table.DataTable({
             order: [],
             responsive: true,
             ajax: {
@@ -1358,26 +1433,37 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
         }).draw();
 
-        $('#kt_search_waktu').on('change', function(e) {
+        $('#datepicker_karyawan_kehadiran').on('change', function(e) {
             e.preventDefault();
             var params = {};
-            $('.kt-input').each(function() {
-                var i = $(this).data('col-index');
-                if (params[i]) {
-                    params[i] += '|' + $(this).val();
-                } else {
-                    params[i] = $(this).val();
-                }
-            });
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
             $.each(params, function(i, val) {
                 // apply search params to datatable
                 table.column(i).search(val ? val : '', false, false);
             });
             table.table().draw();
         });
-        $('#kt_search_all').on('keyup', function() {
+
+        $('#search_karyawan_kehadiran').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#datepicker_karyawan_kehadiran').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTableKaryawanList = function() {
@@ -1526,17 +1612,15 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
         }).draw();
 
-        $('#kt_search_waktu').on('change', function(e) {
+        $('#monthpicker_complaint').on('change', function(e) {
             e.preventDefault();
             var params = {};
-            $('.kt-input').each(function() {
-                var i = $(this).data('col-index');
-                if (params[i]) {
-                    params[i] += '|' + $(this).val();
-                } else {
-                    params[i] = $(this).val();
-                }
-            });
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
             $.each(params, function(i, val) {
                 // apply search params to datatable
                 table.column(i).search(val ? val : '', false, false);
@@ -1544,13 +1628,28 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             table.table().draw();
         });
 
-        $('#kt_search_all').on('keyup', function() {
+        $('#search_complaint').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#monthpicker_complaint').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            orientation: "bottom auto",
+            format: "MM yyyy",
+            viewMode: "months",
+            minViewMode: "months",
+            rtl: KTUtil.isRTL(),
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
-    var initTableKaryawanInventory = function () {
-        var table = $('#table_karyawan_inventory_sisa').DataTable({
+    var initTableKaryawanKehadiranDetail = function () {
+        // begin first table
+        var table = $('#table_karyawan_kehadiran_detail').DataTable({
             order: [],
             responsive: true,
             // Pagination settings
@@ -1565,7 +1664,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             processing: true,
             serverSide: false,
             ajax: {
-                url: 'source/supervisor_studio/karyawan_inventory.json',
+                url: 'source/supervisor_studio/karyawan_kehadiran.json',
                 type: 'POST',
                 data: {
                     // parameters for custom backend script demo
@@ -1573,6 +1672,124 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                         'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
                         'tanggal', 'status', 'aksi',
                     ],
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'tanggal',
+                title: 'Tanggal',
+            }, {
+                data: 'status',
+                title: 'Status',
+                render: function (data, type, row, meta) {
+                    var status = {
+                        masuk: {
+                            'title': 'Masuk',
+                            'class': 'btn-label-success'
+                        },
+                        izin: {
+                            'title': 'Izin',
+                            'class': 'btn-label-warning'
+                        },
+                        cuti: {
+                            'title': 'Cuti',
+                            'class': 'btn-label-warning'
+                        },
+                        sakit: {
+                            'title': 'Sakit',
+                            'class': 'btn-label-warning'
+                        },
+                        "lain-lain": {
+                            'title': 'Lain-lain',
+                            'class': 'btn-label-danger'
+                        },
+                    };
+                    if (typeof status[data] === 'undefined') {
+                        return data;
+                    }
+                    return '<span style="width:100%" class="btn btn-bold btn-sm btn-font-sm ' + status[data].class + '">' + status[data].title + '</span>';
+                }
+            }, {
+                data: 'waktu_masuk',
+                title: 'Waktu Masuk'
+            }, {
+                data: 'waktu_pulang',
+                title: 'Waktu pulang'
+            }, {
+                data: 'keterlambatan',
+                title: 'Keterlambatan'
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+
+        $('#monthpicker_karyawan_kehadiran_detail').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        });
+
+        $('#search_karyawan_kehadiran_detail').on('keyup', function() {
+            table.search(this.value).draw();
+        });
+
+        $('#monthpicker_karyawan_kehadiran_detail').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            orientation: "bottom auto",
+            format: "MM yyyy",
+            viewMode: "months",
+            minViewMode: "months",
+            rtl: KTUtil.isRTL(),
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
+    };
+
+    var initTableKaryawanInventory = function () {
+        var table = $('#table_karyawan_inventory_sisa');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            responsive: true,
+            ajax: {
+                url: 'source/supervisor_studio/karyawan_inventory.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
                 },
             },
             columns: [{
@@ -1600,36 +1817,14 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }],
         });
 
-        table.on('order.dt search.dt', function() {
-            table.column(0, {
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
                 search: 'applied',
                 order: 'applied'
             }).nodes().each(function(cell, i) {
                 cell.innerHTML = i + 1;
             });
         }).draw();
-
-        $('#kt_search_waktu').on('change', function(e) {
-            e.preventDefault();
-            var params = {};
-            $('.kt-input').each(function() {
-                var i = $(this).data('col-index');
-                if (params[i]) {
-                    params[i] += '|' + $(this).val();
-                } else {
-                    params[i] = $(this).val();
-                }
-            });
-            $.each(params, function(i, val) {
-                // apply search params to datatable
-                table.column(i).search(val ? val : '', false, false);
-            });
-            table.table().draw();
-        });
-
-        $('#kt_search_all').on('keyup', function() {
-            table.search(this.value).draw();
-        });
     };
 
     var initTableKaryawanInventoryPenggunaan = function () {
@@ -1698,17 +1893,15 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
         }).draw();
 
-        $('#kt_search_waktu').on('change', function(e) {
+        $('#monthpicker_karyawan_inventory_penggunaan').on('change', function(e) {
             e.preventDefault();
             var params = {};
-            $('.kt-input').each(function() {
-                var i = $(this).data('col-index');
-                if (params[i]) {
-                    params[i] += '|' + $(this).val();
-                } else {
-                    params[i] = $(this).val();
-                }
-            });
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
             $.each(params, function(i, val) {
                 // apply search params to datatable
                 table.column(i).search(val ? val : '', false, false);
@@ -1716,9 +1909,23 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             table.table().draw();
         });
 
-        $('#kt_search_all').on('keyup', function() {
+        $('#search_karyawan_inventory_penggunaan').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#monthpicker_karyawan_inventory_penggunaan').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            orientation: "bottom auto",
+            format: "MM yyyy",
+            viewMode: "months",
+            minViewMode: "months",
+            rtl: KTUtil.isRTL(),
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTableKaryawanInventoryRequest = function () {
@@ -1788,17 +1995,15 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
         }).draw();
 
-        $('#kt_search_waktu').on('change', function(e) {
+        $('#monthpicker_karyawan_inventory_request').on('change', function(e) {
             e.preventDefault();
             var params = {};
-            $('.kt-input').each(function() {
-                var i = $(this).data('col-index');
-                if (params[i]) {
-                    params[i] += '|' + $(this).val();
-                } else {
-                    params[i] = $(this).val();
-                }
-            });
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
             $.each(params, function(i, val) {
                 // apply search params to datatable
                 table.column(i).search(val ? val : '', false, false);
@@ -1806,9 +2011,23 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             table.table().draw();
         });
 
-        $('#kt_search_all').on('keyup', function() {
+        $('#search_karyawan_inventory_request').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#monthpicker_karyawan_inventory_request').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            orientation: "bottom auto",
+            format: "MM yyyy",
+            viewMode: "months",
+            minViewMode: "months",
+            rtl: KTUtil.isRTL(),
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     return {
@@ -1833,6 +2052,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableKaryawanKehadiran();
             initTableKaryawanList();
             initTableKaryawanComplaint();
+            initTableKaryawanKehadiranDetail();
             initTableKaryawanInventory();
             initTableKaryawanInventoryPenggunaan();
             initTableKaryawanInventoryRequest();
