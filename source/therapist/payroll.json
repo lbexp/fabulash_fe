@@ -5,35 +5,35 @@
     "sColumns": "",
     "aaData": [{
         "no": 1,
-        "bulan": "Januari",
+        "bulan": "Januari 2020",
         "gaji": "Rp. 3.000.000,00"
     }, {
         "no": 2,
-        "bulan": "Desember",
+        "bulan": "Desember 2019",
         "gaji": "Rp. 3.000.000,00"
     }, {
         "no": 3,
-        "bulan": "November",
+        "bulan": "November 2019",
         "gaji": "Rp. 3.000.000,00"
     }, {
         "no": 4,
-        "bulan": "Oktober",
+        "bulan": "Oktober 2019",
         "gaji": "Rp. 3.000.000,00"
     }, {
         "no": 5,
-        "bulan": "September",
+        "bulan": "September 2019",
         "gaji": "Rp. 3.000.000,00"
     }, {
         "no": 6,
-        "bulan": "Agustus",
+        "bulan": "Agustus 2019",
         "gaji": "Rp. 3.000.000,00"
     }, {
         "no": 7,
-        "bulan": "Juli",
+        "bulan": "Juli 2019",
         "gaji": "Rp. 3.000.000,00"
     }, {
         "no": 8,
-        "bulan": "Juni",
+        "bulan": "Juni 2019",
         "gaji": "Rp. 3.000.000,00"
     }]
 }
