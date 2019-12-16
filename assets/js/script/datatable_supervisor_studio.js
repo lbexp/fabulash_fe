@@ -608,7 +608,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             searching: false,
             responsive: true,
             ajax: {
-                url: 'source/admin/invoice.json',
+                url: 'source/supervisor_studio/invoice.json',
                 type: 'POST',
                 data: {
                     pagination: {

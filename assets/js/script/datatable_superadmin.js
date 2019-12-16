@@ -441,6 +441,282 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
+    var initTableSPKScheduled = function () {
+        var table = $('#table_spk_scheduled');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/superadmin/spk.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kategori',
+                title: 'Kategori'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTableSPKWaiting = function () {
+        var table = $('#table_spk_waiting');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/superadmin/spk.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kategori',
+                title: 'Kategori'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTableSPKOngoing = function () {
+        var table = $('#table_spk_ongoing');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/superadmin/spk.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kategori',
+                title: 'Kategori'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, {
+                data: 'waktu_mulai',
+                title: 'Waktu Mulai'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTableSPKDone = function () {
+        var table = $('#table_spk_done');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/superadmin/spk.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kategori',
+                title: 'Kategori'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, {
+                data: 'inventory',
+                title: 'Inventory'
+            }, {
+                data: 'complaint',
+                title: 'Complaint'
+            }, {
+                data: 'durasi',
+                title: 'Durasi'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTableSPKPaid = function () {
+        var table = $('#table_spk_paid');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/superadmin/spk.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kategori',
+                title: 'Kategori'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, {
+                data: 'inventory',
+                title: 'Inventory'
+            }, {
+                data: 'complaint',
+                title: 'Complaint'
+            }, {
+                data: 'durasi',
+                title: 'Durasi'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTableInvoice = function () {
+        var table = $('#table_invoice');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/admin/invoice.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'treatment',
+                title: 'Treatment'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, {
+                data: 'harga',
+                title: 'Harga'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
     // var initTablePengeluaran = function() {
     //     // begin first table
     //     var table = $('#table_finance_pengeluaran').DataTable({
@@ -1428,7 +1704,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             order: [],
             responsive: true,
             ajax: {
-                url: 'source/supervisor_studio/karyawan_inventory.json',
+                url: 'source/superadmin/karyawan_inventory.json',
                 type: 'POST',
                 data: {
                     pagination: {
@@ -1978,6 +2254,12 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableAllTreatment();
             initTableVoidTreatment();
             initTableTreatmentDetail();
+            initTableSPKScheduled();
+            initTableSPKWaiting();
+            initTableSPKOngoing();
+            initTableSPKDone();
+            initTableSPKPaid();
+            initTableInvoice();
             // initTablePengeluaran();
             // initTablePengeluaranDetail();
             // initTablePemasukan();
