@@ -13,84 +13,6 @@ var datepickerIndonesia = function () {
         titleFormat: "MM yyyy"
     };
 
-    // $('#kt_search_tanggal').datepicker({
-    //     todayHighlight: true,
-    //     language: 'id',
-    //     rtl: KTUtil.isRTL(),
-    //     todayBtn: "linked",
-    //     clearBtn: true,
-    //     templates: {
-    //         leftArrow: '<i class="la la-angle-left"></i>',
-    //         rightArrow: '<i class="la la-angle-right"></i>',
-    //     },
-    // });
-    //
-    // $('.kt_search_tanggal').datepicker({
-    //     todayHighlight: true,
-    //     language: 'id',
-    //     rtl: KTUtil.isRTL(),
-    //     todayBtn: "linked",
-    //     clearBtn: true,
-    //     templates: {
-    //         leftArrow: '<i class="la la-angle-left"></i>',
-    //         rightArrow: '<i class="la la-angle-right"></i>',
-    //     },
-    // });
-    //
-    // $('#kt_search_waktu').datepicker({
-    //     todayHighlight: true,
-    //     language: 'id',
-    //     orientation: "bottom auto",
-    //     rtl: KTUtil.isRTL(),
-    //     todayBtn: "linked",
-    //     clearBtn: true,
-    //     templates: {
-    //         leftArrow: '<i class="la la-angle-left"></i>',
-    //         rightArrow: '<i class="la la-angle-right"></i>',
-    //     },
-    // });
-    //
-    // $('#kt_search_waktu_2').datepicker({
-    //     todayHighlight: true,
-    //     language: 'id',
-    //     orientation: "bottom auto",
-    //     rtl: KTUtil.isRTL(),
-    //     todayBtn: "linked",
-    //     clearBtn: true,
-    //     templates: {
-    //         leftArrow: '<i class="la la-angle-left"></i>',
-    //         rightArrow: '<i class="la la-angle-right"></i>',
-    //     },
-    // });
-    //
-    // $('#kt_search_month').datepicker({
-    //     todayHighlight: true,
-    //     language: 'id',
-    //     orientation: "bottom auto",
-    //     format: "MM yyyy",
-    //     viewMode: "months",
-    //     minViewMode: "months",
-    //     rtl: KTUtil.isRTL(),
-    //     templates: {
-    //         leftArrow: '<i class="la la-angle-left"></i>',
-    //         rightArrow: '<i class="la la-angle-right"></i>',
-    //     },
-    // }).datepicker("setDate", new Date());
-    //
-    // $('.kt_multidatepicker').datepicker({
-    //     // startDate: new Date(),
-    //     multidate: true,
-    //     todayHighlight: true,
-    //     language: 'id',
-    //     clearBtn: true,
-    //     daysOfWeekHighlighted: "6,0",
-    //     daysOfWeekDisabled: "6,0",
-    //     templates: {
-    //         leftArrow: '<i class="la la-angle-left"></i>',
-    //         rightArrow: '<i class="la la-angle-right"></i>',
-    //     },
-    // });
-
     $('.kt-datepicker').datepicker({
         todayHighlight: true,
         language: 'id',
@@ -110,6 +32,7 @@ var datepickerIndonesia = function () {
         format: "MM yyyy",
         viewMode: "months",
         minViewMode: "months",
+        clearBtn: true,
         rtl: KTUtil.isRTL(),
         templates: {
             leftArrow: '<i class="la la-angle-left"></i>',
