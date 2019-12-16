@@ -214,17 +214,15 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
         }).draw();
 
-        $('#kt_search_waktu').on('change', function(e) {
+        $('#datepicker_stock_barang_keluar').on('change', function(e) {
             e.preventDefault();
             var params = {};
-            $('.kt-input').each(function() {
-                var i = $(this).data('col-index');
-                if (params[i]) {
-                    params[i] += '|' + $(this).val();
-                } else {
-                    params[i] = $(this).val();
-                }
-            });
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
             $.each(params, function(i, val) {
                 // apply search params to datatable
                 table.column(i).search(val ? val : '', false, false);
@@ -232,9 +230,21 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             table.table().draw();
         });
 
-        $('#kt_search_all').on('keyup', function() {
+        $('#search_stock_barang_keluar').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#datepicker_stock_barang_keluar').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTableStockBarangMasuk = function() {
@@ -312,17 +322,15 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
         }).draw();
 
-        $('#kt_search_waktu').on('change', function(e) {
+        $('#datepicker_stock_barang_masuk').on('change', function(e) {
             e.preventDefault();
             var params = {};
-            $('.kt-input').each(function() {
-                var i = $(this).data('col-index');
-                if (params[i]) {
-                    params[i] += '|' + $(this).val();
-                } else {
-                    params[i] = $(this).val();
-                }
-            });
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
             $.each(params, function(i, val) {
                 // apply search params to datatable
                 table.column(i).search(val ? val : '', false, false);
@@ -330,9 +338,21 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             table.table().draw();
         });
 
-        $('#kt_search_all').on('keyup', function() {
+        $('#search_stock_barang_masuk').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#datepicker_stock_barang_masuk').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTableStockHistoryIn = function () {
@@ -407,17 +427,15 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
         }).draw();
 
-        $('#kt_search_waktu').on('change', function(e) {
+        $('#datepicker_stock_history_in').on('change', function(e) {
             e.preventDefault();
             var params = {};
-            $('.kt-input').each(function() {
-                var i = $(this).data('col-index');
-                if (params[i]) {
-                    params[i] += '|' + $(this).val();
-                } else {
-                    params[i] = $(this).val();
-                }
-            });
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
             $.each(params, function(i, val) {
                 // apply search params to datatable
                 table.column(i).search(val ? val : '', false, false);
@@ -425,9 +443,21 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             table.table().draw();
         });
 
-        $('#kt_search_all').on('keyup', function() {
+        $('#search_stock_history_in').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#datepicker_stock_history_in').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTableStockHistoryOut = function () {
@@ -502,17 +532,15 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
         }).draw();
 
-        $('#kt_search_waktu').on('change', function(e) {
+        $('#datepicker_stock_history_out').on('change', function(e) {
             e.preventDefault();
             var params = {};
-            $('.kt-input').each(function() {
-                var i = $(this).data('col-index');
-                if (params[i]) {
-                    params[i] += '|' + $(this).val();
-                } else {
-                    params[i] = $(this).val();
-                }
-            });
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
             $.each(params, function(i, val) {
                 // apply search params to datatable
                 table.column(i).search(val ? val : '', false, false);
@@ -520,9 +548,21 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             table.table().draw();
         });
 
-        $('#kt_search_all').on('keyup', function() {
+        $('#search_stock_history_out').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#datepicker_stock_history_out').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTableRequestStock = function() {
@@ -626,17 +666,15 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
         }).draw();
 
-        $('#kt_search_waktu').on('change', function(e) {
+        $('#datepicker_request_stock').on('change', function(e) {
             e.preventDefault();
             var params = {};
-            $('.kt-input').each(function() {
-                var i = $(this).data('col-index');
-                if (params[i]) {
-                    params[i] += '|' + $(this).val();
-                } else {
-                    params[i] = $(this).val();
-                }
-            });
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
             $.each(params, function(i, val) {
                 // apply search params to datatable
                 table.column(i).search(val ? val : '', false, false);
@@ -644,9 +682,21 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             table.table().draw();
         });
 
-        $('#kt_search_all').on('keyup', function() {
+        $('#search_request_stock').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#datepicker_request_stock').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTableKehadiran = function () {
@@ -744,26 +794,40 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
         }).draw();
 
-        $('#kt_search_waktu').on('change', function(e) {
+        $('#monthpicker_kehadiran').on('change', function(e) {
             e.preventDefault();
             var params = {};
-            $('.kt-input').each(function() {
-                var i = $(this).data('col-index');
-                if (params[i]) {
-                    params[i] += '|' + $(this).val();
-                } else {
-                    params[i] = $(this).val();
-                }
-            });
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
             $.each(params, function(i, val) {
                 // apply search params to datatable
                 table.column(i).search(val ? val : '', false, false);
             });
             table.table().draw();
         });
-        $('#kt_search_all').on('keyup', function() {
+
+        $('#search_kehadiran').on('keyup', function() {
             table.search(this.value).draw();
         });
+
+        $('#monthpicker_kehadiran').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            orientation: "bottom auto",
+            format: "MM yyyy",
+            viewMode: "months",
+            minViewMode: "months",
+            clearBtn: true,
+            rtl: KTUtil.isRTL(),
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTableKehadiranDayOff = function () {
