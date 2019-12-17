@@ -310,6 +310,9 @@ License: You must have a valid license purchased only from themeforest(the above
 										<span class="kt-subheader__breadcrumbs-separator"></span>
 										<a href="user_admin/profile_kehadiran.html" class="kt-subheader__breadcrumbs-link">
 											Kehadiran </a>
+                                        <span class="kt-subheader__breadcrumbs-separator"></span>
+										<a href="user_admin/profile_kehadiran_dayoff.html" class="kt-subheader__breadcrumbs-link">
+											List Request Day-Off </a>
 									</div>
 								</div>
 							</div>
@@ -318,74 +321,11 @@ License: You must have a valid license purchased only from themeforest(the above
 						<!-- end:: Content Head -->
 
 						<!-- begin:: Content -->
-						<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+                        <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
 
                             <div class="row row-centered">
 
-                                <div class="col-12">
-									<div class="row">
-		                                <div class="col-lg-3 col-sm-6">
-		                                    <div class="kt-portlet kt-portlet--height-fluid">
-		                                    	<div class="kt-widget14">
-		                                    		<div class="kt-widget14__header" style="margin-bottom:0px;">
-		                                    			<h6>
-		                                    				Total Hari Kerja
-		                                    			</h6>
-		                                    			<h3 class="kt-widget14__desc kt-margin-t-5 color-main-dark">
-		                                    				<span name="kehadiran_kerja">200</span><span> Hari</span>
-		                                    			</h3>
-		                                    		</div>
-		                                    	</div>
-		                                    </div>
-		                                </div>
-		                                <div class="col-lg-3 col-sm-6">
-		                                    <div class="kt-portlet kt-portlet--height-fluid">
-		                                    	<div class="kt-widget14">
-		                                    		<div class="kt-widget14__header" style="margin-bottom:0px;">
-		                                    			<h6>
-		                                    				Sisa Cuti
-		                                    			</h6>
-		                                    			<h3 class="kt-widget14__desc kt-margin-t-5 color-main-dark">
-		                                    				<span name="kehadiran_cuti">20</span><span> Hari</span>
-		                                    			</h3>
-		                                    		</div>
-		                                    	</div>
-		                                    </div>
-		                                </div>
-		                                <div class="col-lg-3 col-sm-6">
-		                                    <div class="kt-portlet kt-portlet--height-fluid">
-		                                    	<div class="kt-widget14">
-		                                    		<div class="kt-widget14__header" style="margin-bottom:0px;">
-		                                    			<h6>
-		                                    				Jumlah Izin
-		                                    			</h6>
-		                                    			<h3 class="kt-widget14__desc kt-margin-t-5 color-main-dark">
-		                                    				<span name="kehadiran_izin">10</span><span> Hari</span>
-		                                    			</h3>
-		                                    		</div>
-		                                    	</div>
-		                                    </div>
-		                                </div>
-		                                <div class="col-lg-3 col-sm-6">
-		                                    <div class="kt-portlet kt-portlet--height-fluid">
-		                                    	<div class="kt-widget14">
-		                                    		<div class="kt-widget14__header" style="margin-bottom:0px;">
-		                                    			<h6>
-		                                    				Jumlah Sakit
-		                                    			</h6>
-		                                    			<h3 class="kt-widget14__desc kt-margin-t-5 color-main-dark">
-		                                    				<span name="kehadiran_sakit">5</span><span> Hari</span>
-		                                    			</h3>
-		                                    		</div>
-		                                    	</div>
-		                                    </div>
-		                                </div>
-									</div>
-								</div>
-
 								<div class="col-12">
-
-                                    <!--begin::Portlet-->
 									<div class="kt-portlet">
 										<div class="kt-portlet__head">
 											<div class="kt-portlet__head-label">
@@ -393,101 +333,17 @@ License: You must have a valid license purchased only from themeforest(the above
 													<i class="flaticon2-user-outline-symbol"></i>
 												</span>
 												<h3 class="kt-portlet__head-title">
-													Kehadiran
+													List Request Day-Off
 												</h3>
-											</div>
-                                            <div class="kt-portlet__head-toolbar">
-												<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_request_dayoff"><i class="flaticon2-graphic-design"></i> Request Day-Off</button>
-												<a class="kt-margin-l-5" href="user_admin/profile_kehadiran_dayoff.html"><button type="button" class="btn btn-sm btn-outline-success"><i class="flaticon2-list-3"></i> List Request Day-Off <i class="flaticon2-right-arrow" style="font-size: 0.6rem"></i></button></a>
 											</div>
 										</div>
 										<div class="kt-portlet__body">
-											<form class="kt-margin-b-5">
-    											<div class="row justify-space-between">
-													<div class="col-lg-4 col-sm-6 input-daterange input-group margin-mobile-b-5">
-														<input readonly type="text" class="form-control" name="start" placeholder="Pilih Tanggal" data-col-index="1" id="datepicker_kehadiran"/>
-														<div class="input-group-append">
-															<span class="input-group-text">
-																<i class="la la-calendar"></i>
-															</span>
-														</div>
-													</div>
-													<div class="col-lg-4 col-sm-6">
-	    												<input type="text" class="form-control" placeholder="Search" id="search_kehadiran">
-													</div>
-    											</div>
-    										</form>
-                                            <table class="table table-bordered table-hover table-checkable" id="table_kehadiran"></table>
+                                            <table class="table table-bordered table-hover table-checkable" id="table_kehadiran_request_dayoff"></table>
 										</div>
 									</div>
-
-									<!--end::Portlet-->
 								</div>
+
 							</div>
-
-                            <!-- begin:: Modal -->
-                            <div class="modal fade" id="kt_modal_request_dayoff" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Request Day-Off</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            </button>
-                                        </div>
-										<form id="kt_form_dayoff">
-	                                        <div class="modal-body">
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-3 col-form-label">Tanggal</label>
-                                                    <div class="col-9">
-														<div class="input-group date">
-	                                                        <input type="text" class="form-control kt_multidatepicker" placeholder="Tanggal" name="dayoff_tanggal">
-															<div class="input-group-append">
-																<span class="input-group-text">
-																	<i class="la la-calendar-check-o"></i>
-																</span>
-															</div>
-														</div>
-														<span class="form-text text-muted kt-hidden" style="margin:0px;"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-3 col-form-label">Status</label>
-                                                    <div class="col-9">
-                                                        <select class="form-control" name="dayoff_status" placeholder="Status">
-                                                            <option value="" disabled selected>Status</option>
-    														<option>Cuti Tahunan</option>
-    														<option>Izin</option>
-    														<option>Sakit</option>
-    														<option>Lain-lain</option>
-    													</select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-3 col-form-label">Notes</label>
-                                                    <div class="col-9">
-														<textarea class="form-control" name="dayoff_notes" rows="3" placeholder="Notes"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-3 col-form-label">Foto</label>
-                                                    <div class="col-9">
-														<div class="custom-file">
-															<input type="file" class="custom-file-input" name="dayoff_foto" accept="image/*">
-															<label class="custom-file-label">Choose file</label>
-														</div>
-                                                    </div>
-                                                </div>
-	                                        </div>
-	                                        <div class="modal-footer" style="justify-content:center;">
-	                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	                                            <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil">Submit</button>
-	                                        </div>
-										</form>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--end::Modal-->
 
 						</div>
 
@@ -585,17 +441,11 @@ License: You must have a valid license purchased only from themeforest(the above
                 // define validation rules
 	            rules: {
 	                dayoff_tanggal: {
-	                    required: true
+	                    required: true,
 	                },
 	                dayoff_status: {
 	                    required: true
-	                },
-					dayoff_notes: {
-						required: true
-					},
-					dayoff_foto: {
-						required: false
-					}
+	                }
 	            },
 
 	            invalidHandler: function(event, validator) {
