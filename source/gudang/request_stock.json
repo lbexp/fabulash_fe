@@ -7,48 +7,56 @@
         "no": 1,
         "no_request": "#12345",
         "tanggal": "12 November 2019",
+        "studio": "Studio Cabang Dg Tata",
         "list_barang": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "status": "Request"
     }, {
         "no": 2,
         "no_request": "#12345",
         "tanggal": "12 November 2019",
+        "studio": "Studio Cabang Dg Tata",
         "list_barang": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "status": "Terkirim"
     }, {
         "no": 3,
         "no_request": "#12345",
         "tanggal": "12 November 2019",
+        "studio": "Studio Cabang Dg Tata",
         "list_barang": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "status": "Diterima"
     }, {
         "no": 4,
         "no_request": "#12345",
         "tanggal": "12 November 2019",
+        "studio": "Studio Cabang Dg Tata",
         "list_barang": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "status": "Request"
     }, {
         "no": 5,
         "no_request": "#12345",
         "tanggal": "12 November 2019",
+        "studio": "Studio Cabang Dg Tata",
         "list_barang": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "status": "Terkirim"
     }, {
         "no": 6,
         "no_request": "#12345",
         "tanggal": "12 November 2019",
+        "studio": "Studio Cabang Dg Tata",
         "list_barang": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "status": "Diterima"
     }, {
         "no": 7,
         "no_request": "#12345",
         "tanggal": "12 November 2019",
+        "studio": "Studio Cabang Dg Tata",
         "list_barang": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "status": "Request"
     }, {
         "no": 8,
         "no_request": "#12345",
         "tanggal": "12 November 2019",
+        "studio": "Studio Cabang Dg Tata",
         "list_barang": "Lorem ipsum, lorem ipsum, & lorem ipsum",
         "status": "Terkirim"
     }]

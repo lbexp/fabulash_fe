@@ -607,6 +607,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: 'no_request',
                 title: 'No. Request',
             }, {
+                data: 'studio',
+                title: 'Studio',
+            }, {
                 data: 'list_barang',
                 title: 'List Barang',
             }, {
