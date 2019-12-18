@@ -318,61 +318,62 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 										</div>
 										<div class="kt-portlet__body">
-                                            <table class="table table-bordered table-hover well-align-table" role="grid">
-                                                <thead>
-                                                    <tr role="row">
-                                                        <th style="width: 5%">No</th>
-                                                        <th style="width: 15%">Alat/Bahan</th>
-                                                        <th style="width: 25%">Barang</th>
-                                                        <th style="width: 15%">Satuan</th>
-                                                        <th style="width: 12.5%">Request</th>
-                                                        <th style="width: 12.5%">Disetujui</th>
-                                                        <th style="width: 15%">Upload Foto</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="item_list">
-                                                    <tr role="row">
-                                                        <td>1</td>
-                                                        <td class="text-center">
-                                                            <select class="form-control" name="request_type">
-        														<option>Alat</option>
-        														<option>Bahan</option>
-        													</select>
-                                                        </td>
-														<td class="text-center">
-                                                            <select class="form-control" name="request_barang">
-        														<option>Eyelash Size 12</option>
-        														<option>Eyelash Size 12</option>
-        														<option>Eyelash Size 12</option>
-        													</select>
-                                                        </td>
-														<td class="text-center">
-                                                            <select class="form-control" name="request_satuan">
-        														<option>Box</option>
-        														<option>Box</option>
-        														<option>Box</option>
-        													</select>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <input type="number" class="form-control" name="request_jumlah_request">
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <input type="number" class="form-control" name="request_jumlah_disetujui">
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <input type="file" style="display: none; width:0; height: 0" accept="image/*" id="request_foto" name="request_foto">
-                                                            <label for="request_foto"  class="btn btn-link" style="padding:0px;"><i class="flaticon2-photo-camera"></i>Foto</label>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <div style="padding:0px;text-align:center;">
-                                                <button type="button" class="btn btn-link" style="padding-right:0px;" id="item_add"><i class="flaticon-add"></i>Tambah Item</button>
-                                            </div>
-                                            <div style="text-align: center; margin-top: 50px">
-                                                <button type="reset" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                                <button type="submit" class="btn btn-success" id="kt_sweetalert_request_berhasil">Submit</button>
-                                            </div>
+											<form id="kt_form_request_barang">
+												<table class="table table-bordered table-hover well-align-table" role="grid">
+	                                                <thead>
+	                                                    <tr role="row">
+	                                                        <th style="width: 5%">No</th>
+	                                                        <th style="width: 15%">Alat/Bahan</th>
+	                                                        <th style="width: 25%">Barang</th>
+	                                                        <th style="width: 15%">Satuan</th>
+	                                                        <th style="width: 12.5%">Request</th>
+	                                                        <th style="width: 12.5%">Disetujui</th>
+	                                                        <th style="width: 15%">Upload Foto</th>
+	                                                    </tr>
+	                                                </thead>
+	                                                <tbody id="item_list">
+	                                                    <tr role="row">
+	                                                        <td>1</td>
+	                                                        <td class="text-center">
+	                                                            <select class="form-control request_required" name="request_type1" required>
+	        														<option>Alat</option>
+	        														<option>Bahan</option>
+	        													</select>
+	                                                        </td>
+															<td class="text-center">
+	                                                            <select class="form-control request_required" name="request_barang1" >
+	        														<option>Eyelash Size 12</option>
+	        														<option>Eyelash Size 12</option>
+	        														<option>Eyelash Size 12</option>
+	        													</select>
+	                                                        </td>
+															<td class="text-center">
+	                                                            <select class="form-control request_required" name="request_satuan1" >
+	        														<option>Box</option>
+	        														<option>Box</option>
+	        														<option>Box</option>
+	        													</select>
+	                                                        </td>
+	                                                        <td class="text-center">
+	                                                            <input type="number" class="form-control request_required" name="request_jumlah_request1" placeholder="Jumlah" >
+	                                                        </td>
+	                                                        <td class="text-center">
+	                                                            <input type="number" class="form-control request_required" name="request_jumlah_disetujui1" placeholder="Jumlah" >
+	                                                        </td>
+	                                                        <td class="text-center">
+	                                                            <input class="kt-hidden request_required" type="file" accept="image/*" id="request_foto1" name="request_foto1" >
+	                                                            <label for="request_foto1" class="btn btn-link" style="padding:0px;"><i class="flaticon2-photo-camera"></i>Foto</label>
+	                                                        </td>
+	                                                    </tr>
+	                                                </tbody>
+	                                            </table>
+	                                            <div style="text-align:center;">
+	                                                <button type="button" class="btn btn-link" style="padding:0px;" id="item_add"><i class="flaticon-add"></i>Tambah Item</button>
+	                                            </div>
+	                                            <div style="text-align: center; margin-top: 50px">
+	                                                <button type="submit" class="btn btn-success" id="kt_sweetalert_request_berhasil">Submit</button>
+	                                            </div>
+											</form>
 										</div>
 									</div>
 
@@ -459,47 +460,50 @@ License: You must have a valid license purchased only from themeforest(the above
 		<script src="assets/js/custom/datepicker.js" type="text/javascript"></script>
 
         <script>
-            //Tambah item
-            $('#item_add').click(function() {
+            // Tambah item
+			var i = 1;
+	        $('#item_add').click(function() {
+				i += 1;
 				document.querySelector('#item_list').insertAdjacentHTML (
 					'beforeend',
 					`<tr role="row">
-                        <td>1</td>
+                        <td>`+ i +`</td>
                         <td class="text-center">
-                            <select class="form-control">
+                            <select name="request_type`+ i +`" class="form-control request_required">
                                 <option>Alat</option>
                                 <option>Bahan</option>
                             </select>
                         </td>
                         <td class="text-center">
-                            <select class="form-control">
+                            <select name="request_barang`+ i +`" class="form-control request_required" >
                                 <option>Eyelash Size 12</option>
                                 <option>Eyelash Size 12</option>
                                 <option>Eyelash Size 12</option>
                             </select>
                         </td>
                         <td class="text-center">
-                            <select class="form-control">
+                            <select name="request_satuan`+ i +`" class="form-control request_required" >
                                 <option>Box</option>
                                 <option>Box</option>
                                 <option>Box</option>
                             </select>
                         </td>
                         <td class="text-center">
-                            <input type="number" class="form-control">
+                            <input name="request_jumlah_request`+ i +`" type="number" min="1" class="form-control request_required" placeholder="Jumlah" >
                         </td>
                         <td class="text-center">
-                            <input type="number" class="form-control">
+                            <input name="request_jumlah_disetujui`+ i +`" type="number" min="1" class="form-control request_required" placeholder="Jumlah" >
                         </td>
                         <td class="text-center">
-                            <input type="file" style="display: none; width:0; height: 0" accept="image/*" id="request_foto">
-                            <label for="request_foto"  class="btn btn-link" style="padding:0px;"><i class="flaticon2-photo-camera"></i>Foto</label>
+                            <input class="kt-hidden request_required" name="request_foto`+ i +`" type="file" accept="image/*" id="request_foto`+ i +`" >
+                            <label for="request_foto`+ i +`"  class="btn btn-link" style="padding:0px;"><i class="flaticon2-photo-camera"></i>Foto</label>
                         </td>
                     </tr>`
-				)
+				);
+				return i;
 			});
 
-            //Sweetalert
+            // Sweetalert
             $('#kt_sweetalert_request_berhasil').click(function(e) {
 				swal.fire({
 					title: "Berhasil",
@@ -511,6 +515,18 @@ License: You must have a valid license purchased only from themeforest(the above
 					// location.reload();
 				});
 			});
+
+			// Form validation
+			$('#kt_form_request_barang').on('submit', function(event) {
+				$('.request_required').each(function (item) {
+					$(this).rules('add', {
+						required: true
+					})
+				});
+				event.preventDefault();
+			})
+
+			$('#kt_form_request_barang').validate({})
 
         </script>
 

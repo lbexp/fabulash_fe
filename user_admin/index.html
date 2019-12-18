@@ -755,7 +755,14 @@ License: You must have a valid license purchased only from themeforest(the above
 					jadwal_waktu : {
 						required: true
 					}
-				}
+				},
+
+	            invalidHandler: function(event, validator) {
+	                KTUtil.scrollTop();
+	            },
+	            submitHandler: function(form) {
+	                //form[0].submit(); // submit the form
+	            }
 			});
 
 			$("#kt_form_customer").validate({
