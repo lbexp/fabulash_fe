@@ -327,53 +327,28 @@ License: You must have a valid license purchased only from themeforest(the above
 	                                                <span class="kt-font-bold">Date Approve : <span name="date_approve">15 November 2019</span></span>
 												</div>
                                             </div>
-                                            <table class="table table-bordered table-hover well-align-table" role="grid">
-                                                <thead>
-                                                    <tr role="row">
-                                                        <th style="width: 5%">No</th>
-                                                        <th style="width: 15%">Alat/Bahan</th>
-                                                        <th style="width: 25%">Barang</th>
-                                                        <th style="width: 15%">Satuan</th>
-                                                        <th style="width: 12.5%">Request</th>
-                                                        <th style="width: 12.5%">Disetujui</th>
-                                                        <th style="width: 15%">Upload Foto</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="item_list">
-                                                    <tr role="row">
-                                                        <td>1</td>
-                                                        <td class="text-center">
-                                                            <select class="form-control" name="request_type" disabled>
-        														<option>Alat</option>
-        														<option>Bahan</option>
-        													</select>
-                                                        </td>
-														<td class="text-center">
-                                                            <select class="form-control" name="request_barang" disabled>
-        														<option>Eyelash Size 12</option>
-        														<option>Eyelash Size 12</option>
-        														<option>Eyelash Size 12</option>
-        													</select>
-                                                        </td>
-														<td class="text-center">
-                                                            <select class="form-control" name="request_satuan" disabled>
-        														<option>Box</option>
-        														<option>Box</option>
-        														<option>Box</option>
-        													</select>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <input type="number" class="form-control" name="request_jumlah_request" value="5" readonly>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <input type="number" class="form-control" name="request_jumlah_disetujui" value="5" readonly>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <label for="request_foto"  class="btn btn-link" style="padding:0px;"><i class="flaticon2-photo-camera"></i>Preview</label>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+											<form id="kt_form_request_barang">
+												<div class="kt-margin-b-20">
+													<label style="font-size: 1rem;font-weight: 400;">Item List : </label>
+		                                            <table class="table table-bordered table-hover well-align-table" role="grid" id="table_request_inventory_detail_disetujui">
+		                                                <thead>
+		                                                    <tr role="row">
+		                                                        <th style="width: 5%">No</th>
+		                                                        <th style="width: 15%">Jenis</th>
+		                                                        <th style="width: 25%">Barang</th>
+		                                                        <th style="width: 15%">Satuan</th>
+		                                                        <th style="width: 12.5%">Request</th>
+		                                                        <th style="width: 12.5%">Disetujui</th>
+		                                                        <th style="width: 15%">Foto</th>
+		                                                    </tr>
+		                                                </thead>
+		                                            </table>
+												</div>
+												<div class="form-group form-group-last">
+													<label class="kt-margin-b-15" for="request_notes">Notes: </label>
+													<textarea class="form-control" id="request_notes" name="request_notes" rows="3" readonly>Lorem ipsum dolor sit amet</textarea>
+												</div>
+											</form>
 										</div>
 									</div>
 
@@ -381,6 +356,26 @@ License: You must have a valid license purchased only from themeforest(the above
 								</div>
 
 							</div>
+
+							<div class="modal fade" id="modal_foto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		                        <div class="modal-dialog" role="document">
+		                            <div class="modal-content">
+		                                <div class="modal-header">
+		                                    <h5 class="modal-title">Foto</h5>
+		                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		                                    </button>
+		                                </div>
+		                               <div class="modal-body">
+										   <div align="center">
+											   <div class="dropzone dropzone-default">
+		   							    			<div class="dropzone-msg dz-message needsclick" id="foto_placement">
+		   							    			</div>
+		   							    		</div>
+											</div>
+		                               </div>
+		                            </div>
+		                        </div>
+		                    </div>
 
 						</div>
 

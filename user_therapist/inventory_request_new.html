@@ -319,29 +319,31 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 										<div class="kt-portlet__body">
 											<form id="kt_form_request_barang">
-												<label style="font-size: 1rem;font-weight: 400;">Item List : </label>
-												<div class="table-responsive">
-													<table class="table table-bordered table-hover well-align-table table-mobile" role="grid" id="table_request_inventory_new">
-		                                                <thead>
-		                                                    <tr role="row">
-		                                                        <th style="width: 5%">No</th>
-		                                                        <th style="width: 15%">Jenis</th>
-		                                                        <th style="width: 25%">Barang</th>
-		                                                        <th style="width: 15%">Satuan</th>
-		                                                        <th style="width: 12.5%">Request</th>
-		                                                        <th style="width: 12.5%">Disetujui</th>
-		                                                        <th style="width: 15%">Upload Foto</th>
-		                                                    </tr>
-		                                                </thead>
-		                                                <tbody id="item_list">
-		                                                </tbody>
-		                                            </table>
+												<div class="kt-margin-b-20">
+													<label class="kt-margin-b-15" style="font-size: 1rem;font-weight: 400;">Item List : </label>
+													<div class="table-responsive">
+														<table class="table table-bordered table-hover well-align-table table-mobile" role="grid" id="table_request_inventory_new">
+			                                                <thead>
+			                                                    <tr role="row">
+			                                                        <th style="width: 5%">No</th>
+			                                                        <th style="width: 15%">Jenis</th>
+			                                                        <th style="width: 25%">Barang</th>
+			                                                        <th style="width: 15%">Satuan</th>
+			                                                        <th style="width: 12.5%">Request</th>
+			                                                        <th style="width: 12.5%">Disetujui</th>
+			                                                        <th style="width: 15%">Upload Foto</th>
+			                                                    </tr>
+			                                                </thead>
+			                                                <tbody id="item_list">
+			                                                </tbody>
+			                                            </table>
+													</div>
+		                                            <div style="text-align:center;">
+		                                                <button type="button" class="btn btn-link" style="padding:0px;" id="item_add"><i class="flaticon-add"></i>Tambah Item</button>
+		                                            </div>
 												</div>
-	                                            <div class="kt-margin-b-10" style="text-align:center;">
-	                                                <button type="button" class="btn btn-link" style="padding:0px;" id="item_add"><i class="flaticon-add"></i>Tambah Item</button>
-	                                            </div>
 												<div class="form-group form-group-last">
-													<label for="request_notes">Notes: </label>
+													<label class="kt-margin-b-15" for="request_notes">Notes: </label>
 													<textarea class="form-control" id="request_notes" name="request_notes" rows="3" placeholder="Notes"></textarea>
 												</div>
 	                                            <div style="text-align: center; margin-top: 30px">
@@ -468,7 +470,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <input name="request_jumlah_request`+ i +`" type="number" min="1" class="form-control request_required" placeholder="Jumlah" >
                         </td>
                         <td class="text-center">
-                            <input name="request_jumlah_disetujui`+ i +`" type="number" min="1" class="form-control request_required" placeholder="Jumlah" >
+                            <input name="request_jumlah_disetujui`+ i +`" type="number" min="1" class="form-control readonly" readonly>
                         </td>
                         <td class="text-center">
 						<label for="request_foto`+ i +`"  class="btn btn-link" style="padding:0px;" id="request_foto`+ i +`-label"><i class="flaticon2-photo-camera"></i>Foto</label>

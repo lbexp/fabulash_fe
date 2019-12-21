@@ -1175,6 +1175,138 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
+    var initTableRequestInventoryRequestDetailRequest = function () {
+        var i = 0;
+        var table = $('#table_request_inventory_detail_request');
+        var datatable = table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/therapist/request_detail.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'jenis',
+                title: 'Jenis'
+            }, {
+                data: 'barang',
+                title: 'Barang'
+            }, {
+                data: 'satuan',
+                title: 'Satuan'
+            }, {
+                data: 'request',
+                title: 'Request'
+            }, {
+                field: 'disetujui',
+                title: 'Disetujui',
+                render: function(data, type, full, meta) {
+                    i++;
+                    return `<input name="request_jumlah_disetujui`+ i +`" type="number" min="1" class="form-control request_required" placeholder="Jumlah">`;
+                }
+            }, {
+                data: 'foto',
+                title: 'Foto',
+                render: function(data, type, full, meta) {
+                    return `
+                    <button type="button" class="btn btn-link" style="padding:0px;" data-toggle="modal" data-url="`+ data +`" data-target="#modal_foto"><i class="flaticon2-photo-camera"></i>Foto</button>`;
+                }
+            }],
+			columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5, 6],
+                orderable: false,
+				className: 'text-center'
+            }],
+        });
+
+        $("#modal_foto").on('show.bs.modal', function (e) {
+            var triggerLink = $(e.relatedTarget);
+            var url = triggerLink.data("url");
+            $(this).find("#foto_placement").html(`<img src="`+ url +`" class="uploaded_img">`);
+        });
+    };
+
+    var initTableRequestInventoryRequestDetailDisetujui = function () {
+        var i = 0;
+        var table = $('#table_request_inventory_detail_disetujui');
+        var datatable = table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/therapist/request_detail.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'jenis',
+                title: 'Jenis'
+            }, {
+                data: 'barang',
+                title: 'Barang'
+            }, {
+                data: 'satuan',
+                title: 'Satuan'
+            }, {
+                data: 'request',
+                title: 'Request'
+            }, {
+                data: 'setuju',
+                title: 'Disetujui'
+            }, {
+                data: 'foto',
+                title: 'Foto',
+                render: function(data, type, full, meta) {
+                    return `
+                    <button type="button" class="btn btn-link" style="padding:0px;" data-toggle="modal" data-url="`+ data +`" data-target="#modal_foto"><i class="flaticon2-photo-camera"></i>Foto</button>`;
+                }
+            }],
+			columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5, 6],
+                orderable: false,
+				className: 'text-center'
+            }],
+        });
+
+        $("#modal_foto").on('show.bs.modal', function (e) {
+            var triggerLink = $(e.relatedTarget);
+            var url = triggerLink.data("url");
+            $(this).find("#foto_placement").html(`<img src="`+ url +`" class="uploaded_img">`);
+        });
+    };
+
     return {
         //main function to initiate the module
         init: function() {
@@ -1191,6 +1323,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTablePayroll();
             initTablePinjamanListRequest();
             initTablePinjamanCurrent();
+            initTableRequestInventoryRequestDetailRequest();
+            initTableRequestInventoryRequestDetailDisetujui();
         },
     };
 }();

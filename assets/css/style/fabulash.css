@@ -444,3 +444,7 @@ body {
         width: 350%;
     }
 }
+
+.readonly {
+    background-color: #f7f8fa !important;
+}
