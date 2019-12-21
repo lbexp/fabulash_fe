@@ -825,6 +825,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             viewMode: "months",
             minViewMode: "months",
             rtl: KTUtil.isRTL(),
+            clearBtn: true,
             templates: {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
@@ -961,6 +962,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             viewMode: "months",
             minViewMode: "months",
             rtl: KTUtil.isRTL(),
+            clearBtn: true,
             templates: {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
@@ -1097,6 +1099,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             viewMode: "months",
             minViewMode: "months",
             rtl: KTUtil.isRTL(),
+            clearBtn: true,
             templates: {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
@@ -1226,6 +1229,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             format: "MM yyyy",
             viewMode: "months",
             minViewMode: "months",
+            clearBtn: true,
             rtl: KTUtil.isRTL(),
             templates: {
                 leftArrow: '<i class="la la-angle-left"></i>',
@@ -1648,6 +1652,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             format: "MM yyyy",
             viewMode: "months",
             minViewMode: "months",
+            clearBtn: true,
             rtl: KTUtil.isRTL(),
             templates: {
                 leftArrow: '<i class="la la-angle-left"></i>',
@@ -1778,6 +1783,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             format: "MM yyyy",
             viewMode: "months",
             minViewMode: "months",
+            clearBtn: true,
             rtl: KTUtil.isRTL(),
             templates: {
                 leftArrow: '<i class="la la-angle-left"></i>',
@@ -1929,6 +1935,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             format: "MM yyyy",
             viewMode: "months",
             minViewMode: "months",
+            clearBtn: true,
             rtl: KTUtil.isRTL(),
             templates: {
                 leftArrow: '<i class="la la-angle-left"></i>',
@@ -2031,6 +2038,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             format: "MM yyyy",
             viewMode: "months",
             minViewMode: "months",
+            clearBtn: true,
             rtl: KTUtil.isRTL(),
             templates: {
                 leftArrow: '<i class="la la-angle-left"></i>',
