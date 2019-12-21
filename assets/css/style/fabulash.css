@@ -415,6 +415,32 @@ body {
     border-color: #278484;
 }
 
-/* .ui-timepicker-container {
-      z-index: 3500 !important;
- } */
+@media (max-width: 768px) {
+    .table-mobile {
+        width: 150%;
+    }
+}
+
+@media (max-width: 575px) {
+    .table-mobile {
+        width: 190%;
+    }
+}
+
+@media (max-width: 425px) {
+    .table-mobile {
+        width: 250%;
+    }
+}
+
+@media (max-width: 375px) {
+    .table-mobile {
+        width: 300%;
+    }
+}
+
+@media (max-width: 320px) {
+    .table-mobile {
+        width: 350%;
+    }
+}

@@ -334,40 +334,6 @@ License: You must have a valid license purchased only from themeforest(the above
 		                                                    </tr>
 		                                                </thead>
 		                                                <tbody id="item_list">
-		                                                    <tr role="row">
-		                                                        <td>1</td>
-		                                                        <td class="text-center">
-		                                                            <select class="form-control request_required" name="request_type1" required>
-		        														<option>Alat</option>
-		        														<option>Bahan</option>
-		        													</select>
-		                                                        </td>
-																<td class="text-center">
-		                                                            <select class="form-control request_required" name="request_barang1" >
-		        														<option>Eyelash Size 12</option>
-		        														<option>Eyelash Size 12</option>
-		        														<option>Eyelash Size 12</option>
-		        													</select>
-		                                                        </td>
-																<td class="text-center">
-		                                                            <select class="form-control request_required" name="request_satuan1" >
-		        														<option>Box</option>
-		        														<option>Box</option>
-		        														<option>Box</option>
-		        													</select>
-		                                                        </td>
-		                                                        <td class="text-center">
-		                                                            <input type="number" min="1" class="form-control request_required" name="request_jumlah_request1" placeholder="Jumlah" >
-		                                                        </td>
-		                                                        <td class="text-center">
-		                                                            <input type="number" min="1" class="form-control request_required" name="request_jumlah_disetujui1" placeholder="Jumlah" >
-		                                                        </td>
-		                                                        <td class="text-center">
-		                                                            <input class="kt-hidden request_required" type="file" accept="image/*" id="request_foto1" name="request_foto1" >
-		                                                            <label for="request_foto1" class="btn btn-link" style="padding:0px;" id="request_foto1-label"><i class="flaticon2-photo-camera"></i>Foto</label>
-																	<span class="form-text text-muted kt-hidden"></span>
-		                                                        </td>
-		                                                    </tr>
 		                                                </tbody>
 		                                            </table>
 												</div>
@@ -471,7 +437,6 @@ License: You must have a valid license purchased only from themeforest(the above
             // Tambah item
 			var i = 1;
 	        $('#item_add').click(function() {
-				i += 1;
 				document.querySelector('#item_list').insertAdjacentHTML (
 					'beforeend',
 					`<tr role="row">
@@ -503,14 +468,16 @@ License: You must have a valid license purchased only from themeforest(the above
                             <input name="request_jumlah_disetujui`+ i +`" type="number" min="1" class="form-control request_required" placeholder="Jumlah" >
                         </td>
                         <td class="text-center">
+						<label for="request_foto`+ i +`"  class="btn btn-link" style="padding:0px;" id="request_foto`+ i +`-label"><i class="flaticon2-photo-camera"></i>Foto</label>
                             <input class="kt-hidden request_required" name="request_foto`+ i +`" type="file" accept="image/*" id="request_foto`+ i +`" >
-                            <label for="request_foto`+ i +`"  class="btn btn-link" style="padding:0px;" id="request_foto`+ i +`-label"><i class="flaticon2-photo-camera"></i>Foto</label>
-							<span class="form-text text-muted kt-hidden"></span>
                         </td>
                     </tr>`
 				);
-				return i;
+				i++;
 			});
+			$('document').ready(function () {
+				$('#item_add').click();
+			})
 
             // Sweetalert
             $('#kt_sweetalert_request_berhasil').click(function(e) {
@@ -535,10 +502,19 @@ License: You must have a valid license purchased only from themeforest(the above
 				event.preventDefault();
 			})
 
+			jQuery.extend(jQuery.validator.messages, {
+			    required : "Required"
+			});
+
 			$('#kt_form_request_barang').validate({
 				rules: {
 					request_notes: {
 						required: true
+					}
+				},
+				messages: {
+					request_notes: {
+						required: "This field is required"
 					}
 				}
 			})
