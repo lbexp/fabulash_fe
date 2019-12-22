@@ -348,9 +348,6 @@ License: You must have a valid license purchased only from themeforest(the above
 													<label class="kt-margin-b-15" for="request_notes">Notes: </label>
 													<textarea class="form-control" id="request_notes" name="request_notes" rows="3" readonly>Lorem ipsum dolor sit amet</textarea>
 												</div>
-	                                            <div style="text-align: center; margin-top: 30px">
-	                                                <button type="submit" class="btn btn-success" id="kt_sweetalert_request_berhasil">Submit</button>
-	                                            </div>
 											</form>
 										</div>
 									</div>
@@ -456,37 +453,6 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Page Scripts(used by this page) -->
 		<script src="assets/js/script/datatable_therapist.js"></script>
 		<script src="assets/js/custom/datepicker.js" type="text/javascript"></script>
-
-        <script>
-			// Form validation
-			jQuery.extend(jQuery.validator.messages, {
-			    required : "Required"
-			});
-
-			$('#kt_form_request_barang').on('submit', function(event) {
-				$('.request_required').each(function (item) {
-					$(this).rules('add', {
-						required: true
-					})
-				});
-				event.preventDefault();
-			});
-
-			$('#kt_form_request_barang').validate();
-
-            //Sweetalert
-            $('#kt_sweetalert_request_berhasil').click(function(e) {
-				swal.fire({
-					title: "Berhasil",
-					text: "Request berhasil dilakukan",
-					type: "success",
-					confirmButtonText: "Ok",
-					confirmButtonClass: "btn btn-brand"
-				}).then(function(result) {
-					// location.reload();
-				});
-			});
-        </script>
 
 		<!--end::Page Scripts -->
 	</body>

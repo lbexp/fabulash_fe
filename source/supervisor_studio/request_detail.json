@@ -1,0 +1,31 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "jenis": "#12345",
+        "barang": "Eyelash Extension",
+        "satuan": "box",
+        "request": "12",
+        "setuju": "12",
+        "foto": "assets/media/blog/blog1.jpg"
+    }, {
+        "no": 2,
+        "jenis": "#12345",
+        "barang": "Eyelash Extension",
+        "satuan": "box",
+        "request": "12",
+        "setuju": "12",
+        "foto": "assets/media/blog/blog2.jpg"
+    }, {
+        "no": 3,
+        "jenis": "#12345",
+        "barang": "Eyelash Extension",
+        "satuan": "box",
+        "request": "12",
+        "setuju": "12",
+        "foto": "assets/media/blog/blog3.jpg"
+    }]
+}

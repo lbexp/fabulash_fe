@@ -1219,14 +1219,14 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 title: 'Disetujui',
                 render: function(data, type, full, meta) {
                     i++;
-                    return `<input name="request_jumlah_disetujui`+ i +`" type="number" min="1" class="form-control request_required" placeholder="Jumlah">`;
+                    return `<input name="request_jumlah_disetujui`+ i +`" type="number" min="1" class="form-control readonly" readonly>`;
                 }
             }, {
                 data: 'foto',
                 title: 'Foto',
                 render: function(data, type, full, meta) {
                     return `
-                    <button type="button" class="btn btn-link" style="padding:0px;" data-toggle="modal" data-url="`+ data +`" data-target="#modal_foto"><i class="flaticon2-photo-camera"></i>Foto</button>`;
+                    <button type="button" class="btn btn-link" style="padding:0px;" data-toggle="modal" data-url="`+ data +`" data-target="#modal_foto"><i class="flaticon2-photo-camera"></i>Preview</button>`;
                 }
             }],
 			columnDefs: [{
@@ -1290,7 +1290,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 title: 'Foto',
                 render: function(data, type, full, meta) {
                     return `
-                    <button type="button" class="btn btn-link" style="padding:0px;" data-toggle="modal" data-url="`+ data +`" data-target="#modal_foto"><i class="flaticon2-photo-camera"></i>Foto</button>`;
+                    <button type="button" class="btn btn-link" style="padding:0px;" data-toggle="modal" data-url="`+ data +`" data-target="#modal_foto"><i class="flaticon2-photo-camera"></i>Preview</button>`;
                 }
             }],
 			columnDefs: [{
