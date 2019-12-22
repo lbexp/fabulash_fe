@@ -341,57 +341,38 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <span class="kt-margin-10">Terkirim</span><i class="flaticon2-next" style="padding: 10px 0px;"></i>
                                                 <span class="kt-margin-10">Diterima</span>
                                             </div>
-                                            <table class="table table-bordered table-hover well-align-table" role="grid">
-                                                <thead>
-                                                    <tr role="row">
-                                                        <th style="width: 5%">No</th>
-                                                        <th style="width: 25%">Nama Barang</th>
-                                                        <th style="width: 15%">Satuan</th>
-                                                        <th style="width: 12.5%">Request</th>
-                                                        <th style="width: 12.5%">Terkirim</th>
-                                                        <th style="width: 12.5%">Diterima</th>
-                                                        <th style="width: 17.5%">Margin Hilang</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="item_list">
-                                                    <tr role="row">
-                                                        <td>1</td>
-                                                        <td class="text-center">
-                                                            <select class="form-control" name="request_barang">
-        														<option>Eyelash Size 12</option>
-        														<option>Eyelash Size 12</option>
-        														<option>Eyelash Size 12</option>
-        													</select>
-                                                        </td>
-														<td class="text-center">
-                                                            <select class="form-control" name="request_satuan">
-        														<option>Box</option>
-        														<option>Box</option>
-        														<option>Box</option>
-        													</select>
-                                                        </td>
-														<td class="text-center">
-                                                            <input type="number" class="form-control" name="request_jumlah_request">
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <input type="number" class="form-control" name="request_jumlah_terkirim">
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <input type="number" class="form-control" name="request_jumlah_diterima">
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <input type="number" class="form-control" name="request_margin">
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <div style="padding:0px;text-align:center;">
-                                                <button type="button" class="btn btn-link" style="padding-right:0px;" id="item_add"><i class="flaticon-add"></i>Tambah Item</button>
-                                            </div>
-                                            <div style="text-align: center; margin-top: 50px">
-                                                <button type="reset" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                                <button type="submit" class="btn btn-success" id="kt_sweetalert_request_berhasil">Submit</button>
-                                            </div>
+											<form id="kt_form_request_barang">
+												<div class="kt-margin-b-20">
+													<label class="kt-margin-b-15" style="font-size: 1rem;font-weight: 400;">Item List : </label>
+													<div class="table-responsive">
+														<table class="table table-bordered table-hover well-align-table table-mobile" role="grid" id="table_request_inventory_new">
+															<thead>
+			                                                    <tr role="row">
+			                                                        <th style="width: 5%">No</th>
+			                                                        <th style="width: 25%">Barang</th>
+			                                                        <th style="width: 15%">Satuan</th>
+			                                                        <th style="width: 12.5%">Request</th>
+			                                                        <th style="width: 12.5%">Terkirim</th>
+			                                                        <th style="width: 12.5%">Diterima</th>
+			                                                        <th style="width: 17.5%">Margin Hilang</th>
+			                                                    </tr>
+			                                                </thead>
+			                                                <tbody id="item_list">
+			                                                </tbody>
+			                                            </table>
+													</div>
+		                                            <div style="text-align:center;">
+		                                                <button type="button" class="btn btn-link" style="padding:0px;" id="item_add"><i class="flaticon-add"></i>Tambah Item</button>
+		                                            </div>
+												</div>
+												<div class="form-group form-group-last">
+													<label class="kt-margin-b-15" for="request_notes">Notes: </label>
+													<textarea class="form-control" id="request_notes" name="request_notes" rows="3" placeholder="Notes"></textarea>
+												</div>
+	                                            <div style="text-align: center; margin-top: 30px">
+	                                                <button type="submit" class="btn btn-success" id="kt_sweetalert_request_berhasil">Submit</button>
+	                                            </div>
+											</form>
 										</div>
 									</div>
 
@@ -478,41 +459,49 @@ License: You must have a valid license purchased only from themeforest(the above
 		<script src="assets/js/custom/datepicker.js" type="text/javascript"></script>
 
         <script>
-            //Tambah item
+            // Tambah item
+			var i = 1;
             $('#item_add').click(function() {
 				document.querySelector('#item_list').insertAdjacentHTML (
 					'beforeend',
 					`<tr role="row">
-						<td>1</td>
+                        <td>`+ i +`</td>
 						<td class="text-center">
-							<select class="form-control" name="request_barang">
+							<select class="form-control request_required" name="request_barang`+ i +`">
+                                <option value="" selected disabled>Nama Barang</option>
 								<option>Eyelash Size 12</option>
 								<option>Eyelash Size 12</option>
 								<option>Eyelash Size 12</option>
 							</select>
 						</td>
 						<td class="text-center">
-							<select class="form-control" name="request_satuan">
+							<select class="form-control request_required" name="request_satuan`+ i +`">
+                                <option value="" selected disabled>Satuan</option>
 								<option>Box</option>
 								<option>Box</option>
 								<option>Box</option>
 							</select>
 						</td>
 						<td class="text-center">
-							<input type="number" class="form-control" name="request_jumlah_request">
+							<input type="number" min="1" class="form-control request_required" placeholder="Jumlah" name="request_jumlah_request`+ i +`">
 						</td>
 						<td class="text-center">
-							<input type="number" class="form-control" name="request_jumlah_terkirim">
+							<input type="number" min="1" class="form-control readonly" name="request_jumlah_terkirim`+ i +`">
 						</td>
 						<td class="text-center">
-							<input type="number" class="form-control" name="request_jumlah_diterima">
+							<input type="number" min="1" class="form-control readonly" name="request_jumlah_diterima`+ i +`">
 						</td>
 						<td class="text-center">
-							<input type="number" class="form-control" name="request_margin">
+							<input type="number" min="1" class="form-control readonly" name="request_margin`+ i +`">
 						</td>
 					</tr>`
-				)
+				);
+				i++
 			});
+
+			$('document').ready(function () {
+				$('#item_add').click();
+			})
 
             //Sweetalert
             $('#kt_sweetalert_request_berhasil').click(function(e) {
@@ -525,6 +514,33 @@ License: You must have a valid license purchased only from themeforest(the above
 				}).then(function(result) {
 					// location.reload();
 				});
+			});
+
+			// Form validation
+			$('#kt_form_request_barang').on('submit', function(event) {
+				$('.request_required').each(function (item) {
+					$(this).rules('add', {
+						required: true
+					})
+				});
+				event.preventDefault();
+			})
+
+			jQuery.extend(jQuery.validator.messages, {
+			    required : "Required"
+			});
+
+			$('#kt_form_request_barang').validate({
+				rules: {
+					request_notes: {
+						required: true
+					}
+				},
+				messages: {
+					request_notes: {
+						required: "This field is required"
+					}
+				}
 			});
 
         </script>

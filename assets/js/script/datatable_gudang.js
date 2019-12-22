@@ -934,6 +934,182 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
+    var initTableRequestStockDetailRequest = function () {
+        var i = 0;
+        var table = $('#table_request_stock_detail_request');
+        var datatable = table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/gudang/request_stock_detail.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'barang',
+                title: 'Barang'
+            }, {
+                data: 'satuan',
+                title: 'Satuan'
+            }, {
+                data: 'request',
+                title: 'Request'
+            }, {
+                field: 'terkirim',
+                title: 'Terkirim',
+                render: function(data, type, full, meta) {
+                    i++;
+                    return `<input name="request_jumlah_terkirim`+ i +`" type="number" min="1" class="form-control request_required" placeholder="Jumlah">`;
+                }
+            }, {
+                field: 'diterima',
+                title: 'Diterima',
+                render: function(data, type, full, meta) {
+                    return `<input type="number" min="1" class="form-control readonly" readonly>`;
+                }
+            }, {
+                field: 'margin',
+                title: 'Margin Hilang',
+                render: function(data, type, full, meta) {
+                    return `<input type="number" min="1" class="form-control readonly" readonly>`;
+                }
+            }],
+			columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5, 6],
+                orderable: false,
+				className: 'text-center'
+            }],
+        });
+    };
+
+    var initTableRequestStockDetailTerkirim = function () {
+        var table = $('#table_request_stock_detail_terkirim');
+        var datatable = table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/gudang/request_stock_detail.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'barang',
+                title: 'Barang'
+            }, {
+                data: 'satuan',
+                title: 'Satuan'
+            }, {
+                data: 'request',
+                title: 'Request'
+            }, {
+                data: 'terkirim',
+                title: 'Terkirim'
+            }, {
+                field: 'diterima',
+                title: 'Diterima',
+                render: function(data, type, full, meta) {
+                    return `<input type="number" min="1" class="form-control readonly" readonly>`;
+                }
+            }, {
+                field: 'margin',
+                title: 'Margin Hilang',
+                render: function(data, type, full, meta) {
+                    return `<input type="number" min="1" class="form-control readonly" readonly>`;
+                }
+            }],
+			columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5, 6],
+                orderable: false,
+				className: 'text-center'
+            }],
+        });
+    };
+
+    var initTableRequestStockDetailDiterima = function () {
+        var table = $('#table_request_stock_detail_diterima');
+        var datatable = table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/gudang/request_stock_detail.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'barang',
+                title: 'Barang'
+            }, {
+                data: 'satuan',
+                title: 'Satuan'
+            }, {
+                data: 'request',
+                title: 'Request'
+            }, {
+                data: 'terkirim',
+                title: 'Terkirim'
+            }, {
+                data: 'diterima',
+                title: 'Diterima'
+            }, {
+                data: 'margin',
+                title: 'Margin Hilang'
+            }],
+			columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5, 6],
+                orderable: false,
+				className: 'text-center'
+            }],
+        });
+    };
+
     return {
         //main function to initiate the module
         init: function() {
@@ -946,6 +1122,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableRequestStock();
             initTableKehadiran();
             initTableKehadiranDayOff();
+            initTableRequestStockDetailRequest();
+            initTableRequestStockDetailTerkirim();
+            initTableRequestStockDetailDiterima();
         },
     };
 }();
