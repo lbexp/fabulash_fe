@@ -152,9 +152,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         }).datepicker("setDate", new Date());
     };
 
-    var initTableAllTreatment = function() {
+    var initTablePaidTreatment = function() {
         // begin first table
-        var table = $('#table_treatment_all').DataTable({
+        var table = $('#table_treatment_paid').DataTable({
             order: [],
             responsive: true,
             // Pagination settings
@@ -2251,7 +2251,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         //main function to initiate the module
         init: function() {
             initTableActiveTreatment();
-            initTableAllTreatment();
+            initTablePaidTreatment();
             initTableVoidTreatment();
             initTableTreatmentDetail();
             initTableSPKScheduled();

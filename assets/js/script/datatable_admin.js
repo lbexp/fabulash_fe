@@ -193,19 +193,31 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
-    var initTableAllTreatment = function() {
-        var table = $('#table_treatment_all');
+    var initTablePaidTreatment = function() {
         // begin first table
-        var datatable = table.DataTable({
+        var table = $('#table_treatment_paid').DataTable({
             order: [],
             responsive: true,
+            // Pagination settings
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            // read more: https://datatables.net/examples/basic_init/dom.html
+            lengthMenu: [5, 10, 25, 50],
+            pageLength: 10,
+            language: {
+                'lengthMenu': 'Display _MENU_',
+            },
+            searchDelay: 500,
+            processing: true,
+            serverSide: false,
             ajax: {
                 url: 'source/admin/treatment.json',
                 type: 'POST',
                 data: {
-                    pagination: {
-                        perpage: 50,
-                    },
+                    // parameters for custom backend script demo
+                    columnsDef: [
+                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                        'tanggal', 'status', 'aksi',
+                    ],
                 },
             },
             columns: [{
@@ -217,17 +229,20 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 35,
                 orderable: false,
             }, {
+                data: 'tanggal',
+                title: 'Tanggal',
+            }, {
                 data: 'no_pesanan',
                 title: 'No Pesanan',
             }, {
-                data: 'customer',
-                title: 'Customer',
-            }, {
-                data: 'kategori',
-                title: 'Kategori',
+                data: 'no_pesanan',
+                title: 'No Pesanan',
             }, {
                 data: 'treatment',
                 title: 'Treatment',
+            }, {
+                data: 'customer',
+                title: 'Customer',
             }, {
                 data: 'therapist',
                 title: 'Therapist',
@@ -244,20 +259,52 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 },
             }],
             columnDefs: [{
-                targets: [0, 1, 2, 3, 4, 5, 6],
+                targets: [0, 1, 2, 3, 4, 5, 6, 7],
                 className: 'text-center',
                 orderable: true,
             }],
         });
 
-        datatable.on('order.dt search.dt', function() {
-            datatable.column(0, {
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
                 search: 'applied',
                 order: 'applied'
             }).nodes().each(function(cell, i) {
                 cell.innerHTML = i + 1;
             });
         }).draw();
+
+        $('#datepicker_treatment_paid').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        });
+
+        $('#search_treatment_paid').on('keyup', function() {
+            table.search(this.value).draw();
+        });
+
+        $('#datepicker_treatment_paid').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
     };
 
     var initTableVoidTreatment = function() {
@@ -1373,7 +1420,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         init: function() {
             initTableActiveTreatment();
             initTableTreatmentDetail();
-            initTableAllTreatment();
+            initTablePaidTreatment();
             initTableVoidTreatment();
             initTableCustomer();
             initTableCustomerDetail();

@@ -18,7 +18,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<head>
 		<base href="../">
 		<meta charset="utf-8" />
-		<title>All Treatments | Admin Fabulash</title>
+		<title>Paid Treatments | Admin Fabulash</title>
 		<meta name="description" content="Updates and statistics">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -136,7 +136,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
 										<ul class="kt-menu__subnav">
 											<li class="kt-menu__item " aria-haspopup="true"><a href="user_admin/listTreatment_active.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Active Treatments</span></a></li>
-											<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="user_admin/listTreatment_all.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">All Treatments</span></a></li>
+											<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="user_admin/listTreatment_paid.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Paid Treatments</span></a></li>
 											<li class="kt-menu__item " aria-haspopup="true"><a href="user_admin/listTreatment_void.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Void Treatments</span></a></li>
 										</ul>
 									</div>
@@ -306,10 +306,10 @@ License: You must have a valid license purchased only from themeforest(the above
 										List Treatment </h3>
 									<span class="kt-subheader__separator kt-hidden"></span>
 									<div class="kt-subheader__breadcrumbs">
-										<a href="user_admin/listTreatment_all.html" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+										<a href="user_admin/listTreatment_paid.html" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
 										<span class="kt-subheader__breadcrumbs-separator"></span>
-										<a href="user_admin/listTreatment_all.html" class="kt-subheader__breadcrumbs-link">
-											All Treatments </a>
+										<a href="user_admin/listTreatment_paid.html" class="kt-subheader__breadcrumbs-link">
+											Paid Treatments </a>
 									</div>
 								</div>
 							</div>
@@ -332,12 +332,27 @@ License: You must have a valid license purchased only from themeforest(the above
 													<i class="flaticon2-cube-1"></i>
 												</span>
 												<h3 class="kt-portlet__head-title">
-													All Treatments
+													Paid Treatments
 												</h3>
 											</div>
 										</div>
 										<div class="kt-portlet__body">
-                                            <table class="table table-bordered table-hover table-checkable" id="table_treatment_all"></table>
+											<form class="kt-margin-b-5">
+    											<div class="row justify-space-between">
+													<div class="col-lg-4 col-sm-6 input-daterange input-group margin-mobile-b-5">
+														<input readonly type="text" class="form-control" name="start" placeholder="Pilih Tanggal" data-col-index="1" id="datepicker_treatment_paid"/>
+														<div class="input-group-append">
+															<span class="input-group-text">
+																<i class="la la-calendar"></i>
+															</span>
+														</div>
+													</div>
+													<div class="col-lg-4 col-sm-6">
+	    												<input type="text" class="form-control" placeholder="Search" id="search_treatment_paid">
+													</div>
+    											</div>
+    										</form>
+                                            <table class="table table-bordered table-hover table-checkable" id="table_treatment_paid"></table>
 										</div>
 									</div>
 
