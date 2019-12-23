@@ -38,14 +38,20 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: 'nama',
                 title: 'Nama Barang'
             }, {
-                data: 'satuan_besar',
-                title: 'Satuan Besar'
-            }, {
                 data: 'satuan_kecil',
                 title: 'Satuan Kecil'
             }, {
-                data: 'jumlah_satuan_kecil_per_besar',
-                title: 'Jumlah Satuan Kecil Per Satuan Besar'
+                data: 'satuan_sedang',
+                title: 'Satuan Sedang'
+            }, {
+                data: 'satuan_besar',
+                title: 'Satuan Besar'
+            }, {
+                data: 'jumlah_satuan_sedang_banding_kecil',
+                title: 'Sedang : Kecil'
+            }, {
+                data: 'jumlah_satuan_besar_banding_sedang',
+                title: 'Besar : Sedang'
             }, {
                 data: 'tipe_barang',
                 title: 'Tipe Barang'
@@ -62,7 +68,66 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 },
             }, ],
             columnDefs: [{
-                targets: [0, 1, 2, 3, 4, 5],
+                targets: [0, 1, 2, 3, 4, 5, 6, 7],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    };
+
+    var initTableDataSatuan = function() {
+        var table = $('#table_data_satuan');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            info: true,
+            paging: true,
+            lengthChange: true,
+            searching: true,
+            responsive: true,
+            ajax: {
+                url: 'source/gudang/data_satuan.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'satuan',
+                title: 'Nama Satuan'
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 100,
+                render: function(data, type, full, meta) {
+                    return `
+                    <button type="button" class="btn btn-sm btn-danger" style="color:white;border-radius:15px" onClick="swalDelete();">Delete</button>`;
+                },
+            }, ],
+            columnDefs: [{
+                targets: [0, 1],
                 className: 'text-center',
                 orderable: true,
             }],
@@ -1114,6 +1179,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         //main function to initiate the module
         init: function() {
             initTableDataBarang();
+            initTableDataSatuan();
             initTableStock();
             initTableStockBarangKeluar();
             initTableStockBarangMasuk();

@@ -1,0 +1,31 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "satuan": "Box"
+    }, {
+        "no": 2,
+        "satuan": "Box"
+    }, {
+        "no": 3,
+        "satuan": "Box"
+    }, {
+        "no": 4,
+        "satuan": "Box"
+    }, {
+        "no": 5,
+        "satuan": "Box"
+    }, {
+        "no": 6,
+        "satuan": "Box"
+    }, {
+        "no": 7,
+        "satuan": "Box"
+    }, {
+        "no": 8,
+        "satuan": "Box"
+    }]
+}

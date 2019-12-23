@@ -7,57 +7,73 @@
         "no": 1,
         "nama": "Eyelash",
         "satuan_besar": "Box",
+        "satuan_sedang": "Pack",
         "satuan_kecil": "Pcs",
-        "jumlah_satuan_kecil_per_besar": "12",
+        "jumlah_satuan_sedang_banding_kecil": "1 Pack = 3 Pcs",
+        "jumlah_satuan_besar_banding_sedang": "1 Box = 10 Pack",
         "tipe_barang": "Bahan"
     }, {
         "no": 2,
         "nama": "Eyelash",
         "satuan_besar": "Box",
+        "satuan_sedang": "Pack",
         "satuan_kecil": "Pcs",
-        "jumlah_satuan_kecil_per_besar": "12",
+        "jumlah_satuan_sedang_banding_kecil": "1 Pack = 3 Pcs",
+        "jumlah_satuan_besar_banding_sedang": "1 Box = 10 Pack",
         "tipe_barang": "Bahan"
     }, {
         "no": 3,
         "nama": "Eyelash",
         "satuan_besar": "Box",
+        "satuan_sedang": "Pack",
         "satuan_kecil": "Pcs",
-        "jumlah_satuan_kecil_per_besar": "12",
+        "jumlah_satuan_sedang_banding_kecil": "1 Pack = 3 Pcs",
+        "jumlah_satuan_besar_banding_sedang": "1 Box = 10 Pack",
         "tipe_barang": "Bahan"
     }, {
         "no": 4,
         "nama": "Eyelash",
         "satuan_besar": "Box",
+        "satuan_sedang": "Pack",
         "satuan_kecil": "Pcs",
-        "jumlah_satuan_kecil_per_besar": "12",
+        "jumlah_satuan_sedang_banding_kecil": "1 Pack = 3 Pcs",
+        "jumlah_satuan_besar_banding_sedang": "1 Box = 10 Pack",
         "tipe_barang": "Bahan"
     }, {
         "no": 5,
         "nama": "Eyelash",
         "satuan_besar": "Box",
+        "satuan_sedang": "Pack",
         "satuan_kecil": "Pcs",
-        "jumlah_satuan_kecil_per_besar": "12",
+        "jumlah_satuan_sedang_banding_kecil": "1 Pack = 3 Pcs",
+        "jumlah_satuan_besar_banding_sedang": "1 Box = 10 Pack",
         "tipe_barang": "Bahan"
     }, {
         "no": 6,
         "nama": "Eyelash",
         "satuan_besar": "Box",
+        "satuan_sedang": "Pack",
         "satuan_kecil": "Pcs",
-        "jumlah_satuan_kecil_per_besar": "12",
+        "jumlah_satuan_sedang_banding_kecil": "1 Pack = 3 Pcs",
+        "jumlah_satuan_besar_banding_sedang": "1 Box = 10 Pack",
         "tipe_barang": "Bahan"
     }, {
         "no": 7,
         "nama": "Eyelash",
         "satuan_besar": "Box",
+        "satuan_sedang": "Pack",
         "satuan_kecil": "Pcs",
-        "jumlah_satuan_kecil_per_besar": "12",
+        "jumlah_satuan_sedang_banding_kecil": "1 Pack = 3 Pcs",
+        "jumlah_satuan_besar_banding_sedang": "1 Box = 10 Pack",
         "tipe_barang": "Bahan"
     }, {
         "no": 8,
         "nama": "Eyelash",
         "satuan_besar": "Box",
+        "satuan_sedang": "Pack",
         "satuan_kecil": "Pcs",
-        "jumlah_satuan_kecil_per_besar": "12",
+        "jumlah_satuan_sedang_banding_kecil": "1 Pack = 3 Pcs",
+        "jumlah_satuan_besar_banding_sedang": "1 Box = 10 Pack",
         "tipe_barang": "Bahan"
     }]
 }

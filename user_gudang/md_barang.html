@@ -129,6 +129,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								</svg></span><span class="kt-menu__link-text">Master Data</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
 									<div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
 										<ul class="kt-menu__subnav">
+											<li class="kt-menu__item " aria-haspopup="true"><a href="user_gudang/md_satuan.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Satuan</span></a></li>
 											<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="user_gudang/md_barang.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Barang</span></a></li>
 										</ul>
 									</div>
@@ -318,7 +319,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												</h3>
 											</div>
                                             <div class="kt-portlet__head-toolbar">
-												<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_data_barang_tambah"><i class="flaticon-plus" style="color: white;"></i> New Request</button>
+												<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_data_barang_tambah"><i class="flaticon-plus" style="color: white;"></i> Tambah Barang</button>
 											</div>
 										</div>
 										<div class="kt-portlet__body">
@@ -349,6 +350,37 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 												<div class="form-group row">
+													<label class="col-sm-4 col-form-label">Satuan Kecil :</label>
+													<div class="col-sm-8">
+                                                        <select class="form-control" name="data_barang_satuan_kecil">
+    														<option value="" disabled selected>Satuan Kecil</option>
+    														<option>Pcs</option>
+    														<option>Pcs</option>
+    														<option>Pcs</option>
+    													</select>
+													</div>
+												</div>
+												<div class="form-group row kt-margin-b-5">
+													<label class="col-sm-4 col-form-label">Satuan Sedang :</label>
+													<div class="col-sm-8">
+                                                        <select class="form-control" name="data_barang_satuan_sedang">
+    														<option value="" disabled selected>Satuan Sedang</option>
+    														<option>Pack</option>
+    														<option>Pack</option>
+    														<option>Pack</option>
+    													</select>
+													</div>
+												</div>
+												<div class="form-group row">
+													<div class="col-sm-8 offset-sm-4">
+														<div class="input-group">
+															<input type="number" min="1" class="form-control input-group-child-normal kt-margin-r-5" name="data_barang_satuan_sedang_jumlah" placeholder="Jumlah">
+															<span class="input-group-text" name="data_barang_satuan_sedang_kecil">Pcs</span>
+														</div>
+														<span class="form-text text-muted kt-hidden" style="margin:0px;"></span>
+													</div>
+												</div>
+												<div class="form-group row kt-margin-b-5">
 													<label class="col-sm-4 col-form-label">Satuan Besar :</label>
 													<div class="col-sm-8">
                                                         <select class="form-control" name="data_barang_satuan_besar">
@@ -360,20 +392,12 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-sm-4 col-form-label">Satuan Kecil :</label>
-													<div class="col-sm-8">
-                                                        <select class="form-control" name="data_barang_satuan_kecil">
-    														<option value="" disabled selected>Satuan Kecil</option>
-    														<option>Pcs</option>
-    														<option>Pcs</option>
-    														<option>Pcs</option>
-    													</select>
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-4 col-form-label">Satuan Kecil Per Satuan Besar :</label>
-													<div class="col-sm-8">
-														<input type="number" class="form-control" name="data_barang_satuan_kecil_per_besar" placeholder="Satuan Kecil Per Satuan Besar">
+													<div class="col-sm-8 offset-sm-4">
+														<div class="input-group">
+															<input type="number" min="1" class="form-control input-group-child-normal kt-margin-r-5" name="data_barang_satuan_besar_jumlah" placeholder="Jumlah">
+															<span class="input-group-text" name="data_barang_satuan_besar_sedang">Pack</span>
+														</div>
+														<span class="form-text text-muted kt-hidden" style="margin:0px;"></span>
 													</div>
 												</div>
 												<div class="form-group row">
@@ -383,17 +407,6 @@ License: You must have a valid license purchased only from themeforest(the above
     														<option value="" disabled selected>Tipe Barang</option>
     														<option>Alat</option>
     														<option>Bahan</option>
-    													</select>
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-4 col-form-label">Satuan Sedang :</label>
-													<div class="col-sm-8">
-                                                        <select class="form-control" name="data_barang_satuan_sedang">
-    														<option value="" disabled selected>Satuan Sedang</option>
-    														<option>Pack</option>
-    														<option>Pack</option>
-    														<option>Pack</option>
     													</select>
 													</div>
 												</div>
@@ -518,27 +531,31 @@ License: You must have a valid license purchased only from themeforest(the above
 				});
 			});
 
-			//
+			// Form Validation
 			$('#kt_form_data_barang_tambah').validate({
 				rules : {
 					data_barang_nama : {
 						required: true
 					},
-					data_barang_satuan_besar : {
-						required: true
-					},
 					data_barang_satuan_kecil : {
 						required: true
 					},
-					data_barang_satuan_kecil_per_besar : {
+					data_barang_satuan_sedang : {
+						required: true
+					},
+					data_barang_satuan_besar : {
+						required: true
+					},
+					data_barang_satuan_sedang_jumlah : {
+						required: true,
+						digits: true
+					},
+					data_barang_satuan_besar_jumlah : {
 						required: true,
 						digits: true
 					},
 					data_barang_tipe : {
 						required: true
-					},
-					data_barang_satuan_sedang : {
-						required: false
 					}
 				}
 			});
