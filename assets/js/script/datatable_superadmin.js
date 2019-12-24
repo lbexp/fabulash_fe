@@ -986,6 +986,66 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     //     });
     // };
 
+    var initTableDataKategoriTreatment = function() {
+        var table = $('#table_data_kategori_treatment');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            info: true,
+            paging: true,
+            lengthChange: true,
+            searching: true,
+            responsive: true,
+            ajax: {
+                url: 'source/superadmin/data_treatment.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kategori',
+                title: 'Kategori'
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 175,
+                render: function(data, type, full, meta) {
+                    return `
+                        <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_edit_kategori_treatment"><i class="fa fa-edit"></i> Edit</button>&nbsp;
+                        <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
+                },
+            }, ],
+            columnDefs: [{
+                targets: [0, 1],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    };
+
     var initTableDataTreatment = function() {
         var table = $('#table_data_treatment');
         // begin first table
@@ -2397,6 +2457,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             // initTablePengeluaran();
             // initTablePengeluaranDetail();
             // initTablePemasukan();
+            initTableDataKategoriTreatment();
             initTableDataTreatment();
             initTableDataComplaint();
             initTableDataKomisi();
