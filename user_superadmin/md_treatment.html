@@ -359,6 +359,9 @@ License: You must have a valid license purchased only from themeforest(the above
 													Treatment
 												</h3>
 											</div>
+                                            <div class="kt-portlet__head-toolbar">
+												<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_tambah_treatment"><i class="flaticon-plus" style="color: white;"></i> Tambah Treatment</button>
+											</div>
 										</div>
 										<div class="kt-portlet__body">
                                             <table class="table table-bordered table-hover table-checkable" id="table_data_treatment"></table>
@@ -370,46 +373,82 @@ License: You must have a valid license purchased only from themeforest(the above
 
 							</div>
 
-                            <!-- begin:: Modal -->
-                            <div class="modal fade" id="kt_modal_tambah_barang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Tambah Barang</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            </button>
-                                        </div>
-                                        <form id="kt_form_1">
-                                            <div class="modal-body">
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Nama Barang</label>
-                                                    <div class="col-8">
-                                                        <input type="text" class="form-control" name="inventory_nama" placeholder="Nama">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Satuan</label>
-                                                    <div class="col-8">
-                                                        <input type="text" class="form-control" name="inventory_satuan" placeholder="Satuan">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Jumlah Per Satuan</label>
-                                                    <div class="col-8">
-                                                        <input type="text" class="form-control" name="inventory_jumlah_satuan" placeholder="Jumlah Per Satuan">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer" style="justify-content:center;">
-                                                <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil">Submit</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+							<div class="modal fade" id="kt_modal_tambah_treatment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Tambah Treatment</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											</button>
+										</div>
+										<form id="kt_form_tambah_treatment">
+											<div class="modal-body">
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label">Nama Treatment :</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" name="treatment_nama" placeholder="Nama Treatment">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label">Kategori :</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" name="treatment_kategori" placeholder="Kategori">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label">Harga :</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" name="treatment_harga" placeholder="Harga">
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer" style="justify-content:center;">
+												<button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
+												<button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_tambah">Submit</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
 
-                            <!--end::Modal-->
+							<div class="modal fade" id="kt_modal_edit_treatment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Edit Treatment</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											</button>
+										</div>
+										<form id="kt_form_edit_treatment">
+											<div class="modal-body">
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label">Nama Treatment :</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" name="treatment_nama_edit" placeholder="Nama Treatment" value="Eyelash Extension">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label">Kategori :</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" name="treatment_kategori_edit" placeholder="Kategori" value="Eyelash">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label">Harga :</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" name="treatment_harga_edit" placeholder="Harga" value="Rp 350.000,00">
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer" style="justify-content:center;">
+												<button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
+												<button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_edit">Submit</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
 						</div>
 
 						<!-- end:: Content -->
@@ -486,6 +525,80 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Page Scripts(used by this page) -->
 		<script src="assets/js/script/datatable_superadmin.js"></script>
 		<script src="assets/js/custom/datepicker.js" type="text/javascript"></script>
+
+		<script>
+            // Sweetalert
+            var swalDelete = function () {
+                swal.fire({
+                    title: 'Yakin untuk menghapus?',
+                    text: "Tindakan ini tidak bisa diubah kembali!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Ya, hapus!'
+                }).then(function(result) {
+                    if (result.value) {
+                        swal.fire(
+                            'Terhapus!',
+                            'Data berhasil dihapus.',
+                            'success'
+                        )
+                    }
+                });
+            };
+
+			$('#kt_sweetalert_berhasil_tambah').click(function(e) {
+				swal.fire({
+					title: "Berhasil",
+					text: "Data berhasil ditambahkan.",
+					type: "success",
+					confirmButtonText: "Ok",
+					confirmButtonClass: "btn btn-brand"
+				}).then(function(result) {
+					// location.reload();
+				});
+			});
+
+			$('#kt_sweetalert_berhasil_edit').click(function(e) {
+				swal.fire({
+					title: "Berhasil",
+					text: "Pembaruan data berhasil dilakukan.",
+					type: "success",
+					confirmButtonText: "Ok",
+					confirmButtonClass: "btn btn-brand"
+				}).then(function(result) {
+					// location.reload();
+				});
+			});
+
+			// Form Validation
+			$('#kt_form_tambah_treatment').validate({
+				rules : {
+					treatment_nama : {
+						required: true
+					},
+					treatment_kategori : {
+						required: true
+					},
+                    treatment_harga : {
+						required: true
+					}
+				}
+			});
+
+			$('#kt_form_edit_treatment').validate({
+				rules : {
+					treatment_nama_edit : {
+						required: true
+					},
+					treatment_kategori_edit : {
+						required: true
+					},
+                    treatment_harga_edit : {
+						required: true
+					}
+				}
+			});
+        </script>
 
 		<!--end::Page Scripts -->
 	</body>

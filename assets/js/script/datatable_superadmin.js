@@ -1017,8 +1017,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: 'treatment',
                 title: 'Treatment'
             }, {
-                data: 'tipe',
-                title: 'Tipe'
+                data: 'kategori',
+                title: 'Kategori'
             }, {
                 data: 'harga',
                 title: 'Harga'
@@ -1028,10 +1028,11 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 responsivePriority: -1,
                 className: 'text-center',
                 orderable: false,
-                width: 100,
+                width: 175,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_superadmin/#.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                        <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_edit_treatment"><i class="fa fa-edit"></i> Edit</button>&nbsp;
+                        <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
                 },
             }, ],
             columnDefs: [{
@@ -1090,14 +1091,147 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 responsivePriority: -1,
                 className: 'text-center',
                 orderable: false,
-                width: 100,
+                width: 175,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="#.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                        <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_edit_complaint"><i class="fa fa-edit"></i> Edit</button>&nbsp;
+                        <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
                 },
             }, ],
             columnDefs: [{
                 targets: [0, 1, 2],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    };
+
+    var initTableDataKomisi = function() {
+        var table = $('#table_data_komisi');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            info: true,
+            paging: true,
+            lengthChange: true,
+            searching: true,
+            responsive: true,
+            ajax: {
+                url: 'source/superadmin/data_komisi.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'jenis',
+                title: 'Jenis Komisi'
+            }, {
+                data: 'jumlah',
+                title: 'Jumlah Komisi'
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 175,
+                render: function(data, type, full, meta) {
+                    return `
+                        <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_edit_komisi"><i class="fa fa-edit"></i> Edit</button>&nbsp;
+                        <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
+                },
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    };
+
+    var initTableDataStudio = function() {
+        var table = $('#table_data_studio');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            info: true,
+            paging: true,
+            lengthChange: true,
+            searching: true,
+            responsive: true,
+            ajax: {
+                url: 'source/superadmin/data_studio.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'nama',
+                title: 'Nama'
+            }, {
+                data: 'no_telepon',
+                title: 'No. Telepon'
+            }, {
+                data: 'alamat',
+                title: 'Alamat'
+            }, {
+                data: 'supervisor',
+                title: 'Supervisor'
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 175,
+                render: function(data, type, full, meta) {
+                    return `
+                        <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_edit_studio"><i class="fa fa-edit"></i> Edit</button>&nbsp;
+                        <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
+                },
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4],
                 className: 'text-center',
                 orderable: true,
             }],
@@ -2265,6 +2399,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             // initTablePemasukan();
             initTableDataTreatment();
             initTableDataComplaint();
+            initTableDataKomisi();
+            initTableDataStudio();
             initTableKaryawan();
             initTableKaryawanTreatment();
             initTableKaryawanKehadiran();

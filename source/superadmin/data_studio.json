@@ -1,0 +1,55 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "nama": "Studio Cabang Hasanuddin",
+        "no_telepon": "0411 123456",
+        "alamat": "Jl. Sultan Hasanuddin No. 25, Makassar",
+        "supervisor": "Darnilla"
+    }, {
+        "no": 2,
+        "nama": "Studio Cabang Hasanuddin",
+        "no_telepon": "0411 123456",
+        "alamat": "Jl. Sultan Hasanuddin No. 25, Makassar",
+        "supervisor": "Darnilla"
+    }, {
+        "no": 3,
+        "nama": "Studio Cabang Hasanuddin",
+        "no_telepon": "0411 123456",
+        "alamat": "Jl. Sultan Hasanuddin No. 25, Makassar",
+        "supervisor": "Darnilla"
+    }, {
+        "no": 4,
+        "nama": "Studio Cabang Hasanuddin",
+        "no_telepon": "0411 123456",
+        "alamat": "Jl. Sultan Hasanuddin No. 25, Makassar",
+        "supervisor": "Darnilla"
+    }, {
+        "no": 5,
+        "nama": "Studio Cabang Hasanuddin",
+        "no_telepon": "0411 123456",
+        "alamat": "Jl. Sultan Hasanuddin No. 25, Makassar",
+        "supervisor": "Darnilla"
+    }, {
+        "no": 6,
+        "nama": "Studio Cabang Hasanuddin",
+        "no_telepon": "0411 123456",
+        "alamat": "Jl. Sultan Hasanuddin No. 25, Makassar",
+        "supervisor": "Darnilla"
+    }, {
+        "no": 7,
+        "nama": "Studio Cabang Hasanuddin",
+        "no_telepon": "0411 123456",
+        "alamat": "Jl. Sultan Hasanuddin No. 25, Makassar",
+        "supervisor": "Darnilla"
+    }, {
+        "no": 8,
+        "nama": "Studio Cabang Hasanuddin",
+        "no_telepon": "0411 123456",
+        "alamat": "Jl. Sultan Hasanuddin No. 25, Makassar",
+        "supervisor": "Darnilla"
+    }]
+}

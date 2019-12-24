@@ -359,26 +359,82 @@ License: You must have a valid license purchased only from themeforest(the above
 													Komisi
 												</h3>
 											</div>
+                                            <div class="kt-portlet__head-toolbar">
+												<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_tambah_komisi"><i class="flaticon-plus" style="color: white;"></i> Tambah Komisi</button>
+											</div>
 										</div>
 										<div class="kt-portlet__body">
                                             <table class="table table-bordered table-hover table-checkable" id="table_data_komisi"></table>
-										</div>
-										<div class="kt-portlet__foot kt-hidden">
-											<div class="row">
-												<div class="col-lg-6">
-													Portlet footer:
-												</div>
-												<div class="col-lg-6">
-													<button type="submit" class="btn btn-primary">Submit</button>
-													<span class="kt-margin-left-10">or <a href="#" class="kt-link kt-font-bold">Cancel</a></span>
-												</div>
-											</div>
 										</div>
 									</div>
 
 									<!--end::Portlet-->
 								</div>
 
+							</div>
+
+							<div class="modal fade" id="kt_modal_tambah_komisi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Tambah Komisi</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											</button>
+										</div>
+										<form id="kt_form_tambah_komisi">
+											<div class="modal-body">
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label">Jenis :</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" name="komisi_jenis" placeholder="Jenis">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label">Jumlah :</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" name="komisi_jumlah" placeholder="Jumlah">
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer" style="justify-content:center;">
+												<button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
+												<button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_tambah">Submit</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+							<div class="modal fade" id="kt_modal_edit_komisi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Edit Komisi</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											</button>
+										</div>
+										<form id="kt_form_edit_komisi">
+											<div class="modal-body">
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label">Jenis :</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" name="komisi_jenis_edit" placeholder="Jenis" value="Lorem ipsum">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label">Jumlah :</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" name="komisi_jumlah_edit" placeholder="Jumlah" value="Rp 350.000,00">
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer" style="justify-content:center;">
+												<button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
+												<button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_edit">Submit</button>
+											</div>
+										</form>
+									</div>
+								</div>
 							</div>
 
 						</div>
@@ -457,6 +513,74 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Page Scripts(used by this page) -->
 		<script src="assets/js/script/datatable_superadmin.js"></script>
 		<script src="assets/js/custom/datepicker.js" type="text/javascript"></script>
+
+		<script>
+            // Sweetalert
+            var swalDelete = function () {
+                swal.fire({
+                    title: 'Yakin untuk menghapus?',
+                    text: "Tindakan ini tidak bisa diubah kembali!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Ya, hapus!'
+                }).then(function(result) {
+                    if (result.value) {
+                        swal.fire(
+                            'Terhapus!',
+                            'Data berhasil dihapus.',
+                            'success'
+                        )
+                    }
+                });
+            };
+
+			$('#kt_sweetalert_berhasil_tambah').click(function(e) {
+				swal.fire({
+					title: "Berhasil",
+					text: "Data berhasil ditambahkan.",
+					type: "success",
+					confirmButtonText: "Ok",
+					confirmButtonClass: "btn btn-brand"
+				}).then(function(result) {
+					// location.reload();
+				});
+			});
+
+			$('#kt_sweetalert_berhasil_edit').click(function(e) {
+				swal.fire({
+					title: "Berhasil",
+					text: "Pembaruan data berhasil dilakukan.",
+					type: "success",
+					confirmButtonText: "Ok",
+					confirmButtonClass: "btn btn-brand"
+				}).then(function(result) {
+					// location.reload();
+				});
+			});
+
+			// Form Validation
+			$('#kt_form_tambah_komisi').validate({
+				rules : {
+					komisi_jenis : {
+						required: true
+					},
+					komisi_jumlah : {
+						required: true
+					}
+				}
+			});
+
+			$('#kt_form_edit_komisi').validate({
+				rules : {
+					komisi_jenis_edit : {
+						required: true
+					},
+					komisi_jumlah_edit : {
+						required: true
+					}
+				}
+			});
+        </script>
 
 		<!--end::Page Scripts -->
 	</body>

@@ -5,51 +5,35 @@
     "sColumns": "",
     "aaData": [{
         "no": 1,
-        "treatment": "Eyelash Extension",
-        "tipe": "Nail",
-        "therapist": "Ka",
-        "harga": "Rp. 350.000"
+        "jenis": "Lorem ipsum",
+        "jumlah": "Rp. 350.000"
     }, {
         "no": 2,
-        "treatment": "Eyelash Extension",
-        "tipe": "Nail",
-        "therapist": "Ka",
-        "harga": "Rp. 350.000"
+        "jenis": "Lorem ipsum",
+        "jumlah": "Rp. 350.000"
     }, {
         "no": 3,
-        "treatment": "Eyelash Extension",
-        "tipe": "Nail",
-        "therapist": "Ka",
-        "harga": "Rp. 350.000"
+        "jenis": "Lorem ipsum",
+        "jumlah": "Rp. 350.000"
     }, {
         "no": 4,
-        "treatment": "Eyelash Extension",
-        "tipe": "Nail",
-        "therapist": "Ka",
-        "harga": "Rp. 350.000"
+        "jenis": "Lorem ipsum",
+        "jumlah": "Rp. 350.000"
     }, {
         "no": 5,
-        "treatment": "Eyelash Extension",
-        "tipe": "Nail",
-        "therapist": "Ka",
-        "harga": "Rp. 350.000"
+        "jenis": "Lorem ipsum",
+        "jumlah": "Rp. 350.000"
     }, {
         "no": 6,
-        "treatment": "Eyelash Extension",
-        "tipe": "Nail",
-        "therapist": "Ka",
-        "harga": "Rp. 350.000"
+        "jenis": "Lorem ipsum",
+        "jumlah": "Rp. 350.000"
     }, {
         "no": 7,
-        "treatment": "Eyelash Extension",
-        "tipe": "Nail",
-        "therapist": "Ka",
-        "harga": "Rp. 350.000"
+        "jenis": "Lorem ipsum",
+        "jumlah": "Rp. 350.000"
     }, {
         "no": 8,
-        "treatment": "Eyelash Extension",
-        "tipe": "Nail",
-        "therapist": "Ka",
-        "harga": "Rp. 350.000"
+        "jenis": "Lorem ipsum",
+        "jumlah": "Rp. 350.000"
     }]
 }

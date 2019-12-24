@@ -359,6 +359,9 @@ License: You must have a valid license purchased only from themeforest(the above
 													Complaint
 												</h3>
 											</div>
+                                            <div class="kt-portlet__head-toolbar">
+												<button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_tambah_complaint"><i class="flaticon-plus" style="color: white;"></i> Tambah Complaint</button>
+											</div>
 										</div>
 										<div class="kt-portlet__body">
                                             <table class="table table-bordered table-hover table-checkable" id="table_data_complaint"></table>
@@ -368,6 +371,70 @@ License: You must have a valid license purchased only from themeforest(the above
 									<!--end::Portlet-->
 								</div>
 
+							</div>
+
+							<div class="modal fade" id="kt_modal_tambah_complaint" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Tambah Complaint</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											</button>
+										</div>
+										<form id="kt_form_tambah_complaint">
+											<div class="modal-body">
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label">Complaint :</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" name="complaint_nama" placeholder="Complaint">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label">Tipe :</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" name="complaint_tipe" placeholder="Tipe">
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer" style="justify-content:center;">
+												<button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
+												<button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_tambah">Submit</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+							<div class="modal fade" id="kt_modal_edit_complaint" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Edit Complaint</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											</button>
+										</div>
+										<form id="kt_form_edit_complaint">
+											<div class="modal-body">
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label">Complaint :</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" name="complaint_nama_edit" placeholder="Complaint" value="Gatal-gatal">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label">Tipe :</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" name="complaint_tipe_edit" placeholder="Tipe" value="Nail">
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer" style="justify-content:center;">
+												<button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
+												<button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_edit">Submit</button>
+											</div>
+										</form>
+									</div>
+								</div>
 							</div>
 
 						</div>
@@ -446,6 +513,74 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Page Scripts(used by this page) -->
 		<script src="assets/js/script/datatable_superadmin.js"></script>
 		<script src="assets/js/custom/datepicker.js" type="text/javascript"></script>
+
+		<script>
+            // Sweetalert
+            var swalDelete = function () {
+                swal.fire({
+                    title: 'Yakin untuk menghapus?',
+                    text: "Tindakan ini tidak bisa diubah kembali!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Ya, hapus!'
+                }).then(function(result) {
+                    if (result.value) {
+                        swal.fire(
+                            'Terhapus!',
+                            'Data berhasil dihapus.',
+                            'success'
+                        )
+                    }
+                });
+            };
+
+			$('#kt_sweetalert_berhasil_tambah').click(function(e) {
+				swal.fire({
+					title: "Berhasil",
+					text: "Data berhasil ditambahkan.",
+					type: "success",
+					confirmButtonText: "Ok",
+					confirmButtonClass: "btn btn-brand"
+				}).then(function(result) {
+					// location.reload();
+				});
+			});
+
+			$('#kt_sweetalert_berhasil_edit').click(function(e) {
+				swal.fire({
+					title: "Berhasil",
+					text: "Pembaruan data berhasil dilakukan.",
+					type: "success",
+					confirmButtonText: "Ok",
+					confirmButtonClass: "btn btn-brand"
+				}).then(function(result) {
+					// location.reload();
+				});
+			});
+
+			// Form Validation
+			$('#kt_form_tambah_complaint').validate({
+				rules : {
+					complaint_nama : {
+						required: true
+					},
+					complaint_tipe : {
+						required: true
+					}
+				}
+			});
+
+			$('#kt_form_edit_complaint').validate({
+				rules : {
+					complaint_nama_edit : {
+						required: true
+					},
+					complaint_tipe_edit : {
+						required: true
+					}
+				}
+			});
+        </script>
 
 		<!--end::Page Scripts -->
 	</body>
