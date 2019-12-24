@@ -322,47 +322,37 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 										</div>
 										<div class="kt-portlet__body">
-                                            <table class="table table-bordered table-hover well-align-table" role="grid">
-                                                <thead>
-                                                    <tr role="row">
-                                                        <th style="width: 10%">No</th>
-                                                        <th style="width: 30%">Nama Barang</th>
-                                                        <th style="width: 15%">Jumlah</th>
-                                                        <th style="width: 20%">Satuan</th>
-                                                        <th style="width: 25%">Harga</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="stock_new_list">
-                                                    <tr role="row">
-                                                        <td>1</td>
-                                                        <td class="text-center">
-                                                            <input type="name" class="form-control" name="stock_nama" placeholder="Nama Barang">
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <input type="number" class="form-control" name="stock_jumlah" placeholder="Jumlah">
-                                                        </td>
-														<td class="text-center">
-                                                            <select class="form-control" name="stock_satuan">
-        														<option valiue="" selected disabled>Satuan</option>
-            													<option>Box</option>
-            													<option>Box</option>
-            													<option>Box</option>
-            													<option>Box</option>
-        													</select>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <input type="number" class="form-control" name="stock_harga" placeholder="Harga">
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <div style="padding:0px;text-align:center;">
-                                                <button type="button" class="btn btn-link" style="padding-right:0px;" id="item_add"><i class="flaticon-add"></i>Tambah Item</button>
-                                            </div>
-                                            <div style="text-align: center; margin-top: 50px">
-                                                <button type="reset" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                                <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil">Submit</button>
-                                            </div>
+											<form id="kt_form_request_barang">
+												<div class="kt-margin-b-20">
+													<label class="kt-margin-b-15" style="font-size: 1rem;font-weight: 400;">Item List : </label>
+													<div class="table-responsive">
+														<table class="table table-bordered table-hover well-align-table table-mobile" role="grid" id="table_request_inventory_new">
+			                                                <thead>
+																<tr role="row">
+			                                                        <th style="width: 5%">No</th>
+			                                                        <th style="width: 22.5%">Nama Barang</th>
+			                                                        <th style="width: 17.5%">Jumlah<br>(Satuan Besar)</th>
+			                                                        <th style="width: 15%">Jumlah<br>(Satuan Sedang)</th>
+			                                                        <th style="width: 15%">Jumlah<br>(Satuan Kecil)</th>
+			                                                        <th style="width: 20%">Harga</th>
+			                                                    </tr>
+			                                                </thead>
+			                                                <tbody id="item_list">
+			                                                </tbody>
+			                                            </table>
+													</div>
+		                                            <div style="text-align:center;">
+		                                                <button type="button" class="btn btn-link" style="padding:0px;" id="item_add"><i class="flaticon-add"></i>Tambah Item</button>
+		                                            </div>
+												</div>
+												<div class="form-group form-group-last">
+													<label class="kt-margin-b-15" for="request_notes">Notes: </label>
+													<textarea class="form-control" id="request_notes" name="request_notes" rows="3" placeholder="Notes"></textarea>
+												</div>
+	                                            <div style="text-align: center; margin-top: 30px">
+	                                                <button type="submit" class="btn btn-success" id="kt_sweetalert_request_berhasil">Submit</button>
+	                                            </div>
+											</form>
 										</div>
 									</div>
 
@@ -445,11 +435,54 @@ License: You must have a valid license purchased only from themeforest(the above
 
 		<!--begin::Page Scripts(used by this page) -->
 
-        <script>
-			$('#kt_sweetalert_berhasil').click(function(e) {
+		<script>
+            // Tambah item
+			var i = 1;
+	        $('#item_add').click(function() {
+				document.querySelector('#item_list').insertAdjacentHTML (
+					'beforeend',
+					`<tr role="row">
+						<td>`+ i +`</td>
+						<td class="text-center">
+							<select class="form-control request_required" name="stock_barang`+ i +`">
+								<option valiue="" disabled>Nama Barang</option>
+								<option selected>Eyelash Extension</option>
+								<option>Eyelash Extension</option>
+								<option>Eyelash Extension</option>
+							</select>
+						</td>
+						<td class="text-center">
+							<div class="form-group kt-margin-b-0">
+								<div class="input-group">
+									<input type="text" class="form-control request_required" name="stock_jumlah_besar`+ i +`" placeholder="Jumlah">
+									<div class="input-group-append"><span class="input-group-text" name="stock_satuan_besar`+ i +`">Box</span></div>
+								</div>
+								<span class="form-text text-muted kt-hidden"></span>
+							</div>
+						</td>
+						<td class="text-center">
+							<span name="stock_jumlah_sedang`+ i +`">20</span>&nbsp;<span name="stock_satuan_sedang`+ i +`">Pack</span>
+						</td>
+						<td class="text-center">
+							<span name="stock_jumlah_kecil`+ i +`">60</span>&nbsp;<span name="stock_satuan_kecil`+ i +`">Pcs</span>
+						</td>
+						<td class="text-center">
+							<input type="number" class="form-control request_required" name="stock_harga`+ i +`" placeholder="Harga">
+						</td>
+                    </tr>`
+				);
+				i++;
+			});
+
+			$('document').ready(function () {
+				$('#item_add').click();
+			});
+
+            // Sweetalert
+            $('#kt_sweetalert_request_berhasil').click(function(e) {
 				swal.fire({
 					title: "Berhasil",
-					text: "Stock berhasil ditambahkan.",
+					text: "Stock berhasil ditambahkan",
 					type: "success",
 					confirmButtonText: "Ok",
 					confirmButtonClass: "btn btn-brand"
@@ -458,58 +491,49 @@ License: You must have a valid license purchased only from themeforest(the above
 				});
 			});
 
-            // Tambah item
-            $('#item_add').click(function() {
-				document.querySelector('#stock_new_list').insertAdjacentHTML (
-					'beforeend',
-					`<tr role="row">
-                        <td>1</td>
-                        <td class="text-center">
-                            <input type="name" class="form-control" name="stock_nama" placeholder="Nama Barang">
-                        </td>
-                        <td class="text-center">
-                            <input type="number" class="form-control" name="stock_jumlah" placeholder="Jumlah">
-                        </td>
-                        <td class="text-center">
-                            <select class="form-control" name="stock_satuan">
-                                <option valiue="" selected disabled>Satuan</option>
-                                <option>Box</option>
-                                <option>Box</option>
-                                <option>Box</option>
-                                <option>Box</option>
-                            </select>
-                        </td>
-                        <td class="text-center">
-                            <input type="number" class="form-control" name="stock_harga" placeholder="Harga">
-                        </td>
-                    </tr>`
-				)
+			// Form validation
+			$('#kt_form_request_barang').on('submit', function(event) {
+				$('.request_required').each(function (item) {
+					$(this).rules('add', {
+						required: true
+					})
+				});
+				event.preventDefault();
 			});
 
-			// Form validation
-			$('#kt_form_data_barang_tambah').validate({
-				rules : {
-					data_barang_nama : {
+			jQuery.extend(jQuery.validator.messages, {
+			    required : "Required"
+			});
+
+			$('#kt_form_request_barang').validate({
+				rules: {
+					request_notes: {
 						required: true
-					},
-					data_barang_satuan_besar : {
-						required: true
-					},
-					data_barang_satuan_kecil : {
-						required: true
-					},
-					data_barang_satuan_kecil_per_besar : {
-						required: true,
-						digits: true
-					},
-					data_barang_tipe : {
-						required: true
-					},
-					data_barang_satuan_sedang : {
-						required: false
+					}
+				},
+				messages: {
+					request_notes: {
+						required: "This field is required"
 					}
 				}
 			});
+
+			$(document).on('change', '.request_required', function() {
+				$(this).removeClass('is-invalid');
+				var input_id = $(this).attr('id')
+				var error_msg_id = '#' + input_id + '-error';
+				$(error_msg_id).remove();
+				var label_id = '#' + input_id + '-label';
+				var valid_icon_id = input_id + '-label-valid-icon';
+				$('#'+ valid_icon_id).remove();
+				$(label_id).append(`<svg id="`+ valid_icon_id +`" style="margin-left: 8px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+				    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				        <polygon points="0 0 24 0 24 24 0 24"/>
+				        <path style="fill: #0abb87" d="M6.26193932,17.6476484 C5.90425297,18.0684559 5.27315905,18.1196257 4.85235158,17.7619393 C4.43154411,17.404253 4.38037434,16.773159 4.73806068,16.3523516 L13.2380607,6.35235158 C13.6013618,5.92493855 14.2451015,5.87991302 14.6643638,6.25259068 L19.1643638,10.2525907 C19.5771466,10.6195087 19.6143273,11.2515811 19.2474093,11.6643638 C18.8804913,12.0771466 18.2484189,12.1143273 17.8356362,11.7474093 L14.0997854,8.42665306 L6.26193932,17.6476484 Z" fill="#000000" fill-rule="nonzero" transform="translate(11.999995, 12.000002) rotate(-180.000000) translate(-11.999995, -12.000002) "/>
+				    </g>
+				</svg>`);
+			});
+
         </script>
 
 		<!--end::Page Scripts -->
