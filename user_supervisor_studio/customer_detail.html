@@ -317,6 +317,9 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="kt-subheader__separator kt-hidden"></span>
 									<div class="kt-subheader__breadcrumbs">
 										<a href="user_supervisor_studio/customer.html" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+                                        <span class="kt-subheader__breadcrumbs-separator"></span>
+                                        <a href="user_supervisor_studio/customer_detail.html" class="kt-subheader__breadcrumbs-link">
+                                            Customer Details </a>
 									</div>
 								</div>
 							</div>
@@ -332,27 +335,59 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="col-12">
 
                                     <!--begin::Portlet-->
-									<div class="kt-portlet">
+									<div class="kt-portlet" id="print-section">
 										<div class="kt-portlet__head">
 											<div class="kt-portlet__head-label">
 												<span class="kt-portlet__head-icon">
 													<i class="flaticon2-user-outline-symbol"></i>
 												</span>
 												<h3 class="kt-portlet__head-title">
-													Customer
+													Customer Details
 												</h3>
 											</div>
 										</div>
 										<div class="kt-portlet__body">
-                                            <table class="table table-bordered table-hover table-checkable" id="table_customer"></table>
+                                            <div class="row" style="margin-bottom:20px;">
+												<div class="col-6">
+	                                                <h5 class="color-main-dark" name="customer_nama">Darnilla</h5>
+	                                                <span class="kt-font-bold" name="customer_nohp">081342497228</span>&nbsp;<br>
+	                                                <span class="kt-font-bold" name="customer_alamat">Jl. Areopala 6</span>&nbsp;<br>
+	                                                <span class="kt-font-bold">Lahir <span name="customer_tanggalLahir"></span>09 April 1997</span>&nbsp;<br>
+	                                                <span class="kt-font-bold">Sejak <span name="customer_membership"></span>02 Oktober 2019</span>&nbsp;<br>
+												</div>
+												<div class="col-6">
+													<div class="row">
+														<div class="col-12" style="text-align: right; margin-bottom:5px;">
+															<button class="col-4 btn btn-warning" onclick="printFunction()">Print</button>
+														</div>
+														<div class="col-12" style="text-align: right;">
+															<button class="col-4 btn btn-success">Agreement</button>
+														</div>
+													</div>
+												</div>
+                                            </div>
+											<form class="kt-margin-b-5">
+    											<div class="row justify-space-between">
+													<div class="col-lg-4 col-sm-6 input-daterange input-group margin-mobile-b-5">
+														<input readonly type="text" class="form-control" name="start" placeholder="Pilih Tanggal" data-col-index="1" id="datepicker_customer_detail"/>
+														<div class="input-group-append">
+															<span class="input-group-text">
+																<i class="la la-calendar"></i>
+															</span>
+														</div>
+													</div>
+													<div class="col-lg-4 col-sm-6">
+	    												<input type="text" class="form-control" placeholder="Search" id="search_customer_detail">
+													</div>
+    											</div>
+    										</form>
+                                            <table class="table table-bordered table-hover table-checkable" id="table_customer_detail"></table>
 										</div>
 									</div>
 
 									<!--end::Portlet-->
 								</div>
-
 							</div>
-
 						</div>
 
 						<!-- end:: Content -->

@@ -2402,6 +2402,206 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
+    var initTableCustomer = function() {
+        var table = $('#table_customer');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            responsive: true,
+            ajax: {
+                url: 'source/supervisor_studio/customer.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'nama',
+                title: 'Nama'
+            }, {
+                data: 'alamat',
+                title: 'Alamat'
+            }, {
+                data: 'no_hp',
+                title: 'No. Telepon'
+            }, {
+                data: 'tanggal_lahir',
+                title: 'Tanggal Lahir'
+            }, {
+                data: 'jumlah_treatment',
+                title: 'Jumlah Treatment',
+                render: function(data, type, full, meta) {
+                    if (data <= 10){
+                        return `<span style="width:80%" class="btn btn-bold btn-sm btn-font-sm btn-label-danger">${data} Treatment</span>`;
+                    }
+                    else if (data <= 30) {
+                        return `<span style="width:80%" class="btn btn-bold btn-sm btn-font-sm btn-label-brand">${data} Treatment</span>`;
+                    }
+                    else if (data > 30) {
+                        return `<span style="width:80%" class="btn btn-bold btn-sm btn-font-sm btn-label-success">${data} Treatment</span>`;
+                    }
+                    else {
+                        return data;
+                    }
+                },
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 100,
+                render: function(data, type, full, meta) {
+                    return `
+                    <a href="user_supervisor_studio/customer_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                },
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5, 6],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    };
+
+    var initTableCustomerDetail = function() {
+        // begin first table
+        var table = $('#table_customer_detail').DataTable({
+            order: [],
+            responsive: true,
+            // Pagination settings
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            // read more: https://datatables.net/examples/basic_init/dom.html
+            lengthMenu: [5, 10, 25, 50],
+            pageLength: 10,
+            language: {
+                'lengthMenu': 'Display _MENU_',
+            },
+            searchDelay: 500,
+            processing: true,
+            serverSide: false,
+            ajax: {
+                url: 'source/supervisor_studio/customer_detail_treatment.json',
+                type: 'POST',
+                data: {
+                    // parameters for custom backend script demo
+                    columnsDef: [
+                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                        'tanggal', 'status', 'aksi',
+                    ],
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'tanggal',
+                title: 'Tanggal',
+            }, {
+                data: 'waktu_mulai',
+                title: 'Waktu Mulai',
+            }, {
+                data: 'treatment',
+                title: 'Treatment',
+            }, {
+                data: 'therapist',
+                title: 'Therapist',
+            }, {
+                data: 'complaint',
+                title: 'Complaint',
+                render: function(data, type, row, meta) {
+                    if (data == 'Ada') {
+                        return `<span class="kt-font-danger">${data}</span>`;
+                    }
+                    else {
+                        return `<span class="kt-font-success">${data}</span>`
+                    }
+                }
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 100,
+                render: function(data, type, full, meta) {
+                    return `
+                    <a href="user_supervisor_studio/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                },
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5, 6],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+
+        $('#datepicker_customer_detail').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        });
+
+        $('#search_customer_detail').on('keyup', function() {
+            table.search(this.value).draw();
+        });
+
+        $('#datepicker_customer_detail').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
+    };
+
     return {
         //main function to initiate the module
         init: function() {
@@ -2433,6 +2633,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableRequestOutDetailRequest();
             initTableRequestOutDetailTerkirim();
             initTableRequestOutDetailDiterima();
+            initTableCustomer();
+            initTableCustomerDetail();
         },
     };
 }();

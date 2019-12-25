@@ -1,0 +1,79 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "tanggal": "29 Agustus 2019",
+        "durasi": "1 Jam 20 Menit",
+        "waktu_mulai": "08.00 WITA",
+        "treatment": "Eyelash Extension",
+        "therapist": "Ka",
+        "complaint": "Ada",
+        "status": "ongoing"
+    }, {
+        "no": 2,
+        "tanggal": "29 Agustus 2019",
+        "durasi": "1 Jam 20 Menit",
+        "waktu_mulai": "08.00 WITA",
+        "treatment": "Eyelash Extension",
+        "therapist": "Ka",
+        "complaint": "Ada",
+        "status": "ongoing"
+    }, {
+        "no": 3,
+        "tanggal": "29 Agustus 2019",
+        "durasi": "1 Jam 20 Menit",
+        "waktu_mulai": "08.00 WITA",
+        "treatment": "Eyelash Extension",
+        "therapist": "Ka",
+        "complaint": "Ada",
+        "status": "ongoing"
+    }, {
+        "no": 4,
+        "tanggal": "29 Agustus 2019",
+        "durasi": "1 Jam 20 Menit",
+        "waktu_mulai": "08.00 WITA",
+        "treatment": "Eyelash Extension",
+        "therapist": "Ka",
+        "complaint": "Ada",
+        "status": "ongoing"
+    }, {
+        "no": 5,
+        "tanggal": "29 Agustus 2019",
+        "durasi": "1 Jam 20 Menit",
+        "waktu_mulai": "08.00 WITA",
+        "treatment": "Eyelash Extension",
+        "therapist": "Ka",
+        "complaint": "Tidak Ada",
+        "status": "ongoing"
+    }, {
+        "no": 6,
+        "tanggal": "29 Agustus 2019",
+        "durasi": "1 Jam 20 Menit",
+        "waktu_mulai": "08.00 WITA",
+        "treatment": "Eyelash Extension",
+        "therapist": "Ka",
+        "complaint": "Ada",
+        "status": "ongoing"
+    }, {
+        "no": 7,
+        "tanggal": "29 Agustus 2019",
+        "durasi": "1 Jam 20 Menit",
+        "waktu_mulai": "08.00 WITA",
+        "treatment": "Eyelash Extension",
+        "therapist": "Ka",
+        "complaint": "Ada",
+        "status": "ongoing"
+    }, {
+        "no": 8,
+        "tanggal": "29 Agustus 2019",
+        "durasi": "1 Jam 20 Menit",
+        "waktu_mulai": "08.00 WITA",
+        "treatment": "Eyelash Extension",
+        "therapist": "Ka",
+        "complaint": "Ada",
+        "status": "ongoing"
+    }]
+}
