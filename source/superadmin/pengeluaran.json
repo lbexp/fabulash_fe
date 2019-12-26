@@ -20,7 +20,7 @@
         "deskripsi": "Beli Makanan",
         "nominal": "Rp. 100.000,00",
         "penerima": "Ka",
-        "user": "inventory"
+        "user": "gudang"
     }, {
         "no": 3,
         "tanggal": "29 Agustus 2019",
@@ -38,7 +38,7 @@
         "deskripsi": "Beli Makanan",
         "nominal": "Rp. 100.000,00",
         "penerima": "Ka",
-        "user": "superadmin"
+        "user": "gudang"
     }, {
         "no": 5,
         "tanggal": "29 Agustus 2019",
@@ -56,7 +56,7 @@
         "deskripsi": "Beli Makanan",
         "nominal": "Rp. 100.000,00",
         "penerima": "Ka",
-        "user": "superadmin"
+        "user": "gudang"
     }, {
         "no": 7,
         "tanggal": "29 Agustus 2019",

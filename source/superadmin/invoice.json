@@ -6,10 +6,12 @@
     "aaData": [{
         "no": 1,
         "treatment": "Eyelash Extension",
+        "therapist": "Ica",
         "harga": "Rp 150.000,00"
     }, {
         "no": 2,
         "treatment": "Eyelash Extension",
+        "therapist": "Ica",
         "harga": "Rp 150.000,00"
     }]
 }
