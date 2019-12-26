@@ -2676,6 +2676,491 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         }).datepicker("setDate", new Date());
     };
 
+    var initTableInventoryGudang = function () {
+        var table = $('#table_inventory_gudang');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            responsive: true,
+            ajax: {
+                url: 'source/gudang/stock.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'barang',
+                title: 'Barang',
+            }, {
+                data: 'jumlah',
+                title: 'Jumlah',
+            }, {
+                data: 'satuan_besar',
+                title: 'Satuan Besar',
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 100,
+                render: function(data, type, full, meta) {
+                    return `
+                    <a href="user_superadmin/inventory_gudang_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                },
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    };
+
+    var initTableInventoryGudangKeluar = function() {
+        // begin first table
+        var table = $('#table_inventory_gudang_keluar').DataTable({
+            order: [],
+            responsive: true,
+            // Pagination settings
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            // read more: https://datatables.net/examples/basic_init/dom.html
+            lengthMenu: [5, 10, 25, 50],
+            pageLength: 10,
+            language: {
+                'lengthMenu': 'Display _MENU_',
+            },
+            searchDelay: 500,
+            processing: true,
+            serverSide: false,
+            ajax: {
+                url: 'source/gudang/stock_barang.json',
+                type: 'POST',
+                data: {
+                    // parameters for custom backend script demo
+                    columnsDef: [
+                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                        'tanggal', 'status', 'aksi',
+                    ],
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'tanggal',
+                title: 'Tanggal',
+            }, {
+                data: 'no_spk',
+                title: 'No. Request',
+            }, {
+                data: 'jumlah',
+                title: 'Jumlah',
+            }, {
+                data: 'studio',
+                title: 'Studio',
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+
+        $('#datepicker_inventory_gudang_keluar').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        });
+
+        $('#search_inventory_gudang_keluar').on('keyup', function() {
+            table.search(this.value).draw();
+        });
+
+        $('#datepicker_inventory_gudang_keluar').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
+    };
+
+    var initTableInventoryGudangMasuk = function() {
+        // begin first table
+        var table = $('#table_inventory_gudang_masuk').DataTable({
+            order: [],
+            responsive: true,
+            // Pagination settings
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            // read more: https://datatables.net/examples/basic_init/dom.html
+            lengthMenu: [5, 10, 25, 50],
+            pageLength: 10,
+            language: {
+                'lengthMenu': 'Display _MENU_',
+            },
+            searchDelay: 500,
+            processing: true,
+            serverSide: false,
+            ajax: {
+                url: 'source/gudang/stock_barang.json',
+                type: 'POST',
+                data: {
+                    // parameters for custom backend script demo
+                    columnsDef: [
+                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                        'tanggal', 'status', 'aksi',
+                    ],
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'tanggal',
+                title: 'Tanggal',
+            }, {
+                data: 'no_spk',
+                title: 'No. Pembelian',
+            }, {
+                data: 'jumlah',
+                title: 'Jumlah',
+            }, {
+                data: 'studio',
+                title: 'Studio',
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+
+        $('#datepicker_inventory_gudang_masuk').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        });
+
+        $('#search_inventory_gudang_masuk').on('keyup', function() {
+            table.search(this.value).draw();
+        });
+
+        $('#datepicker_inventory_gudang_masuk').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
+    };
+
+    var initTableInventoryStudio = function () {
+        var table = $('#table_inventory_studio');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            responsive: true,
+            ajax: {
+                url: 'source/supervisor_studio/inventory.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'barang',
+                title: 'Barang',
+            }, {
+                data: 'isi_satuan',
+                title: 'Isi Per Satuan',
+            }, {
+                data: 'satuan',
+                title: 'Satuan',
+            }, {
+                data: 'persediaan',
+                title: 'Persediaan',
+            },{
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 100,
+                render: function(data, type, full, meta) {
+                    return `
+                    <a href="user_superadmin/inventory_studio_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                },
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    };
+
+    var initTableInventoryStudioDetail = function () {
+        // begin first table
+        var table = $('#table_inventory_studio_detail').DataTable({
+            order: [],
+            responsive: true,
+            // Pagination settings
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            // read more: https://datatables.net/examples/basic_init/dom.html
+            lengthMenu: [5, 10, 25, 50],
+            pageLength: 10,
+            language: {
+                'lengthMenu': 'Display _MENU_',
+            },
+            searchDelay: 500,
+            processing: true,
+            serverSide: false,
+            ajax: {
+                url: 'source/supervisor_studio/stock_detail.json',
+                type: 'POST',
+                data: {
+                    // parameters for custom backend script demo
+                    columnsDef: [
+                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                        'tanggal', 'status', 'aksi',
+                    ],
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'tanggal',
+                title: 'Tanggal'
+            }, {
+                data: 'status',
+                title: 'Status',
+                render: function(data, type, row, meta) {
+                    var status = {
+                        "Stock Masuk": {
+                            'title': 'Stock Masuk',
+                            'class': 'kt-font-success'
+                        },
+                        "Stock Keluar": {
+                            'title': 'Stock Keluar',
+                            'class': 'kt-font-danger'
+                        },
+                    };
+                    if (typeof status[data] === 'undefined') {
+                        return data;
+                    }
+                    return '<span class="' + status[data].class + '">' + status[data].title + '</span>';
+                },
+            }, {
+                data: 'quantity',
+                title: 'Quantity'
+            }, {
+                data: 'harga',
+                title: 'Harga'
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+
+        $('#monthpicker_inventory_studio_detail').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        });
+
+        $('#search_inventory_studio_detail').on('keyup', function() {
+            table.search(this.value).draw();
+        });
+
+        $('#monthpicker_inventory_studio_detail').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            orientation: "bottom auto",
+            format: "MM yyyy",
+            viewMode: "months",
+            minViewMode: "months",
+            rtl: KTUtil.isRTL(),
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
+    };
+
+    var initTableInventoryTherapist = function () {
+        var table = $('#table_inventory_therapist');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            responsive: true,
+            ajax: {
+                url: 'source/therapist/stock.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'barang',
+                title: 'Barang'
+            }, {
+                data: 'jumlah',
+                title: 'Jumlah'
+            }, {
+                data: 'satuan',
+                title: 'Satuan'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    };
+
     return {
         //main function to initiate the module
         init: function() {
@@ -2712,6 +3197,12 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTablePengeluaranDetail();
             initTableCustomer();
             initTableCustomerDetail();
+            initTableInventoryGudang();
+            initTableInventoryGudangKeluar();
+            initTableInventoryGudangMasuk();
+            initTableInventoryStudio();
+            initTableInventoryStudioDetail();
+            initTableInventoryTherapist();
         },
     };
 }();
