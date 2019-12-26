@@ -16,7 +16,9 @@
         "harga": "Rp. 350.000",
         "status": "scheduled",
         "komisi": "lorem ipsum",
-        "complaint": "Gatal-gatal"
+        "complaint": "Gatal-gatal",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00"
     }, {
         "no": 2,
         "tanggal": "29 Agustus 2019",
@@ -30,7 +32,9 @@
         "harga": "Rp. 350.000",
         "status": "waiting",
         "komisi": "lorem ipsum",
-        "complaint": "Gatal-gatal"
+        "complaint": "Gatal-gatal",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00"
     }, {
         "no": 3,
         "tanggal": "29 Agustus 2019",
@@ -44,7 +48,9 @@
         "harga": "Rp. 350.000",
         "status": "scheduled",
         "komisi": "lorem ipsum",
-        "complaint": "Gatal-gatal"
+        "complaint": "Gatal-gatal",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00"
     }, {
         "no": 4,
         "tanggal": "29 Agustus 2019",
@@ -58,7 +64,9 @@
         "harga": "Rp. 350.000",
         "status": "ongoing",
         "komisi": "lorem ipsum",
-        "complaint": "Gatal-gatal"
+        "complaint": "Gatal-gatal",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00"
     }, {
         "no": 5,
         "tanggal": "29 Agustus 2019",
@@ -72,7 +80,9 @@
         "harga": "Rp. 350.000",
         "status": "done",
         "komisi": "lorem ipsum",
-        "complaint": "Gatal-gatal"
+        "complaint": "Gatal-gatal",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00"
     }, {
         "no": 6,
         "tanggal": "29 Agustus 2019",
@@ -86,7 +96,9 @@
         "harga": "Rp. 350.000",
         "status": "ongoing",
         "komisi": "lorem ipsum",
-        "complaint": "Gatal-gatal"
+        "complaint": "Gatal-gatal",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00"
     }, {
         "no": 7,
         "tanggal": "29 Agustus 2019",
@@ -100,7 +112,9 @@
         "harga": "Rp. 350.000",
         "status": "scheduled",
         "komisi": "lorem ipsum",
-        "complaint": "Gatal-gatal"
+        "complaint": "Gatal-gatal",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00"
     }, {
         "no": 8,
         "tanggal": "29 Agustus 2019",
@@ -114,6 +128,8 @@
         "harga": "Rp. 350.000",
         "status": "ongoing",
         "komisi": "lorem ipsum",
-        "complaint": "Gatal-gatal"
+        "complaint": "Gatal-gatal",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00"
     }]
 }

@@ -194,8 +194,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: 'no_pesanan',
                 title: 'No Pesanan',
             }, {
-                data: 'no_pesanan',
-                title: 'No Pesanan',
+                data: 'kategori',
+                title: 'Kategori',
             }, {
                 data: 'treatment',
                 title: 'Treatment',
@@ -205,6 +205,21 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'therapist',
                 title: 'Therapist',
+            }, {
+                data: 'waktu_mulai',
+                title: 'Waktu Mulai',
+            }, {
+                data: 'waktu_selesai',
+                title: 'Waktu Selesai',
+            }, {
+                data: 'harga',
+                title: 'Harga',
+            }, {
+                data: 'foto',
+                title: 'Foto',
+                render: function(data, type, full, meta) {
+                    return `<button type="button" class="btn btn-link" style="padding:0px;" data-toggle="modal" data-url="`+ data +`" data-target="#modal_foto"><i class="flaticon2-photo-camera"></i> Foto</button>`;
+                }
             }, {
                 field: 'aksi',
                 title: 'Aksi',
@@ -218,7 +233,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 },
             }],
             columnDefs: [{
-                targets: [0, 1, 2, 3, 4, 5, 6, 7],
+                targets: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
                 className: 'text-center',
                 orderable: true,
             }],

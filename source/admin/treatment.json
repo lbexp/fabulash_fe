@@ -13,7 +13,9 @@
         "treatment": "Eyelash Extension",
         "customer": "Darnilla",
         "therapist": "Ka",
-        "status": "scheduled"
+        "status": "scheduled",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00"
     }, {
         "no": 2,
         "tanggal": "29 Agustus 2019",
@@ -24,7 +26,9 @@
         "treatment": "Eyelash Extension",
         "customer": "Darnilla",
         "therapist": "Ka",
-        "status": "waiting"
+        "status": "waiting",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00"
     }, {
         "no": 3,
         "tanggal": "29 Agustus 2019",
@@ -35,7 +39,9 @@
         "treatment": "Eyelash Extension",
         "customer": "Darnilla",
         "therapist": "Ka",
-        "status": "ongoing"
+        "status": "ongoing",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00"
     }, {
         "no": 4,
         "tanggal": "29 Agustus 2019",
@@ -46,7 +52,9 @@
         "treatment": "Eyelash Extension",
         "customer": "Darnilla",
         "therapist": "Ka",
-        "status": "done"
+        "status": "done",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00"
     }, {
         "no": 5,
         "tanggal": "29 Agustus 2019",
@@ -57,7 +65,9 @@
         "treatment": "Eyelash Extension",
         "customer": "Darnilla",
         "therapist": "Ka",
-        "status": "waiting"
+        "status": "waiting",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00"
     }, {
         "no": 6,
         "tanggal": "29 Agustus 2019",
@@ -68,7 +78,9 @@
         "treatment": "Eyelash Extension",
         "customer": "Darnilla",
         "therapist": "Ka",
-        "status": "ongoing"
+        "status": "ongoing",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00"
     }, {
         "no": 7,
         "tanggal": "29 Agustus 2019",
@@ -79,7 +91,9 @@
         "treatment": "Eyelash Extension",
         "customer": "Darnilla",
         "therapist": "Ka",
-        "status": "done"
+        "status": "done",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00"
     }, {
         "no": 8,
         "tanggal": "29 Agustus 2019",
@@ -90,6 +104,8 @@
         "treatment": "Eyelash Extension",
         "customer": "Darnilla",
         "therapist": "Kiki",
-        "status": "ongoing"
+        "status": "ongoing",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00"
     }]
 }

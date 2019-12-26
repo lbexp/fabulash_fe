@@ -14,9 +14,12 @@
         "therapist": "Ka",
         "durasi": "1 Jam",
         "harga": "Rp. 350.000",
-        "status": "scheduled",
-        "kategori": "Eyelash",
-        "complaint": "Gatal-gatal"
+        "status": "done",
+        "void": "Request Void",
+        "complaint": "Gatal-gatal",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00",
+        "kategori": "Eyelash"
     }, {
         "no": 2,
         "tanggal": "29 Agustus 2019",
@@ -29,8 +32,11 @@
         "durasi": "1 Jam",
         "harga": "Rp. 350.000",
         "status": "waiting",
-        "kategori": "Eyelash",
-        "complaint": "Gatal-gatal"
+        "void": "Request Void",
+        "complaint": "Gatal-gatal",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00",
+        "kategori": "Eyelash"
     }, {
         "no": 3,
         "tanggal": "29 Agustus 2019",
@@ -42,9 +48,12 @@
         "therapist": "Ka",
         "durasi": "1 Jam",
         "harga": "Rp. 350.000",
-        "status": "scheduled",
-        "kategori": "Eyelash",
-        "complaint": "Gatal-gatal"
+        "status": "done",
+        "void": "Void",
+        "complaint": "Gatal-gatal",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00",
+        "kategori": "Eyelash"
     }, {
         "no": 4,
         "tanggal": "29 Agustus 2019",
@@ -55,10 +64,12 @@
         "customer": "Darnilla",
         "therapist": "Ka",
         "durasi": "1 Jam",
-        "harga": "Rp. 350.000",
         "status": "ongoing",
-        "kategori": "Eyelash",
-        "complaint": "Gatal-gatal"
+        "void": "Request Void",
+        "complaint": "Gatal-gatal",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00",
+        "kategori": "Eyelash"
     }, {
         "no": 5,
         "tanggal": "29 Agustus 2019",
@@ -70,9 +81,12 @@
         "therapist": "Ka",
         "durasi": "1 Jam",
         "harga": "Rp. 350.000",
-        "status": "done",
-        "kategori": "Eyelash",
-        "complaint": "Gatal-gatal"
+        "status": "scheduled",
+        "void": "Void",
+        "complaint": "Gatal-gatal",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00",
+        "kategori": "Eyelash"
     }, {
         "no": 6,
         "tanggal": "29 Agustus 2019",
@@ -84,9 +98,12 @@
         "therapist": "Ka",
         "durasi": "1 Jam",
         "harga": "Rp. 350.000",
-        "status": "ongoing",
-        "kategori": "Eyelash",
-        "complaint": "Gatal-gatal"
+        "status": "done",
+        "void": "Request Void",
+        "complaint": "Gatal-gatal",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00",
+        "kategori": "Eyelash"
     }, {
         "no": 7,
         "tanggal": "29 Agustus 2019",
@@ -99,8 +116,11 @@
         "durasi": "1 Jam",
         "harga": "Rp. 350.000",
         "status": "scheduled",
-        "kategori": "Eyelash",
-        "complaint": "Gatal-gatal"
+        "void": "Void",
+        "complaint": "Gatal-gatal",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00",
+        "kategori": "Eyelash"
     }, {
         "no": 8,
         "tanggal": "29 Agustus 2019",
@@ -113,7 +133,10 @@
         "durasi": "1 Jam",
         "harga": "Rp. 350.000",
         "status": "ongoing",
-        "kategori": "Eyelash",
-        "complaint": "Gatal-gatal"
+        "void": "Request Void",
+        "complaint": "Gatal-gatal",
+        "waktu_selesai": "10.00 WITA",
+        "harga": "Rp. 350.000,00",
+        "kategori": "Eyelash"
     }]
 }
