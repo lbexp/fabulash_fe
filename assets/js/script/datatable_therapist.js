@@ -1155,20 +1155,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'notes',
                 title: 'Notes'
-            }, {
-                field: 'aksi',
-                title: 'Aksi',
-                responsivePriority: -1,
-                className: 'text-center',
-                orderable: false,
-                width: 100,
-                render: function(data, type, full, meta) {
-                    return `
-                    <a href="user_therapist/profile_payroll_pinjaman_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
-                },
             }],
             columnDefs: [{
-                targets: [0, 1, 2, 3, 4, 5],
+                targets: [0, 1, 2, 3, 4],
                 className: 'text-center',
                 orderable: false,
             }],

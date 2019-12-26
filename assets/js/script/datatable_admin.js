@@ -1430,6 +1430,171 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         }).draw();
     };
 
+    var initTablePayroll = function () {
+        var table = $('#table_payroll');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            responsive: true,
+            ajax: {
+                url: 'source/therapist/payroll.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'bulan',
+                title: 'Bulan',
+            }, {
+                data: 'gaji',
+                title: 'Total Gaji',
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 100,
+                render: function(data, type, full, meta) {
+                    return `
+                    <a href="user_admin/profile_payroll_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                },
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    };
+
+    var initTablePinjamanListRequest = function () {
+        var table = $('#table_pinjaman_list_request');
+        // begin first table
+        table.DataTable({
+            order: [],
+            responsive: true,
+            ajax: {
+                url: 'source/therapist/pinjaman.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'nama',
+                title: 'Nama'
+            }, {
+                data: 'nominal',
+                title: 'Nominal'
+            }, {
+                data: 'termin',
+                title: 'Termin Pembayaran'
+            }, {
+                data: 'notes',
+                title: 'Notes'
+            }, {
+                data: 'status',
+                title: 'Status',
+                render: function (data, type, row, meta) {
+                    var status = {
+                        approve: {
+                            'title': 'Approve',
+                            'class': 'btn-label-success'
+                        },
+                        reject: {
+                            'title': 'Reject',
+                            'class': 'btn-label-danger'
+                        }
+                    };
+                    if (typeof status[data] === 'undefined') {
+                        return data;
+                    }
+                    return '<span style="width:100%" class="btn btn-bold btn-sm btn-font-sm ' + status[data].class + '">' + status[data].title + '</span>';
+                }
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTablePinjamanCurrent = function () {
+        var table = $('#table_pinjaman_current');
+        // begin first table
+        table.DataTable({
+            order: [],
+            responsive: true,
+            ajax: {
+                url: 'source/therapist/pinjaman.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'nama',
+                title: 'Nama'
+            }, {
+                data: 'nominal',
+                title: 'Nominal'
+            }, {
+                data: 'termin',
+                title: 'Termin Pembayaran'
+            }, {
+                data: 'notes',
+                title: 'Notes'
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
     return {
         //main function to initiate the module
         init: function() {
@@ -1450,6 +1615,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableInvoice();
             initTableKehadiran();
             initTableKehadiranDayOff();
+            initTablePayroll();
+            initTablePinjamanListRequest();
+            initTablePinjamanCurrent();
         },
     };
 }();
