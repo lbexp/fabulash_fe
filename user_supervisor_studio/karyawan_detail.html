@@ -356,6 +356,11 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="nav-item">
+														<a class="nav-link" data-toggle="tab" href="#tab-treatment" role="tab" aria-selected="true">
+															Treatment
+														</a>
+													</li>
+													<li class="nav-item">
 														<a class="nav-link" data-toggle="tab" href="#tab-complaint" role="tab" aria-selected="false">
 															Complaint
 														</a>
@@ -437,11 +442,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         </div>
                                                     </div>
 												</div>
-												<div class="tab-pane" id="tab-complaint" role="tabpanel">
+												<div class="tab-pane" id="tab-treatment" role="tabpanel">
         											<form class="kt-margin-b-5">
             											<div class="row justify-space-between">
         													<div class="col-lg-4 col-sm-6 input-daterange input-group margin-mobile-b-5">
-        														<input readonly type="text" class="form-control" name="start" placeholder="Pilih Bulan" data-col-index="1" id="monthpicker_complaint"/>
+        														<input readonly type="text" class="form-control" name="start" placeholder="Pilih Bulan" data-col-index="1" id="monthpicker_karyawan_treatment"/>
         														<div class="input-group-append">
         															<span class="input-group-text">
         																<i class="la la-calendar"></i>
@@ -449,11 +454,29 @@ License: You must have a valid license purchased only from themeforest(the above
         														</div>
         													</div>
         													<div class="col-lg-4 col-sm-6">
-        	    												<input type="text" class="form-control" placeholder="Search" id="search_complaint">
+        	    												<input type="text" class="form-control" placeholder="Search" id="search_karyawan_treatment">
         													</div>
             											</div>
             										</form>
-                                                    <table class="table table-bordered table-hover table-checkable" id="table_complaint"></table>
+                                                    <table class="table table-bordered table-hover table-checkable" id="table_karyawan_treatment"></table>
+												</div>
+												<div class="tab-pane" id="tab-complaint" role="tabpanel">
+        											<form class="kt-margin-b-5">
+            											<div class="row justify-space-between">
+        													<div class="col-lg-4 col-sm-6 input-daterange input-group margin-mobile-b-5">
+        														<input readonly type="text" class="form-control" name="start" placeholder="Pilih Bulan" data-col-index="1" id="monthpicker_karyawan_complaint"/>
+        														<div class="input-group-append">
+        															<span class="input-group-text">
+        																<i class="la la-calendar"></i>
+        															</span>
+        														</div>
+        													</div>
+        													<div class="col-lg-4 col-sm-6">
+        	    												<input type="text" class="form-control" placeholder="Search" id="search_karyawan_complaint">
+        													</div>
+            											</div>
+            										</form>
+                                                    <table class="table table-bordered table-hover table-checkable" id="table_karyawan_complaint"></table>
 												</div>
 												<div class="tab-pane" id="tab-kehadiran" role="tabpanel">
 													<form class="kt-margin-b-5">

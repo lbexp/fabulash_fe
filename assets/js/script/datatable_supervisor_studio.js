@@ -1609,9 +1609,115 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         }).draw();
     };
 
+    var initTableKaryawanTreatment = function() {
+        // begin first table
+        var table = $('#table_karyawan_treatment').DataTable({
+            order: [],
+            responsive: true,
+            // Pagination settings
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            // read more: https://datatables.net/examples/basic_init/dom.html
+            lengthMenu: [5, 10, 25, 50],
+            pageLength: 10,
+            language: {
+                'lengthMenu': 'Display _MENU_',
+            },
+            searchDelay: 500,
+            processing: true,
+            serverSide: false,
+            ajax: {
+                url: 'source/supervisor_studio/treatment.json',
+                type: 'POST',
+                data: {
+                    // parameters for custom backend script demo
+                    columnsDef: [
+                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                        'tanggal', 'status', 'aksi',
+                    ],
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'tanggal',
+                title: 'Tanggal'
+            }, {
+                data: 'no_pesanan',
+                title: 'No Pesanan'
+            }, {
+                data: 'waktu_mulai',
+                title: 'Waktu Mulai'
+            }, {
+                data: 'treatment',
+                title: 'Treatment'
+            }, {
+                data: 'customer',
+                title: 'Customer'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5, 6],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+
+        $('#monthpicker_karyawan_treatment').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        });
+
+        $('#search_karyawan_treatment').on('keyup', function() {
+            table.search(this.value).draw();
+        });
+
+        $('#monthpicker_karyawan_treatment').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            orientation: "bottom auto",
+            format: "MM yyyy",
+            viewMode: "months",
+            minViewMode: "months",
+            clearBtn: true,
+            rtl: KTUtil.isRTL(),
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        }).datepicker("setDate", new Date());
+    };
+
     var initTableKaryawanComplaint = function() {
         // begin first table
-        var table = $('#table_complaint').DataTable({
+        var table = $('#table_karyawan_complaint').DataTable({
             order: [],
             responsive: true,
             // Pagination settings
@@ -1659,20 +1765,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'complaint',
                 title: 'Complaint',
-            },{
-                field: 'aksi',
-                title: 'Aksi',
-                responsivePriority: -1,
-                className: 'text-center',
-                orderable: false,
-                width: 100,
-                render: function(data, type, full, meta) {
-                    return `
-                    <a href="user_supervisor_studio/karyawan_detail_complaint.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
-                },
             }],
             columnDefs: [{
-                targets: [0, 1, 2, 3, 4, 5, 6],
+                targets: [0, 1, 2, 3, 4, 5],
                 className: 'text-center',
                 orderable: true,
             }],
@@ -1687,7 +1782,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
         }).draw();
 
-        $('#monthpicker_complaint').on('change', function(e) {
+        $('#monthpicker_karyawan_complaint').on('change', function(e) {
             e.preventDefault();
             var params = {};
             var i = $(this).data('col-index');
@@ -1703,11 +1798,11 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             table.table().draw();
         });
 
-        $('#search_complaint').on('keyup', function() {
+        $('#search_karyawan_complaint').on('keyup', function() {
             table.search(this.value).draw();
         });
 
-        $('#monthpicker_complaint').datepicker({
+        $('#monthpicker_karyawan_complaint').datepicker({
             todayHighlight: true,
             language: 'id',
             orientation: "bottom auto",
@@ -2803,6 +2898,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableKehadiranDayOff();
             initTableKaryawanKehadiran();
             initTableKaryawanList();
+            initTableKaryawanTreatment();
             initTableKaryawanComplaint();
             initTableKaryawanKehadiranDetail();
             initTableKaryawanInventory();
