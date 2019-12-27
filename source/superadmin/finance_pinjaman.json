@@ -1,0 +1,71 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "tanggal_request": "20 November 2019",
+        "tanggal_approved": "12 Desember 2019",
+        "karyawan": "Ica",
+        "termin": "12 Bulan",
+        "nominal": "Rp. 3.500.000,00",
+        "status": "lunas"
+    }, {
+        "no": 2,
+        "tanggal_request": "20 November 2019",
+        "tanggal_approved": "12 Desember 2019",
+        "karyawan": "Ica",
+        "termin": "12 Bulan",
+        "nominal": "Rp. 3.500.000,00",
+        "status": "belum lunas"
+    }, {
+        "no": 3,
+        "tanggal_request": "20 November 2019",
+        "tanggal_approved": "12 Desember 2019",
+        "karyawan": "Ica",
+        "termin": "12 Bulan",
+        "nominal": "Rp. 3.500.000,00",
+        "status": "lunas"
+    }, {
+        "no": 4,
+        "tanggal_request": "20 November 2019",
+        "tanggal_approved": "12 Desember 2019",
+        "karyawan": "Ica",
+        "termin": "12 Bulan",
+        "nominal": "Rp. 3.500.000,00",
+        "status": "belum lunas"
+    }, {
+        "no": 5,
+        "tanggal_request": "20 November 2019",
+        "tanggal_approved": "12 Desember 2019",
+        "karyawan": "Ica",
+        "termin": "12 Bulan",
+        "nominal": "Rp. 3.500.000,00",
+        "status": "lunas"
+    }, {
+        "no": 6,
+        "tanggal_request": "20 November 2019",
+        "tanggal_approved": "12 Desember 2019",
+        "karyawan": "Ica",
+        "termin": "12 Bulan",
+        "nominal": "Rp. 3.500.000,00",
+        "status": "lunas"
+    }, {
+        "no": 7,
+        "tanggal_request": "20 November 2019",
+        "tanggal_approved": "12 Desember 2019",
+        "karyawan": "Ica",
+        "termin": "12 Bulan",
+        "nominal": "Rp. 3.500.000,00",
+        "status": "belum lunas"
+    }, {
+        "no": 8,
+        "tanggal_request": "20 November 2019",
+        "tanggal_approved": "12 Desember 2019",
+        "karyawan": "Ica",
+        "termin": "12 Bulan",
+        "nominal": "Rp. 3.500.000,00",
+        "status": "lunas"
+    }]
+}

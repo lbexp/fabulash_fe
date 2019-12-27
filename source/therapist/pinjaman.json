@@ -7,57 +7,57 @@
         "no": 1,
         "nama": "Ica",
         "nominal": "Rp. 3.000.000,00",
-        "termin": "12",
+        "termin": "12 Bulan",
         "notes": "Lorem ipsum dolor sit amet",
-        "status": "approve"
+        "status": "approved"
     }, {
         "no": 2,
         "nama": "Ica",
         "nominal": "Rp. 3.000.000,00",
-        "termin": "12",
+        "termin": "12 Bulan",
         "notes": "Lorem ipsum dolor sit amet",
-        "status": "reject"
+        "status": "rejected"
     }, {
         "no": 3,
         "nama": "Ica",
         "nominal": "Rp. 3.000.000,00",
-        "termin": "12",
+        "termin": "12 Bulan",
         "notes": "Lorem ipsum dolor sit amet",
-        "status": "approve"
+        "status": "approved"
     }, {
         "no": 4,
         "nama": "Ica",
         "nominal": "Rp. 3.000.000,00",
-        "termin": "12",
+        "termin": "12 Bulan",
         "notes": "Lorem ipsum dolor sit amet",
-        "status": "reject"
+        "status": "rejected"
     }, {
         "no": 5,
         "nama": "Ica",
         "nominal": "Rp. 3.000.000,00",
-        "termin": "12",
+        "termin": "12 Bulan",
         "notes": "Lorem ipsum dolor sit amet",
-        "status": "approve"
+        "status": "approved"
     }, {
         "no": 6,
         "nama": "Ica",
         "nominal": "Rp. 3.000.000,00",
-        "termin": "12",
+        "termin": "12 Bulan",
         "notes": "Lorem ipsum dolor sit amet",
-        "status": "reject"
+        "status": "rejected"
     }, {
         "no": 7,
         "nama": "Ica",
         "nominal": "Rp. 3.000.000,00",
-        "termin": "12",
+        "termin": "12 Bulan",
         "notes": "Lorem ipsum dolor sit amet",
-        "status": "approve"
+        "status": "approved"
     }, {
         "no": 8,
         "nama": "Ica",
         "nominal": "Rp. 3.000.000,00",
-        "termin": "12",
+        "termin": "12 Bulan",
         "notes": "Lorem ipsum dolor sit amet",
-        "status": "approve"
+        "status": "approved"
     }]
 }

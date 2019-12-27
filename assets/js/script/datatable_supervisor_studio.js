@@ -2715,12 +2715,12 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 title: 'Status',
                 render: function (data, type, row, meta) {
                     var status = {
-                        approve: {
-                            'title': 'Approve',
+                        approved: {
+                            'title': 'Approved',
                             'class': 'btn-label-success'
                         },
-                        reject: {
-                            'title': 'Reject',
+                        rejected: {
+                            'title': 'Rejected',
                             'class': 'btn-label-danger'
                         }
                     };

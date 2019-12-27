@@ -1958,8 +1958,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
 					<i class="flaticon-more"></i>
 					</button>
 					<div style="min-width:9rem;padding:5px;" class="dropdown-menu dropdown-menu-right">
-					<button onClick="swalApprove();" class="dropdown-item btn btn-secondary kt-margin-b-5"> <i class="fa fa-check"></i> Approve</button>
-					<button onClick="swalReject();" class="dropdown-item btn btn-secondary"> <i class="fa fa-times"></i> Reject</button>
+					<button onClick="swalApprove();" class="dropdown-item btn btn-secondary kt-margin-b-5"> <i class="fa fa-check" style="width: 22px;"></i> Approve</button>
+					<button onClick="swalReject();" class="dropdown-item btn btn-secondary"> <i class="fa fa-times" style="width: 22px;"></i> Reject</button>
                     </div>`;
                 },
             }],
@@ -2075,8 +2075,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
 					<i class="flaticon-more"></i>
 					</button>
 					<div style="min-width:9rem;padding:5px;" class="dropdown-menu dropdown-menu-right">
-					<button onClick="swalApprove();" class="dropdown-item btn btn-secondary kt-margin-b-5"> <i class="fa fa-check"></i> Approve</button>
-					<button onClick="swalReject();" class="dropdown-item btn btn-secondary"> <i class="fa fa-times"></i> Reject</button>
+					<button onClick="swalApprove();" class="dropdown-item btn btn-secondary kt-margin-b-5"> <i class="fa fa-check" style="width: 22px;"></i> Approve</button>
+					<button onClick="swalReject();" class="dropdown-item btn btn-secondary"> <i class="fa fa-times" style="width: 22px;"></i> Reject</button>
                     </div>`;
                 },
             }],
@@ -2172,6 +2172,73 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }],
             columnDefs: [{
                 targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    };
+
+    var initTableFinancePinjaman = function () {
+        var table = $('#table_finance_pinjaman');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            responsive: true,
+            ajax: {
+                url: 'source/superadmin/finance_pinjaman.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'tanggal_request',
+                title: 'Tanggal Request'
+            }, {
+                data: 'karyawan',
+                title: 'Karyawan'
+            }, {
+                data: 'nominal',
+                title: 'Nominal'
+            }, {
+                data: 'termin',
+                title: 'Termin Pembayaran'
+            }, {
+                data: 'tanggal_approved',
+                title: 'Tanggal Approved'
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 75,
+                render: function(data, type, full, meta) {
+                    return `
+                    <button type="button" class="btn btn-sm btn-success" style="border-radius:15px" onClick="swalLunas();">Lunas</button>`;
+                },
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5, 6],
                 className: 'text-center',
                 orderable: true,
             }],
@@ -3192,6 +3259,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableKaryawanRequestDayoff();
             initTableKaryawanRequestPinjaman();
             initTableFinancePayroll();
+            initTableFinancePinjaman();
             initTablePemasukan();
             initTablePengeluaran();
             initTablePengeluaranDetail();
