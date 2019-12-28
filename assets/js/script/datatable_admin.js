@@ -819,7 +819,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_admin/finance_pemasukan_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_admin/listTreatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }],
             columnDefs: [{
