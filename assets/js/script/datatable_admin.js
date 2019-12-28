@@ -1595,6 +1595,62 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
+    var initTableInvoiceEdit = function () {
+        var i = 0;
+        var table = $('#table_invoice_edit');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/admin/invoice.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'treatment',
+                title: 'Treatment',
+                render: function(data, type, full, meta) {
+                    i++;
+                    return `<input name="invoice_treatment`+ i +`" type="text" class="form-control request_required" placeholder="Treatment" value="`+ data +`">`;
+                }
+            }, {
+                data: 'therapist',
+                title: 'Therapist',
+                render: function(data, type, full, meta) {
+                    return `<input name="invoice_therapist`+ i +`" type="text" class="form-control request_required" placeholder="Therapist" value="`+ data +`">`;
+                }
+            }, {
+                data: 'harga',
+                title: 'Harga',
+                render: function(data, type, full, meta) {
+                    return `<input name="invoice_harga`+ i +`" type="text" class="form-control request_required" placeholder="Harga" value="`+ data +`">`;
+                }
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
     return {
         //main function to initiate the module
         init: function() {
@@ -1618,6 +1674,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTablePayroll();
             initTablePinjamanListRequest();
             initTablePinjamanCurrent();
+            initTableInvoiceEdit();
         },
     };
 }();

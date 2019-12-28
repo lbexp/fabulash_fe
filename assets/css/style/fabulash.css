@@ -485,3 +485,8 @@ input[type=number] {
     content: " ";
     background: #c8cada;
 }
+
+.toolbar-absolute {
+    position: absolute;
+    right: 25px;
+}
