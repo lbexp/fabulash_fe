@@ -8,48 +8,56 @@
         "barang": "Eyelash size 12",
         "jumlah": "12",
         "satuan_besar": "Box",
-        "persediaan": "100 Liter"
+        "persediaan": "100 Liter",
+        "foto": "assets/media/blog/blog1.jpg"
     }, {
         "no": 2,
         "barang": "Eyelash size 12",
         "jumlah": "11",
         "satuan_besar": "Box",
-        "persediaan": "100 Liter"
+        "persediaan": "100 Liter",
+        "foto": "assets/media/blog/blog1.jpg"
     }, {
         "no": 3,
         "barang": "Eyelash size 12",
         "jumlah": "12",
         "satuan_besar": "Box",
-        "persediaan": "100 Liter"
+        "persediaan": "100 Liter",
+        "foto": "assets/media/blog/blog1.jpg"
     }, {
         "no": 4,
         "barang": "Eyelash size 12",
         "jumlah": "12",
         "satuan_besar": "Box",
-        "persediaan": "100 Liter"
+        "persediaan": "100 Liter",
+        "foto": "assets/media/blog/blog1.jpg"
     }, {
         "no": 5,
         "barang": "Eyelash size 12",
         "jumlah": "5",
         "satuan_besar": "Box",
-        "persediaan": "100 Liter"
+        "persediaan": "100 Liter",
+        "foto": "assets/media/blog/blog1.jpg"
     }, {
         "no": 6,
         "barang": "Eyelash size 12",
         "jumlah": "12",
         "satuan_besar": "Box",
-        "persediaan": "100 Liter"
+        "persediaan": "100 Liter",
+        "foto": "assets/media/blog/blog1.jpg"
     }, {
         "no": 7,
         "barang": "Eyelash size 12",
         "jumlah": "12",
         "satuan_besar": "Box",
-        "persediaan": "100 Liter"
+        "persediaan": "100 Liter",
+        "foto": "assets/media/blog/blog1.jpg"
     }, {
         "no": 8,
         "barang": "Eyelash size 12",
         "jumlah": "12",
         "satuan_besar": "Box",
-        "persediaan": "100 Liter"
+        "persediaan": "100 Liter",
+        "foto": "assets/media/blog/blog1.jpg"
     }]
 }

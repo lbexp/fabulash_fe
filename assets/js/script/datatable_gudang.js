@@ -176,6 +176,13 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: 'satuan_besar',
                 title: 'Satuan Besar',
             }, {
+                data: 'foto',
+                title: 'Foto',
+                render: function (data, type, full, meta) {
+                    return `
+                    <button type="button" class="btn btn-link" style="padding:0px;" data-toggle="modal" data-url="`+ data +`" data-target="#modal_foto"><i class="flaticon2-photo-camera"></i> Foto</button>`;
+                }
+            }, {
                 field: 'aksi',
                 title: 'Aksi',
                 responsivePriority: -1,
@@ -202,6 +209,12 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 cell.innerHTML = i + 1;
             });
         }).draw();
+
+        $("#modal_foto").on('show.bs.modal', function (e) {
+            var triggerLink = $(e.relatedTarget);
+            var url = triggerLink.data("url");
+            $(this).find("#foto_placement").html(`<img src="`+ url +`" class="uploaded_img">`);
+        });
     };
 
     var initTableStockBarangKeluar = function() {
