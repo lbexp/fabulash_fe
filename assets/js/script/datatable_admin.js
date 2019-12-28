@@ -689,8 +689,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                             'title': 'Admin',
                             'class': 'btn-label-danger'
                         },
-                        inventory: {
-                            'title': 'Inventory',
+                        gudang: {
+                            'title': 'Gudang',
                             'class': 'btn-label-success'
                         },
                     };
@@ -1651,6 +1651,62 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
+    var initTablePengeluaranDetailEdit = function () {
+        var i = 0;
+        var table = $('#table_pengeluaran_detail_edit');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/admin/pengeluaran_detail.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'nama_pengeluaran',
+                title: 'Pengeluaran',
+                render: function(data, type, full, meta) {
+                    i++;
+                    return `<input name="pengeluaran_nama`+ i +`" type="text" class="form-control request_required" placeholder="Nama Pengeluaran" value="`+ data +`">`;
+                }
+            }, {
+                data: 'quantity',
+                title: 'Quantity',
+                render: function(data, type, full, meta) {
+                    return `<input name="pengeluaran_quantity`+ i +`" type="number" min="1" class="form-control request_required" placeholder="Jumlah" value="`+ data +`">`;
+                }
+            }, {
+                data: 'harga',
+                title: 'Harga',
+                render: function(data, type, full, meta) {
+                    return `<input name="pengeluaran_harga`+ i +`" type="text" class="form-control request_required" placeholder="Harga" value="`+ data +`">`;
+                }
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
     return {
         //main function to initiate the module
         init: function() {
@@ -1675,6 +1731,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTablePinjamanListRequest();
             initTablePinjamanCurrent();
             initTableInvoiceEdit();
+            initTablePengeluaranDetailEdit();
         },
     };
 }();

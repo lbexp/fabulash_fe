@@ -342,6 +342,9 @@ License: You must have a valid license purchased only from themeforest(the above
 													Detail Pengeluaran
 												</h3>
 											</div>
+											<div class="kt-portlet__head-toolbar">
+												<a href="user_admin/finance_pengeluaran_detail_edit.html" class="btn btn-outline-success toolbar-absolute"><i class="la la-edit"></i> Edit</a>
+											</div>
 										</div>
 										<div class="kt-portlet__body">
                                             <div class="row" style="margin-bottom:20px;">
@@ -400,135 +403,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								</div>
 
 							</div>
-
-                            <!--begin::Modal-->
-                            <div class="modal fade" id="kt_modal_treatment_tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Tambah Pelanggan</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Nama</label>
-                                                    <div class="col-8">
-                                                        <input type="text" class="form-control" id="customer_nama">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Tanggal Lahir</label>
-                                                    <div class="col-8">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control" readonly="" placeholder="Select date" id="kt_datepicker_2">
-                                                            <div class="input-group-append">
-                                                                <span class="input-group-text">
-                                                                    <i class="la la-calendar-check-o"></i>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">No. Telepon</label>
-                                                    <div class="col-8">
-                                                        <input type="text" class="form-control" id="customer_nohp">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Email</label>
-                                                    <div class="col-8">
-                                                        <input type="email" class="form-control" id="customer-email">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Alamat</label>
-                                                    <div class="col-8">
-                                                        <input type="text" class="form-control" id="customer-alamat">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Persetujuan</label>
-                                                    <div class="col-6">
-                                                        <input type="text" class="form-control" style="background-color:#17bdbd26;color:#17bdbd" value="Setuju" readonly>
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <button class="btn btn-success">Send</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer" style="justify-content:center;">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-success">Submit</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-							<div class="modal fade" id="kt_modal_treatment_bayar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Pembayaran</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-											<div class="justify-center kt-margin-b-10">
-												<h4 class="color-main-dark" name="pembayaran_nominal">Rp. 300.000,00</h4>
-											</div>
-                                            <form>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Jenis</label>
-                                                    <div class="col-8">
-														<div class="kt-radio-inline">
-															<label class="kt-radio">
-																<input type="radio" checked="checked" name="pembayaran_jenis"> Cash
-																<span></span>
-															</label>
-														</div>
-														<div class="kt-radio-inline">
-															<label class="col-6 kt-radio">
-																<input type="radio" name="pembayaran_jenis"> EDC Mandiri
-																<span></span>
-															</label>
-															<label class="col-5 kt-radio">
-																<input type="radio" name="pembayaran_jenis"> EDC BNI
-																<span></span>
-															</label>
-														</div>
-														<div class="kt-radio-inline">
-															<label class="col-6 kt-radio">
-																<input type="radio" name="pembayaran_jenis"> Transfer Mandiri
-																<span></span>
-															</label>
-															<label class="col-5 kt-radio">
-																<input type="radio" name="pembayaran_jenis"> Transfer BNI
-																<span></span>
-															</label>
-														</div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Diskon</label>
-                                                    <div class="col-8">
-                                                        <input type="text" class="form-control" name="pembayaran_diskon" placeholder="Diskon">
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer" style="justify-content:center;">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-success">Submit</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--end::Modal-->
+							
 						</div>
 
 						<!-- end:: Content -->
