@@ -324,17 +324,25 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 										</div>
 										<div class="kt-portlet__body">
-                                            <span class="kt-font-bold kt-margin-b-20">Tanggal Pembayaran : <span name="tanggal_pembayaran">25 November 2019</span></span>
+											<div class="row kt-margin-b-25">
+												<div class="col-6">
+													<span class="kt-font-bold">Bulan : <span class="kt-font-boldest" name="tanggal_pembayaran">November 2019</span></span><br>
+		                                            <span class="kt-font-bold">Tanggal Pembayaran : <span class="kt-font-boldest" name="tanggal_pembayaran">25 November 2019</span></span>
+												</div>
+												<div class="col-6" style="text-align:right;">
+													<button type="button" class="btn btn-outline-brand" data-toggle="modal" data-target="#modal_foto"><i class="flaticon2-photo-camera"></i> Bukti Pembayaran</button></span>
+												</div>
+											</div>
                                             <div class="table-responsive">
                                                 <table class="table table-bordered table-hover well-align-table" role="grid">
-                                                    <thead class="thead-light">
+                                                    <thead>
                                                         <tr role="row">
                                                             <th style="width: 25%">Tipe</th>
                                                             <th style="width: 50%">Keterangan</th>
                                                             <th style="width: 25%">Nominal</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody id="payroll_item_list">
                                                         <tr role="row">
                                                             <td class="text-center">Gaji Pokok</td>
                                                             <td class="text-center" name="gaji_keterangan"></td>
@@ -355,18 +363,14 @@ License: You must have a valid license purchased only from themeforest(the above
                                                             <td class="text-center" name="bonus_keterangan"></td>
                                                             <td class="text-center" name="bonus_nominal">Rp 300.000,00</td>
                                                         </tr>
-                                                        <tr role="row">
-                                                            <td class="text-center">Pinjaman</td>
-                                                            <td class="text-center" name="pinjaman_keterangan"></td>
-                                                            <td class="text-center" name="pinjaman_nominal">- Rp 200.000,00</td>
-                                                        </tr>
-                                                        <tr role="row">
+                                                        <tr role="row" id="row_payroll_total">
                                                             <td class="text-center kt-font-bold" colspan="2">Total</td>
                                                             <td class="text-center kt-font-bold color-main-dark" name="total_gaji">Rp 3.680.000,00</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
+
 										</div>
 									</div>
 
@@ -374,6 +378,27 @@ License: You must have a valid license purchased only from themeforest(the above
 								</div>
 
 							</div>
+
+							<div class="modal fade" id="modal_foto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		                        <div class="modal-dialog" role="document">
+		                            <div class="modal-content">
+		                                <div class="modal-header">
+		                                    <h5 class="modal-title">Bukti Pembayaran</h5>
+		                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		                                    </button>
+		                                </div>
+		                               <div class="modal-body">
+										   <div align="center">
+											   <div class="dropzone dropzone-default">
+		   							    			<div class="dropzone-msg dz-message needsclick">
+														<img src="assets/media/blog/blog3.jpg" class="uploaded_img" name="payroll_bukti">
+		   							    			</div>
+		   							    		</div>
+											</div>
+		                               </div>
+		                            </div>
+		                        </div>
+		                    </div>
 
 						</div>
 
@@ -451,6 +476,21 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Page Scripts(used by this page) -->
 		<script src="assets/js/script/datatable_therapist.js"></script>
 		<script src="assets/js/custom/datepicker.js" type="text/javascript"></script>
+
+		<script>
+			// Table
+			$('document').ready(function () {
+				var i;
+				var pinjaman = 3;
+				for (i = 1; i <= pinjaman; i++) {
+				  $(`<tr role="row">
+					  <td class="text-center">Pinjaman</td>
+					  <td class="text-center" name="pinjaman_keterangan`+ i +`"></td>
+					  <td class="text-center" name="pinjaman_nominal`+ i +`">- Rp 200.000,00</td>
+				  </tr>`).insertBefore(`#row_payroll_total`);
+				}
+			});
+		</script>
 
 		<!--end::Page Scripts -->
 	</body>

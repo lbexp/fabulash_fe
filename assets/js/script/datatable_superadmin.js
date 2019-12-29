@@ -2268,6 +2268,35 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         }).draw();
     };
 
+    var initTableFinancePayrollDetail = function () {
+        var i = 0;
+        var table = $('#table_finance_payroll_detail');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            columns: [{
+                field: 'tipe',
+                title: 'Tipe'
+            }, {
+                field: 'keterangan',
+                title: 'Keterangan'
+            }, {
+                field: 'nominal',
+                title: 'Nominal'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
     var initTableFinancePinjaman = function () {
         var table = $('#table_finance_pinjaman');
         // begin first table
@@ -2340,8 +2369,12 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         var table = $('#table_finance_pengeluaran').DataTable({
             order: [],
             responsive: true,
+            buttons: [
+                'print',
+                'excelHtml5',
+            ],
             // Pagination settings
-            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-3'i><'col-sm-12 col-md-6 text-center dataTables_pager'lp><'col-sm-12 col-md-3 text-right'B>>`,
             // read more: https://datatables.net/examples/basic_init/dom.html
             lengthMenu: [5, 10, 25, 50],
             pageLength: 10,
@@ -2473,8 +2506,12 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         var table = $('#table_finance_pemasukan').DataTable({
             order: [],
             responsive: true,
+            buttons: [
+                'print',
+                'excelHtml5',
+            ],
             // Pagination settings
-            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-3'i><'col-sm-12 col-md-6 text-center dataTables_pager'lp><'col-sm-12 col-md-3 text-right'B>>`,
             // read more: https://datatables.net/examples/basic_init/dom.html
             lengthMenu: [5, 10, 25, 50],
             pageLength: 10,
@@ -3341,6 +3378,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableKaryawanRequestDayoff();
             initTableKaryawanRequestPinjaman();
             initTableFinancePayroll();
+            initTableFinancePayrollDetail();
             initTableFinancePinjaman();
             initTablePemasukan();
             initTablePengeluaran();

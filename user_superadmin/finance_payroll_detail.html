@@ -362,76 +362,87 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="col-12">
 
                                     <!--begin::Portlet-->
-									<div class="kt-portlet">
-										<div class="kt-portlet__head">
-											<div class="kt-portlet__head-label">
-												<span class="kt-portlet__head-icon">
-													<i class="flaticon2-cube-1"></i>
-												</span>
-												<h3 class="kt-portlet__head-title">
-													Detail Payroll
-												</h3>
+									<form id="kt_form_payroll">
+										<div class="kt-portlet">
+											<div class="kt-portlet__head">
+												<div class="kt-portlet__head-label">
+													<span class="kt-portlet__head-icon">
+														<i class="flaticon2-cube-1"></i>
+													</span>
+													<h3 class="kt-portlet__head-title">
+														Detail Payroll
+													</h3>
+												</div>
+											</div>
+											<div class="kt-portlet__body">
+												<div class="form-group row">
+													<label class="col-sm-3 col-form-label">Bulan Pembayaran :</label>
+													<div class="col-sm-9">
+														<div class="input-group date">
+															<input type="text" class="form-control kt-monthpicker request_required" readonly="" placeholder="Pilih Bulan" name="payroll_bulan">
+															<div class="input-group-append">
+																<span class="input-group-text">
+																	<i class="la la-calendar-check-o"></i>
+																</span>
+															</div>
+														</div>
+														<span class="form-text text-muted kt-hidden"></span>
+													</div>
+												</div>
+												<div class="kt-margin-b-15">
+		                                            <div class="table-responsive">
+		                                                <table class="table table-bordered table-hover well-align-table table-mobile" role="grid">
+		                                                    <thead>
+		                                                        <tr role="row">
+		                                                            <th style="width: 25%">Tipe</th>
+		                                                            <th style="width: 50%">Keterangan</th>
+		                                                            <th style="width: 25%">Nominal</th>
+		                                                        </tr>
+		                                                    </thead>
+		                                                    <tbody id="payroll_item_list">
+		                                                        <tr role="row">
+		                                                            <td class="text-center">Gaji Pokok</td>
+		                                                            <td class="text-center" name="payroll_gaji_keterangan"></td>
+		                                                            <td class="text-center" name="payroll_gaji_nominal">Rp 3.000.000,00</td>
+		                                                        </tr>
+		                                                        <tr role="row">
+		                                                            <td class="text-center">Komisi</td>
+		                                                            <td class="text-center" name="payroll_komisi_keterangan">4 Treatment</td>
+		                                                            <td class="text-center" name="payroll_komisi_nominal">Rp 500.000,00</td>
+		                                                        </tr>
+		                                                        <tr role="row">
+		                                                            <td class="text-center">BPJS</td>
+		                                                            <td class="text-center" name="payroll_bpjs_keterangan"></td>
+		                                                            <td class="text-center" name="payroll_bpjs_nominal">Rp 80.000,00</td>
+		                                                        </tr>
+		                                                        <tr role="row">
+		                                                            <td class="text-center">Bonus</td>
+		                                                            <td class="text-center" name="bonus_keterangan"><input type="text" class="form-control request_required" style="text-align: center" name="payroll_bonus_keterangan" placeholder="Keterangan Bonus"></td>
+		                                                            <td class="text-center"><input type="number" style="text-align: center" class="form-control request_required" name="payroll_bonus_nominal" placeholder="Jumlah"></td>
+		                                                        </tr>
+		                                                        <tr role="row" id="row_payroll_total">
+		                                                            <td class="text-center kt-font-bold" colspan="2">Total</td>
+		                                                            <td class="text-center kt-font-bold color-main-dark" name="payroll_total_gaji">Rp 3.580.000,00</td>
+		                                                        </tr>
+		                                                    </tbody>
+		                                                </table>
+		                                            </div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-3 col-form-label">Foto Bukti Pembayaran :</label>
+													<div class="col-sm-9">
+														<div class="custom-file">
+															<input type="file" class="custom-file-input request_required" name="payroll_payroll_bukti" accept="image/*">
+															<label class="custom-file-label">Choose file</label>
+														</div>
+													</div>
+												</div>
+	                                            <div style="text-align: center; margin-top: 20px">
+	                                                <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil">Submit</button>
+	                                            </div>
 											</div>
 										</div>
-                                        <div class="kt-portlet__body">
-                                            <span class="kt-font-bold kt-margin-b-20">Tanggal Pembayaran : <span name="tanggal_pembayaran">25 November 2019</span></span>
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered table-hover well-align-table" role="grid">
-                                                    <thead class="thead-light">
-                                                        <tr role="row">
-                                                            <th style="width: 25%">Tipe</th>
-                                                            <th style="width: 50%">Keterangan</th>
-                                                            <th style="width: 25%">Nominal</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr role="row">
-                                                            <td class="text-center">Gaji Pokok</td>
-                                                            <td class="text-center" name="gaji_keterangan"></td>
-                                                            <td class="text-center" name="gaji_nominal">Rp 3.000.000,00</td>
-                                                        </tr>
-                                                        <tr role="row">
-                                                            <td class="text-center">Komisi</td>
-                                                            <td class="text-center" name="komisi_keterangan">4 Treatment</td>
-                                                            <td class="text-center" name="komisi_nominal">Rp 500.000,00</td>
-                                                        </tr>
-                                                        <tr role="row">
-                                                            <td class="text-center">BPJS</td>
-                                                            <td class="text-center" name="bpjs_keterangan"></td>
-                                                            <td class="text-center" name="bpjs_nominal">Rp 80.000,00</td>
-                                                        </tr>
-                                                        <tr role="row">
-                                                            <td class="text-center">Bonus</td>
-                                                            <td class="text-center" name="bonus_keterangan"><input type="text" class="form-control"></td>
-                                                            <td class="text-center"><input type="number" style="text-align: center" class="form-control" name="bonus_nominal" placeholder="Rp 200.000,00"></td>
-                                                        </tr>
-                                                        <tr role="row">
-                                                            <td class="text-center">Pinjaman</td>
-                                                            <td class="text-center" name="pinjaman_keterangan">Pinjaman Liburan Akhir Tahun</td>
-                                                            <td class="text-center"><input type="number" style="text-align: center" class="form-control" name="pinjaman_nominal" placeholder="Rp 200.000,00"></td>
-                                                        </tr>
-                                                        <tr role="row">
-                                                            <td class="text-center">Pinjaman</td>
-                                                            <td class="text-center" name="pinjaman_keterangan">Pinjaman Liburan Akhir Tahun</td>
-                                                            <td class="text-center"><input type="number" style="text-align: center" class="form-control" name="pinjaman_nominal" placeholder="Rp 200.000,00"></td>
-                                                        </tr>
-                                                        <tr role="row">
-                                                            <td class="text-center">Pinjaman</td>
-                                                            <td class="text-center" name="pinjaman_keterangan">Pinjaman Liburan Akhir Tahun</td>
-                                                            <td class="text-center"><input type="number" style="text-align: center" class="form-control" name="pinjaman_nominal" placeholder="Rp 200.000,00"></td>
-                                                        </tr>
-                                                        <tr role="row">
-                                                            <td class="text-center kt-font-bold" colspan="2">Total</td>
-                                                            <td class="text-center kt-font-bold color-main-dark" name="total_gaji">Rp 3.580.000,00</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <div style="text-align: center; margin-top: 20px">
-                                                <button type="submit" class="btn btn-success" id="kt_sweetalert_request_berhasil">Submit</button>
-                                            </div>
-										</div>
-									</div>
+									</form>
 
 									<!--end::Portlet-->
 								</div>
@@ -514,6 +525,51 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Page Scripts(used by this page) -->
 		<script src="assets/js/script/datatable_superadmin.js"></script>
 		<script src="assets/js/custom/datepicker.js" type="text/javascript"></script>
+
+		<script>
+			// Table
+			$('document').ready(function () {
+				var i;
+				var pinjaman = 3;
+				for (i = 1; i <= pinjaman; i++) {
+				  $(`<tr role="row">
+					  <td class="text-center">Pinjaman</td>
+					  <td class="text-center" name="payroll_pinjaman_keterangan`+ i +`">Pinjaman Liburan Akhir Tahun</td>
+					  <td class="text-center"><input type="number" style="text-align: center" class="form-control request_required" name="payroll_pinjaman_nominal`+ i +`" placeholder="Jumlah"></td>
+				  </tr>`).insertBefore(`#row_payroll_total`);
+				}
+			});
+
+			// Form Validation
+			$('#kt_form_payroll').on('submit', function(event) {
+				$('.request_required').each(function (item) {
+					$(this).rules('add', {
+						required: true
+					})
+				});
+				event.preventDefault();
+			});
+
+			jQuery.extend(jQuery.validator.messages, {
+				required : "Required"
+			});
+
+			$('#kt_form_payroll').validate();
+
+			// Sweetalert
+			$('#kt_sweetalert_berhasil').click(function(e) {
+				swal.fire({
+					title: "Berhasil",
+					text: "Payroll berhasil dibayar",
+					type: "success",
+					confirmButtonText: "Ok",
+					confirmButtonClass: "btn btn-brand"
+				}).then(function(result) {
+					// location.reload();
+				});
+			});
+
+		</script>
 
 		<!--end::Page Scripts -->
 	</body>

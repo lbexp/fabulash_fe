@@ -632,8 +632,12 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         var table = $('#table_finance_pengeluaran').DataTable({
             order: [],
             responsive: true,
+            buttons: [
+                'print',
+                'excelHtml5',
+            ],
             // Pagination settings
-            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-3'i><'col-sm-12 col-md-6 text-center dataTables_pager'lp><'col-sm-12 col-md-3 text-right'B>>`,
             // read more: https://datatables.net/examples/basic_init/dom.html
             lengthMenu: [5, 10, 25, 50],
             pageLength: 10,
@@ -718,6 +722,17 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }],
         });
 
+        $('#export_print').on('click', function(e) {
+            e.preventDefault();
+            table.button(0).trigger();
+        });
+
+        $('#export_excel').on('click', function(e) {
+            e.preventDefault();
+            table.button(2).trigger();
+        });
+
+
         table.on('order.dt search.dt', function() {
             table.column(0, {
                 search: 'applied',
@@ -765,8 +780,12 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         var table = $('#table_finance_pemasukan').DataTable({
             order: [],
             responsive: true,
+            buttons: [
+                'print',
+                'excelHtml5',
+            ],
             // Pagination settings
-            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-3'i><'col-sm-12 col-md-6 text-center dataTables_pager'lp><'col-sm-12 col-md-3 text-right'B>>`,
             // read more: https://datatables.net/examples/basic_init/dom.html
             lengthMenu: [5, 10, 25, 50],
             pageLength: 10,

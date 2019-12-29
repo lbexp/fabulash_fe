@@ -1,0 +1,42 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "tipe": "Gaji Pokok",
+        "keterangan": "",
+        "nominal": "Rp 3.000.000,00"
+    }, {
+        "no": 2,
+        "tipe": "Komisi",
+        "keterangan": "4 Treatment",
+        "nominal": "Rp 500.000,00"
+    }, {
+        "no": 3,
+        "tipe": "BPJS",
+        "keterangan": "",
+        "nominal": "Rp 80.000,00"
+    }, {
+        "no": 4,
+        "tipe": "Bonus",
+        "keterangan": "",
+        "nominal": ""
+    }, {
+        "no": 5,
+        "tipe": "Pinjaman",
+        "keterangan": "Pinjaman Liburan Akhir Tahun",
+        "nominal": ""
+    }, {
+        "no": 6,
+        "tipe": "Bonus",
+        "keterangan": "Pinjaman Liburan Akhir Tahun",
+        "nominal": ""
+    }, {
+        "no": 7,
+        "tipe": "Bonus",
+        "keterangan": "Pinjaman Liburan Akhir Tahun",
+        "nominal": ""
+    }]
+}
