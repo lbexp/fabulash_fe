@@ -60,6 +60,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'therapist',
                 title: 'Therapist',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_superadmin/hr_karyawan_detail.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'status',
                 title: 'Status',
@@ -211,6 +214,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'therapist',
                 title: 'Therapist',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_superadmin/hr_karyawan_detail.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'waktu_mulai',
                 title: 'Waktu Mulai',
@@ -329,9 +335,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: 'no_pesanan',
                 title: 'No Pesanan',
             }, {
-                data: 'no_pesanan',
-                title: 'No Pesanan',
-            }, {
                 data: 'treatment',
                 title: 'Treatment',
             }, {
@@ -340,9 +343,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, full, meta) {
                     return `<a href="user_superadmin/customer_detail.html">`+ data +`</a>`;
                 }
-            }, {
-                data: 'therapist',
-                title: 'Therapist',
             }, {
                 data: 'void',
                 title: 'Status',
@@ -368,14 +368,22 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 responsivePriority: -1,
                 className: 'text-center',
                 orderable: false,
-                width: 100,
+                width: 50,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_superadmin/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <button type="button" class="btn btn-clean btn-icon btn-sm btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="flaticon-more"></i>
+					</button>
+					<div style="min-width:9rem;padding:5px;" class="dropdown-menu dropdown-menu-right">
+                    <a href="user_superadmin/treatment_detail_paid.html" class="dropdown-item btn btn-secondary"><i class="fa fa-info-circle" style="width: 22px;"></i> Rincian</a>
+					<button onClick="swalApprove();" class="dropdown-item btn btn-secondary kt-margin-b-5"><i class="fa fa-check" style="width: 22px;"></i> Approve</button>
+					<button onClick="swalReject();" class="dropdown-item btn btn-secondary"><i class="fa fa-times" style="width: 22px;"></i> Reject</button>
+                    </div>
+                    `;
                 },
             }],
             columnDefs: [{
-                targets: [0, 1, 2, 3, 4, 5, 6, 7],
+                targets: [0, 1, 2, 3, 4, 5],
                 className: 'text-center',
                 orderable: true,
             }],
@@ -497,7 +505,10 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 title: 'Kategori'
             }, {
                 data: 'therapist',
-                title: 'Therapist'
+                title: 'Therapist',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_superadmin/hr_karyawan_detail.html">`+ data +`</a>`;
+                }
             }, ],
             columnDefs: [{
                 targets: [0, 1, 2],
@@ -539,7 +550,10 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 title: 'Kategori'
             }, {
                 data: 'therapist',
-                title: 'Therapist'
+                title: 'Therapist',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_superadmin/hr_karyawan_detail.html">`+ data +`</a>`;
+                }
             }, ],
             columnDefs: [{
                 targets: [0, 1, 2],
@@ -581,7 +595,10 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 title: 'Kategori'
             }, {
                 data: 'therapist',
-                title: 'Therapist'
+                title: 'Therapist',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_superadmin/hr_karyawan_detail.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'waktu_mulai',
                 title: 'Waktu Mulai'
@@ -626,7 +643,10 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 title: 'Kategori'
             }, {
                 data: 'therapist',
-                title: 'Therapist'
+                title: 'Therapist',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_superadmin/hr_karyawan_detail.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'inventory',
                 title: 'Inventory'
@@ -677,7 +697,10 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 title: 'Kategori'
             }, {
                 data: 'therapist',
-                title: 'Therapist'
+                title: 'Therapist',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_superadmin/hr_karyawan_detail.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'inventory',
                 title: 'Inventory'
@@ -728,7 +751,10 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 title: 'Treatment'
             }, {
                 data: 'therapist',
-                title: 'Therapist'
+                title: 'Therapist',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_superadmin/hr_karyawan_detail.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'harga',
                 title: 'Harga'
@@ -2804,6 +2830,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'therapist',
                 title: 'Therapist',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_superadmin/hr_karyawan_detail.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'complaint',
                 title: 'Complaint',

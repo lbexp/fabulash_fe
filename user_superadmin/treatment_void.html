@@ -472,6 +472,45 @@ License: You must have a valid license purchased only from themeforest(the above
 		<script src="assets/js/script/datatable_superadmin.js"></script>
 		<script src="assets/js/custom/datepicker.js" type="text/javascript"></script>
 
+		<script>
+			// Sweetalert
+			function swalApprove() {
+				swal.fire({
+					title: 'Yakin untuk menyetujui?',
+					text: "Tindakan ini tidak bisa diubah kembali!",
+					type: 'warning',
+					showCancelButton: true,
+					confirmButtonText: 'Ya, approve!'
+				}).then(function(result) {
+					if (result.value) {
+						swal.fire(
+							'Approved!',
+							'Request berhasil disetujui.',
+							'success'
+						)
+					}
+				});
+			};
+
+			function swalReject() {
+				swal.fire({
+					title: 'Yakin untuk menolak?',
+					text: "Tindakan ini tidak bisa diubah kembali!",
+					type: 'warning',
+					showCancelButton: true,
+					confirmButtonText: 'Ya, reject!'
+				}).then(function(result) {
+					if (result.value) {
+						swal.fire(
+							'Rejected!',
+							'Request berhasil ditolak.',
+							'success'
+						)
+					}
+				});
+			};
+		</script>
+
 		<!--end::Page Scripts -->
 	</body>
 
