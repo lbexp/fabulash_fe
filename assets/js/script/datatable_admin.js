@@ -53,6 +53,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'customer',
                 title: 'Customer',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_admin/customer_detail.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'therapist',
                 title: 'Therapist',
@@ -148,7 +151,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableTreatmentDetail = function() {
@@ -243,6 +246,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'customer',
                 title: 'Customer',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_admin/customer_detail.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'therapist',
                 title: 'Therapist',
@@ -319,7 +325,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableVoidTreatment = function() {
@@ -366,6 +372,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'customer',
                 title: 'Customer',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_admin/customer_detail.html">`+ data +`</a>`;
+                }
             }, {
                 field: 'aksi',
                 title: 'Aksi',
@@ -424,7 +433,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableCustomer = function() {
@@ -624,7 +633,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTablePengeluaran = function() {
@@ -772,7 +781,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTablePemasukan = function() {
@@ -887,7 +896,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTablePengeluaranDetail = function() {
@@ -1336,7 +1345,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableKehadiranDayOff = function () {

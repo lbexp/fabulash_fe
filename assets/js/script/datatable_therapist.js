@@ -140,7 +140,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableListTreatment = function() {
@@ -254,7 +254,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableComplaint = function() {
@@ -368,7 +368,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableTreatmentDetail = function() {
@@ -598,7 +598,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTablePemakaianInventory = function() {
@@ -704,7 +704,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableKehadiran = function () {
@@ -835,7 +835,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableSPKComplaint = function () {

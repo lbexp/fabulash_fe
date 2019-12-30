@@ -322,7 +322,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableStockBarangMasuk = function() {
@@ -430,7 +430,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableStockHistoryIn = function () {
@@ -535,7 +535,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableStockHistoryOut = function () {
@@ -640,7 +640,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableRequestStock = function() {
@@ -777,7 +777,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableKehadiran = function () {
@@ -908,7 +908,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableKehadiranDayOff = function () {

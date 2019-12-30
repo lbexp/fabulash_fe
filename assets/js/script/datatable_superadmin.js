@@ -54,6 +54,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'customer',
                 title: 'Customer',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_superadmin/customer_detail.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'therapist',
                 title: 'Therapist',
@@ -149,7 +152,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTablePaidTreatment = function() {
@@ -202,6 +205,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'customer',
                 title: 'Customer',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_superadmin/customer_detail.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'therapist',
                 title: 'Therapist',
@@ -278,7 +284,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableVoidTreatment = function() {
@@ -331,6 +337,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'customer',
                 title: 'Customer',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_superadmin/customer_detail.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'therapist',
                 title: 'Therapist',
@@ -411,7 +420,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableTreatmentDetail = function() {
@@ -1167,7 +1176,10 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 title: 'Treatment'
             }, {
                 data: 'customer',
-                title: 'Customer'
+                title: 'Customer',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_superadmin/customer_detail.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'therapist',
                 title: 'Therapist'
@@ -1221,7 +1233,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableKaryawanComplaint = function() {
@@ -1271,6 +1283,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'customer',
                 title: 'Customer',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_superadmin/customer_detail.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'complaint',
                 title: 'Complaint',
@@ -1324,7 +1339,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableKaryawanKehadiran = function() {
@@ -1427,7 +1442,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableKaryawanPayroll = function() {
@@ -1867,7 +1882,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableKaryawanInventoryRequest = function () {
@@ -1970,7 +1985,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableKaryawanRequestDayoff = function () {
@@ -2090,7 +2105,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableKaryawanRequestPinjaman = function () {
@@ -2207,7 +2222,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableFinancePayroll = function () {
@@ -2498,7 +2513,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTablePemasukan = function() {
@@ -2613,7 +2628,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTablePengeluaranDetail = function() {
@@ -2858,7 +2873,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableInventoryGudang = function () {
@@ -3016,7 +3031,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableInventoryGudangMasuk = function() {
@@ -3113,7 +3128,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableInventoryStudio = function () {
@@ -3293,7 +3308,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',
             },
-        }).datepicker("setDate", new Date());
+        })/*.datepicker("setDate", new Date());*/
     };
 
     var initTableInventoryTherapist = function () {
