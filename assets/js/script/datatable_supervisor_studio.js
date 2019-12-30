@@ -1486,7 +1486,10 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 title: 'Tanggal',
             }, {
                 data: 'karyawan',
-                title: 'Karyawan'
+                title: 'Karyawan',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_supervisor_studio/karyawan_detail.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'status',
                 title: 'Status',
@@ -1685,7 +1688,10 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 title: 'Tanggal'
             }, {
                 data: 'no_pesanan',
-                title: 'No Pesanan'
+                title: 'No. Pesanan',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_supervisor_studio/treatment_detail_done.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'waktu_mulai',
                 title: 'Waktu Mulai'
@@ -1795,6 +1801,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'no_pesanan',
                 title: 'No. Pesanan',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_supervisor_studio/treatment_detail_paid.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'treatment',
                 title: 'Treatment',
@@ -2080,7 +2089,10 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 title: 'Tanggal'
             }, {
                 data: 'kode_spk',
-                title: 'Kode SPK'
+                title: 'Kode SPK',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_supervisor_studio/treatment_detail_paid.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'barang',
                 title: 'Barang'
@@ -2183,7 +2195,10 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 title: 'Tanggal'
             }, {
                 data: 'kode_spk',
-                title: 'Kode SPK'
+                title: 'Kode SPK',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_supervisor_studio/request_in_detail_disetujui.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'barang',
                 title: 'Barang'
@@ -2839,8 +2854,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 35,
                 orderable: false,
             }, {
-                data: 'nama',
-                title: 'Nama'
+                data: 'nama_pinjaman',
+                title: 'Nama Pinjaman'
             }, {
                 data: 'nominal',
                 title: 'Nominal'
@@ -2902,8 +2917,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 35,
                 orderable: false,
             }, {
-                data: 'nama',
-                title: 'Nama'
+                data: 'nama_pinjaman',
+                title: 'Nama Pinjaman'
             }, {
                 data: 'nominal',
                 title: 'Nominal'

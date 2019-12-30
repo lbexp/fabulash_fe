@@ -1540,8 +1540,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 35,
                 orderable: false,
             }, {
-                data: 'nama',
-                title: 'Nama'
+                data: 'nama_pinjaman',
+                title: 'Nama Pinjaman'
             }, {
                 data: 'nominal',
                 title: 'Nominal'
@@ -1603,8 +1603,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 35,
                 orderable: false,
             }, {
-                data: 'nama',
-                title: 'Nama'
+                data: 'nama_pinjaman',
+                title: 'Nama Pinjaman'
             }, {
                 data: 'nominal',
                 title: 'Nominal'
