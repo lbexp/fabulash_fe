@@ -346,6 +346,14 @@ License: You must have a valid license purchased only from themeforest(the above
 											Inventory therapist </a>
 									</div>
 								</div>
+								<div class="kt-subheader__toolbar">
+									<select class="form-control kt-select2" id="filter_therapist" name="filter_therapist" style="min-width: 250px">
+										<option></option>
+										<option value="Ica">Ica</option>
+										<option value="Vega">Vega</option>
+										<option value="Darnilla">Darnilla</option>
+									</select>
+								</div>
 							</div>
 						</div>
 
@@ -371,12 +379,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 										</div>
 										<div class="kt-portlet__body">
-											<select class="col-sm-12 kt-margin-b-20 form-control" name="inventory_studio" id="inventory_studio">
-												<option disabled selected>Choose Therapist</option>
-												<option>Ica</option>
-												<option>Vega</option>
-												<option>Darnila</option>
-											</select>
+
                                             <table class="table table-bordered table-hover table-checkable" id="table_inventory_therapist"></table>
 										</div>
 									</div>
@@ -462,6 +465,14 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Page Scripts(used by this page) -->
 		<script src="assets/js/script/datatable_superadmin.js"></script>
 		<script src="assets/js/custom/datepicker.js" type="text/javascript"></script>
+
+		<script>
+			// Filter Select2
+			$('#filter_therapist').select2({
+	            placeholder: "Pilih Therapist",
+				allowClear: true
+	        });
+		</script>
 
 		<!--end::Page Scripts -->
 	</body>

@@ -346,6 +346,16 @@ License: You must have a valid license purchased only from themeforest(the above
 											Daftar karyawan </a>
 									</div>
 								</div>
+								<div class="kt-subheader__toolbar">
+									<select class="form-control kt-select2" id="filter_studio" name="filter_studio" style="min-width: 250px">
+										<option></option>
+										<option>Studio Cabang Hasanuddin</option>
+										<option>Studio Cabang Dg. Tata</option>
+										<option>Studio Cabang Hasanuddin</option>
+										<option>Studio Cabang Dg. Tata</option>
+										<option>Studio Cabang Hasanuddin</option>
+									</select>
+								</div>
 							</div>
 						</div>
 
@@ -526,6 +536,12 @@ License: You must have a valid license purchased only from themeforest(the above
 		<script src="assets/js/custom/datepicker.js" type="text/javascript"></script>
 
 		<script>
+			// Filter Select2
+			$('#filter_studio').select2({
+				placeholder: "Pilih Studio",
+				allowClear: true
+			});
+
 			// Sweetalert
 			$('#kt_sweetalert_berhasil').click(function(e) {
 				swal.fire({
