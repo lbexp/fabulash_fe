@@ -381,7 +381,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_gudang/stock_tambah_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_gudang/stock_pembelian_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -486,7 +486,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_gudang/stock_tambah_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_gudang/stock_pembelian_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -1353,6 +1353,56 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
+    var initTablePembelianDetail = function () {
+        var table = $('#table_pembelian_detail');
+        var datatable = table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/gudang/pembelian.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'nama_barang',
+                title: 'Nama Barang'
+            }, {
+                data: 'jumlah_satuan_besar',
+                title: 'Jumlah<br>(Satuan Besar)'
+            }, {
+                data: 'jumlah_satuan_sedang',
+                title: 'Jumlah<br>(Satuan Sedang)'
+            }, {
+                data: 'jumlah_satuan_kecil',
+                title: 'Jumlah<br>(Satuan Kecil)'
+            }, {
+                data: 'harga',
+                title: 'Harga'
+            }],
+			columnDefs: [{
+                targets: [0, 1, 2, 3, 4, 5],
+                orderable: false,
+				className: 'text-center'
+            }],
+        });
+    };
+
     return {
         //main function to initiate the module
         init: function() {
@@ -1372,6 +1422,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTablePayroll();
             initTablePinjamanListRequest();
             initTablePinjamanCurrent();
+            initTablePembelianDetail();
         },
     };
 }();

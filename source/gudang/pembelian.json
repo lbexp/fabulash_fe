@@ -1,0 +1,63 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "nama_barang": "Eyelash Extension",
+        "jumlah_satuan_besar": "15 Box",
+        "jumlah_satuan_sedang": "20 Pack",
+        "jumlah_satuan_kecil": "60 Pcs",
+        "harga": "Rp 2.000.000,00"
+    }, {
+        "no": 2,
+        "nama_barang": "Eyelash Extension",
+        "jumlah_satuan_besar": "15 Box",
+        "jumlah_satuan_sedang": "20 Pack",
+        "jumlah_satuan_kecil": "60 Pcs",
+        "harga": "Rp 2.000.000,00"
+    }, {
+        "no": 3,
+        "nama_barang": "Eyelash Extension",
+        "jumlah_satuan_besar": "15 Box",
+        "jumlah_satuan_sedang": "20 Pack",
+        "jumlah_satuan_kecil": "60 Pcs",
+        "harga": "Rp 2.000.000,00"
+    }, {
+        "no": 4,
+        "nama_barang": "Eyelash Extension",
+        "jumlah_satuan_besar": "15 Box",
+        "jumlah_satuan_sedang": "20 Pack",
+        "jumlah_satuan_kecil": "60 Pcs",
+        "harga": "Rp 2.000.000,00"
+    }, {
+        "no": 5,
+        "nama_barang": "Eyelash Extension",
+        "jumlah_satuan_besar": "15 Box",
+        "jumlah_satuan_sedang": "20 Pack",
+        "jumlah_satuan_kecil": "60 Pcs",
+        "harga": "Rp 2.000.000,00"
+    }, {
+        "no": 6,
+        "nama_barang": "Eyelash Extension",
+        "jumlah_satuan_besar": "15 Box",
+        "jumlah_satuan_sedang": "20 Pack",
+        "jumlah_satuan_kecil": "60 Pcs",
+        "harga": "Rp 2.000.000,00"
+    }, {
+        "no": 7,
+        "nama_barang": "Eyelash Extension",
+        "jumlah_satuan_besar": "15 Box",
+        "jumlah_satuan_sedang": "20 Pack",
+        "jumlah_satuan_kecil": "60 Pcs",
+        "harga": "Rp 2.000.000,00"
+    }, {
+        "no": 8,
+        "nama_barang": "Eyelash Extension",
+        "jumlah_satuan_besar": "15 Box",
+        "jumlah_satuan_sedang": "20 Pack",
+        "jumlah_satuan_kecil": "60 Pcs",
+        "harga": "Rp 2.000.000,00"
+    }]
+}
