@@ -1215,7 +1215,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, full, meta) {
                     i++;
                     return `
-                    <button type="button" class="btn btn-link" style="padding:0px;" data-toggle="modal" data-url="`+ data +`" data-target="#modal_foto"><i class="flaticon2-photo-camera"></i>Preview</button>`;
+                    <button type="button" class="btn btn-link" style="padding:0px;" data-toggle="modal" data-url="`+ data +`" data-target="#modal_foto"><i class="flaticon2-photo-camera"></i> Foto</button>`;
                 }
             }],
 			columnDefs: [{
@@ -1279,7 +1279,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 title: 'Foto',
                 render: function(data, type, full, meta) {
                     return `
-                    <button type="button" class="btn btn-link" style="padding:0px;" data-toggle="modal" data-url="`+ data +`" data-target="#modal_foto"><i class="flaticon2-photo-camera"></i>Preview</button>`;
+                    <button type="button" class="btn btn-link" style="padding:0px;" data-toggle="modal" data-url="`+ data +`" data-target="#modal_foto"><i class="flaticon2-photo-camera"></i> Foto</button>`;
                 }
             }],
 			columnDefs: [{
