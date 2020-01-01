@@ -369,8 +369,7 @@ body {
 }
 
 .input-group-child-normal {
-    border-top-right-radius: 4px !important;
-    border-bottom-right-radius: 4px !important;
+    border-radius: 4px !important;
 }
 
 .form-label-brand {
