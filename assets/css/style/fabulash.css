@@ -491,8 +491,13 @@ input[type=number] {
 }
 
 .btn-md {
-    padding: 8.45px 1rem;
+    padding: 8.45px 1rem !important;
     font-size: 0.875rem;
     line-height: 1.5;
     border-radius: 0.2rem;
+}
+
+.btn.btn-icon.btn-md, .btn-group-md > .btn.btn-icon {
+    height: 35.88px;
+    width: 35.88px;
 }
