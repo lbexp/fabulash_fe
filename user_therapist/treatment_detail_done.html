@@ -360,7 +360,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             </button>
                                         </div>
-										<form id="kt_form_treatment_selesai">
+										<form id="kt_form_treatment_tambah">
 	                                        <div class="modal-body">
 												<div class="form-group row">
                                                     <label for="example-text-input" class="col-sm-4 col-form-label">No. Pesanan : </label>
@@ -372,7 +372,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													<div class="form-group row kt-margin-b-10">
 	                                                    <label for="example-text-input" class="col-sm-4 col-form-label">Treatment : </label>
 	                                                    <div class="col-sm-8">
-	                                                        <input type="text" class="form-control" name="treatment_nama1" placeholder="Treatment">
+	                                                        <input type="text" class="form-control request_required" name="treatment_nama1" placeholder="Treatment">
 	                                                    </div>
 	                                                </div>
 													<div class="form-group row">
@@ -381,17 +381,18 @@ License: You must have a valid license purchased only from themeforest(the above
 															<div class="col-12">
 																<div class="row">
 																	<div class="col-5" style="padding-left:0px">
-			                                                            <input type="text" class="form-control" name="treatment_barang1_1" placeholder="Pemakaian">
+			                                                            <input type="text" class="form-control request_required" name="treatment_barang1_1" placeholder="Pemakaian">
 			                                                        </div>
 			                                                        <div class="col-7 kt-margin-0" style="padding:0px">
 																		<div class="input-group">
 				                                                            <label class="col-form-label kt-margin-r-10">Qty :</label>
-																			<input type="text" class="form-control kt-margin-r-10 input-group-child-normal" name="treatment_barang_jumlah1_1" placeholder="Jumlah">
+																			<input type="number" min="1" class="form-control kt-margin-r-10 input-group-child-normal request_required" name="treatment_barang_jumlah1_1" placeholder="Jumlah">
 																			<button type="button" class="btn btn-success btn-icon treatment_barang_add" id="1" data-counter="1"><i class="fa fa-plus"></i></button>
 																		</div>
 			                                                        </div>
 																</div>
 															</div>
+															<span class="form-text text-muted kt-hidden"></span>
 	                                                    </div>
 	                                                </div>
 												</div>
@@ -402,7 +403,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <label for="example-text-input" class="col-4 col-form-label">Foto</label>
                                                     <div class="col-8">
 														<div class="custom-file">
-															<input type="file" class="custom-file-input" name="treatment_foto" id="treatment_foto" accept="image/*">
+															<input type="file" class="custom-file-input request_required" name="treatment_foto" id="treatment_foto" accept="image/*">
 															<label class="custom-file-label" for="treatment_foto">Choose file</label>
 														</div>
                                                     </div>
@@ -410,7 +411,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	                                        </div>
 	                                        <div class="modal-footer" style="justify-content:center;">
 	                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	                                            <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_modal">Submit</button>
+	                                            <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil">Submit</button>
 	                                        </div>
 										</form>
                                     </div>
@@ -510,7 +511,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					`<div class="form-group row kt-margin-b-10">
 						<label for="example-text-input" class="col-sm-4 col-form-label">Treatment : </label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control" name="treatment_nama`+ i +`" placeholder="Treatment">
+							<input type="text" class="form-control request_required" name="treatment_nama`+ i +`" placeholder="Treatment">
 						</div>
 					</div>
 					<div class="form-group row">
@@ -519,17 +520,18 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="col-12">
 								<div class="row">
 									<div class="col-5" style="padding-left:0px">
-										<input type="text" class="form-control" name="treatment_barang`+ i +`_1" placeholder="Pemakaian">
+										<input type="text" class="form-control request_required" name="treatment_barang`+ i +`_1" placeholder="Pemakaian">
 									</div>
 									<div class="col-7 kt-margin-0" style="padding:0px">
 										<div class="input-group">
 											<label class="col-form-label kt-margin-r-10">Qty :</label>
-											<input type="text" class="form-control kt-margin-r-10 input-group-child-normal" name="treatment_barang_jumlah`+ i +`_1" placeholder="Jumlah">
+											<input type="number" min="1" class="form-control kt-margin-r-10 input-group-child-normal request_required" name="treatment_barang_jumlah`+ i +`_1" placeholder="Jumlah">
 											<button type="button" class="btn btn-success btn-icon treatment_barang_add" id="`+ i +`" data-counter="1"><i class="fa fa-plus"></i></button>
 										</div>
 									</div>
 								</div>
 							</div>
+							<span class="form-text text-muted kt-hidden"></span>
 						</div>
 					</div>`
 				)
@@ -545,12 +547,12 @@ License: You must have a valid license purchased only from themeforest(the above
 				$("#treatment_list").contents().find(barang_id).prepend(`<div class="col-12 kt-margin-b-5">
 					<div class="row">
 						<div class="col-5" style="padding-left:0px">
-							<input type="text" class="form-control" name="treatment_barang`+ barang_counter +`_`+ counter +`" placeholder="Pemakaian">
+							<input type="text" class="form-control request_required" name="treatment_barang`+ barang_counter +`_`+ counter +`" placeholder="Pemakaian">
 						</div>
 						<div class="col-7 kt-margin-0" style="padding:0px">
 							<div class="input-group">
 								<label class="col-form-label kt-margin-r-10">Qty :</label>
-								<input type="text" class="form-control input-group-child-normal" name="treatment_barang_jumlah`+ barang_counter +`_`+ counter +`" placeholder="Jumlah">
+								<input type="number" min="1" class="form-control input-group-child-normal request_required" name="treatment_barang_jumlah`+ barang_counter +`_`+ counter +`" placeholder="Jumlah">
 							</div>
 						</div>
 					</div>
@@ -558,10 +560,10 @@ License: You must have a valid license purchased only from themeforest(the above
 			});
 
 			// Sweetalert
-			$('#kt_sweetalert_berhasil_modal_2').click(function(e) {
+			$('#kt_sweetalert_berhasil').click(function(e) {
 				swal.fire({
 					title: "Berhasil",
-					text: "Pembayaran berhasil dilakukan",
+					text: "Treatment berhasil ditambahkan",
 					type: "success",
 					confirmButtonText: "Ok",
 					confirmButtonClass: "btn btn-brand"
@@ -570,44 +572,17 @@ License: You must have a valid license purchased only from themeforest(the above
 				});
 			});
 
-			$('#kt_sweetalert_void').click(function(e) {
-				swal.fire({
-					title: 'Tandai sebagai void treatment?',
-					text: "Tindakan ini tidak bisa diubah kembali!",
-					type: 'warning',
-					showCancelButton: true,
-					confirmButtonText: 'Ya, tandai!'
-				}).then(function(result) {
-					if (result.value) {
-						swal.fire(
-							'Ditandai sebagai void!',
-							'Treatment telah digolongkan sebagai void treatment.',
-							'success'
-						)
-					}
+			// Form Validation
+			$('#kt_form_treatment_tambah').on('submit', function(event) {
+				$('.request_required').each(function (item) {
+					$(this).rules('add', {
+						required: true
+					})
 				});
+				event.preventDefault();
 			});
 
-			// Form Validation
-			$("#kt_form_pembayaran").validate({
-	            // define validation rules
-	            rules: {
-					pembayaran_jenis : {
-						required: true
-					},
-					pembayaran_diskon : {
-						required: false,
-						digits: true
-					}
-	            },
-
-	            invalidHandler: function(event, validator) {
-	                KTUtil.scrollTop();
-	            },
-	            submitHandler: function(form) {
-	                //form[0].submit(); // submit the form
-	            }
-        	});
+			$('#kt_form_treatment_tambah').validate();
 		</script>
 
 		<!--end::Page Scripts -->

@@ -365,42 +365,47 @@ License: You must have a valid license purchased only from themeforest(the above
 										<form id="kt_form_treatment_selesai">
 	                                        <div class="modal-body">
 												<div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">No. Pesanan</label>
-                                                    <div class="col-8">
+                                                    <label for="example-text-input" class="col-sm-4 col-form-label">No. Pesanan : </label>
+                                                    <div class="col-sm-8">
                                                         <input type="text" class="form-control color-main-dark" name="treatment_nomor" value="#123456" readonly>
                                                     </div>
                                                 </div>
 												<div id="treatment_list">
-													<div class="form-group row">
-	                                                    <label for="example-text-input" class="col-4 col-form-label">Treatment</label>
-	                                                    <div class="col-8">
-	                                                        <input type="text" class="form-control" name="treatment_nama" placeholder="Treatment">
+													<div class="form-group row kt-margin-b-10">
+	                                                    <label for="example-text-input" class="col-sm-4 col-form-label">Treatment : </label>
+	                                                    <div class="col-sm-8">
+	                                                        <input type="text" class="form-control request_required" name="treatment_nama1" placeholder="Treatment">
 	                                                    </div>
 	                                                </div>
 													<div class="form-group row">
-	                                                    <label for="example-text-input" class="col-4 col-form-label">Pemakaian</label>
-	                                                    <div class="row col-8 kt-margin-0" id=treatment_barang_list>
-	                                                        <div class="col-5" style="padding-left:0px">
-	                                                            <input type="text" class="form-control" name="treatment_barang" placeholder="Pemakaian">
-	                                                        </div>
-	                                                        <div class="row col-7 kt-margin-0" style="padding:0px">
-	                                                            <label for="example-text-input" class="col-2 col-form-label">Qty</label>
-																<div class="col-8">
-		                                                            <input type="text" class="form-control" name="treatment_barang_jumlah" placeholder="Jumlah">
+	                                                    <label for="example-text-input" class="col-sm-4 col-form-label">Pemakaian : </label>
+	                                                    <div class="col-sm-8" id=treatment_barang_list1>
+															<div class="col-12">
+																<div class="row">
+																	<div class="col-5" style="padding-left:0px">
+			                                                            <input type="text" class="form-control request_required" name="treatment_barang1_1" placeholder="Pemakaian">
+			                                                        </div>
+			                                                        <div class="col-7 kt-margin-0" style="padding:0px">
+																		<div class="input-group">
+				                                                            <label class="col-form-label kt-margin-r-10">Qty :</label>
+																			<input type="number" min="1" class="form-control kt-margin-r-10 input-group-child-normal request_required" name="treatment_barang_jumlah1_1" placeholder="Jumlah">
+																			<button type="button" class="btn btn-success btn-icon treatment_barang_add" id="1" data-counter="1"><i class="fa fa-plus"></i></button>
+																		</div>
+			                                                        </div>
 																</div>
-																<button type="button" class="btn btn-success btn-icon col-2" id="treatment_barang_add"><i class="fa fa-plus"></i></button>
-	                                                        </div>
+															</div>
+															<span class="form-text text-muted kt-hidden"></span>
 	                                                    </div>
 	                                                </div>
 												</div>
 												<div class="form-group justify-end">
-													<button type="button" class="btn btn-link" style="padding-right:0px;" id="treatment_add" onclick="addTreatment()"><i class="flaticon-add"></i>Tambah Treatment</button>
+													<button type="button" class="btn btn-link" style="padding-right:0px;" id="treatment_add"><i class="flaticon-add"></i>Tambah Treatment</button>
 												</div>
                                                 <div class="form-group row">
                                                     <label for="example-text-input" class="col-4 col-form-label">Foto</label>
                                                     <div class="col-8">
 														<div class="custom-file">
-															<input type="file" class="custom-file-input" name="treatment_foto" id="treatment_foto" accept="image/*">
+															<input type="file" class="custom-file-input request_required" name="treatment_foto" id="treatment_foto" accept="image/*">
 															<label class="custom-file-label" for="treatment_foto">Choose file</label>
 														</div>
                                                     </div>
@@ -408,7 +413,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	                                        </div>
 	                                        <div class="modal-footer" style="justify-content:center;">
 	                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	                                            <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_modal">Submit</button>
+	                                            <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil">Submit</button>
 	                                        </div>
 										</form>
                                     </div>
@@ -493,62 +498,73 @@ License: You must have a valid license purchased only from themeforest(the above
 		<script src="assets/js/script/datatable_therapist.js"></script>
 
 		<script>
-			// Modal on top of modal fix
-			$(document).on('hidden.bs.modal', function (event) {
-				if ($('.modal:visible').length) {
-					$('body').addClass('modal-open');
-				}
-			});
+			// Print function
+			var printFunction = function () {
+				window.print();
+			}
 
 			// Add button
+			var i = 1;
 			$('#treatment_add').click(function() {
+				i++;
 				document.querySelector('#treatment_list').insertAdjacentHTML (
 					'beforeend',
-					`<div class="form-group row">
-						<label for="example-text-input" class="col-4 col-form-label">Treatment</label>
-						<div class="col-8">
-							<input type="text" class="form-control" name="treatment_nama" placeholder="Treatment">
+					`<div class="form-group row kt-margin-b-10">
+						<label for="example-text-input" class="col-sm-4 col-form-label">Treatment : </label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control request_required" name="treatment_nama`+ i +`" placeholder="Treatment">
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="example-text-input" class="col-4 col-form-label">Pemakaian</label>
-						<div class="row col-8 kt-margin-0" id=treatment_barang_list>
-							<div class="col-5" style="padding-left:0px">
-								<input type="text" class="form-control" name="treatment_barang" placeholder="Pemakaian">
-							</div>
-							<div class="row col-7 kt-margin-0" style="padding:0px">
-								<label for="example-text-input" class="col-2 col-form-label">Qty</label>
-								<div class="col-8">
-									<input type="text" class="form-control" name="treatment_barang_jumlah" placeholder="Jumlah">
+						<label for="example-text-input" class="col-sm-4 col-form-label">Pemakaian : </label>
+						<div class="col-sm-8" id="treatment_barang_list`+ i +`">
+							<div class="col-12">
+								<div class="row">
+									<div class="col-5" style="padding-left:0px">
+										<input type="text" class="form-control request_required" name="treatment_barang`+ i +`_1" placeholder="Pemakaian">
+									</div>
+									<div class="col-7 kt-margin-0" style="padding:0px">
+										<div class="input-group">
+											<label class="col-form-label kt-margin-r-10">Qty :</label>
+											<input type="number" min="1" class="form-control kt-margin-r-10 input-group-child-normal request_required" name="treatment_barang_jumlah`+ i +`_1" placeholder="Jumlah">
+											<button type="button" class="btn btn-success btn-icon treatment_barang_add" id="`+ i +`" data-counter="1"><i class="fa fa-plus"></i></button>
+										</div>
+									</div>
 								</div>
-								<button type="button" class="btn btn-success btn-icon col-2" id="treatment_barang_add"><i class="fa fa-plus"></i></button>
 							</div>
+							<span class="form-text text-muted kt-hidden"></span>
 						</div>
 					</div>`
 				)
 			});
 
-
-			$('#treatment_barang_add').click(function() {
-				document.querySelector('#treatment_barang_list').insertAdjacentHTML (
-					'afterbegin',
-					`<div class="col-5" style="padding-left:0px; margin-bottom: 10px">
-						<input type="text" class="form-control" name="treatment_barang" placeholder="Pemakaian">
-					</div>
-					<div class="row col-7 kt-margin-0" style="padding:0px; margin-bottom: 10px">
-						<label for="example-text-input" class="col-2 col-form-label">Qty</label>
-						<div class="col-10" style="padding-right: 0px">
-							<input type="text" class="form-control" name="treatment_barang_jumlah" placeholder="Jumlah">
+			$(document).on('click', '.treatment_barang_add', function() {
+				var counter =  $(this).data('counter');
+				counter++;
+				$(this).data('counter', counter);
+				var barang_counter = $(this).attr('id');
+				console.log(counter);
+				var barang_id = '#treatment_barang_list' + barang_counter;
+				$("#treatment_list").contents().find(barang_id).prepend(`<div class="col-12 kt-margin-b-5">
+					<div class="row">
+						<div class="col-5" style="padding-left:0px">
+							<input type="text" class="form-control request_required" name="treatment_barang`+ barang_counter +`_`+ counter +`" placeholder="Pemakaian">
 						</div>
-					</div>`
-				)
+						<div class="col-7 kt-margin-0" style="padding:0px">
+							<div class="input-group">
+								<label class="col-form-label kt-margin-r-10">Qty :</label>
+								<input type="number" min="1" class="form-control input-group-child-normal request_required" name="treatment_barang_jumlah`+ barang_counter +`_`+ counter +`" placeholder="Jumlah">
+							</div>
+						</div>
+					</div>
+				</div>`);
 			});
 
 			// Sweetalert
-			$('#kt_sweetalert_berhasil_modal').click(function(e) {
+			$('#kt_sweetalert_berhasil').click(function(e) {
 				swal.fire({
-					title: "Selesai!",
-					text: "Treatment telah selesai dilakukan.",
+					title: "Berhasil",
+					text: "Treatment berhasil ditambahkan",
 					type: "success",
 					confirmButtonText: "Ok",
 					confirmButtonClass: "btn btn-brand"
@@ -558,30 +574,16 @@ License: You must have a valid license purchased only from themeforest(the above
 			});
 
 			// Form Validation
-			$("#kt_form_treatment_selesai").validate({
-				// define validation rules
-				rules: {
-					treatment_nama : {
+			$('#kt_form_treatment_selesai').on('submit', function(event) {
+				$('.request_required').each(function (item) {
+					$(this).rules('add', {
 						required: true
-					},
-					treatment_barang : {
-						required: true
-					},
-					treatment_barang_jumlah : {
-						required: true
-					},
-					treatment_foto : {
-						required: true
-					}
-				},
-
-				invalidHandler: function(event, validator) {
-					KTUtil.scrollTop();
-				},
-				submitHandler: function(form) {
-					//form[0].submit(); // submit the form
-				}
+					})
+				});
+				event.preventDefault();
 			});
+
+			$('#kt_form_treatment_selesai').validate();
 		</script>
 
 		<!--end::Page Scripts -->
