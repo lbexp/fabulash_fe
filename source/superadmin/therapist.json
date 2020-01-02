@@ -1,0 +1,47 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "nama": "Ica",
+        "no_telepon": "081321123345",
+        "studio": "Studio Cabang Hasanuddin"
+    }, {
+        "no": 2,
+        "nama": "Ica",
+        "no_telepon": "081321123345",
+        "studio": "Studio Cabang Hasanuddin"
+    }, {
+        "no": 3,
+        "nama": "Ica",
+        "no_telepon": "081321123345",
+        "studio": "Studio Cabang Hasanuddin"
+    }, {
+        "no": 4,
+        "nama": "Ica",
+        "no_telepon": "081321123345",
+        "studio": "Studio Cabang Hasanuddin"
+    }, {
+        "no": 5,
+        "nama": "Ica",
+        "no_telepon": "081321123345",
+        "studio": "Studio Cabang Hasanuddin"
+    }, {
+        "no": 6,
+        "nama": "Ica",
+        "no_telepon": "081321123345",
+        "studio": "Studio Cabang Hasanuddin"
+    }, {
+        "no": 7,
+        "nama": "Ica",
+        "no_telepon": "081321123345",
+        "studio": "Studio Cabang Hasanuddin"
+    }, {
+        "no": 8,
+        "nama": "Ica",
+        "no_telepon": "081321123345",
+        "studio": "Studio Cabang Hasanuddin"
+    }]
+}

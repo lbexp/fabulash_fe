@@ -489,3 +489,10 @@ input[type=number] {
     position: absolute;
     right: 25px;
 }
+
+.btn-md {
+    padding: 8.45px 1rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
