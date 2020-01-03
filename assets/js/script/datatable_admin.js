@@ -636,313 +636,313 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         })/*.datepicker("setDate", new Date());*/
     };
 
-    var initTablePengeluaran = function() {
-        // begin first table
-        var table = $('#table_finance_pengeluaran').DataTable({
-            order: [],
-            responsive: true,
-            buttons: [
-                'print',
-                'excelHtml5',
-            ],
-            // Pagination settings
-            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-3'i><'col-sm-12 col-md-6 text-center dataTables_pager'lp><'col-sm-12 col-md-3 text-right'B>>`,
-            // read more: https://datatables.net/examples/basic_init/dom.html
-            lengthMenu: [5, 10, 25, 50],
-            pageLength: 10,
-            language: {
-                'lengthMenu': 'Display _MENU_',
-            },
-            searchDelay: 500,
-            processing: true,
-            serverSide: false,
-            ajax: {
-                url: 'source/admin/pengeluaran.json',
-                type: 'POST',
-                data: {
-                    // parameters for custom backend script demo
-                    columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
-                    ],
-                },
-            },
-            columns: [{
-                data: 'null',
-                title: 'No',
-                render: function(data, type, row, meta) {
-                    return meta.row + meta.settings._iDisplayStart + 1;
-                },
-                width: 35,
-                orderable: false,
-            }, {
-                data: 'tanggal',
-                title: 'Tanggal',
-            }, {
-                data: 'no_pengeluaran',
-                title: 'No Pengeluaran',
-            }, {
-                data: 'kategori',
-                title: 'Kategori',
-            }, {
-                data: 'deskripsi',
-                title: 'Deskripsi',
-            }, {
-                data: 'nominal',
-                title: 'Nominal',
-            }, {
-                data: 'penerima',
-                title: 'Penerima',
-            }, {
-                data: 'user',
-                title: 'User',
-                render: function(data, type, row, meta) {
-                    var user = {
-                        admin: {
-                            'title': 'Admin',
-                            'class': 'btn-label-danger'
-                        },
-                        gudang: {
-                            'title': 'Gudang',
-                            'class': 'btn-label-success'
-                        },
-                    };
-                    if (typeof user[data] === 'undefined') {
-                        return data;
-                    }
-                    return '<span style="width:100%" class="btn btn-bold btn-sm btn-font-sm ' + user[data].class + '">' + user[data].title + '</span>';
-                }
-            }, {
-                field: 'aksi',
-                title: 'Aksi',
-                responsivePriority: -1,
-                className: 'text-center',
-                orderable: false,
-                width: 100,
-                render: function(data, type, full, meta) {
-                    return `
-                    <a href="user_admin/finance_pengeluaran_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
-                },
-            }],
-            columnDefs: [{
-                targets: [0, 1, 2, 3, 4, 5, 6, 7, 8],
-                className: 'text-center',
-                orderable: true,
-            }],
-        });
+    // var initTablePengeluaran = function() {
+    //     // begin first table
+    //     var table = $('#table_finance_pengeluaran').DataTable({
+    //         order: [],
+    //         responsive: true,
+    //         buttons: [
+    //             'print',
+    //             'excelHtml5',
+    //         ],
+    //         // Pagination settings
+    //         dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-3'i><'col-sm-12 col-md-6 text-center dataTables_pager'lp><'col-sm-12 col-md-3 text-right'B>>`,
+    //         // read more: https://datatables.net/examples/basic_init/dom.html
+    //         lengthMenu: [5, 10, 25, 50],
+    //         pageLength: 10,
+    //         language: {
+    //             'lengthMenu': 'Display _MENU_',
+    //         },
+    //         searchDelay: 500,
+    //         processing: true,
+    //         serverSide: false,
+    //         ajax: {
+    //             url: 'source/admin/pengeluaran.json',
+    //             type: 'POST',
+    //             data: {
+    //                 // parameters for custom backend script demo
+    //                 columnsDef: [
+    //                     'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+    //                     'tanggal', 'status', 'aksi',
+    //                 ],
+    //             },
+    //         },
+    //         columns: [{
+    //             data: 'null',
+    //             title: 'No',
+    //             render: function(data, type, row, meta) {
+    //                 return meta.row + meta.settings._iDisplayStart + 1;
+    //             },
+    //             width: 35,
+    //             orderable: false,
+    //         }, {
+    //             data: 'tanggal',
+    //             title: 'Tanggal',
+    //         }, {
+    //             data: 'no_pengeluaran',
+    //             title: 'No Pengeluaran',
+    //         }, {
+    //             data: 'kategori',
+    //             title: 'Kategori',
+    //         }, {
+    //             data: 'deskripsi',
+    //             title: 'Deskripsi',
+    //         }, {
+    //             data: 'nominal',
+    //             title: 'Nominal',
+    //         }, {
+    //             data: 'penerima',
+    //             title: 'Penerima',
+    //         }, {
+    //             data: 'user',
+    //             title: 'User',
+    //             render: function(data, type, row, meta) {
+    //                 var user = {
+    //                     admin: {
+    //                         'title': 'Admin',
+    //                         'class': 'btn-label-danger'
+    //                     },
+    //                     gudang: {
+    //                         'title': 'Gudang',
+    //                         'class': 'btn-label-success'
+    //                     },
+    //                 };
+    //                 if (typeof user[data] === 'undefined') {
+    //                     return data;
+    //                 }
+    //                 return '<span style="width:100%" class="btn btn-bold btn-sm btn-font-sm ' + user[data].class + '">' + user[data].title + '</span>';
+    //             }
+    //         }, {
+    //             field: 'aksi',
+    //             title: 'Aksi',
+    //             responsivePriority: -1,
+    //             className: 'text-center',
+    //             orderable: false,
+    //             width: 100,
+    //             render: function(data, type, full, meta) {
+    //                 return `
+    //                 <a href="user_admin/finance_pengeluaran_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+    //             },
+    //         }],
+    //         columnDefs: [{
+    //             targets: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+    //             className: 'text-center',
+    //             orderable: true,
+    //         }],
+    //     });
 
-        $('#export_print').on('click', function(e) {
-            e.preventDefault();
-            table.button(0).trigger();
-        });
+    //     $('#export_print').on('click', function(e) {
+    //         e.preventDefault();
+    //         table.button(0).trigger();
+    //     });
 
-        $('#export_excel').on('click', function(e) {
-            e.preventDefault();
-            table.button(2).trigger();
-        });
+    //     $('#export_excel').on('click', function(e) {
+    //         e.preventDefault();
+    //         table.button(2).trigger();
+    //     });
 
 
-        table.on('order.dt search.dt', function() {
-            table.column(0, {
-                search: 'applied',
-                order: 'applied'
-            }).nodes().each(function(cell, i) {
-                cell.innerHTML = i + 1;
-            });
-        }).draw();
+    //     table.on('order.dt search.dt', function() {
+    //         table.column(0, {
+    //             search: 'applied',
+    //             order: 'applied'
+    //         }).nodes().each(function(cell, i) {
+    //             cell.innerHTML = i + 1;
+    //         });
+    //     }).draw();
 
-        $('#datepicker_finance_pengeluaran').on('change', function(e) {
-            e.preventDefault();
-            var params = {};
-            var i = $(this).data('col-index');
-            if (params[i]) {
-                params[i] += '|' + $(this).val();
-            } else {
-                params[i] = $(this).val();
-            }
-            $.each(params, function(i, val) {
-                // apply search params to datatable
-                table.column(i).search(val ? val : '', false, false);
-            });
-            table.table().draw();
-        });
+    //     $('#datepicker_finance_pengeluaran').on('change', function(e) {
+    //         e.preventDefault();
+    //         var params = {};
+    //         var i = $(this).data('col-index');
+    //         if (params[i]) {
+    //             params[i] += '|' + $(this).val();
+    //         } else {
+    //             params[i] = $(this).val();
+    //         }
+    //         $.each(params, function(i, val) {
+    //             // apply search params to datatable
+    //             table.column(i).search(val ? val : '', false, false);
+    //         });
+    //         table.table().draw();
+    //     });
 
-        $('#search_finance_pengeluaran').on('keyup', function() {
-            table.search(this.value).draw();
-        });
+    //     $('#search_finance_pengeluaran').on('keyup', function() {
+    //         table.search(this.value).draw();
+    //     });
 
-        $('#datepicker_finance_pengeluaran').datepicker({
-            todayHighlight: true,
-            language: 'id',
-            rtl: KTUtil.isRTL(),
-            todayBtn: "linked",
-            clearBtn: true,
-            templates: {
-                leftArrow: '<i class="la la-angle-left"></i>',
-                rightArrow: '<i class="la la-angle-right"></i>',
-            },
-        })/*.datepicker("setDate", new Date());*/
-    };
+    //     $('#datepicker_finance_pengeluaran').datepicker({
+    //         todayHighlight: true,
+    //         language: 'id',
+    //         rtl: KTUtil.isRTL(),
+    //         todayBtn: "linked",
+    //         clearBtn: true,
+    //         templates: {
+    //             leftArrow: '<i class="la la-angle-left"></i>',
+    //             rightArrow: '<i class="la la-angle-right"></i>',
+    //         },
+    //     })/*.datepicker("setDate", new Date());*/
+    // };
 
-    var initTablePemasukan = function() {
-        // begin first table
-        var table = $('#table_finance_pemasukan').DataTable({
-            order: [],
-            responsive: true,
-            buttons: [
-                'print',
-                'excelHtml5',
-            ],
-            // Pagination settings
-            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-3'i><'col-sm-12 col-md-6 text-center dataTables_pager'lp><'col-sm-12 col-md-3 text-right'B>>`,
-            // read more: https://datatables.net/examples/basic_init/dom.html
-            lengthMenu: [5, 10, 25, 50],
-            pageLength: 10,
-            language: {
-                'lengthMenu': 'Display _MENU_',
-            },
-            searchDelay: 500,
-            processing: true,
-            serverSide: false,
-            ajax: {
-                url: 'source/admin/pemasukan.json',
-                type: 'POST',
-                data: {
-                    // parameters for custom backend script demo
-                    columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
-                    ],
-                },
-            },
-            columns: [{
-                data: 'null',
-                title: 'No',
-                render: function(data, type, row, meta) {
-                    return meta.row + meta.settings._iDisplayStart + 1;
-                },
-                width: 35,
-                orderable: false,
-            }, {
-                data: 'tanggal',
-                title: 'Tanggal',
-            }, {
-                data: 'no_pesanan',
-                title: 'No Pesanan',
-            }, {
-                data: 'tipe_pembayaran',
-                title: 'Tipe Pembayaran',
-            }, {
-                data: 'treatment',
-                title: 'Treatment',
-            }, {
-                data: 'nominal',
-                title: 'Nominal',
-            }, {
-                field: 'aksi',
-                title: 'Aksi',
-                responsivePriority: -1,
-                className: 'text-center',
-                orderable: false,
-                width: 100,
-                render: function(data, type, full, meta) {
-                    return `
-                    <a href="user_admin/listTreatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
-                },
-            }],
-            columnDefs: [{
-                targets: [0, 1, 2, 3, 4, 5, 6],
-                className: 'text-center',
-                orderable: true,
-            }],
-        });
+    // var initTablePemasukan = function() {
+    //     // begin first table
+    //     var table = $('#table_finance_pemasukan').DataTable({
+    //         order: [],
+    //         responsive: true,
+    //         buttons: [
+    //             'print',
+    //             'excelHtml5',
+    //         ],
+    //         // Pagination settings
+    //         dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-3'i><'col-sm-12 col-md-6 text-center dataTables_pager'lp><'col-sm-12 col-md-3 text-right'B>>`,
+    //         // read more: https://datatables.net/examples/basic_init/dom.html
+    //         lengthMenu: [5, 10, 25, 50],
+    //         pageLength: 10,
+    //         language: {
+    //             'lengthMenu': 'Display _MENU_',
+    //         },
+    //         searchDelay: 500,
+    //         processing: true,
+    //         serverSide: false,
+    //         ajax: {
+    //             url: 'source/admin/pemasukan.json',
+    //             type: 'POST',
+    //             data: {
+    //                 // parameters for custom backend script demo
+    //                 columnsDef: [
+    //                     'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+    //                     'tanggal', 'status', 'aksi',
+    //                 ],
+    //             },
+    //         },
+    //         columns: [{
+    //             data: 'null',
+    //             title: 'No',
+    //             render: function(data, type, row, meta) {
+    //                 return meta.row + meta.settings._iDisplayStart + 1;
+    //             },
+    //             width: 35,
+    //             orderable: false,
+    //         }, {
+    //             data: 'tanggal',
+    //             title: 'Tanggal',
+    //         }, {
+    //             data: 'no_pesanan',
+    //             title: 'No Pesanan',
+    //         }, {
+    //             data: 'tipe_pembayaran',
+    //             title: 'Tipe Pembayaran',
+    //         }, {
+    //             data: 'treatment',
+    //             title: 'Treatment',
+    //         }, {
+    //             data: 'nominal',
+    //             title: 'Nominal',
+    //         }, {
+    //             field: 'aksi',
+    //             title: 'Aksi',
+    //             responsivePriority: -1,
+    //             className: 'text-center',
+    //             orderable: false,
+    //             width: 100,
+    //             render: function(data, type, full, meta) {
+    //                 return `
+    //                 <a href="user_admin/listTreatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+    //             },
+    //         }],
+    //         columnDefs: [{
+    //             targets: [0, 1, 2, 3, 4, 5, 6],
+    //             className: 'text-center',
+    //             orderable: true,
+    //         }],
+    //     });
 
-        table.on('order.dt search.dt', function() {
-            table.column(0, {
-                search: 'applied',
-                order: 'applied'
-            }).nodes().each(function(cell, i) {
-                cell.innerHTML = i + 1;
-            });
-        }).draw();
+    //     table.on('order.dt search.dt', function() {
+    //         table.column(0, {
+    //             search: 'applied',
+    //             order: 'applied'
+    //         }).nodes().each(function(cell, i) {
+    //             cell.innerHTML = i + 1;
+    //         });
+    //     }).draw();
 
-        $('#datepicker_finance_pemasukan').on('change', function(e) {
-            e.preventDefault();
-            var params = {};
-            var i = $(this).data('col-index');
-            if (params[i]) {
-                params[i] += '|' + $(this).val();
-            } else {
-                params[i] = $(this).val();
-            }
-            $.each(params, function(i, val) {
-                // apply search params to datatable
-                table.column(i).search(val ? val : '', false, false);
-            });
-            table.table().draw();
-        });
+    //     $('#datepicker_finance_pemasukan').on('change', function(e) {
+    //         e.preventDefault();
+    //         var params = {};
+    //         var i = $(this).data('col-index');
+    //         if (params[i]) {
+    //             params[i] += '|' + $(this).val();
+    //         } else {
+    //             params[i] = $(this).val();
+    //         }
+    //         $.each(params, function(i, val) {
+    //             // apply search params to datatable
+    //             table.column(i).search(val ? val : '', false, false);
+    //         });
+    //         table.table().draw();
+    //     });
 
-        $('#search_finance_pemasukan').on('keyup', function() {
-            table.search(this.value).draw();
-        });
+    //     $('#search_finance_pemasukan').on('keyup', function() {
+    //         table.search(this.value).draw();
+    //     });
 
-        $('#datepicker_finance_pemasukan').datepicker({
-            todayHighlight: true,
-            language: 'id',
-            rtl: KTUtil.isRTL(),
-            todayBtn: "linked",
-            clearBtn: true,
-            templates: {
-                leftArrow: '<i class="la la-angle-left"></i>',
-                rightArrow: '<i class="la la-angle-right"></i>',
-            },
-        })/*.datepicker("setDate", new Date());*/
-    };
+    //     $('#datepicker_finance_pemasukan').datepicker({
+    //         todayHighlight: true,
+    //         language: 'id',
+    //         rtl: KTUtil.isRTL(),
+    //         todayBtn: "linked",
+    //         clearBtn: true,
+    //         templates: {
+    //             leftArrow: '<i class="la la-angle-left"></i>',
+    //             rightArrow: '<i class="la la-angle-right"></i>',
+    //         },
+    //     })/*.datepicker("setDate", new Date());*/
+    // };
 
-    var initTablePengeluaranDetail = function() {
-        var table = $('#table_pengeluaran_detail');
-        // begin first table
-        table.DataTable({
-            order: [],
-            info: false,
-            paging: false,
-            lengthChange: false,
-            searching: false,
-            responsive: true,
-            ajax: {
-                url: 'source/admin/pengeluaran_detail.json',
-                type: 'POST',
-                data: {
-                    pagination: {
-                        perpage: 50,
-                    },
-                },
-            },
-            columns: [{
-                data: 'null',
-                title: 'No',
-                render: function(data, type, row, meta) {
-                    return meta.row + meta.settings._iDisplayStart + 1;
-                },
-                width: 35,
-                orderable: false,
-            }, {
-                data: 'nama_pengeluaran',
-                title: 'Pengeluaran'
-            }, {
-                data: 'quantity',
-                title: 'Quantity'
-            }, {
-                data: 'harga',
-                title: 'Harga'
-            }, ],
-            columnDefs: [{
-                targets: [0, 1, 2, 3],
-                className: 'text-center',
-                orderable: false,
-            }],
-        });
-    };
+    // var initTablePengeluaranDetail = function() {
+    //     var table = $('#table_pengeluaran_detail');
+    //     // begin first table
+    //     table.DataTable({
+    //         order: [],
+    //         info: false,
+    //         paging: false,
+    //         lengthChange: false,
+    //         searching: false,
+    //         responsive: true,
+    //         ajax: {
+    //             url: 'source/admin/pengeluaran_detail.json',
+    //             type: 'POST',
+    //             data: {
+    //                 pagination: {
+    //                     perpage: 50,
+    //                 },
+    //             },
+    //         },
+    //         columns: [{
+    //             data: 'null',
+    //             title: 'No',
+    //             render: function(data, type, row, meta) {
+    //                 return meta.row + meta.settings._iDisplayStart + 1;
+    //             },
+    //             width: 35,
+    //             orderable: false,
+    //         }, {
+    //             data: 'nama_pengeluaran',
+    //             title: 'Pengeluaran'
+    //         }, {
+    //             data: 'quantity',
+    //             title: 'Quantity'
+    //         }, {
+    //             data: 'harga',
+    //             title: 'Harga'
+    //         }, ],
+    //         columnDefs: [{
+    //             targets: [0, 1, 2, 3],
+    //             className: 'text-center',
+    //             orderable: false,
+    //         }],
+    //     });
+    // };
 
     var initTableSPKScheduled = function () {
         var table = $('#table_spk_scheduled');
@@ -1679,61 +1679,61 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         });
     };
 
-    var initTablePengeluaranDetailEdit = function () {
-        var i = 0;
-        var table = $('#table_pengeluaran_detail_edit');
-        // begin first table
-        table.DataTable({
-            order: [],
-            info: false,
-            paging: false,
-            lengthChange: false,
-            searching: false,
-            responsive: true,
-            ajax: {
-                url: 'source/admin/pengeluaran_detail.json',
-                type: 'POST',
-                data: {
-                    pagination: {
-                        perpage: 50,
-                    },
-                },
-            },
-            columns: [{
-                data: 'null',
-                title: 'No',
-                render: function(data, type, row, meta) {
-                    return meta.row + meta.settings._iDisplayStart + 1;
-                },
-                width: 35,
-                orderable: false,
-            }, {
-                data: 'nama_pengeluaran',
-                title: 'Pengeluaran',
-                render: function(data, type, full, meta) {
-                    i++;
-                    return `<input name="pengeluaran_nama`+ i +`" type="text" class="form-control request_required" placeholder="Nama Pengeluaran" value="`+ data +`">`;
-                }
-            }, {
-                data: 'quantity',
-                title: 'Quantity',
-                render: function(data, type, full, meta) {
-                    return `<input name="pengeluaran_quantity`+ i +`" type="number" min="1" class="form-control request_required" placeholder="Jumlah" value="`+ data +`">`;
-                }
-            }, {
-                data: 'harga',
-                title: 'Harga',
-                render: function(data, type, full, meta) {
-                    return `<input name="pengeluaran_harga`+ i +`" type="text" class="form-control request_required" placeholder="Harga" value="`+ data +`">`;
-                }
-            }, ],
-            columnDefs: [{
-                targets: [0, 1, 2, 3],
-                className: 'text-center',
-                orderable: false,
-            }],
-        });
-    };
+    // var initTablePengeluaranDetailEdit = function () {
+    //     var i = 0;
+    //     var table = $('#table_pengeluaran_detail_edit');
+    //     // begin first table
+    //     table.DataTable({
+    //         order: [],
+    //         info: false,
+    //         paging: false,
+    //         lengthChange: false,
+    //         searching: false,
+    //         responsive: true,
+    //         ajax: {
+    //             url: 'source/admin/pengeluaran_detail.json',
+    //             type: 'POST',
+    //             data: {
+    //                 pagination: {
+    //                     perpage: 50,
+    //                 },
+    //             },
+    //         },
+    //         columns: [{
+    //             data: 'null',
+    //             title: 'No',
+    //             render: function(data, type, row, meta) {
+    //                 return meta.row + meta.settings._iDisplayStart + 1;
+    //             },
+    //             width: 35,
+    //             orderable: false,
+    //         }, {
+    //             data: 'nama_pengeluaran',
+    //             title: 'Pengeluaran',
+    //             render: function(data, type, full, meta) {
+    //                 i++;
+    //                 return `<input name="pengeluaran_nama`+ i +`" type="text" class="form-control request_required" placeholder="Nama Pengeluaran" value="`+ data +`">`;
+    //             }
+    //         }, {
+    //             data: 'quantity',
+    //             title: 'Quantity',
+    //             render: function(data, type, full, meta) {
+    //                 return `<input name="pengeluaran_quantity`+ i +`" type="number" min="1" class="form-control request_required" placeholder="Jumlah" value="`+ data +`">`;
+    //             }
+    //         }, {
+    //             data: 'harga',
+    //             title: 'Harga',
+    //             render: function(data, type, full, meta) {
+    //                 return `<input name="pengeluaran_harga`+ i +`" type="text" class="form-control request_required" placeholder="Harga" value="`+ data +`">`;
+    //             }
+    //         }, ],
+    //         columnDefs: [{
+    //             targets: [0, 1, 2, 3],
+    //             className: 'text-center',
+    //             orderable: false,
+    //         }],
+    //     });
+    // };
 
     return {
         //main function to initiate the module
@@ -1744,9 +1744,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableVoidTreatment();
             initTableCustomer();
             initTableCustomerDetail();
-            initTablePengeluaran();
-            initTablePemasukan();
-            initTablePengeluaranDetail();
+            // initTablePengeluaran();
+            // initTablePemasukan();
+            // initTablePengeluaranDetail();
             initTableSPKScheduled();
             initTableSPKWaiting();
             initTableSPKOngoing();
@@ -1759,7 +1759,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTablePinjamanListRequest();
             initTablePinjamanCurrent();
             initTableInvoiceEdit();
-            initTablePengeluaranDetailEdit();
+            // initTablePengeluaranDetailEdit();
         },
     };
 }();
