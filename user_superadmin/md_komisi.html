@@ -395,15 +395,23 @@ License: You must have a valid license purchased only from themeforest(the above
 										<form id="kt_form_tambah_komisi">
 											<div class="modal-body">
 												<div class="form-group row">
-													<label class="col-sm-4 col-form-label">Jenis :</label>
+													<label class="col-sm-4 col-form-label">Persentase :</label>
 													<div class="col-sm-8">
-														<input type="text" class="form-control" name="komisi_jenis" placeholder="Jenis">
+														<div class="input-group">
+															<input type="number" min="1" max="100" class="form-control" name="komisi_persentase" placeholder="Persentase" aria-describedby="percentage">
+															<div class="input-group-append"><span class="input-group-text" id="percentage">%</span></div>
+														</div>
+														<span class="form-text text-muted kt-hidden"></span>
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-sm-4 col-form-label">Jumlah :</label>
+													<label class="col-sm-4 col-form-label">Pengambilan Komisi :</label>
 													<div class="col-sm-8">
-														<input type="text" class="form-control" name="komisi_jumlah" placeholder="Jumlah">
+														<select class="form-control" name="komisi_pengambilan">
+															<option value="" selected disabled>Pengambilan Komisi</option>
+															<option>Basic Harga Treeatment</option>
+															<option>Final Harga Treatment</option>
+														</select>
 													</div>
 												</div>
 											</div>
@@ -427,15 +435,23 @@ License: You must have a valid license purchased only from themeforest(the above
 										<form id="kt_form_edit_komisi">
 											<div class="modal-body">
 												<div class="form-group row">
-													<label class="col-sm-4 col-form-label">Jenis :</label>
+													<label class="col-sm-4 col-form-label">Persentase :</label>
 													<div class="col-sm-8">
-														<input type="text" class="form-control" name="komisi_jenis_edit" placeholder="Jenis" value="Lorem ipsum">
+														<div class="input-group">
+															<input type="number" min="1" max="100" class="form-control" name="komisi_persentase_edit" placeholder="Persentase" value="7.5" aria-describedby="percentage">
+															<div class="input-group-append"><span class="input-group-text" id="percentage">%</span></div>
+														</div>
+														<span class="form-text text-muted kt-hidden"></span>
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-sm-4 col-form-label">Jumlah :</label>
+													<label class="col-sm-4 col-form-label">Pengambilan Komisi :</label>
 													<div class="col-sm-8">
-														<input type="text" class="form-control" name="komisi_jumlah_edit" placeholder="Jumlah" value="Rp 350.000,00">
+														<select class="form-control" name="komisi_pengambilan_edit">
+															<option value="" disabled>Pengambilan Komisi</option>
+															<option>Basic Harga Treeatment</option>
+															<option selected>Final Harga Treatment</option>
+														</select>
 													</div>
 												</div>
 											</div>
@@ -572,10 +588,10 @@ License: You must have a valid license purchased only from themeforest(the above
 			// Form Validation
 			$('#kt_form_tambah_komisi').validate({
 				rules : {
-					komisi_jenis : {
+					komisi_persentase : {
 						required: true
 					},
-					komisi_jumlah : {
+					komisi_pengambilan : {
 						required: true
 					}
 				}
@@ -583,10 +599,10 @@ License: You must have a valid license purchased only from themeforest(the above
 
 			$('#kt_form_edit_komisi').validate({
 				rules : {
-					komisi_jenis_edit : {
+					komisi_persentase_edit : {
 						required: true
 					},
-					komisi_jumlah_edit : {
+					komisi_pengambilan_edit : {
 						required: true
 					}
 				}

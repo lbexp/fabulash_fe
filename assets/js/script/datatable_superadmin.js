@@ -984,11 +984,11 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 35,
                 orderable: false,
             }, {
-                data: 'jenis',
-                title: 'Jenis Komisi'
+                data: 'persentase',
+                title: 'Persentase Komisi'
             }, {
-                data: 'jumlah',
-                title: 'Jumlah Komisi'
+                data: 'pengambilan_komisi',
+                title: 'Pengambilan Komisi'
             }, {
                 field: 'aksi',
                 title: 'Aksi',

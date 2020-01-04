@@ -5,35 +5,35 @@
     "sColumns": "",
     "aaData": [{
         "no": 1,
-        "jenis": "Lorem ipsum",
-        "jumlah": "Rp. 350.000"
+        "persentase": "7.5%",
+        "pengambilan_komisi": "Final Harga Treatment"
     }, {
         "no": 2,
-        "jenis": "Lorem ipsum",
-        "jumlah": "Rp. 350.000"
+        "persentase": "7.5%",
+        "pengambilan_komisi": "Final Harga Treatment"
     }, {
         "no": 3,
-        "jenis": "Lorem ipsum",
-        "jumlah": "Rp. 350.000"
+        "persentase": "7.5%",
+        "pengambilan_komisi": "Final Harga Treatment"
     }, {
         "no": 4,
-        "jenis": "Lorem ipsum",
-        "jumlah": "Rp. 350.000"
+        "persentase": "7.5%",
+        "pengambilan_komisi": "Final Harga Treatment"
     }, {
         "no": 5,
-        "jenis": "Lorem ipsum",
-        "jumlah": "Rp. 350.000"
+        "persentase": "7.5%",
+        "pengambilan_komisi": "Final Harga Treatment"
     }, {
         "no": 6,
-        "jenis": "Lorem ipsum",
-        "jumlah": "Rp. 350.000"
+        "persentase": "7.5%",
+        "pengambilan_komisi": "Final Harga Treatment"
     }, {
         "no": 7,
-        "jenis": "Lorem ipsum",
-        "jumlah": "Rp. 350.000"
+        "persentase": "7.5%",
+        "pengambilan_komisi": "Final Harga Treatment"
     }, {
         "no": 8,
-        "jenis": "Lorem ipsum",
-        "jumlah": "Rp. 350.000"
+        "persentase": "7.5%",
+        "pengambilan_komisi": "Final Harga Treatment"
     }]
 }
