@@ -1,0 +1,31 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "tipe": "Cash"
+    }, {
+        "no": 2,
+        "tipe": "Cash"
+    }, {
+        "no": 3,
+        "tipe": "Cash"
+    }, {
+        "no": 4,
+        "tipe": "Cash"
+    }, {
+        "no": 5,
+        "tipe": "Cash"
+    }, {
+        "no": 6,
+        "tipe": "Cash"
+    }, {
+        "no": 7,
+        "tipe": "Cash"
+    }, {
+        "no": 8,
+        "tipe": "Cash"
+    }]
+}

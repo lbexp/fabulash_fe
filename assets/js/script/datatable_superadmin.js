@@ -1088,6 +1088,66 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         }).draw();
     };
 
+    var initTableDataTipePembayaran = function() {
+        var table = $('#table_data_tipe_pembayaran');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            info: true,
+            paging: true,
+            lengthChange: true,
+            searching: true,
+            responsive: true,
+            ajax: {
+                url: 'source/superadmin/data_tipe_payment.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'tipe',
+                title: 'Tipe Pembayaran'
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 175,
+                render: function(data, type, full, meta) {
+                    return `
+                        <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_edit_tipe"><i class="fa fa-edit"></i> Edit</button>&nbsp;
+                        <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
+                },
+            }, ],
+            columnDefs: [{
+                targets: [0, 1],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    };
+
     var initTableKaryawan = function() {
         var table = $('#table_karyawan');
         // begin first table
@@ -3713,6 +3773,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableDataComplaint();
             initTableDataKomisi();
             initTableDataStudio();
+            initTableDataTipePembayaran();
             initTableKaryawan();
             initTableKaryawanTreatment();
             initTableKaryawanComplaint();
