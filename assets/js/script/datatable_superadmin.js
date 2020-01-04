@@ -2371,6 +2371,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                     return `<a href="user_superadmin/hr_karyawan_detail.html">`+ data +`</a>`;
                 }
             }, {
+                data: 'bulan',
+                title: 'Bulan'
+            }, {
                 data: 'nominal',
                 title: 'Nominal'
             }, {

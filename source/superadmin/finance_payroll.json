@@ -6,34 +6,42 @@
     "aaData": [{
         "no": 1,
         "karyawan": "Ica",
+        "bulan": "Januari 2020",
         "nominal": "Rp 3.000.000,00"
     }, {
         "no": 2,
         "karyawan": "Bella",
+        "bulan": "Januari 2020",
         "nominal": "Rp 3.000.000,00"
     }, {
         "no": 3,
         "karyawan": "Dina",
+        "bulan": "Januari 2020",
         "nominal": "Rp 3.000.000,00"
     }, {
         "no": 4,
         "karyawan": "Dona",
+        "bulan": "Januari 2020",
         "nominal": "Rp 3.000.000,00"
     }, {
         "no": 5,
         "karyawan": "Agnes",
+        "bulan": "Januari 2020",
         "nominal": "Rp 3.000.000,00"
     }, {
         "no": 6,
         "karyawan": "Lala",
+        "bulan": "Januari 2020",
         "nominal": "Rp 3.000.000,00"
     }, {
         "no": 7,
         "karyawan": "Putri",
+        "bulan": "Januari 2020",
         "nominal": "Rp 3.000.000,00"
     }, {
         "no": 8,
         "karyawan": "Tari",
+        "bulan": "Januari 2020",
         "nominal": "Rp 3.000.000,00"
     }]
 }
