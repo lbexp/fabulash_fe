@@ -801,9 +801,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         }).draw();
     };
 
-    var initTableStockDetail = function() {
+    var initTableStockDetailIn = function() {
         // begin first table
-        var table = $('#table_stock_detail').DataTable({
+        var table = $('#table_stock_detail_in').DataTable({
             order: [],
             responsive: true,
             // Pagination settings
@@ -840,24 +840,11 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: 'tanggal',
                 title: 'Tanggal'
             }, {
-                data: 'status',
-                title: 'Status',
-                render: function(data, type, row, meta) {
-                    var status = {
-                        "Stock Masuk": {
-                            'title': 'Stock Masuk',
-                            'class': 'kt-font-success'
-                        },
-                        "Stock Keluar": {
-                            'title': 'Stock Keluar',
-                            'class': 'kt-font-danger'
-                        },
-                    };
-                    if (typeof status[data] === 'undefined') {
-                        return data;
-                    }
-                    return '<span class="' + status[data].class + '">' + status[data].title + '</span>';
-                },
+                data: 'no_request',
+                title: 'No. Request',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_supervisor_studio/request_detail_in_disetujui.html">`+ data +`</a>`;
+                }
             }, {
                 data: 'quantity',
                 title: 'Quantity'
@@ -892,7 +879,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             });
         }).draw();
 
-        $('#monthpicker_stock_detail').on('change', function(e) {
+        $('#monthpicker_stock_detail_in').on('change', function(e) {
             e.preventDefault();
             var params = {};
             var i = $(this).data('col-index');
@@ -908,11 +895,122 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             table.table().draw();
         });
 
-        $('#search_stock_detail').on('keyup', function() {
+        $('#search_stock_detail_in').on('keyup', function() {
             table.search(this.value).draw();
         });
 
-        $('#monthpicker_stock_detail').datepicker({
+        $('#monthpicker_stock_detail_in').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            orientation: "bottom auto",
+            format: "MM yyyy",
+            viewMode: "months",
+            minViewMode: "months",
+            rtl: KTUtil.isRTL(),
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        })/*.datepicker("setDate", new Date());*/
+    };
+
+    var initTableStockDetailOut = function() {
+        // begin first table
+        var table = $('#table_stock_detail_out').DataTable({
+            order: [],
+            responsive: true,
+            // Pagination settings
+            dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            // read more: https://datatables.net/examples/basic_init/dom.html
+            lengthMenu: [5, 10, 25, 50],
+            pageLength: 10,
+            language: {
+                'lengthMenu': 'Display _MENU_',
+            },
+            searchDelay: 500,
+            processing: true,
+            serverSide: false,
+            ajax: {
+                url: 'source/supervisor_studio/stock_detail.json',
+                type: 'POST',
+                data: {
+                    // parameters for custom backend script demo
+                    columnsDef: [
+                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                        'tanggal', 'status', 'aksi',
+                    ],
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'tanggal',
+                title: 'Tanggal'
+            }, {
+                data: 'no_request',
+                title: 'No. Request',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_supervisor_studio/request_detail_in_disetujui.html">`+ data +`</a>`;
+                }
+            }, {
+                data: 'quantity',
+                title: 'Quantity'
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 100,
+                render: function(data, type, full, meta) {
+                    return `
+                    <button class="btn btn-sm btn-danger" onClick="swalVoid();" style="color:white;border-radius:15px">Void</button>`;
+                },
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+
+        $('#monthpicker_stock_detail_out').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        });
+
+        $('#search_stock_detail_out').on('keyup', function() {
+            table.search(this.value).draw();
+        });
+
+        $('#monthpicker_stock_detail_out').datepicker({
             todayHighlight: true,
             language: 'id',
             orientation: "bottom auto",
@@ -3315,7 +3413,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableSPKPaid();
             initTableInvoice();
             initTableStock();
-            initTableStockDetail();
+            initTableStockDetailIn();
+            initTableStockDetailOut();
             initTableRequestIn();
             initTableRequestOut();
             initTableKehadiran();

@@ -6,49 +6,49 @@
     "aaData": [{
         "no": 1,
         "tanggal": "12 November 2019",
-        "status": "Stock Keluar",
+        "no_request": "#12345",
         "quantity": "12",
-        "harga": ""
+        "harga": "Rp. 250.000,00"
     }, {
         "no": 2,
         "tanggal": "12 November 2019",
-        "status": "Stock Masuk",
-        "quantity": "11",
+        "no_request": "#12345",
+        "quantity": "12",
         "harga": "Rp. 250.000,00"
     }, {
         "no": 3,
         "tanggal": "12 November 2019",
-        "status": "Stock Keluar",
+        "no_request": "#12345",
         "quantity": "12",
-        "harga": ""
+        "harga": "Rp. 250.000,00"
     }, {
         "no": 4,
         "tanggal": "12 November 2019",
-        "status": "Stock Masuk",
+        "no_request": "#12345",
         "quantity": "12",
         "harga": "Rp. 250.000,00"
     }, {
         "no": 5,
         "tanggal": "12 November 2019",
-        "status": "Stock Keluar",
-        "quantity": "5",
-        "harga": ""
+        "no_request": "#12345",
+        "quantity": "12",
+        "harga": "Rp. 250.000,00"
     }, {
         "no": 6,
         "tanggal": "12 November 2019",
-        "status": "Stock Masuk",
+        "no_request": "#12345",
         "quantity": "12",
         "harga": "Rp. 250.000,00"
     }, {
         "no": 7,
         "tanggal": "12 November 2019",
-        "status": "Stock Keluar",
+        "no_request": "#12345",
         "quantity": "12",
-        "harga": ""
+        "harga": "Rp. 250.000,00"
     }, {
         "no": 8,
         "tanggal": "12 November 2019",
-        "status": "Stock Masuk",
+        "no_request": "#12345",
         "quantity": "12",
         "harga": "Rp. 250.000,00"
     }]
