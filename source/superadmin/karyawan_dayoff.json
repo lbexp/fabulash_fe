@@ -9,55 +9,63 @@
         "karyawan": "Ica",
         "dayoff": "20 Desember 2019, 21 Desember 2019, 22 Desember 2019",
         "foto": "#",
-        "notes": "Lorem ipsum dolor sit amet"
+        "notes": "Lorem ipsum dolor sit amet",
+        "status": "pending"
     }, {
         "no": 2,
         "tanggal": "20 November 2019",
         "karyawan": "Ica",
         "dayoff": "20 Desember 2019, 21 Desember 2019, 22 Desember 2019",
         "foto": "#",
-        "notes": "Lorem ipsum dolor sit amet"
+        "notes": "Lorem ipsum dolor sit amet",
+        "status": "pending"
     }, {
         "no": 3,
         "tanggal": "20 November 2019",
         "karyawan": "Ica",
         "dayoff": "20 Desember 2019, 21 Desember 2019, 22 Desember 2019",
         "foto": "#",
-        "notes": "Lorem ipsum dolor sit amet"
+        "notes": "Lorem ipsum dolor sit amet",
+        "status": "pending"
     }, {
         "no": 4,
         "tanggal": "20 November 2019",
         "karyawan": "Ica",
         "dayoff": "20 Desember 2019, 21 Desember 2019, 22 Desember 2019",
         "foto": "#",
-        "notes": "Lorem ipsum dolor sit amet"
+        "notes": "Lorem ipsum dolor sit amet",
+        "status": "pending"
     }, {
         "no": 5,
         "tanggal": "20 November 2019",
         "karyawan": "Ica",
         "dayoff": "20 Desember 2019, 21 Desember 2019, 22 Desember 2019",
         "foto": "#",
-        "notes": "Lorem ipsum dolor sit amet"
+        "notes": "Lorem ipsum dolor sit amet",
+        "status": "disetujui"
     }, {
         "no": 6,
         "tanggal": "20 November 2019",
         "karyawan": "Ica",
         "dayoff": "20 Desember 2019, 21 Desember 2019, 22 Desember 2019",
         "foto": "#",
-        "notes": "Lorem ipsum dolor sit amet"
+        "notes": "Lorem ipsum dolor sit amet",
+        "status": "disetujui"
     }, {
         "no": 7,
         "tanggal": "20 November 2019",
         "karyawan": "Ica",
         "dayoff": "20 Desember 2019, 21 Desember 2019, 22 Desember 2019",
         "foto": "#",
-        "notes": "Lorem ipsum dolor sit amet"
+        "notes": "Lorem ipsum dolor sit amet",
+        "status": "ditolak"
     }, {
         "no": 8,
         "tanggal": "20 November 2019",
         "karyawan": "Ica",
         "dayoff": "20 Desember 2019, 21 Desember 2019, 22 Desember 2019",
         "foto": "#",
-        "notes": "Lorem ipsum dolor sit amet"
+        "notes": "Lorem ipsum dolor sit amet",
+        "status": "ditolak"
     }]
 }

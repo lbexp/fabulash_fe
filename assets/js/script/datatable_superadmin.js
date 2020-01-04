@@ -2124,6 +2124,29 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                     return `<button type="button" class="btn btn-link" style="padding:0px;" data-toggle="modal" data-target="#kt_modal_foto"><i class="flaticon2-photo-camera"></i>Foto</button>`;
                 }
             }, {
+                data: 'status',
+                title: 'Status',
+                render: function(data, type, row, meta) {
+                    var status = {
+                        pending: {
+                            'title': 'Pending',
+                            'class': 'btn-label-warning'
+                        },
+                        disetujui: {
+                            'title': 'Disetujui',
+                            'class': 'btn-label-success'
+                        },
+                        ditolak: {
+                            'title': 'Ditolak',
+                            'class': 'btn-label-danger'
+                        }
+                    };
+                    if (typeof status[data] === 'undefined') {
+                        return data;
+                    }
+                    return '<span style="width:100%" class="btn btn-bold btn-sm btn-font-sm ' + status[data].class + '">' + status[data].title + '</span>';
+                }
+            }, {
                 field: 'aksi',
                 title: 'Aksi',
                 responsivePriority: -1,
@@ -2131,14 +2154,19 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 orderable: false,
                 width: 50,
                 render: function(data, type, full, meta) {
-                    return `
-                    <button type="button" class="btn btn-clean btn-icon btn-sm btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<i class="flaticon-more"></i>
-					</button>
-					<div style="min-width:9rem;padding:5px;" class="dropdown-menu dropdown-menu-right">
-					<button onClick="swalApprove();" class="dropdown-item btn btn-secondary kt-margin-b-5"> <i class="fa fa-check" style="width: 22px;"></i> Approve</button>
-					<button onClick="swalReject();" class="dropdown-item btn btn-secondary"> <i class="fa fa-times" style="width: 22px;"></i> Reject</button>
-                    </div>`;
+                    if (full.status == "pending") {
+                        return `
+                        <button type="button" class="btn btn-clean btn-icon btn-sm btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="flaticon-more"></i>
+                        </button>
+                        <div style="min-width:9rem;padding:5px;" class="dropdown-menu dropdown-menu-right">
+                        <button onClick="swalApprove();" class="dropdown-item btn btn-secondary kt-margin-b-5"> <i class="fa fa-check" style="width: 22px;"></i> Approve</button>
+                        <button onClick="swalReject();" class="dropdown-item btn btn-secondary"> <i class="fa fa-times" style="width: 22px;"></i> Reject</button>
+                        </div>`;
+                    };
+                    return `<span class="btn btn-clean btn-icon btn-sm btn-icon-md">
+                    <i class="fa fa-ban"></i>
+                    </span>`;
                 },
             }],
             columnDefs: [{
