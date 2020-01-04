@@ -1110,14 +1110,11 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: 'inventory',
                 title: 'Inventory'
             }, {
-                data: 'complaint',
-                title: 'Complaint'
-            }, {
                 data: 'durasi',
                 title: 'Durasi'
             }, ],
             columnDefs: [{
-                targets: [0, 1, 2, 3, 4],
+                targets: [0, 1, 2, 3],
                 className: 'text-center',
                 orderable: false,
             }],
