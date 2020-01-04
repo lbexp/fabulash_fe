@@ -1544,6 +1544,50 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         }).draw();
     };
 
+    var initTableKaryawanPinjamanCurrent = function () {
+        var table = $('#table_karyawan_pinjaman_current');
+        // begin first table
+        table.DataTable({
+            order: [],
+            responsive: true,
+            ajax: {
+                url: 'source/therapist/pinjaman.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'nama_pinjaman',
+                title: 'Nama Pinjaman'
+            }, {
+                data: 'nominal',
+                title: 'Nominal'
+            }, {
+                data: 'termin',
+                title: 'Termin Pembayaran'
+            }, {
+                data: 'notes',
+                title: 'Notes'
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
     // var initTablePembelian = function() {
     //     // begin first table
     //     var table = $('#table_pembelian').DataTable({
@@ -3643,6 +3687,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableKaryawanComplaint();
             initTableKaryawanKehadiran();
             initTableKaryawanPayroll();
+            initTableKaryawanPinjamanCurrent();
             // initTablePembelian();
             // initTableStock();
             // initTableStockDetail();

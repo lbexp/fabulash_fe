@@ -587,27 +587,42 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 												</div>
 												<div class="tab-pane" id="tab-payroll" role="tabpanel">
-													<form class="kt-margin-b-5">
-		    											<div class="row justify-content-end">
-															<div class="col-lg-4 col-sm-6 input-daterange input-group margin-mobile-b-5">
-																<input readonly type="text" class="form-control kt-monthpicker" name="start" placeholder="Pilih Bulan" data-col-index="1" id="monthpicker_karyawan_payroll"/>
-																<div class="input-group-append">
-																	<span class="input-group-text">
-																		<i class="la la-calendar"></i>
-																	</span>
+													<ul class="nav nav-tabs nav-fill" role="tablist">
+	    												<li class="nav-item">
+	    													<a class="nav-link active" data-toggle="tab" href="#tab-pinjaman-list">List Pinjaman</a>
+	    												</li>
+	    												<li class="nav-item">
+	    													<a class="nav-link" data-toggle="tab" href="#tab-payroll-list">Payroll</a>
+	    												</li>
+	    											</ul>
+	                                                <div class="tab-content">
+	    												<div class="tab-pane active" id="tab-pinjaman-list" role="tabpanel">
+															<table class="table table-bordered table-hover table-checkable" id="table_karyawan_pinjaman_current"></table>
+														</div>
+	    												<div class="tab-pane" id="tab-payroll-list" role="tabpanel">
+															<form class="kt-margin-b-5">
+																<div class="row justify-content-end">
+																	<div class="col-lg-4 col-sm-6 input-daterange input-group margin-mobile-b-5">
+																		<input readonly type="text" class="form-control kt-monthpicker" name="start" placeholder="Pilih Bulan" data-col-index="1" id="monthpicker_karyawan_payroll"/>
+																		<div class="input-group-append">
+																			<span class="input-group-text">
+																				<i class="la la-calendar"></i>
+																			</span>
+																		</div>
+																	</div>
+																</div>
+															</form>
+															<table class="table table-bordered table-hover table-checkable" id="table_karyawan_payroll"></table>
+															<div class="col-12" style="padding:0;">
+																<div class="col-12 justify-end" style="padding:0; margin-bottom: 20px;">
+																	<h4 class="kt-portlet__head-titlek">
+																		Total: <span class="color-main-dark" name="total_payroll">Rp 3.900.000,00</span>
+																	</h4>
+																</div>
+																<div class="col-12 justify-end" style="padding:0;">
+																	<button type="button" class="btn btn-success col-2" data-toggle="modal" data-target="#kt_modal_1">Bayar</button>
 																</div>
 															</div>
-		    											</div>
-		    										</form>
-													<table class="table table-bordered table-hover table-checkable" id="table_karyawan_payroll"></table>
-													<div class="col-12" style="padding:0;">
-														<div class="col-12 justify-end" style="padding:0; margin-bottom: 20px;">
-															<h4 class="kt-portlet__head-titlek">
-																Total: <span class="color-main-dark" name="total_payroll">Rp 3.900.000,00</span>
-															</h4>
-														</div>
-														<div class="col-12 justify-end" style="padding:0;">
-															<button type="button" class="btn btn-success col-2" data-toggle="modal" data-target="#kt_modal_1">Bayar</button>
 														</div>
 													</div>
 												</div>
