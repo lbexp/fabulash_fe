@@ -843,7 +843,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: 'no_request',
                 title: 'No. Request',
                 render: function(data, type, full, meta) {
-                    return `<a href="user_supervisor_studio/request_detail_in_disetujui.html">`+ data +`</a>`;
+                    return `<a href="user_supervisor_studio/request_in_detail_disetujui.html">`+ data +`</a>`;
                 }
             }, {
                 data: 'quantity',
@@ -957,7 +957,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: 'no_request',
                 title: 'No. Request',
                 render: function(data, type, full, meta) {
-                    return `<a href="user_supervisor_studio/request_detail_in_disetujui.html">`+ data +`</a>`;
+                    return `<a href="user_supervisor_studio/request_out_detail_diterima.html">`+ data +`</a>`;
                 }
             }, {
                 data: 'quantity',

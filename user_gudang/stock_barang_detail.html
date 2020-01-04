@@ -324,60 +324,63 @@ License: You must have a valid license purchased only from themeforest(the above
 													<i class="flaticon2-cube-1"></i>
 												</span>
 												<h3 class="kt-portlet__head-title">
-													Stock Barang Keluar
+													Stock Barang <span name="stock_nama">Eyelash Extension</span>
 												</h3>
+											</div>
+											<div class="kt-portlet__head-toolbar">
+												<ul class="nav nav-pills" role="tablist">
+													<li class="nav-item">
+														<a class="nav-link active" data-toggle="tab" href="#tab-stock-in" role="tab" aria-selected="true">
+															Stock In
+														</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" data-toggle="tab" href="#tab-stock-out" role="tab" aria-selected="false">
+															Stock Out
+														</a>
+													</li>
+												</ul>
 											</div>
 										</div>
 										<div class="kt-portlet__body">
-											<form class="kt-form kt-form--fit kt-margin-b-5">
-    											<div class="row justify-space-between">
-													<div class="col-lg-4 col-sm-6 input-daterange input-group margin-mobile-b-5">
-														<input readonly type="text" class="form-control" name="start" placeholder="Pilih Tanggal" data-col-index="1" id="datepicker_stock_barang_keluar"/>
-														<div class="input-group-append">
-															<span class="input-group-text">
-																<i class="la la-calendar"></i>
-															</span>
+											<div class="tab-content">
+												<div class="tab-pane active" id="tab-stock-in" role="tabpanel">
+													<form class="kt-form kt-form--fit kt-margin-b-5">
+														<div class="row justify-space-between">
+															<div class="col-lg-4 col-sm-6 input-daterange input-group margin-mobile-b-5">
+																<input readonly type="text" class="form-control" name="start" placeholder="Pilih Tanggal" data-col-index="1" id="datepicker_stock_barang_masuk"/>
+																<div class="input-group-append">
+																	<span class="input-group-text">
+																		<i class="la la-calendar"></i>
+																	</span>
+																</div>
+															</div>
+															<div class="col-lg-4 col-sm-6">
+																<input type="text" class="form-control" placeholder="Search" id="search_stock_barang_masuk">
+															</div>
 														</div>
-													</div>
-													<div class="col-lg-4 col-sm-6">
-	    												<input type="text" class="form-control" placeholder="Search" id="search_stock_barang_keluar">
-													</div>
-    											</div>
-    										</form>
-                                            <table class="table table-bordered table-hover table-checkable" id="table_stock_barang_keluar"></table>
-										</div>
-									</div>
-								</div>
-
-								<div class="col-12">
-									<div class="kt-portlet">
-										<div class="kt-portlet__head">
-											<div class="kt-portlet__head-label">
-												<span class="kt-portlet__head-icon">
-													<i class="flaticon2-cube-1"></i>
-												</span>
-												<h3 class="kt-portlet__head-title">
-													Stock Barang Masuk
-												</h3>
+													</form>
+													<table class="table table-bordered table-hover table-checkable" id="table_stock_barang_masuk"></table>
+												</div>
+												<div class="tab-pane" id="tab-stock-out" role="tabpanel">
+													<form class="kt-form kt-form--fit kt-margin-b-5">
+														<div class="row justify-space-between">
+															<div class="col-lg-4 col-sm-6 input-daterange input-group margin-mobile-b-5">
+																<input readonly type="text" class="form-control" name="start" placeholder="Pilih Tanggal" data-col-index="1" id="datepicker_stock_barang_keluar"/>
+																<div class="input-group-append">
+																	<span class="input-group-text">
+																		<i class="la la-calendar"></i>
+																	</span>
+																</div>
+															</div>
+															<div class="col-lg-4 col-sm-6">
+																<input type="text" class="form-control" placeholder="Search" id="search_stock_barang_keluar">
+															</div>
+														</div>
+													</form>
+													<table class="table table-bordered table-hover table-checkable" id="table_stock_barang_keluar"></table>
+												</div>
 											</div>
-										</div>
-										<div class="kt-portlet__body">
-											<form class="kt-form kt-form--fit kt-margin-b-5">
-    											<div class="row justify-space-between">
-													<div class="col-lg-4 col-sm-6 input-daterange input-group margin-mobile-b-5">
-														<input readonly type="text" class="form-control" name="start" placeholder="Pilih Tanggal" data-col-index="1" id="datepicker_stock_barang_masuk"/>
-														<div class="input-group-append">
-															<span class="input-group-text">
-																<i class="la la-calendar"></i>
-															</span>
-														</div>
-													</div>
-													<div class="col-lg-4 col-sm-6">
-	    												<input type="text" class="form-control" placeholder="Search" id="search_stock_barang_masuk">
-													</div>
-    											</div>
-    										</form>
-                                            <table class="table table-bordered table-hover table-checkable" id="table_stock_barang_masuk"></table>
 										</div>
 									</div>
 								</div>

@@ -3350,27 +3350,13 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'no_request',
                 title: 'No. Request',
-                render: function(data, type, full, meta) {
-                    return `<a href="user_supervisor_studio/request_detail_in_disetujui.html">`+ data +`</a>`;
-                }
             }, {
                 data: 'quantity',
                 title: 'Quantity'
             }, {
                 data: 'harga',
                 title: 'Harga'
-            }, {
-                field: 'aksi',
-                title: 'Aksi',
-                responsivePriority: -1,
-                className: 'text-center',
-                orderable: false,
-                width: 100,
-                render: function(data, type, full, meta) {
-                    return `
-                    <button class="btn btn-sm btn-danger" onClick="swalVoid();" style="color:white;border-radius:15px">Void</button>`;
-                },
-            }, ],
+            },],
             columnDefs: [{
                 targets: [0, 1, 2, 3, 4],
                 className: 'text-center',
@@ -3464,26 +3450,12 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'no_request',
                 title: 'No. Request',
-                render: function(data, type, full, meta) {
-                    return `<a href="user_supervisor_studio/request_detail_in_disetujui.html">`+ data +`</a>`;
-                }
             }, {
                 data: 'quantity',
                 title: 'Quantity'
-            }, {
-                field: 'aksi',
-                title: 'Aksi',
-                responsivePriority: -1,
-                className: 'text-center',
-                orderable: false,
-                width: 100,
-                render: function(data, type, full, meta) {
-                    return `
-                    <button class="btn btn-sm btn-danger" onClick="swalVoid();" style="color:white;border-radius:15px">Void</button>`;
-                },
-            }, ],
+            },],
             columnDefs: [{
-                targets: [0, 1, 2, 3, 4],
+                targets: [0, 1, 2, 3],
                 className: 'text-center',
                 orderable: true,
             }],
