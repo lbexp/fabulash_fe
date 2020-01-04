@@ -257,6 +257,147 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         })/*.datepicker("setDate", new Date());*/
     };
 
+    var initTableSPKOngoing = function () {
+        var table = $('#table_spk_ongoing');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/admin/spk.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kategori',
+                title: 'Kategori'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, {
+                data: 'waktu_mulai',
+                title: 'Waktu Mulai'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTableSPKDone = function () {
+        var table = $('#table_spk_done');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/admin/spk.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kategori',
+                title: 'Kategori'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, {
+                data: 'inventory',
+                title: 'Inventory'
+            }, {
+                data: 'complaint',
+                title: 'Complaint'
+            }, {
+                data: 'durasi',
+                title: 'Durasi'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTableInvoice = function () {
+        var table = $('#table_invoice');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/admin/invoice.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'treatment',
+                title: 'Treatment'
+            }, {
+                data: 'therapist',
+                title: 'Therapist'
+            }, {
+                data: 'harga',
+                title: 'Harga'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
     var initTableComplaint = function() {
         // begin first table
         var table = $('#table_complaint').DataTable({
@@ -371,47 +512,47 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         })/*.datepicker("setDate", new Date());*/
     };
 
-    var initTableTreatmentDetail = function() {
-        var table = $('#table_treatment_detail');
-        // begin first table
-        table.DataTable({
-            order: [],
-            info: false,
-            paging: false,
-            lengthChange: false,
-            searching: false,
-            responsive: true,
-            ajax: {
-                url: 'source/therapist/invoice.json',
-                type: 'POST',
-                data: {
-                    pagination: {
-                        perpage: 50,
-                    },
-                },
-            },
-            columns: [{
-                data: 'null',
-                title: 'No',
-                render: function(data, type, row, meta) {
-                    return meta.row + meta.settings._iDisplayStart + 1;
-                },
-                width: 35,
-                orderable: false,
-            }, {
-                data: 'treatment',
-                title: 'Treatment'
-            }, {
-                data: 'harga',
-                title: 'Harga'
-            }, ],
-            columnDefs: [{
-                targets: [0, 1, 2],
-                className: 'text-center',
-                orderable: false,
-            }],
-        });
-    };
+    // var initTableTreatmentDetail = function() {
+    //     var table = $('#table_treatment_detail');
+    //     // begin first table
+    //     table.DataTable({
+    //         order: [],
+    //         info: false,
+    //         paging: false,
+    //         lengthChange: false,
+    //         searching: false,
+    //         responsive: true,
+    //         ajax: {
+    //             url: 'source/therapist/invoice.json',
+    //             type: 'POST',
+    //             data: {
+    //                 pagination: {
+    //                     perpage: 50,
+    //                 },
+    //             },
+    //         },
+    //         columns: [{
+    //             data: 'null',
+    //             title: 'No',
+    //             render: function(data, type, row, meta) {
+    //                 return meta.row + meta.settings._iDisplayStart + 1;
+    //             },
+    //             width: 35,
+    //             orderable: false,
+    //         }, {
+    //             data: 'treatment',
+    //             title: 'Treatment'
+    //         }, {
+    //             data: 'harga',
+    //             title: 'Harga'
+    //         }, ],
+    //         columnDefs: [{
+    //             targets: [0, 1, 2],
+    //             className: 'text-center',
+    //             orderable: false,
+    //         }],
+    //     });
+    // };
 
     var initTableStock = function() {
         var table = $('#table_inventory_stock');
@@ -1301,8 +1442,11 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         init: function() {
             initTableActiveTreatment();
             initTableListTreatment();
+            initTableSPKOngoing();
+            initTableSPKDone();
+            initTableInvoice();
             initTableComplaint();
-            initTableTreatmentDetail();
+            // initTableTreatmentDetail();
             initTableStock();
             initTableRequestInventory();
             initTablePemakaianInventory();
