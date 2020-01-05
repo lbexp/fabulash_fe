@@ -985,7 +985,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
     //         }],
     //     });
     // };
-    // 
+    //
     // var initTableSPKWaiting = function () {
     //     var table = $('#table_spk_waiting');
     //     // begin first table
@@ -1581,6 +1581,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         // begin first table
         table.DataTable({
             order: [],
+            dom: `<'row'<'col-sm-12 col-md-6 dataTables_info'<'total'>><'col-sm-12 col-md-6'f>><'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
             responsive: true,
             ajax: {
                 url: 'source/therapist/pinjaman.json',
@@ -1618,6 +1619,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 orderable: false,
             }],
         });
+        
+        $("div.total").html('<h5>Total Pinjaman : <span class="color-main-dark" name="pembayaran_nominal">Rp. 300.000,00</span></h5>');
     };
 
     var initTableInvoiceEdit = function () {
