@@ -403,9 +403,9 @@ License: You must have a valid license purchased only from themeforest(the above
 	                                        <div class="modal-body">
 	                                            <h5 class="color-main-dark">#123456</h5>
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-2 col-form-label">Kategori</label>
-                                                    <div class="col-10">
-														<select name="pengeluaran_kategori" class="form-control">
+                                                    <label for="example-text-input" class="col-sm-2 col-form-label">Kategori :</label>
+                                                    <div class="col-sm-10">
+														<select name="pengeluaran_kategori" class="form-control request_required">
 							                                <option value="" selected disabled>Kategori</option>
 							                                <option>Lorem ipsum</option>
 							                                <option>Lorem ipsum</option>
@@ -415,58 +415,59 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-2 col-form-label">Pengeluaran</label>
-                                                    <div class="row col-10 kt-margin-0">
-                                                        <div class="col-3" style="padding-left:0px">
-                                                            <input type="text" class="form-control" name="pengeluaran_nama" placeholder="Pengeluaran">
-                                                        </div>
-                                                        <div class="row col-4 kt-margin-0" style="padding-left:0px">
-                                                            <label for="example-text-input" class="col-4 col-form-label">Qty</label>
-															<div class="col-8">
-	                                                            <input type="text" class="form-control" name="pengeluaran_jumlah" placeholder="Nominal">
+                                                    <label for="example-text-input" class="col-sm-2 col-form-label">Pengeluaran :</label>
+													<div class="col-sm-10" id=pengeluaran_list>
+														<div class="col-12">
+															<div class="row">
+																<div class="col-4" style="padding-left:0px">
+		                                                            <input type="text" class="form-control request_required" name="pengeluaran_nama_1" placeholder="Pengeluaran">
+		                                                        </div>
+																<div class="col-8 kt-margin-0" style="padding:0px">
+																	<div class="input-group">
+																		<label class="col-form-label kt-margin-r-10">Qty :</label>
+																		<input type="number" min="1" class="form-control kt-margin-r-10 input-group-child-normal request_required" name="pengeluaran_jumlah_1" placeholder="Jumlah">
+																		<label class="col-form-label kt-margin-r-10">Harga :</label>
+																		<input type="number" min="1" class="form-control kt-margin-r-10 input-group-child-normal request_required" name="pengeluaran_harga_1" placeholder="Nominal">
+																		<button type="button" class="btn btn-success btn-icon" id="btn_pengeluaran_add"><i class="fa fa-plus"></i></button>
+																	</div>
+																</div>
 															</div>
-                                                        </div>
-                                                        <div class="row col-4 kt-margin-0" style="padding-left:0px">
-                                                            <label for="example-text-input" class="col-4 col-form-label">Harga</label>
-															<div class="col-8">
-	                                                            <input type="text" class="form-control" name="pengeluaran_harga" placeholder="Nominal">
-															</div>
-                                                        </div>
-														<button type="button" class="btn btn-success btn-icon col-1"><i class="fa fa-plus"></i></button>
+														</div>
+														<span class="form-text text-muted kt-hidden"></span>
+													</div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-sm-2 col-form-label">Penerima :</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control request_required" name="pengeluaran_penerima" placeholder="Penerima">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-2 col-form-label">Penerima</label>
-                                                    <div class="col-10">
-                                                        <input type="text" class="form-control" name="pengeluaran_penerima" placeholder="Penerima">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-2 col-form-label">Jenis Pembayaran</label>
-                                                    <div class="col-10">
+                                                    <label for="example-text-input" class="col-sm-2 col-form-label">Jenis Pembayaran :</label>
+                                                    <div class="col-sm-10">
                                                         <div class="kt-radio-inline">
                                                             <label class="kt-radio">
-                                                                <input type="radio" name="pengeluaran_jenis_pembayaran"> Cash
+                                                                <input type="radio" class="request_required" name="pengeluaran_jenis_pembayaran"> Cash
                                                                 <span></span>
                                                             </label>
                                                         </div>
                                                         <div class="kt-radio-inline">
                                                             <label class="col-6 kt-radio">
-                                                                <input type="radio" name="pengeluaran_jenis_pembayaran"> EDC Mandiri
+                                                                <input type="radio" class="request_required" name="pengeluaran_jenis_pembayaran"> EDC Mandiri
                                                                 <span></span>
                                                             </label>
                                                             <label class="col-5 kt-radio">
-                                                                <input type="radio" name="pengeluaran_jenis_pembayaran"> EDC BNI
+                                                                <input type="radio" class="request_required" name="pengeluaran_jenis_pembayaran"> EDC BNI
                                                                 <span></span>
                                                             </label>
                                                         </div>
                                                         <div class="kt-radio-inline">
                                                             <label class="col-6 kt-radio">
-                                                                <input type="radio" name="pengeluaran_jenis_pembayaran"> Transfer Mandiri
+                                                                <input type="radio" class="request_required" name="pengeluaran_jenis_pembayaran"> Transfer Mandiri
                                                                 <span></span>
                                                             </label>
                                                             <label class="col-5 kt-radio">
-                                                                <input type="radio" name="pengeluaran_jenis_pembayaran"> Transfer BNI
+                                                                <input type="radio" class="request_required" name="pengeluaran_jenis_pembayaran"> Transfer BNI
                                                                 <span></span>
                                                             </label>
                                                         </div>
@@ -562,40 +563,45 @@ License: You must have a valid license purchased only from themeforest(the above
 		<script src="assets/js/custom/datepicker.js" type="text/javascript"></script>
 
 		<script>
-		   // Form Validation
-		   $("#kt_form_pengeluaran").validate({
-			   // define validation rules
-			   rules: {
-				   pengeluaran_kategori : {
-					   required: true
-				   },
-				   pengeluaran_nama : {
-					   required: true
-				   },
-				   pengeluaran_jumlah : {
-					   required: true
-				   },
-				   pengeluaran_harga : {
-					   required: true
-				   },
-				   pengeluaran_penerima : {
-					   required: true
-				   },
-				   pengeluaran_jenis_pembayaran : {
-					   required: true
-				   }
-			   },
+			// Add button
+			var i = 1;
+			$('#btn_pengeluaran_add').click(function() {
+				i++;
+				document.querySelector('#pengeluaran_list').insertAdjacentHTML (
+					'afterbegin',
+					`<div class="col-12 kt-margin-b-5">
+						<div class="row">
+							<div class="col-4" style="padding-left:0px">
+								<input type="text" class="form-control request_required" name="pengeluaran_nama_`+ i +`" placeholder="Pengeluaran">
+							</div>
+							<div class="col-8 kt-margin-0" style="padding:0px">
+								<div class="input-group">
+									<label class="col-form-label kt-margin-r-10">Qty :</label>
+									<input type="number" min="1" class="form-control kt-margin-r-10 input-group-child-normal request_required" name="pengeluaran_jumlah_`+ i +`" placeholder="Jumlah">
+									<label class="col-form-label kt-margin-r-10">Harga :</label>
+									<input type="number" min="1" class="form-control input-group-child-normal request_required" name="pengeluaran_harga_`+ i +`" placeholder="Nominal">
+								</div>
+							</div>
+						</div>
+					</div>`
+				)
+			});
 
-			   invalidHandler: function(event, validator) {
-				   KTUtil.scrollTop();
-			   },
-			   submitHandler: function(form) {
-				   //form[0].submit(); // submit the form
-			   }
-		   });
+			// Form Validation
+			$('#kt_form_pengeluaran').on('submit', function(event) {
+				$('.request_required').each(function (item) {
+					$(this).rules('add', {
+						required: true
+					})
+				});
+				event.preventDefault();
+			});
 
-		   // Sweetalert
-		   $('#kt_sweetalert_berhasil_modal').click(function(e) {
+			// Form Validation
+ 		   $("#kt_form_pengeluaran").validate();
+
+			// Sweetalert
+			$('#kt_sweetalert_berhasil_modal').click(function(e) {
 			   swal.fire({
 				   title: "Berhasil",
 				   text: "Pengeluaran berhasil ditambahkan",
@@ -605,7 +611,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			   }).then(function(result) {
 				   // location.reload();
 			   });
-		   });
+			});
 		</script>
 
 		<!--end::Page Scripts -->
