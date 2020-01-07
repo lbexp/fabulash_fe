@@ -503,3 +503,16 @@ input[type=number] {
     height: 35.88px;
     width: 35.88px;
 }
+
+.mobile-show {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-hidden {
+        display: none;
+    }
+    .mobile-show {
+        display: unset;
+    }
+}

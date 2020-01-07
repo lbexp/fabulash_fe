@@ -323,23 +323,52 @@ License: You must have a valid license purchased only from themeforest(the above
 												</h3>
 											</div>
                                             <div class="kt-portlet__head-toolbar">
-												<ul class="nav nav-pills" role="tablist">
-													<li class="nav-item">
-														<a class="nav-link active" data-toggle="tab" href="#tab-request" role="tab" aria-selected="true">
-															Request Pinjaman
-														</a>
-													</li>
-													<li class="nav-item">
-														<a class="nav-link" data-toggle="tab" href="#tab-list" role="tab" aria-selected="false">
-															List Request Pinjaman
-														</a>
-													</li>
-													<li class="nav-item">
-														<a class="nav-link" data-toggle="tab" href="#tab-current" role="tab" aria-selected="false">
-															Pinjaman Saat Ini
-														</a>
-													</li>
-												</ul>
+												<div class="mobile-show">
+													<div class="dropdown dropdown-inline kt-margin-l-5">
+														<a href="#" data-ktportlet-tool="toggle" class="btn btn-md btn-icon btn-icon-md btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="la la-angle-down"></i></a>
+														<div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);">
+															<ul class="kt-nav nav" style="padding:0px;" role="tablist">
+																<li class="kt-nav__item nav-item">
+																	<a class="kt-nav__link nav-link active" data-toggle="tab" href="#tab-request" role="tab" aria-selected="true">
+																		<i class="kt-nav__link-icon flaticon2-graphic-design"></i>
+																		<span class="kt-nav__link-text">Request Pinjaman</span>
+																	</a>
+																</li>
+																<li class="kt-nav__item nav-item">
+																	<a class="kt-nav__link nav-link" data-toggle="tab" href="#tab-list" role="tab" aria-selected="false">
+																		<i class="kt-nav__link-icon flaticon2-list-3"></i>
+																		<span class="kt-nav__link-text">List Request Pinjaman</span>
+																	</a>
+																</li>
+																<li class="kt-nav__item nav-item">
+																	<a class="kt-nav__link nav-link" data-toggle="tab" href="#tab-current" role="tab" aria-selected="false">
+																		<i class="kt-nav__link-icon flaticon2-list-3"></i>
+																		<span class="kt-nav__link-text">Pinjaman Saat Ini</span>
+																	</a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="mobile-hidden">
+													<ul class="nav nav-pills" role="tablist">
+														<li class="nav-item">
+															<a class="nav-link btn-md active" data-toggle="tab" href="#tab-request" role="tab" aria-selected="true">
+																Request Pinjaman
+															</a>
+														</li>
+														<li class="nav-item">
+															<a class="nav-link btn-md" data-toggle="tab" href="#tab-list" role="tab" aria-selected="false">
+																List Request Pinjaman
+															</a>
+														</li>
+														<li class="nav-item">
+															<a class="nav-link btn-md" data-toggle="tab" href="#tab-current" role="tab" aria-selected="false">
+																Pinjaman Saat Ini
+															</a>
+														</li>
+													</ul>
+												</div>
 											</div>
 										</div>
 										<div class="kt-portlet__body">
