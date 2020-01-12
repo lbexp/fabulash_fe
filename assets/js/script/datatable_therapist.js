@@ -509,48 +509,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         })/*.datepicker("setDate", new Date());*/
     };
 
-    // var initTableTreatmentDetail = function() {
-    //     var table = $('#table_treatment_detail');
-    //     // begin first table
-    //     table.DataTable({
-    //         order: [],
-    //         info: false,
-    //         paging: false,
-    //         lengthChange: false,
-    //         searching: false,
-    //         responsive: true,
-    //         ajax: {
-    //             url: 'source/therapist/invoice.json',
-    //             type: 'POST',
-    //             data: {
-    //                 pagination: {
-    //                     perpage: 50,
-    //                 },
-    //             },
-    //         },
-    //         columns: [{
-    //             data: 'null',
-    //             title: 'No',
-    //             render: function(data, type, row, meta) {
-    //                 return meta.row + meta.settings._iDisplayStart + 1;
-    //             },
-    //             width: 35,
-    //             orderable: false,
-    //         }, {
-    //             data: 'treatment',
-    //             title: 'Treatment'
-    //         }, {
-    //             data: 'harga',
-    //             title: 'Harga'
-    //         }, ],
-    //         columnDefs: [{
-    //             targets: [0, 1, 2],
-    //             className: 'text-center',
-    //             orderable: false,
-    //         }],
-    //     });
-    // };
-
     var initTableStock = function() {
         var table = $('#table_inventory_stock');
         // begin first table
@@ -1446,7 +1404,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableSPKDone();
             initTableInvoice();
             initTableComplaint();
-            // initTableTreatmentDetail();
             initTableStock();
             initTableRequestInventory();
             initTablePemakaianInventory();

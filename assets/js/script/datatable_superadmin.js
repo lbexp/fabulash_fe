@@ -1648,227 +1648,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         $("div.total").html('<h5>Total Pinjaman : <span class="color-main-dark" name="pembayaran_nominal">Rp. 300.000,00</span></h5>');
     };
 
-    // var initTablePembelian = function() {
-    //     // begin first table
-    //     var table = $('#table_pembelian').DataTable({
-    //         order: [],
-    //         responsive: true,
-    //         // Pagination settings
-    //         dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
-    //         // read more: https://datatables.net/examples/basic_init/dom.html
-    //         lengthMenu: [5, 10, 25, 50],
-    //         pageLength: 10,
-    //         language: {
-    //             'lengthMenu': 'Display _MENU_',
-    //         },
-    //         searchDelay: 500,
-    //         processing: true,
-    //         serverSide: false,
-    //         ajax: {
-    //             url: 'source/superadmin/pembelian.json',
-    //             type: 'POST',
-    //             data: {
-    //                 // parameters for custom backend script demo
-    //                 columnsDef: [
-    //                     'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-    //                     'tanggal', 'status', 'aksi',
-    //                 ],
-    //             },
-    //         },
-    //         columns: [{
-    //             data: 'null',
-    //             title: 'No',
-    //             render: function(data, type, row, meta) {
-    //                 return meta.row + meta.settings._iDisplayStart + 1;
-    //             },
-    //             width: 35,
-    //             orderable: false,
-    //         }, {
-    //             data: 'tanggal',
-    //             title: 'Tanggal'
-    //         }, {
-    //             data: 'barang',
-    //             title: 'Nama Barang'
-    //         }, {
-    //             data: 'satuan',
-    //             title: 'Satuan'
-    //         }, {
-    //             data: 'quantity',
-    //             title: 'Jumlah'
-    //         }, {
-    //             data: 'harga',
-    //             title: 'Harga'
-    //         }],
-    //         columnDefs: [{
-    //             targets: [0, 1, 2, 3, 4, 5],
-    //             className: 'text-center',
-    //             orderable: true,
-    //         }],
-    //     });
-    //
-    //     table.on('order.dt search.dt', function() {
-    //         table.column(0, {
-    //             search: 'applied',
-    //             order: 'applied'
-    //         }).nodes().each(function(cell, i) {
-    //             cell.innerHTML = i + 1;
-    //         });
-    //     }).draw();
-    //
-    //     $('#kt_search_waktu').on('change', function(e) {
-    //         e.preventDefault();
-    //         var params = {};
-    //         var i = $(this).data('col-index');
-    //         if (params[i]) {
-    //             params[i] += '|' + $(this).val();
-    //         } else {
-    //             params[i] = $(this).val();
-    //         }
-    //         $.each(params, function(i, val) {
-    //             // apply search params to datatable
-    //             table.column(i).search(val ? val : '', false, false);
-    //         });
-    //         table.table().draw();
-    //     });
-    //
-    //     $('#kt_search_all').on('keyup', function() {
-    //         table.search(this.value).draw();
-    //     });
-    // };
-
-    // var initTableStock = function() {
-    //     var table = $('#table_stock');
-    //     // begin first table
-    //     var datatable = table.DataTable({
-    //         order: [],
-    //         responsive: true,
-    //         ajax: {
-    //             url: 'source/superadmin/stock.json',
-    //             type: 'POST',
-    //             data: {
-    //                 pagination: {
-    //                     perpage: 50,
-    //                 },
-    //             },
-    //         },
-    //         columns: [{
-    //             data: 'null',
-    //             title: 'No',
-    //             render: function(data, type, row, meta) {
-    //                 return meta.row + meta.settings._iDisplayStart + 1;
-    //             },
-    //             width: 35,
-    //             orderable: false,
-    //         }, {
-    //             data: 'barang',
-    //             title: 'Barang',
-    //         }, {
-    //             data: 'isi_satuan',
-    //             title: 'Isi Per Satuan',
-    //         }, {
-    //             data: 'satuan',
-    //             title: 'Satuan',
-    //         }, {
-    //             data: 'persediaan',
-    //             title: 'Persediaan',
-    //         },{
-    //             field: 'aksi',
-    //             title: 'Aksi',
-    //             responsivePriority: -1,
-    //             className: 'text-center',
-    //             orderable: false,
-    //             width: 100,
-    //             render: function(data, type, full, meta) {
-    //                 return `
-    //                 <a href="user_superadmin/stock_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
-    //             },
-    //         }],
-    //         columnDefs: [{
-    //             targets: [0, 1, 2, 3, 4],
-    //             className: 'text-center',
-    //             orderable: true,
-    //         }],
-    //     });
-    //
-    //     datatable.on('order.dt search.dt', function() {
-    //         datatable.column(0, {
-    //             search: 'applied',
-    //             order: 'applied'
-    //         }).nodes().each(function(cell, i) {
-    //             cell.innerHTML = i + 1;
-    //         });
-    //     }).draw();
-    // };
-
-    // var initTableStockDetail = function() {
-    //     var table = $('#table_stock_detail');
-    //     // begin first table
-    //     var datatable = table.DataTable({
-    //         order: [],
-    //         responsive: true,
-    //         ajax: {
-    //             url: 'source/superadmin/stock_detail.json',
-    //             type: 'POST',
-    //             data: {
-    //                 pagination: {
-    //                     perpage: 50,
-    //                 },
-    //             },
-    //         },
-    //         columns: [{
-    //             data: 'null',
-    //             title: 'No',
-    //             render: function(data, type, row, meta) {
-    //                 return meta.row + meta.settings._iDisplayStart + 1;
-    //             },
-    //             width: 35,
-    //             orderable: false,
-    //         }, {
-    //             data: 'tanggal',
-    //             title: 'Tanggal'
-    //         }, {
-    //             data: 'status',
-    //             title: 'Status',
-    //             render: function(data, type, row, meta) {
-    //                 var status = {
-    //                     "Stock Masuk": {
-    //                         'title': 'Stock Masuk',
-    //                         'class': 'kt-font-success'
-    //                     },
-    //                     "Stock Keluar": {
-    //                         'title': 'Stock Keluar',
-    //                         'class': 'kt-font-danger'
-    //                     },
-    //                 };
-    //                 if (typeof status[data] === 'undefined') {
-    //                     return data;
-    //                 }
-    //                 return '<span class="' + status[data].class + '">' + status[data].title + '</span>';
-    //             },
-    //         }, {
-    //             data: 'quantity',
-    //             title: 'Quantity'
-    //         }, {
-    //             data: 'harga',
-    //             title: 'Harga'
-    //         }, ],
-    //         columnDefs: [{
-    //             targets: [0, 1, 2, 3, 4],
-    //             className: 'text-center',
-    //             orderable: true,
-    //         }],
-    //     });
-    //
-    //     datatable.on('order.dt search.dt', function() {
-    //         datatable.column(0, {
-    //             search: 'applied',
-    //             order: 'applied'
-    //         }).nodes().each(function(cell, i) {
-    //             cell.innerHTML = i + 1;
-    //         });
-    //     }).draw();
-    // };
-
     var initTableKaryawanInventory = function () {
         var table = $('#table_karyawan_inventory_sisa');
         // begin first table
@@ -2442,7 +2221,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 responsivePriority: -1,
                 className: 'text-center',
                 orderable: false,
-                width: 50,
+                width: 100,
                 render: function(data, type, full, meta) {
                     return `
                     <a href="user_superadmin/finance_payroll_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
@@ -2541,10 +2320,10 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 responsivePriority: -1,
                 className: 'text-center',
                 orderable: false,
-                width: 75,
+                width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <button type="button" class="btn btn-sm btn-success" style="border-radius:2rem" onClick="swalLunas();">Lunas</button>`;
+                    <button type="button" class="btn btn-sm btn-success" style="border-radius:2rem" onClick="swalLunas();"><i class="fa fa-check-circle"></i> Lunas</button>`;
                 },
             }],
             columnDefs: [{
@@ -3780,9 +3559,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableKaryawanKehadiran();
             initTableKaryawanPayroll();
             initTableKaryawanPinjamanCurrent();
-            // initTablePembelian();
-            // initTableStock();
-            // initTableStockDetail();
             initTableKaryawanInventory();
             initTableKaryawanInventoryPenggunaan();
             initTableKaryawanInventoryRequest();
