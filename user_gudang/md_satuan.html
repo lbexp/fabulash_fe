@@ -231,7 +231,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											<h3 class="kt-head__title">
 												User Notifications
 												&nbsp;
-												<span class="btn btn-success btn-sm btn-bold btn-font-md">23 new</span>
+												<span class="btn btn-success btn-md btn-bold btn-font-md">23 new</span>
 											</h3>
 										</div>
 
@@ -367,6 +367,32 @@ License: You must have a valid license purchased only from themeforest(the above
 								</div>
 							</div>
 
+							<div class="modal fade" id="kt_modal_data_satuan_edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Edit Satuan</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											</button>
+										</div>
+										<form id="kt_form_data_satuan_edit">
+											<div class="modal-body">
+												<div class="form-group row">
+													<label class="col-sm-4 col-form-label">Nama Satuan :</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" name="data_satuan_nama_edit" placeholder="Nama Satuan" value="Box">
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer" style="justify-content:center;">
+												<button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
+												<button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_edit">Submit</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
                             <!-- end:: Modal -->
 
 						</div>
@@ -478,10 +504,30 @@ License: You must have a valid license purchased only from themeforest(the above
 				});
 			});
 
+			$('#kt_sweetalert_berhasil_edit').click(function(e) {
+				swal.fire({
+					title: "Berhasil",
+					text: "Data berhasil diubah.",
+					type: "success",
+					confirmButtonText: "Ok",
+					confirmButtonClass: "btn btn-brand"
+				}).then(function(result) {
+					// location.reload();
+				});
+			});
+
 			// Form Validation
 			$('#kt_form_data_satuan_tambah').validate({
 				rules : {
 					data_satuan_nama : {
+						required: true
+					}
+				}
+			});
+
+			$('#kt_form_data_satuan_edit').validate({
+				rules : {
+					data_satuan_nama_edit : {
 						required: true
 					}
 				}

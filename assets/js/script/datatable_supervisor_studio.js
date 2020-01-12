@@ -106,7 +106,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                         done : {'href': 'treatment_detail_done.html'}
                     };
                     return `
-                    <a href="user_supervisor_studio/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_supervisor_studio/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -283,7 +283,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_supervisor_studio/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_supervisor_studio/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -391,7 +391,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_supervisor_studio/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_supervisor_studio/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -778,7 +778,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_supervisor_studio/stock_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_supervisor_studio/stock_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -857,7 +857,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <button class="btn btn-sm btn-danger" onClick="swalVoid();" style="color:white;border-radius:15px">Void</button>`;
+                    <button class="btn btn-sm btn-danger" onClick="swalVoid();" style="color:white;border-radius:2rem">Void</button>`;
                 },
             }, ],
             columnDefs: [{
@@ -968,7 +968,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <button class="btn btn-sm btn-danger" onClick="swalVoid();" style="color:white;border-radius:15px">Void</button>`;
+                    <button class="btn btn-sm btn-danger" onClick="swalVoid();" style="color:white;border-radius:2rem">Void</button>`;
                 },
             }, ],
             columnDefs: [{
@@ -1106,7 +1106,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                         Disetujui: {'href': 'request_in_detail_disetujui.html'}
                     };
                     return `
-                    <a href="user_supervisor_studio/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_supervisor_studio/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -1245,7 +1245,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                         Diterima: {'href': 'request_out_detail_diterima.html'}
                     }
                     return `
-                    <a href="user_supervisor_studio/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_supervisor_studio/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -1723,7 +1723,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_supervisor_studio/karyawan_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_supervisor_studio/karyawan_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }, ],
             columnDefs: [{
@@ -2725,7 +2725,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_supervisor_studio/customer_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_supervisor_studio/customer_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }, ],
             columnDefs: [{
@@ -2815,7 +2815,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_supervisor_studio/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_supervisor_studio/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -2905,7 +2905,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_supervisor_studio/profile_payroll_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_supervisor_studio/profile_payroll_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -3120,7 +3120,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_supervisor_studio/finance_pengeluaran_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_supervisor_studio/finance_pengeluaran_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -3246,7 +3246,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_supervisor_studio/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_supervisor_studio/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{

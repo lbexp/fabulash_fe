@@ -663,7 +663,8 @@ License: You must have a valid license purchased only from themeforest(the above
 			  submitHandler: function(form) {
 				  //form[0].submit(); // submit the form
 			  }
-		  	});
+			  });
+			  
 			$("#kt_form_pembayaran").validate({
 	            // define validation rules
 	            rules: {
@@ -682,7 +683,14 @@ License: You must have a valid license purchased only from themeforest(the above
 	            submitHandler: function(form) {
 	                //form[0].submit(); // submit the form
 	            }
-        	});
+			});
+			
+			// Datatable responsiveness x Bootstrap tab bug
+			$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+		        $($.fn.dataTable.tables(true)).DataTable()
+		           .columns.adjust()
+		           .responsive.recalc();
+		    });
 		</script>
 
 		<!--end::Page Scripts -->

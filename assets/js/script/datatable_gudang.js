@@ -61,11 +61,12 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 responsivePriority: -1,
                 className: 'text-center',
                 orderable: false,
-                width: 100,
+                width: 175 ,
                 render: function(data, type, full, meta) {
                     return `
-                    <button type="button" class="btn btn-sm btn-danger" style="color:white;border-radius:15px" onClick="swalDelete();">Delete</button>`;
-                },
+                        <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_data_barang_edit"><i class="fa fa-edit"></i> Edit</button>&nbsp;
+                        <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
+                }
             }, ],
             columnDefs: [{
                 targets: [0, 1, 2, 3, 4, 5, 6, 7],
@@ -120,10 +121,11 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 responsivePriority: -1,
                 className: 'text-center',
                 orderable: false,
-                width: 100,
+                width: 175,
                 render: function(data, type, full, meta) {
                     return `
-                    <button type="button" class="btn btn-sm btn-danger" style="color:white;border-radius:15px" onClick="swalDelete();">Delete</button>`;
+                        <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_data_satuan_edit"><i class="fa fa-edit"></i> Edit</button>&nbsp;
+                        <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
                 },
             }, ],
             columnDefs: [{
@@ -191,7 +193,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_gudang/stock_barang_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_gudang/stock_barang_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -273,7 +275,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_gudang/request_stock_detail_diterima.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_gudang/request_stock_detail_diterima.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -381,7 +383,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_gudang/stock_pembelian_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_gudang/stock_pembelian_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -486,7 +488,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_gudang/stock_pembelian_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_gudang/stock_pembelian_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -591,7 +593,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_gudang/request_stock_detail_diterima.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_gudang/request_stock_detail_diterima.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -728,7 +730,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                         Diterima: {'href': 'request_stock_detail_diterima.html'}
                     }
                     return `
-                    <a href="user_gudang/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_gudang/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -1226,7 +1228,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_gudang/profile_payroll_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_gudang/profile_payroll_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{

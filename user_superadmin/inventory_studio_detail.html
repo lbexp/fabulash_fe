@@ -577,6 +577,15 @@ License: You must have a valid license purchased only from themeforest(the above
 		<script src="assets/js/script/datatable_superadmin.js"></script>
 		<script src="assets/js/custom/datepicker.js" type="text/javascript"></script>
 
+		<script>
+			// Datatable responsiveness x Bootstrap tab bug
+			$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+		        $($.fn.dataTable.tables(true)).DataTable()
+		           .columns.adjust()
+		           .responsive.recalc();
+		    });
+		</script>
+
 		<!--end::Page Scripts -->
 	</body>
 

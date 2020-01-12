@@ -91,7 +91,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                         done : {'href': 'treatment_detail_done.html'},
                     };
                     return `
-                    <a href="user_therapist/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_therapist/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -205,7 +205,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_therapist/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_therapist/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -454,7 +454,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_therapist/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_therapist/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -684,7 +684,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                         Disetujui: {'href': 'inventory_request_detail_disetujui.html'}
                     };
                     return `
-                    <a href="user_therapist/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_therapist/${status[full.status].href}" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -1175,7 +1175,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_therapist/profile_payroll_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_therapist/profile_payroll_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
                 },
             }],
             columnDefs: [{
