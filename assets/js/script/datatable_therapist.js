@@ -205,7 +205,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_therapist/treatment_detail_done.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_therapist/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }],
             columnDefs: [{
@@ -454,7 +454,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     return `
-                    <a href="user_therapist/profile_complaint_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
+                    <a href="user_therapist/treatment_detail_paid.html" class="btn btn-sm btn-brand" style="color:white;border-radius:15px">Rincian</a>`;
                 },
             }],
             columnDefs: [{

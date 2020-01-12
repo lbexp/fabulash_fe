@@ -358,6 +358,9 @@ body {
     .form-group {
         margin-bottom: 1rem;
     }
+    .mobile_align_left {
+        text-align: left !important;
+    }
 }
 
 .uploaded_img {
@@ -515,4 +518,16 @@ input[type=number] {
     .mobile-show {
         display: unset;
     }
+}
+
+.kt-nav__link.active {
+    background-color: #f7f8fa;
+}
+
+.kt-nav__link.active > .kt-nav__link-text {
+    color: #5d78ff !important;
+}
+
+.kt-nav__link.active > .kt-nav__link-icon {
+    color: #5d78ff !important;
 }
