@@ -3092,7 +3092,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'penerima',
                 title: 'Penerima',
-            }, {
+            },/*, {
                 data: 'user',
                 title: 'User',
                 render: function(data, type, row, meta) {
@@ -3111,7 +3111,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                     }
                     return '<span style="width:100%" class="btn btn-bold btn-sm btn-font-sm ' + user[data].class + '">' + user[data].title + '</span>';
                 }
-            }, {
+            },*/ {
                 field: 'aksi',
                 title: 'Aksi',
                 responsivePriority: -1,
@@ -3124,7 +3124,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 },
             }],
             columnDefs: [{
-                targets: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+                targets: [0, 1, 2, 3, 4, 5, 6, 7],  //sisa ditambah 8
                 className: 'text-center',
                 orderable: true,
             }],

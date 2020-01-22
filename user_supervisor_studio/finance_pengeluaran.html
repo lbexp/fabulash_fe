@@ -362,8 +362,8 @@ License: You must have a valid license purchased only from themeforest(the above
 													Pengeluaran
 												</h3>
 											</div>
-                                            <div class="kt-portlet__head-toolbar">
-												<button type="button" class="btn btn-md btn-success" data-toggle="modal" data-target="#kt_modal_tambah_pengeluaran"><i class="flaticon2-add"></i> Tambah Pengeluaran</button>
+                                            <div class="kt-portlet__head-toolbar"> 
+												<button type="button" class="btn btn-md btn-success kt-hidden" data-toggle="modal" data-target="#kt_modal_tambah_pengeluaran"><i class="flaticon2-add"></i> Tambah Pengeluaran</button>
 											</div>
 										</div>
 										<div class="kt-portlet__body">
@@ -442,37 +442,18 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <input type="text" class="form-control request_required" name="pengeluaran_penerima" placeholder="Penerima">
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-sm-2 col-form-label">Jenis Pembayaran :</label>
-                                                    <div class="col-sm-10">
-                                                        <div class="kt-radio-inline">
-                                                            <label class="kt-radio">
-                                                                <input type="radio" class="request_required" name="pengeluaran_jenis_pembayaran"> Cash
-                                                                <span></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="kt-radio-inline">
-                                                            <label class="col-6 kt-radio">
-                                                                <input type="radio" class="request_required" name="pengeluaran_jenis_pembayaran"> EDC Mandiri
-                                                                <span></span>
-                                                            </label>
-                                                            <label class="col-5 kt-radio">
-                                                                <input type="radio" class="request_required" name="pengeluaran_jenis_pembayaran"> EDC BNI
-                                                                <span></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="kt-radio-inline">
-                                                            <label class="col-6 kt-radio">
-                                                                <input type="radio" class="request_required" name="pengeluaran_jenis_pembayaran"> Transfer Mandiri
-                                                                <span></span>
-                                                            </label>
-                                                            <label class="col-5 kt-radio">
-                                                                <input type="radio" class="request_required" name="pengeluaran_jenis_pembayaran"> Transfer BNI
-                                                                <span></span>
-                                                            </label>
-                                                        </div>
-														<span class="form-text text-muted kt-hidden"></span>
-                                                    </div>
+                                                <div class="form-group row form-group-last">
+                                                	<label for="jenis_pembayaran" class="col-sm-2 col-form-label">Pembayaran :</label>
+                                                	<div class="col-sm-10">
+                                                		<select id="jenis_pembayaran" class="custom-select form-control">
+                                                			<option selected="">-Pilih Jenis Pembayaran-</option>
+                                                			<option value="cash">Cash</option>
+                                                			<option value="edc mandiri">EDC Mandiri</option>
+                                                			<option value="edc bni">EDC BNI</option>
+                                                			<option value="transfer mandiri">Transfer Mandiri</option>
+                                                			<option value="transfer bni">Transfer BNI</option>
+                                                		</select>
+                                                	</div>
                                                 </div>
 	                                        </div>
 	                                        <div class="modal-footer" style="justify-content:center;">

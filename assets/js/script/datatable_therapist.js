@@ -600,6 +600,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'kode_spk',
                 title: 'SPK Inventory',
+                render: function(data,type,full,meta){
+                    return '<a href="user_therapist/treatment_detail_paid.html">#1234</a>'
+                }
             }, {
                 data: 'barang',
                 title: 'Barang',
@@ -738,6 +741,9 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'kode_spk',
                 title: 'SPK Inventory',
+                render: function(data,type,full,meta){
+                    return '<a href="user_therapist/treatment_detail_paid.html">#1234</a>'
+                }
             }, {
                 data: 'treatment',
                 title: 'Treatment',

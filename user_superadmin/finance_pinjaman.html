@@ -182,10 +182,10 @@ License: You must have a valid license purchased only from themeforest(the above
 								</svg></span><span class="kt-menu__link-text">Human Resources</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
 									<div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
 										<ul class="kt-menu__subnav">
-											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/hr_laporan.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Laporan Karyawan</span></a></li>
+											<li class="kt-menu__item kt-hidden" aria-haspopup="true"><a href="user_superadmin/hr_laporan.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Laporan Karyawan</span></a></li>
 											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/hr_karyawan.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Daftar Karyawan</span></a></li>
 											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/hr_request_dayoff.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Request Day-Off</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/hr_request_pinjaman.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Request Pinjaman</span></a></li>
+											<li class="kt-menu__item kt-hidden" aria-haspopup="true"><a href="user_superadmin/hr_request_pinjaman.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Request Pinjaman</span></a></li>
 										</ul>
 									</div>
 								</li>
@@ -203,7 +203,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/finance_laporan.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Laporan Keuangan</span></a></li>
 											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/finance_pengeluaran.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Pengeluaran</span></a></li>
 											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/finance_pemasukan.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Pemasukan</span></a></li>
-											<li class="kt-menu__item kt-menu__item--active" aria-haspopup="true"><a href="user_superadmin/finance_pinjaman.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">List Pinjaman</span></a></li>
+											<li class="kt-menu__item kt-menu__item--active" aria-haspopup="true"><a href="user_superadmin/finance_pinjaman.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Pinjaman</span></a></li>
 											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/finance_payroll.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">List Payroll</span></a></li>
 										</ul>
 									</div>
@@ -383,7 +383,37 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 										</div>
 										<div class="kt-portlet__body">
-                                            <table class="table table-bordered table-hover table-checkable" id="table_finance_pinjaman"></table>
+											<ul class="nav nav-tabs nav-fill" role="tablist">
+												<li class="nav-item">
+													<a class="nav-link active" data-toggle="tab" href="#kt_tabs_list_pinjaman">List Pinjaman</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link " data-toggle="tab" href="#kt_tabs_request_pinjaman">Request Pinjaman</a>
+												</li>
+											</ul>
+											<div class="tab-content">
+												<div class="tab-pane active" id="kt_tabs_list_pinjaman" role="tabpanel">
+													 <table class="table table-bordered table-hover table-checkable" id="table_finance_pinjaman"></table>
+												</div>
+												<div class="tab-pane" id="kt_tabs_request_pinjaman" role="tabpanel">
+													<form class="kt-margin-b-5">
+														<div class="row justify-space-between">
+															<div class="col-lg-4 col-sm-6 input-daterange input-group margin-mobile-b-5">
+																<input readonly type="text" class="form-control" name="start" placeholder="Pilih Tanggal" data-col-index="1" id="datepicker_karyawan_pinjaman"/>
+																<div class="input-group-append">
+																	<span class="input-group-text">
+																		<i class="la la-calendar"></i>
+																	</span>
+																</div>
+															</div>
+															<div class="col-lg-4 col-sm-6">
+																<input type="text" class="form-control" placeholder="Search" id="search_karyawan_pinjaman">
+															</div>
+														</div>
+													</form>
+													<table class="table table-bordered table-hover table-checkable" id="table_karyawan_pinjaman"></table>
+												</div>
+											</div>
 										</div>
 									</div>
 
@@ -396,6 +426,60 @@ License: You must have a valid license purchased only from themeforest(the above
 
 						<!-- end:: Content -->
 					</div>
+					<!--begin::Modal-->
+					<div class="modal fade" id="kt_modal_approve" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">Persetujuan Pinjaman</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									</button>
+								</div>
+								<div class="modal-body">
+									<div class="row" style="margin-bottom:20px;">
+										<div class="col-6">
+											<table class="col-12">
+												<tbody><tr>
+													<th width="50%">Nama</th>
+													<th width="10%">:</th>
+													<th style="font-weight:500;" name="nama_karyawan" width="60%">Fatima</th>
+												</tr>
+												<tr>
+													<th>Nominal</th>
+													<th>:</th>
+													<th style="font-weight:500;" name="treatment_studio">Rp1.000.000</th>
+												</tr>
+											</tbody></table>
+										</div>
+										<div class="col-6">
+
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="kt-margin-t-15" for="jenis_pembayaran">Jenis Pembayaran: </label>
+										<select id="jenis_pembayaran" class="custom-select form-control">
+											<option selected="">-Pilih Jenis Pembayaran-</option>
+											<option value="cash">Cash</option>
+											<option value="edc mandiri">EDC Mandiri</option>
+											<option value="edc bni">EDC BNI</option>
+											<option value="transfer mandiri">Transfer Mandiri</option>
+											<option value="transfer bni">Transfer BNI</option>
+										</select>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">
+										<i class="fa fa-times"></i> Batal
+									</button>
+									<button onClick="swalApprove();" type="button" class="btn btn-success">
+										<i class="fa fa-check"></i> Approve 
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--end::Modal-->
 
 					<!-- begin:: Footer -->
 					<div class="kt-footer  kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop" id="kt_footer">
@@ -489,6 +573,42 @@ License: You must have a valid license purchased only from themeforest(the above
                         swal.fire(
                             'Berhasil!',
                             'Pinjaman berhasil ditandai sebagai lunas.',
+                            'success'
+                        )
+                    }
+                });
+            };
+
+             function swalApprove() {
+                swal.fire({
+                    title: 'Yakin untuk menyetujui?',
+                    text: "Tindakan ini tidak bisa diubah kembali!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Ya, approve!'
+                }).then(function(result) {
+                    if (result.value) {
+                        swal.fire(
+                            'Approved!',
+                            'Request berhasil disetujui.',
+                            'success'
+                        )
+                    }
+                });
+            };
+
+            function swalReject() {
+                swal.fire({
+                    title: 'Yakin untuk menolak?',
+                    text: "Tindakan ini tidak bisa diubah kembali!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Ya, reject!'
+                }).then(function(result) {
+                    if (result.value) {
+                        swal.fire(
+                            'Rejected!',
+                            'Request berhasil ditolak.',
                             'success'
                         )
                     }

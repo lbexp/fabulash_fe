@@ -182,10 +182,10 @@ License: You must have a valid license purchased only from themeforest(the above
 								</svg></span><span class="kt-menu__link-text">Human Resources</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
 									<div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
 										<ul class="kt-menu__subnav">
-											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/hr_laporan.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Laporan Karyawan</span></a></li>
+											<li class="kt-menu__item kt-hidden" aria-haspopup="true"><a href="user_superadmin/hr_laporan.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Laporan Karyawan</span></a></li>
 											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/hr_karyawan.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Daftar Karyawan</span></a></li>
 											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/hr_request_dayoff.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Request Day-Off</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/hr_request_pinjaman.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Request Pinjaman</span></a></li>
+											<li class="kt-menu__item kt-hidden" aria-haspopup="true"><a href="user_superadmin/hr_request_pinjaman.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Request Pinjaman</span></a></li>
 										</ul>
 									</div>
 								</li>
@@ -203,7 +203,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/finance_laporan.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Laporan Keuangan</span></a></li>
                                             <li class="kt-menu__item kt-menu__item--active" aria-haspopup="true"><a href="user_superadmin/finance_pengeluaran.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Pengeluaran</span></a></li>
 											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/finance_pemasukan.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Pemasukan</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/finance_pinjaman.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">List Pinjaman</span></a></li>
+											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/finance_pinjaman.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Pinjaman</span></a></li>
 											<li class="kt-menu__item " aria-haspopup="true"><a href="user_superadmin/finance_payroll.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">List Payroll</span></a></li>
 										</ul>
 									</div>
@@ -399,10 +399,10 @@ License: You must have a valid license purchased only from themeforest(the above
 														<div class="col-12" style="text-align: right; margin-bottom:5px;">
 															<button class="col-5 btn btn-warning" onclick="printFunction()">Print</button>
 														</div>
-                                                        <div class="col-12" style="text-align: right; margin-bottom:5px;">
+                                                        <div class="col-12 kt-hidden" style="text-align: right; margin-bottom:5px;">
 															<button class="col-5 btn btn-success">Foto</button>
 														</div>
-														<div class="col-12" style="text-align: right;">
+														<div class="col-12 kt-hidden" style="text-align: right;">
 															<button class="col-5 btn btn-danger" id="kt_sweetalert_void">Void</button>
 														</div>
 													</div>
@@ -412,8 +412,10 @@ License: You must have a valid license purchased only from themeforest(the above
         										<thead>
         											<tr>
         												<th>No.</th>
-        												<th>Pengeluaran</th>
-        												<th>Quantity</th>
+        												<th>Nama Barang</th>
+        												<th>Jumlah (Satuan Besar)</th>
+        												<th>Jumlah (Satuan Sedang)</th>
+        												<th>Jumlah (Satuan Kecil)</th>
         												<th>Harga</th>
         											</tr>
         										</thead>

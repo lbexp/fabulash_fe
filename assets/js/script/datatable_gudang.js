@@ -371,10 +371,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'jumlah',
                 title: 'Jumlah',
-            }, {
-                data: 'studio',
-                title: 'Studio',
-            }, {
+            },{
                 field: 'aksi',
                 title: 'Aksi',
                 responsivePriority: -1,
@@ -387,7 +384,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 },
             }],
             columnDefs: [{
-                targets: [0, 1, 2, 3, 4, 5],
+                targets: [0, 1, 2, 3, 4],
                 className: 'text-center',
                 orderable: true,
             }],
@@ -698,12 +695,12 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 // width: 70,
                 render: function(data, type, full, meta) {
                     var status = {
-                        Request: {
-                            'title': 'Request',
+                        Requested: {
+                            'title': 'Requested',
                             'class': 'btn-label-warning'
                         },
-                        Terkirim: {
-                            'title': 'Terkirim',
+                        Mengirim: {
+                            'title': 'Mengirim',
                             'class': 'btn-label-brand'
                         },
                         Diterima: {
@@ -725,8 +722,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 100,
                 render: function(data, type, full, meta) {
                     var status = {
-                        Request: {'href': 'request_stock_detail_request.html'},
-                        Terkirim: {'href': 'request_stock_detail_terkirim.html'},
+                        Requested: {'href': 'request_stock_detail_request.html'},
+                        Mengirim: {'href': 'request_stock_detail_terkirim.html'},
                         Diterima: {'href': 'request_stock_detail_diterima.html'}
                     }
                     return `

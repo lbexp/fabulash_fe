@@ -2126,7 +2126,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
 					<i class="flaticon-more"></i>
 					</button>
 					<div style="min-width:9rem;padding:5px;" class="dropdown-menu dropdown-menu-right">
-					<button onClick="swalApprove();" class="dropdown-item btn btn-secondary kt-margin-b-5"> <i class="fa fa-check" style="width: 22px;"></i> Approve</button>
+					<button data-toggle="modal" data-target="#kt_modal_approve" class="dropdown-item btn btn-secondary kt-margin-b-5"> <i class="fa fa-check" style="width: 22px;"></i> Approve</button>
 					<button onClick="swalReject();" class="dropdown-item btn btn-secondary"> <i class="fa fa-times" style="width: 22px;"></i> Reject</button>
                     </div>`;
                 },
@@ -2623,17 +2623,23 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 35,
                 orderable: false,
             }, {
-                data: 'nama_pengeluaran',
+                data: 'namaBarang',
                 title: 'Pengeluaran'
             }, {
-                data: 'quantity',
-                title: 'Quantity'
+                data: 'qtyBesar',
+                title: 'Satuan Besar (qty)'
+            },  {
+                data: 'qtySedang',
+                title: 'Satuan Sedang (qty)'
             }, {
+                data: 'qtyKecil',
+                title: 'Satuan Kecil (qty)'
+            },{
                 data: 'harga',
                 title: 'Harga'
             }, ],
             columnDefs: [{
-                targets: [0, 1, 2, 3],
+                targets: [0, 1, 2, 3,4,5],
                 className: 'text-center',
                 orderable: false,
             }],

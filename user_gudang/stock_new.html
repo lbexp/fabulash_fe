@@ -357,6 +357,17 @@ License: You must have a valid license purchased only from themeforest(the above
 													<label class="kt-margin-b-15" for="request_notes">Notes: </label>
 													<textarea class="form-control" id="request_notes" name="request_notes" rows="3" placeholder="Notes"></textarea>
 												</div>
+												<div class="form-group form-group-last">
+													<label class="kt-margin-t-15" for="jenis_pembayaran">Jenis Pembayaran: </label>
+													<select id="jenis_pembayaran" class="custom-select form-control">
+														<option selected="">-Pilih Jenis Pembayaran-</option>
+														<option value="cash">Cash</option>
+														<option value="edc mandiri">EDC Mandiri</option>
+														<option value="edc bni">EDC BNI</option>
+														<option value="transfer mandiri">Transfer Mandiri</option>
+														<option value="transfer bni">Transfer BNI</option>
+													</select>
+												</div>
 	                                            <div style="text-align: center; margin-top: 30px">
 	                                                <button type="submit" class="btn btn-success" id="kt_sweetalert_request_berhasil">Submit</button>
 	                                            </div>
@@ -487,7 +498,12 @@ License: You must have a valid license purchased only from themeforest(the above
 							</div>
 						</td>
 						<td class="text-center">
-							<input type="number" class="form-control request_required" name="stock_harga`+ i +`" placeholder="Harga">
+							<div class="form-group kt-margin-b-0">
+								<div class="input-group">
+									<div class="input-group-append"><span class="input-group-text" name="stock_satuan_harga`+ i +`">Rp.</span></div>
+									<input type="number" class="form-control request_required harga" name="stock_harga`+ i +`" placeholder="Harga">
+								</div>
+							</div>
 						</td>
                     </tr>`
 				);
@@ -496,6 +512,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 			$('document').ready(function () {
 				$('#item_add').click();
+				
 			});
 
             // Sweetalert
@@ -554,6 +571,11 @@ License: You must have a valid license purchased only from themeforest(the above
 				</svg>`);
 			});
 
+        </script>
+        <script>
+
+
+        	
         </script>
 
 		<!--end::Page Scripts -->

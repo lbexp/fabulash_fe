@@ -419,6 +419,25 @@ body {
     border-color: #278484;
 }
 
+.btn-refresh{
+    margin-left: 5px;
+}
+
+.garansi-alert{
+    margin-bottom: -20px;
+}
+
+.nav-tabs .nav-item .nav-link {
+    color: #585963;
+    font-weight: 500;
+}
+
+.nav-tabs .nav-item .nav-link.active, .nav-tabs .nav-item .nav-link:active, .nav-tabs .nav-item .nav-link:hover {
+    color:  #4bc0ba;
+    font-size: 1.1rem;
+}
+
+
 @media (max-width: 768px) {
     .table-mobile {
         width: 150%;
