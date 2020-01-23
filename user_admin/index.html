@@ -353,8 +353,36 @@ License: You must have a valid license purchased only from themeforest(the above
 												<div class="form-group">
 													<label class="form-control-label">Nama :</label>
 													<input type="text" class="form-control" type="text" id="treatment_customer_nama" name="treatment_customer_nama" placeholder="Nama">
-													<div class="kt-margin-t-10" style="padding:0px;text-align:right;">
-														<button type="button" class="btn btn-link" style="padding-right:0px;" data-toggle="modal" data-target="#kt_modal_customer"><i class="flaticon-add"></i>Tambah Pelanggan</button>
+												</div>
+												<div class="form-group">
+													<label class="form-control-label">Tanggal Lahir :</label>
+													<div class="input-group date">
+														<input type="text" class="form-control kt-datepicker" readonly="" placeholder="Tanggal" name="customer_lahir" name="customer_lahir">
+														<div class="input-group-append">
+															<span class="input-group-text">
+																<i class="la la-calendar-check-o"></i>
+															</span>
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="form-control-label">Email :</label>
+													<input type="email" class="form-control" type="text" id="customer_email" name="customer_email" placeholder="Email">
+												</div>
+												<div class="form-group">
+													<label class="form-control-label">Alamat :</label>
+													<input type="text" class="form-control" type="text" id="customer_alamat" name="treatment_customer_alamat" placeholder="Alamat">
+												</div>
+												<div class="form-group">
+													<label class="form-control-label">Persetujuan :</label>
+													<div class="input-group">
+														<input type="text" class="form-control form-label-brand input-group-child-normal kt-margin-r-5" value="Persetujuan" readonly>
+														<input type="text" class="form-control form-label-success input-group-child-normal kt-margin-r-5 kt-hidden" value="Setuju" readonly>
+														<input type="text" class="form-control form-label-danger input-group-child-normal kt-margin-r-5 kt-hidden" value="Ditolak" readonly>
+														<button type="button" class="btn btn-sm btn-brand" id="showtoast" style="width:auto;">Send</button>
+														<button type="button" class="btn btn-sm btn-success btn-refresh" style="width:auto;">
+															<span class="flaticon-refresh"></span>
+														</button>
 													</div>
 												</div>
 												<div class="form-group row">
