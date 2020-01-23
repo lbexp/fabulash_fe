@@ -1556,7 +1556,7 @@ var initTableTreatmentDetail = function() {
                 data: 'therapist',
                 title: 'Therapist',
                 render: function(data, type, full, meta) {
-                    return `<input name="invoice_therapist`+ i +`" type="text" class="form-control request_required" placeholder="Therapist" value="`+ data +`">`;
+                    return `<input name="invoice_therapist`+ i +`" type="text" class="form-control request_required" placeholder="Therapist" value="`+ data +`" disabled="">`;
                 }
             }, {
                 data: 'harga',
