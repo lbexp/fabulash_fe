@@ -346,6 +346,11 @@ body {
     pointer-events: none;
 } 
 
+.uppy-Dashboard-inner {
+    width: 100% !important;
+    height: : 300px !important;
+} 
+
 @media (max-width: 1024px) {
     .sidebar-logo {
         display: unset;
