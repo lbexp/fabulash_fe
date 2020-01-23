@@ -337,6 +337,15 @@ body {
     color: #fff;
 }
 
+.mt-10{
+    margin-top: 10px;
+}
+
+.treatment_barang_hapus i {
+    color: salmon;
+    pointer-events: none;
+} 
+
 @media (max-width: 1024px) {
     .sidebar-logo {
         display: unset;
