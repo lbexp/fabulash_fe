@@ -639,6 +639,29 @@ var initTableTreatmentDetail = function() {
                     return `<a href="user_admin/customer_detail.html">`+ data +`</a>`;
                 }
             }, {
+                data: 'statusx',
+                title: 'Status',
+                render: function (data, type, row, meta) {
+                    var statusx = {
+                        "Request Void": {
+                            'title': 'Request Void',
+                            'class': 'btn-label-info'
+                        },
+                        Void: {
+                            'title': 'Void',
+                            'class': 'btn-label-dark'
+                        },
+                        Cancel: {
+                            'title': 'Cancel',
+                            'class': 'btn-label-danger'
+                        },
+                    };
+                    if (typeof statusx[data] === 'undefined') {
+                        return data;
+                    }
+                    return '<span style="width:100%" class="btn btn-bold btn-sm btn-font-sm ' + statusx[data].class + '">' + statusx[data].title + '</span>';
+                }
+            }, {
                 field: 'aksi',
                 title: 'Aksi',
                 responsivePriority: -1,
@@ -651,7 +674,7 @@ var initTableTreatmentDetail = function() {
                 },
             }],
             columnDefs: [{
-                targets: [0, 1, 2, 3, 4],
+                targets: [0, 1, 2, 3, 4,5],
                 className: 'text-center',
                 orderable: true,
             }],
