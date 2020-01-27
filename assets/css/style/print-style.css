@@ -22,7 +22,8 @@ body {
 }
 
 header {
-  padding: 10px 0;
+ /* padding: 10px 0;*/
+  padding: 5px;
   margin-bottom: 30px;
 }
 
@@ -174,6 +175,15 @@ footer {
 {
   color: #41A39C;
   font-weight: 600;
+}
+
+.background {
+  border: 2px solid #999;
+  padding: 5px;
+}
+
+.total{
+  font-size: 1.4rem;
 }
 
 @media print{

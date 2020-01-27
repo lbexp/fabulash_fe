@@ -399,38 +399,38 @@ License: You must have a valid license purchased only from themeforest(the above
 							</div>
 						</div>
 
-							<!--end::Portlet-->
-						</div>
-
+						<!--end::Portlet-->
 					</div>
 
-					<!--begin::Modal-->
-					<div class="modal fade" id="kt_modal_treatment_selesai" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog modal-lg" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">Treatment Selesai</h5>
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									</button>
-								</div>
-								<form id="kt_form_treatment_selesai">
-									<div class="modal-body">
-										<div class="form-group row">
-											<label for="example-text-input" class="col-sm-4 col-form-label">No. Pesanan : </label>
+				</div>
+
+				<!--begin::Modal-->
+				<div class="modal fade" id="kt_modal_treatment_selesai" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Treatment Selesai</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								</button>
+							</div>
+							<form id="kt_form_treatment_selesai">
+								<div class="modal-body">
+									<div class="form-group row">
+										<label for="example-text-input" class="col-sm-4 col-form-label">No. Pesanan : </label>
+										<div class="col-sm-8">
+											<input type="text" class="form-control color-main-dark" name="treatment_nomor" value="#123456" readonly>
+										</div>
+									</div>
+									<div id="treatment_list">
+										<div class="form-group row kt-margin-b-10">
+											<label for="example-text-input" class="col-sm-4 col-form-label">Treatment : </label>
 											<div class="col-sm-8">
-												<input type="text" class="form-control color-main-dark" name="treatment_nomor" value="#123456" readonly>
+												<input type="text" class="form-control request_required" name="treatment_nama1" placeholder="Treatment">
 											</div>
 										</div>
-										<div id="treatment_list">
-											<div class="form-group row kt-margin-b-10">
-												<label for="example-text-input" class="col-sm-4 col-form-label">Treatment : </label>
-												<div class="col-sm-8">
-													<input type="text" class="form-control request_required" name="treatment_nama1" placeholder="Treatment">
-												</div>
-											</div>
-											<div class="form-group row">
-												<label for="example-text-input" class="col-sm-4 col-form-label">Pemakaian : </label>
-												<div class="col-sm-8" id=treatment_barang_list1>
+										<div id="container-treatment" class="form-group row">
+											<label for="example-text-input" class="col-sm-4 col-form-label">Pemakaian : </label>
+											<div class="col-sm-8" class="container_treatment" id=treatment_barang_list1>
 													<div class="col-12">
 														<div class="row">
 															<div class="col-5" style="padding-left:0px">
@@ -450,56 +450,56 @@ License: You must have a valid license purchased only from themeforest(the above
 																		<option value="pack">Pack</option>
 																		<option value="box">Box</option>
 																	</select>
-																	<button type="button" class="btn btn-icon btn-link treatment_barang_hapus" id="1" data-counter="1"><i class="fa fa-times"></i></button>
+																	<button style="pointer-events: none" type="button" class="btn btn-icon btn-link" id="btn_hapus_input" data-id="1"><i class="fa fa-times"></i></button>
 																</div>
 															</div>
 															<div class="offset-5 col-7 kt-align-right mt-10">
 																<button type="button" class="btn btn-success treatment_barang_add" id="1" data-counter="1"><i class="fa fa-plus"></i>Pemakaian</button>
 															</div>
 														</div>
-													</div>
-													<span class="form-text text-muted kt-hidden"></span>
-												</div>
-											</div>
-										</div>
-										<div class="form-group justify-end">
-											<button type="button" class="btn btn-link" style="padding-right:0px;" id="treatment_add"><i class="flaticon-add"></i>Tambah Treatment</button>
-										</div>
-										<div class="form-group">
-											<label for="example-text-input" class="col-form-label">Foto</label>
-											<div class="kt-uppy" id="kt_uppy_2">
-												<div class="kt-uppy__dashboard"></div>
-												<div class="kt-uppy__progress"></div>
+													</div>\
+												<span class="form-text text-muted kt-hidden"></span>
 											</div>
 										</div>
 									</div>
-									<div class="modal-footer" style="justify-content:center;">
-										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-										<button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil">Submit</button>
+									<div class="form-group justify-end">
+										<button type="button" class="btn btn-link" style="padding-right:0px;" id="treatment_add"><i class="flaticon-add"></i>Tambah Treatment</button>
 									</div>
-								</form>
-							</div>
+									<div class="form-group">
+										<label for="example-text-input" class="col-form-label">Foto</label>
+										<div class="kt-uppy" id="kt_uppy_2">
+											<div class="kt-uppy__dashboard"></div>
+											<div class="kt-uppy__progress"></div>
+										</div>
+									</div>
+								</div>
+								<div class="modal-footer" style="justify-content:center;">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+									<button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil">Submit</button>
+								</div>
+							</form>
 						</div>
 					</div>
-
-					<!--end::Modal-->
 				</div>
 
-				<!-- end:: Content -->
+				<!--end::Modal-->
 			</div>
 
-			<!-- begin:: Footer -->
-			<div class="kt-footer  kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop" id="kt_footer">
-				<div class="kt-container  kt-container--fluid " style="justify-content: center;">
-					<div class="kt-footer__copyright">
-						2019&nbsp;&copy;&nbsp;<a href="http://keenthemes.com/metronic" target="_blank" class="kt-link">Upana Studio</a>
-					</div>
-				</div>
-			</div>
-
-			<!-- end:: Footer -->
+			<!-- end:: Content -->
 		</div>
+
+		<!-- begin:: Footer -->
+		<div class="kt-footer  kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop" id="kt_footer">
+			<div class="kt-container  kt-container--fluid " style="justify-content: center;">
+				<div class="kt-footer__copyright">
+					2019&nbsp;&copy;&nbsp;<a href="http://keenthemes.com/metronic" target="_blank" class="kt-link">Upana Studio</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- end:: Footer -->
 	</div>
+</div>
 </div>
 
 <!-- end:: Page -->
@@ -581,7 +581,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					</div>
 					<div class="form-group row">
 					<label for="example-text-input" class="col-sm-4 col-form-label">Pemakaian : </label>
-					<div class="col-sm-8" id="treatment_barang_list`+ i +`">
+					<div class="col-sm-8" class="" id="treatment_barang_list`+ i +`">
 					<div class="col-12">
 					<div class="row">
 					<div class="col-5" style="padding-left:0px">
@@ -604,7 +604,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<button type="button" class="btn btn-icon btn-link treatment_barang_hapus" id="`+ i +`" data-counter="1"><i class="fa fa-times"></i></button>
 					</div>
 					<div class="offset-5 col-7 kt-align-right mt-10">
-					<button type="button" class="btn btn-success treatment_barang_add" id="`+ i +`" data-counter="1"><i class="fa fa-plus"></i>Pemakaian</button>
+					<button type="button" class="btn btn-success treatment_barang_add" id="`+ i +`"  data-counter="1"><i class="fa fa-plus"></i>Pemakaian</button>
 					</div>
 					</div>
 					</div>
@@ -615,14 +615,15 @@ License: You must have a valid license purchased only from themeforest(the above
 					)
 			});
 
+			
+
 			$(document).on('click', '.treatment_barang_add', function() {
 				var counter =  $(this).data('counter');
 				counter++;
 				$(this).data('counter', counter);
 				var barang_counter = $(this).attr('id');
-				console.log(counter);
 				var barang_id = '#treatment_barang_list' + barang_counter;
-				$("#treatment_list").contents().find(barang_id).prepend(`<div class="col-12 kt-margin-b-5">
+				$("#treatment_list").contents().find(barang_id).prepend(`<div class="col-12 kt-margin-b-5 input_pemakaian"data-id="`+counter+`">
 					<div class="row">
 					<div class="col-5" style="padding-left:0px">
 					<select name="treatment_barang`+ barang_counter +`_`+ counter +`" class="custom-select form-control kt-margin-r-10 input-group-child-normal request_required">
@@ -643,11 +644,16 @@ License: You must have a valid license purchased only from themeforest(the above
 					<option value="pack">Pack</option>
 					<option value="box">Box</option>
 					</select>
-					<button type="button" class="btn btn-icon btn-link treatment_barang_hapus" id="`+ i +`" data-counter="1"><i class="fa fa-times"></i></button>
+					<button type="button" class="btn btn-icon btn-link treatment_barang_hapus" data-id="`+counter+`" id="btn_hapus_input" ><i class="fa fa-times"></i></button>
 					</div>
 					</div>
 					</div>
 					</div>`);
+			});
+
+			$('#container-treatment').on('click','.treatment_barang_hapus', function (e) {
+				let id = $(this).data('id');
+				$('.input_pemakaian[data-id="' + id + '"]').remove();
 			});
 
 			// Sweetalert
