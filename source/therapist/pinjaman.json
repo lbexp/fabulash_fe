@@ -9,6 +9,8 @@
         "nominal": "Rp. 3.000.000,00",
         "termin": "12 Bulan",
         "notes": "Lorem ipsum dolor sit amet",
+        "namaBulan" : "Februari",
+        "nominalPembayaran" : "Rp200.000",
         "status": "approved"
     }, {
         "no": 2,
@@ -16,6 +18,8 @@
         "nominal": "Rp. 3.000.000,00",
         "termin": "12 Bulan",
         "notes": "Lorem ipsum dolor sit amet",
+        "namaBulan" : "Februari",
+        "nominalPembayaran" : "Rp200.000",
         "status": "rejected"
     }, {
         "no": 3,
@@ -23,6 +27,8 @@
         "nominal": "Rp. 3.000.000,00",
         "termin": "12 Bulan",
         "notes": "Lorem ipsum dolor sit amet",
+        "namaBulan" : "Februari",
+        "nominalPembayaran" : "Rp200.000",
         "status": "approved"
     }, {
         "no": 4,
@@ -30,6 +36,8 @@
         "nominal": "Rp. 3.000.000,00",
         "termin": "12 Bulan",
         "notes": "Lorem ipsum dolor sit amet",
+        "namaBulan" : "Februari",
+        "nominalPembayaran" : "Rp200.000",
         "status": "rejected"
     }, {
         "no": 5,
@@ -37,6 +45,8 @@
         "nominal": "Rp. 3.000.000,00",
         "termin": "12 Bulan",
         "notes": "Lorem ipsum dolor sit amet",
+        "namaBulan" : "Februari",
+        "nominalPembayaran" : "Rp200.000",
         "status": "approved"
     }, {
         "no": 6,
@@ -44,6 +54,8 @@
         "nominal": "Rp. 3.000.000,00",
         "termin": "12 Bulan",
         "notes": "Lorem ipsum dolor sit amet",
+        "namaBulan" : "Februari",
+        "nominalPembayaran" : "Rp200.000",
         "status": "rejected"
     }, {
         "no": 7,
@@ -51,6 +63,8 @@
         "nominal": "Rp. 3.000.000,00",
         "termin": "12 Bulan",
         "notes": "Lorem ipsum dolor sit amet",
+        "namaBulan" : "Februari",
+        "nominalPembayaran" : "Rp200.000",
         "status": "approved"
     }, {
         "no": 8,
@@ -58,6 +72,8 @@
         "nominal": "Rp. 3.000.000,00",
         "termin": "12 Bulan",
         "notes": "Lorem ipsum dolor sit amet",
+        "namaBulan" : "Februari",
+        "nominalPembayaran" : "Rp200.000",
         "status": "rejected"
     }]
 }

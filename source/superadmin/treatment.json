@@ -19,7 +19,8 @@
         "complaint": "Gatal-gatal",
         "waktu_selesai": "10.00 WITA",
         "harga": "Rp. 350.000,00",
-        "kategori": "Eyelash"
+        "kategori": "Eyelash",
+        "komisi": "jenis komisi"
     }, {
         "no": 2,
         "tanggal": "29 Agustus 2019",
@@ -36,7 +37,8 @@
         "complaint": "Gatal-gatal",
         "waktu_selesai": "10.00 WITA",
         "harga": "Rp. 350.000,00",
-        "kategori": "Eyelash"
+        "kategori": "Eyelash",
+        "komisi": "jenis komisi"
     }, {
         "no": 3,
         "tanggal": "29 Agustus 2019",
@@ -53,7 +55,8 @@
         "complaint": "Gatal-gatal",
         "waktu_selesai": "10.00 WITA",
         "harga": "Rp. 350.000,00",
-        "kategori": "Eyelash"
+        "kategori": "Eyelash",
+        "komisi": "jenis komisi"
     }, {
         "no": 4,
         "tanggal": "29 Agustus 2019",
@@ -69,7 +72,8 @@
         "complaint": "Gatal-gatal",
         "waktu_selesai": "10.00 WITA",
         "harga": "Rp. 350.000,00",
-        "kategori": "Eyelash"
+        "kategori": "Eyelash",
+        "komisi": "jenis komisi"
     }, {
         "no": 5,
         "tanggal": "29 Agustus 2019",
@@ -86,7 +90,8 @@
         "complaint": "Gatal-gatal",
         "waktu_selesai": "10.00 WITA",
         "harga": "Rp. 350.000,00",
-        "kategori": "Eyelash"
+        "kategori": "Eyelash",
+        "komisi": "jenis komisi"
     }, {
         "no": 6,
         "tanggal": "29 Agustus 2019",
@@ -103,7 +108,8 @@
         "complaint": "Gatal-gatal",
         "waktu_selesai": "10.00 WITA",
         "harga": "Rp. 350.000,00",
-        "kategori": "Eyelash"
+        "kategori": "Eyelash",
+        "komisi": "jenis komisi"
     }, {
         "no": 7,
         "tanggal": "29 Agustus 2019",
@@ -120,7 +126,8 @@
         "complaint": "Gatal-gatal",
         "waktu_selesai": "10.00 WITA",
         "harga": "Rp. 350.000,00",
-        "kategori": "Eyelash"
+        "kategori": "Eyelash",
+        "komisi": "jenis komisi"
     }, {
         "no": 8,
         "tanggal": "29 Agustus 2019",
@@ -137,6 +144,7 @@
         "complaint": "Gatal-gatal",
         "waktu_selesai": "10.00 WITA",
         "harga": "Rp. 350.000,00",
-        "kategori": "Eyelash"
+        "kategori": "Eyelash",
+        "komisi": "jenis komisi"
     }]
 }

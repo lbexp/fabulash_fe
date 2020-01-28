@@ -1163,7 +1163,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         var table = $('#table_pinjaman_list_request');
         // begin first table
         table.DataTable({
-            order: [],
+             order: [],
+            dom: `<'row'<'col-sm-12 col-md-6 dataTables_info'<'total'>><'col-sm-12 col-md-6'f>><'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
             responsive: true,
             ajax: {
                 url: 'source/therapist/pinjaman.json',
@@ -1220,6 +1221,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 orderable: false,
             }],
         });
+        $("div.total").html('<h5>Total Pinjaman : <span class="color-main-dark" name="pembayaran_nominal">Rp. 300.000,00</span></h5>');
     };
 
     var initTablePinjamanCurrent = function () {
@@ -1266,7 +1268,51 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }],
         });
 
-        $("div.total").html('<h5>Total Pinjaman : <span class="color-main-dark" name="pembayaran_nominal">Rp. 300.000,00</span></h5>');
+        // $("div.total").html('<h5>Total Pinjaman : <span class="color-main-dark" name="pembayaran_nominal">Rp. 300.000,00</span></h5>');
+    };
+
+    var initTablePinjamanHistori = function () {
+        var table = $('#table_pinjaman_histori');
+        // begin first table
+        table.DataTable({
+            order: [],
+            dom: `<'row'<'col-sm-12 col-md-6 dataTables_info'<'total'>><'col-sm-12 col-md-6'f>><'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
+            responsive: true,
+            ajax: {
+                url: 'source/therapist/pinjaman.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'nama_pinjaman',
+                title: 'Nama Pinjaman'
+            }, {
+                data: 'namaBulan',
+                title: 'Nama Bulan'
+            }, {
+                data: 'nominalPembayaran',
+                title: 'Nominal Pembayaran'
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+
+       
     };
 
     var initTableRequestInventoryRequestDetailRequest = function () {
@@ -1421,6 +1467,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTablePinjamanCurrent();
             initTableRequestInventoryRequestDetailRequest();
             initTableRequestInventoryRequestDetailDisetujui();
+            initTablePinjamanHistori();
         },
     };
 }();
