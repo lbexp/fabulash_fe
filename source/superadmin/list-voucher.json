@@ -1,0 +1,37 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "deskripsi": "Tiket.com",
+        "jumlah": "50",
+        "nominal": "Rp200.000",
+        "aksi": null
+    }, {
+        "no": 2,
+        "deskripsi": "Traveloka",
+        "jumlah": "100",
+        "nominal": "Rp100.000",
+        "aksi": null
+    }, {
+        "no": 3,
+        "deskripsi": "Matahari Mall",
+        "jumlah": "200",
+        "nominal": "Rp50.000",
+        "aksi": null
+    }, {
+        "no": 4,
+        "deskripsi": "Tokopedia",
+        "jumlah": "10",
+        "nominal": "Rp100.000",
+        "aksi": null
+    }, {
+        "no": 5,
+        "deskripsi": "Shoppe",
+        "jumlah": "150",
+        "nominal": "Rp100.000",
+        "aksi": null
+    }]
+}

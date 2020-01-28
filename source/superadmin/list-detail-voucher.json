@@ -1,0 +1,37 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "kode": "1412-3451-8948-9894",
+        "status": "used",
+        "kode_spk": "123466",
+        "costumer": "Darnilia"
+    }, {
+        "no": 2,
+        "kode": "4223-8931-75JG-OF92",
+        "status": "used",
+        "kode_spk": "174565",
+        "costumer": "Shanti"
+    }, {
+        "no": 3,
+        "kode": "JF29-9FJM-765M-019K",
+        "status": "used",
+        "kode_spk": "954956",
+        "costumer": "Gloria"
+    }, {
+        "no": 4,
+        "kode": "0192-065-NVKJ8-MVLO",
+        "status": "not used",
+        "kode_spk": "024567",
+        "costumer": "Nuri"
+    }, {
+        "no": 5,
+        "kode": "X654-ZSDR-IDMC-MZLA",
+        "status": "not used",
+        "kode_spk": "867547",
+        "costumer": "Vero"
+    }]
+}

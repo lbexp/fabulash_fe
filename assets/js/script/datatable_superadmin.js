@@ -1210,6 +1210,147 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
         }).draw();
     };
 
+    var initTableVoucher = function() {
+        var table = $('#table_voucher');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            info: true,
+            paging: true,
+            lengthChange: true,
+            searching: true,
+            responsive: true,
+            ajax: {
+                url: 'source/superadmin/list-voucher.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'deskripsi',
+                title: 'Deskripsi'
+            },  {
+                data: 'nominal',
+                title: 'Nominal'
+            },{
+                data: 'jumlah',
+                title: 'Jumlah'
+            }, {
+                field: 'aksi',
+                title: 'Aksi',
+                responsivePriority: -1,
+                className: 'text-center',
+                orderable: false,
+                width: 100,
+                render: function(data, type, full, meta) {
+                    return `
+                    <a href="user_superadmin/voucher_detail.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
+                },
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    };
+
+    var initTableDetailVoucher = function() {
+        var table = $('#table_detail_voucher');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            info: true,
+            paging: true,
+            lengthChange: true,
+            searching: true,
+            responsive: true,
+            ajax: {
+                url: 'source/superadmin/list-detail-voucher.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'kode',
+                title: 'Kode'
+            },  {
+                data: 'status',
+                title: 'Status',
+                 render: function(data, type, row, meta) {
+                    var status = {
+                        used: {
+                            'title': 'Used',
+                            'class': 'btn-label-success'
+                        },
+                        "not used": {
+                            'title': 'Not Used',
+                            'class': 'btn-label-dark'
+                        }
+                    };
+                    if (typeof status[data] === 'undefined') {
+                        return data;
+                    }
+                    return '<span style="width:100%" class="btn btn-bold btn-sm btn-font-sm ' + status[data].class + '">' + status[data].title + '</span>';
+                }
+            }, {
+                data: 'kode_spk',
+                title: 'Kode SPK',
+                render: function(data, type, full, meta) {
+                    return `<a href="user_superadmin/treatment_detail_paid.html">`+ data +`</a>`;
+                }
+            },{
+                data: 'costumer',
+                title: 'Costomer'
+            },],
+            columnDefs: [{
+                targets: [0, 1, 2, 3,4],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        datatable.on('order.dt search.dt', function() {
+            datatable.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    };
+
     var initTableKaryawanTreatment = function() {
         // begin first table
         var table = $('#table_karyawan_treatment').DataTable({
@@ -3590,6 +3731,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableInventoryStudioDetailOut();
             initTableInventoryTherapist();
             initTableInventoryTherapistView();
+            initTableVoucher();
+            initTableDetailVoucher();
         },
     };
 }();
