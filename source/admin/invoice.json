@@ -7,11 +7,15 @@
         "no": 1,
         "treatment": "Eyelash Extension",
         "therapist": "Ica",
-        "harga": "Rp 150.000,00"
+        "harga": "Rp 150.000,00",
+        "namaKostumer":"Darnilia",
+        "aksi":null
     }, {
         "no": 2,
         "treatment": "Eyelash Extension",
         "therapist": "Ica",
-        "harga": "Rp 150.000,00"
+        "harga": "Rp 150.000,00",
+          "namaKostumer":"Sarinah",
+        "aksi": null
     }]
 }

@@ -123,7 +123,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
 
     var initTablePengeluaran = function() {
         // begin first table
-        var table = $('#treatment_details_done').DataTable({
+        var table = $('#table_finance_pengeluaran').DataTable({
             order: [],
             responsive: true,
             buttons: [
@@ -450,6 +450,52 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }, {
                 data: 'harga',
                 title: 'Harga'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+     var initTableCustomerTTD = function() {
+        var table = $('#table_customer_ttd');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/admin/list_costumer.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'namaKostumer',
+                title: 'Nama Kostumer'
+            }, {
+                data: 'aksi',
+                title: 'Aksi',
+                 render: function(data, type, full, meta) {
+                    return `
+                    <a href="user_administrasi/terms_condition.html" class="btn btn-sm btn-brand" style="color:white;border-radius:2rem"><i class="fa fa-info-circle"></i> Rincian</a>`;
+                },
             }, ],
             columnDefs: [{
                 targets: [0, 1, 2],
@@ -1640,6 +1686,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableInvoiceEdit();
             initTablePengeluaran();
             initTablePemasukan();
+            initTableCustomerTTD();
         },
     };
 }();

@@ -349,7 +349,16 @@ body {
 .uppy-Dashboard-inner {
     width: 100% !important;
     height: : 300px !important;
-} 
+}
+
+#termsCondition {
+    color: #212121;
+}
+
+#signatureCanvas{
+    border: 1px solid #999;
+    border-radius: 10px;
+}
 
 @media (max-width: 1024px) {
     .sidebar-logo {
