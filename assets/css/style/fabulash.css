@@ -358,6 +358,8 @@ body {
 #signatureCanvas{
     border: 1px solid #999;
     border-radius: 10px;
+    height: 158px;
+    width: 308px;
 }
 
 @media (max-width: 1024px) {
