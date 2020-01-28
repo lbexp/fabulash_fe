@@ -123,7 +123,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
 
     var initTablePengeluaran = function() {
         // begin first table
-        var table = $('#table_finance_pengeluaran').DataTable({
+        var table = $('#treatment_details_done').DataTable({
             order: [],
             responsive: true,
             buttons: [
@@ -375,50 +375,50 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }],
         });
 
-table.on('order.dt search.dt', function() {
-    table.column(0, {
-        search: 'applied',
-        order: 'applied'
-    }).nodes().each(function(cell, i) {
-        cell.innerHTML = i + 1;
-    });
-}).draw();
-
-$('#datepicker_treatment_active').on('change', function(e) {
-    e.preventDefault();
-    var params = {};
-    var i = $(this).data('col-index');
-    if (params[i]) {
-        params[i] += '|' + $(this).val();
-    } else {
-        params[i] = $(this).val();
-    }
-    $.each(params, function(i, val) {
-                // apply search params to datatable
-                table.column(i).search(val ? val : '', false, false);
+        table.on('order.dt search.dt', function() {
+            table.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
             });
-    table.table().draw();
-});
+        }).draw();
 
-$('#search_treatment_active').on('keyup', function() {
-    table.search(this.value).draw();
-});
+        $('#datepicker_treatment_active').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
+            $.each(params, function(i, val) {
+                        // apply search params to datatable
+                        table.column(i).search(val ? val : '', false, false);
+                    });
+            table.table().draw();
+        });
 
-$('#datepicker_treatment_active').datepicker({
-    todayHighlight: true,
-    language: 'id',
-    rtl: KTUtil.isRTL(),
-    todayBtn: "linked",
-    clearBtn: true,
-    templates: {
-        leftArrow: '<i class="la la-angle-left"></i>',
-        rightArrow: '<i class="la la-angle-right"></i>',
-    },
-})/*.datepicker("setDate", new Date());*/
-};
+        $('#search_treatment_active').on('keyup', function() {
+            table.search(this.value).draw();
+        });
 
-var initTableTreatmentDetail = function() {
-    var table = $('#table_treatment_detail');
+        $('#datepicker_treatment_active').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        })/*.datepicker("setDate", new Date());*/
+    };
+
+    var initTableTreatmentDetail = function() {
+        var table = $('#table_treatment_detail');
         // begin first table
         table.DataTable({
             order: [],
@@ -958,6 +958,51 @@ var initTableTreatmentDetail = function() {
             }, {
                 data: 'waktu_mulai',
                 title: 'Waktu Mulai'
+            }, ],
+            columnDefs: [{
+                targets: [0, 1, 2, 3],
+                className: 'text-center',
+                orderable: false,
+            }],
+        });
+    };
+
+    var initTableSPKDone2 = function () {
+        var table = $('.table_spk_done2');
+        // begin first table
+        table.DataTable({
+            order: [],
+            info: false,
+            paging: false,
+            lengthChange: false,
+            searching: false,
+            responsive: true,
+            ajax: {
+                url: 'source/admin/spk.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'null',
+                title: 'No',
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+                width: 35,
+                orderable: false,
+            }, {
+                data: 'pemakaian',
+                title: 'Pemakaian'
+            }, {
+                data: 'jumlah',
+                title: 'Jumlah'
+            }, {
+                data: 'satuan',
+                title: 'Satuan'
             }, ],
             columnDefs: [{
                 targets: [0, 1, 2, 3],
@@ -1583,6 +1628,7 @@ var initTableTreatmentDetail = function() {
             initTableCustomer();
             initTableCustomerDetail();
             initTableSPKOngoing();
+            initTableSPKDone2();
             initTableSPKDone();
             initTableSPKPaid();
             initTableInvoice();

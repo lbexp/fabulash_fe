@@ -12,7 +12,10 @@
         "complaint": "lorem ipsum dolor sit amet",
         "inventory": "lorem ipsum dolor sit amet",
         "waktu_mulai": "08.00 WITA",
-        "durasi": "5 Jam"
+        "durasi": "5 Jam",
+        "pemakaian": "Bulu Mata 11",
+        "jumlah": "5",
+        "satuan": "pcs"
     }, {
         "no": 2,
         "tanggal": "2 Desember 2019",
@@ -22,6 +25,9 @@
         "complaint": "lorem ipsum dolor sit amet",
         "inventory": "lorem ipsum dolor sit amet",
         "waktu_mulai": "08.00 WITA",
-        "durasi": "5 Jam"
+        "durasi": "5 Jam",
+        "pemakaian": "Bulu Mata 11",
+        "jumlah": "5",
+        "satuan": "pcs"
     }]
 }
