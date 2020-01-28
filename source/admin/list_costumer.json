@@ -1,0 +1,35 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "namaKostumer":"Darnilia",
+        "aksi":null
+    }, {
+        "no": 2,
+         "namaKostumer":"Sarinah",
+        "aksi": null
+    },{
+        "no": 3,
+         "namaKostumer":"Wardah",
+        "aksi": null
+    },{
+        "no": 4,
+         "namaKostumer":"Velo",
+        "aksi": null
+    },{
+        "no": 5,
+         "namaKostumer":"Diana",
+        "aksi": null
+    },{
+        "no": 6,
+         "namaKostumer":"Shanaz",
+        "aksi": null
+    },{
+        "no": 7,
+         "namaKostumer":"Winda",
+        "aksi": null
+    }]
+}
