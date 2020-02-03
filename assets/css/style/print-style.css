@@ -177,7 +177,7 @@ footer {
 }
 
 .background {
-  border: 2px solid #999;
+  border: 2px solid #E0E0E0;
   padding: 5px;
 }
 
@@ -185,6 +185,10 @@ footer {
   font-size: 1.4rem;
 }
 
+.line-therapist {
+    border-top: 2px solid #BDBDBD;
+    /*border-bottom: 2px solid #BDBDBD;*/
+}
 
 
 @media print{
