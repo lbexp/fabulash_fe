@@ -302,10 +302,8 @@ License: You must have a valid license purchased only from themeforest(the above
 						<!-- end:: Content Head -->
 
 						<!-- begin:: Content -->
-						<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
-
+							<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
                             <div class="row">
-
 								<div class="col-lg-8 col-xl-6 offset-lg-2 offset-xl-3">
 									<div class="kt-portlet kt-portlet--mobile">
 										<div class="kt-portlet__head">
@@ -315,49 +313,23 @@ License: You must have a valid license purchased only from themeforest(the above
 												</h3>
 											</div>
 											<div class="kt-portlet__head-toolbar">
-												<div class="mobile-show">
-													<div class="dropdown dropdown-inline kt-margin-l-5">
-														<a href="#" data-ktportlet-tool="toggle" class="btn btn-md btn-icon btn-icon-md btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="la la-angle-down"></i></a>
-														<div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-149px, 33px, 0px);">
-															<ul class="kt-nav nav" style="padding:0px;" role="tablist">
-																<li class="kt-nav__item nav-item">
-																	<a class="kt-nav__link nav-link active" data-toggle="tab" href="#tab-spk" role="tab" aria-selected="true">
-																		<i class="kt-nav__link-icon flaticon2-file-1"></i>
-																		<span class="kt-nav__link-text">SPK</span>
-																	</a>
-																</li>
-																<li class="kt-nav__item nav-item">
-																	<a class="kt-nav__link nav-link" data-toggle="tab" href="#tab-invoice" role="tab" aria-selected="true">
-																		<i class="kt-nav__link-icon flaticon2-file-1"></i>
-																		<span class="kt-nav__link-text">Invoice</span>
-																	</a>
-																</li>
-															</ul>
-														</div>
-													</div>
-												</div>
-												<div class="mobile-hidden">
-													<ul class="nav nav-pills" role="tablist">
-														<li class="nav-item">
-															<a class="nav-link active" data-toggle="tab" href="#tab-spk" role="tab" aria-selected="true">
-																SPK
-															</a>
-														</li>
-														<li class="nav-item">
-															<a class="nav-link" data-toggle="tab" href="#tab-invoice" role="tab" aria-selected="false">
-																Invoice
-															</a>
-														</li>
-													</ul>
-												</div>
+												<ul class="nav nav-pills" role="tablist">
+													<li class="nav-item">
+														<a class="nav-link active" data-toggle="tab" href="#tab-spk" role="tab" aria-selected="true">
+															SPK
+														</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" data-toggle="tab" href="#tab-invoice" role="tab" aria-selected="false">
+															Invoice
+														</a>
+													</li>
+												</ul>
 											</div>
 										</div>
 									</div>
 								</div>
-
 								<div class="col-lg-8 col-xl-6 offset-lg-2 offset-xl-3">
-
-									<!--begin::Portlet-->
 									<div class="kt-portlet kt-portlet--mobile" id="print-section">
 										<div class="kt-portlet__head centered-content">
 											<div class="kt-portlet__head-label">
@@ -365,61 +337,202 @@ License: You must have a valid license purchased only from themeforest(the above
 													Treatment Details
 												</h3>
 											</div>
+											<div class="kt-portlet__head-toolbar">
+												<a href="user_admin/listTreatment_detail_done_edit.html" class="btn btn-outline-success toolbar-absolute kt-hidden"><i class="la la-edit"></i> Edit</a>
+											</div>
 										</div>
-										<div class="kt-portlet__body">
-											<div class="tab-content">
-												<div class="tab-pane active" id="tab-spk" role="tabpanel">
-													<div style="margin-bottom:20px;">
-		                                                <h5 class="color-main-dark" name="nomor_pesanan">#123456</h5>
-		                                                <span class="kt-font-bold" name="customer_nama">Darnilla</span><br>
-														<span class="kt-font-bold">Tanggal : <span class="kt-font-boldest" name="treatment_tanggal">2 Oktober 2019</span></span>
-		                                            </div>
-		        									<table class="table table-bordered table-hover table-checkable" id="table_spk_done"></table>
-													<div class="row" style="margin-top:60px;">
-														<div class="col-sm-6 margin-mobile-b-10" style="padding-right:0px;">
-															<table class="col-sm-12" style="bottom: 0px; position: absolute;">
-				                                                <tr>
-				                                                    <th width="35%">Waktu Mulai</th>
-				                                                    <th width="10%">:</th>
-				                                                    <th width="55%"style="font-weight:500;" name="waktu_mulai">08.00 WITA</th>
-				                                                </tr>
-				                                                <tr>
-				                                                    <th>Waktu Selesai</th>
-				                                                    <th>:</th>
-				                                                    <th style="font-weight:500;" name="waktu_selesai">10.00 WITA</th>
-				                                                </tr>
-				                                            </table>
+										<div class="tab-content">
+											<div class="tab-pane active" id="tab-spk" role="tabpanel">
+												<div class="kt-portlet__body">
+		                                            <div class="row" style="margin-bottom:20px;">
+														<div class="col-6">
+			                                                <h5 class="color-main-dark" name="nomor_pesanan">#123456</h5>
+			                                                <a href="user_admin/customer_detail.html"><span class="kt-font-bold" name="customer_nama">Darnilla</span></a>&nbsp;<br>
+			                                                <span class="kt-font-bold" name="customer_nohp">081342497228</span>&nbsp;<br>
+			                                                <span class="kt-font-bold" name="customer_alamat">Jl. Areopala 6</span>&nbsp;<br>
 														</div>
-														<div class="col-sm-6 mobile_align_left" style="text-align: right;">
-															<span class="kt-font-bold">Tipe Complaint :</span>&nbsp;<br>
-															<span name="complaint_tipe">Eyelash Extension</span>&nbsp;<br>
-															<span class="kt-font-bold">Complaint :</span>&nbsp;<br>
-															<span name="complaint_text" style="word-wrap: break-word">nama saya fiqar aprialim, saya tidak terima dengan treatment yang diberikan untuk kuku dan bulu mata saya</span>&nbsp;<br>
+														<div class="col-6">
+															<div class="row">
+																<div class="col-12" style="text-align: right; margin-bottom:5px;">
+																	<button class="col-5 btn btn-warning no-print kt-hidden" onclick="printFunction()">Print</button>
+																</div>
+															</div>
 														</div>
 		                                            </div>
+		                                            <table class="col-sm-12 col-md-8 col-lg-6 " style="margin-bottom:0px">
+		                                            	<tr>
+		                                            		<th width="30%">Tanggal</th>
+		                                            		<th width="10%">:</th>
+		                                            		<th width="60%"style="font-weight:500;" name="treatment_hari">2 Oktober 2019</th>
+		                                            	</tr>
+		                                            	<tr>
+		                                            		<th width="35%">Waktu Mulai</th>
+		                                            		<th width="10%">:</th>
+		                                            		<th width="55%"style="font-weight:500;" name="waktu_mulai">08.00 WITA</th>
+		                                            	</tr>
+		                                            	<tr>
+		                                            		<th>Waktu Selesai</th>
+		                                            		<th>:</th>
+		                                            		<th style="font-weight:500;" name="waktu-selesai">10.00 WITA</th>
+		                                            	</tr>
+		                                            </table>
+		                                            <table class="table table-bordered table-hover table-checkable kt-hidden" id="table_spk_done"></table>
+													
+		                                            <!-- treatment list -->
+		                                            <section class="treatmentList" id="treatmentList">
+		                                            	<div class="container">
+		                                            		<div class="listTreatment">
+		                                            			<div class="kt-separator kt-separator--md"></div>
+		                                            			<div class="list">
+		                                            				<table class="col-sm-12 col-md-8 col-lg-6 " style="margin-bottom:0px">
+		                                            					<tr>
+		                                            						<th class="treatmentHeader" width="30%">Treatment</th>
+		                                            						<th class="treatmentHeader" width="10%">:</th>
+		                                            						<th class="treatmentHeader" width="60%"style="font-weight:500;" name="jenisTreatment">Eylesh Extension</th>
+		                                            					</tr>
+		                                            					<tr>
+		                                            						<th width="35%">Therapist</th>
+		                                            						<th width="10%">:</th>
+		                                            						<th width="55%"style="font-weight:500;" name="namaTherapist">Nur Azizah</th>
+		                                            					</tr>
+		                                            					<tr>
+		                                            						<th>Durasi</th>
+		                                            						<th>:</th>
+		                                            						<th style="font-weight:500;" name="durasiTreatment">1 Jam</th>
+		                                            					</tr>
+		                                            				</table>
+		                                            				<table class="table table-bordered table-hover table-checkable table_spk_done2" id=""></table>
+		                                            				<div class="form-group row">
+		                                            					<label for="tipeKomplain" class="col-3 col-form-label">Foto</label>
+		                                            					<div class="col-9">
+		                                            						<div class="row">
+		                                            							<div class="col-4 mb-3">
+		                                            								<img width="100%" src="assets/media/misc/eyelash1.jpg">
+		                                            							</div>
+		                                            							<div class="col-4 mb-3">
+		                                            								<img width="100%" src="assets/media/misc/eyelash2.jpg">
+		                                            							</div>
+		                                            							<div class="col-4 mb-3">
+		                                            								<img width="100%" src="assets/media/misc/eyelash3.jpg">
+		                                            							</div>
+		                                            						</div>
+		                                            					</div>
+		                                            				</div>
+		                                            				<div class="form-group row">
+		                                            					<label for="tipeKomplain" class="col-3 col-form-label">Tipe Komplain</label>
+		                                            					<div class="col-9">
+		                                            						<input class="form-control" type="text" value="Eylash Extension" id="tipeKomplain" name="tipeKomplain" disabled="">
+		                                            					</div>
+		                                            				</div>
+		                                            				<div class="form-group row">
+		                                            					<label for="komplain" class="col-3 col-form-label">Komplain</label>
+		                                            					<div class="col-9">
+		                                            						<textarea rows="4" class="form-control" type="text" id="komplain" name="komplain" disabled="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sapien velit, aliquet eget commodo nec, auctor a sapien. Nam eu neque vulputate diam rhoncus faucibus. Curabitur quis varius libero. Lorem.</textarea>
+		                                            					</div>
+		                                            				</div>
+		                                            			</div>
+		                                            		</div>
+		                                            		<div class="listTreatment">
+		                                            			<div class="kt-separator kt-separator--md"></div>
+		                                            			<div class="list">
+		                                            				<table class="col-sm-12 col-md-8 col-lg-6 " style="margin-bottom:0px">
+		                                            					<tr>
+		                                            						<th class="treatmentHeader" width="30%">Treatment</th>
+		                                            						<th class="treatmentHeader" width="10%">:</th>
+		                                            						<th class="treatmentHeader" width="60%"style="font-weight:500;" name="jenisTreatment">Eylesh Extension</th>
+		                                            					</tr>
+		                                            					<tr>
+		                                            						<th width="35%">Therapist</th>
+		                                            						<th width="10%">:</th>
+		                                            						<th width="55%"style="font-weight:500;" name="namaTherapist">Nur Azizah</th>
+		                                            					</tr>
+		                                            					<tr>
+		                                            						<th>Durasi</th>
+		                                            						<th>:</th>
+		                                            						<th style="font-weight:500;" name="durasiTreatment">1 Jam</th>
+		                                            					</tr>
+		                                            				</table>
+		                                            				<table class="table table-bordered table-hover table-checkable table_spk_done2" id=""></table>
+		                                            				<div class="form-group row">
+		                                            					<label for="tipeKomplain" class="col-3 col-form-label">Foto</label>
+		                                            					<div class="col-9">
+		                                            						<div class="row">
+		                                            							<div class="col-4 mb-3">
+		                                            								<img width="100%" src="assets/media/misc/eyelash1.jpg">
+		                                            							</div>
+		                                            							<div class="col-4 mb-3">
+		                                            								<img width="100%" src="assets/media/misc/eyelash2.jpg">
+		                                            							</div>
+		                                            							<div class="col-4 mb-3">
+		                                            								<img width="100%" src="assets/media/misc/eyelash3.jpg">
+		                                            							</div>
+		                                            						</div>
+		                                            					</div>
+		                                            				</div>
+		                                            				<div class="form-group row">
+		                                            					<label for="tipeKomplain" class="col-3 col-form-label">Tipe Komplain</label>
+		                                            					<div class="col-9">
+		                                            						<input class="form-control" type="text" value="Eylash Extension" id="tipeKomplain" name="tipeKomplain" disabled="">
+		                                            					</div>
+		                                            				</div>
+		                                            				<div class="form-group row">
+		                                            					<label for="komplain" class="col-3 col-form-label">Komplain</label>
+		                                            					<div class="col-9">
+		                                            						<textarea rows="4" class="form-control" type="text" id="komplain" name="komplain" disabled="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sapien velit, aliquet eget commodo nec, auctor a sapien. Nam eu neque vulputate diam rhoncus faucibus. Curabitur quis varius libero. Lorem.</textarea>
+		                                            					</div>
+		                                            				</div>
+		                                            			</div>
+		                                            		</div>
+		                                            	</div>
+		                                            </section>
+		                                            <!-- akhir treatment list -->
 												</div>
-												<div class="tab-pane" id="tab-invoice" role="tabpanel">
-													<div style="margin-bottom:20px;">
-		                                                <h5 class="color-main-dark" name="nomor_pesanan">#123456</h5>
-		                                                <span class="kt-font-bold" name="customer_nama">Darnilla</span><br>
-														<span class="kt-font-bold">Tanggal : <span class="kt-font-boldest" name="treatment_tanggal">2 Oktober 2019</span></span>
+											</div>
+											<div class="tab-pane" id="tab-invoice" role="tabpanel">
+												<div class="kt-portlet__body">
+		                                            <div class="row" style="margin-bottom:20px;">
+														<div class="col-6">
+			                                                <h5 class="color-main-dark" name="nomor_pesanan">#123456</h5>
+															<a href="user_admin/customer_detail.html"><span class="kt-font-bold" name="customer_nama">Darnilla</span></a>&nbsp;<br>
+			                                                <span class="kt-font-bold" name="customer_nohp">081342497228</span>&nbsp;<br>
+			                                                <span class="kt-font-bold" name="customer_alamat">Jl. Areopala 6</span>&nbsp;<br>
+														</div>
+														<div class="col-6">
+															<div class="row">
+																<div class="col-12 kt-hidden" style="text-align: right; margin-bottom:5px;">
+																	<a class="col-5 btn btn-outline-success no-print" href="user_admin/listTreatment_detail_done_edit.html">Edit</a>
+																</div>
+																<div class="col-12" style="text-align: right; margin-bottom:5px;">
+																	<a class="col-5 btn btn-warning no-print" href="user_admin/print_invoice.html">Print</a>
+																</div>
+																<div class="col-12 kt-hidden" style="text-align: right; margin-bottom:5px;">
+																	<button class="col-5 btn btn-danger no-print" id="kt_sweetalert_void">Void</button>
+																</div>
+															</div>
+														</div>
 		                                            </div>
+		                                            <table class="col-sm-12 col-md-8 col-lg-6" style="margin-bottom:50px">
+		                                            	<tr>
+		                                            		<th width="30%">Tanggal</th>
+		                                            		<th width="10%">:</th>
+		                                            		<th width="60%"style="font-weight:500;" name="treatment_hari">2 Oktober 2019</th>
+		                                            	</tr>
+		                                            	<tr>
+		                                            		<th width="35%">Waktu Mulai</th>
+		                                            		<th width="10%">:</th>
+		                                            		<th width="55%"style="font-weight:500;" name="waktu_mulai">08.00 WITA</th>
+		                                            	</tr>
+		                                            	<tr>
+		                                            		<th>Waktu Selesai</th>
+		                                            		<th>:</th>
+		                                            		<th style="font-weight:500;" name="waktu-selesai">10.00 WITA</th>
+		                                            	</tr>
+		                                            </table>
 		        									<table class="table table-bordered table-hover table-checkable" id="table_invoice"></table>
-													<div class="col-12 horizontal-centered" style="padding: 0px 0px" style="margin-bottom:0px;">
-													</div>
-													<div class="row" style="margin-top:60px;">
-														<div class="col-sm-6" style="padding-right:0px;">
-															<table class="col-sm-12" style="bottom: 0px; position: absolute;">
-				                                                <tr>
-				                                                    <th width="35%">Waktu Mulai</th>
-				                                                    <th width="10%">:</th>
-				                                                    <th width="55%"style="font-weight:500;" name="waktu_mulai">08.00 WITA</th>
-				                                                </tr>
-				                                                <tr>
-				                                                    <th>Waktu Selesai</th>
-				                                                    <th>:</th>
-				                                                    <th style="font-weight:500;" name="waktu_selesai">10.00 WITA</th>
-				                                                </tr>
+													<div class="row" style="margin-top:50px;">
+														<div class="col-6" style="padding-right:0px;">
+															<table class="col-sm-24 col-md-16 col-lg-12" style="bottom: 0px; position: absolute;">
+				                                                
 				                                            </table>
 														</div>
 		                                            </div>
@@ -427,81 +540,71 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 										</div>
 									</div>
-
-									<!--end::Portlet-->
 								</div>
-
 							</div>
-
                             <!--begin::Modal-->
-							<div class="modal fade" id="kt_modal_tambah_treatment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal fade" id="kt_modal_treatment_complaint" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Tambah Treatment</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Complaint</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             </button>
                                         </div>
-										<form id="kt_form_treatment_tambah">
+                                        <form id="kt_form_complaint">
 	                                        <div class="modal-body">
-												<div class="form-group row">
-                                                    <label for="example-text-input" class="col-sm-4 col-form-label">No. Pesanan : </label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control color-main-dark" name="treatment_nomor" value="#123456" readonly>
-                                                    </div>
-                                                </div>
-												<div id="treatment_list">
-													<div class="form-group row kt-margin-b-10">
-	                                                    <label for="example-text-input" class="col-sm-4 col-form-label">Treatment : </label>
-	                                                    <div class="col-sm-8">
-	                                                        <input type="text" class="form-control request_required" name="treatment_nama1" placeholder="Treatment">
-	                                                    </div>
-	                                                </div>
-													<div class="form-group row">
-	                                                    <label for="example-text-input" class="col-sm-4 col-form-label">Pemakaian : </label>
-	                                                    <div class="col-sm-8" id=treatment_barang_list1>
-															<div class="col-12">
-																<div class="row">
-																	<div class="col-5" style="padding-left:0px">
-			                                                            <input type="text" class="form-control request_required" name="treatment_barang1_1" placeholder="Pemakaian">
-			                                                        </div>
-			                                                        <div class="col-7 kt-margin-0" style="padding:0px">
-																		<div class="input-group">
-				                                                            <label class="col-form-label kt-margin-r-10">Qty :</label>
-																			<input type="number" min="1" class="form-control kt-margin-r-10 input-group-child-normal request_required" name="treatment_barang_jumlah1_1" placeholder="Jumlah">
-																			<button type="button" class="btn btn-success btn-icon treatment_barang_add" id="1" data-counter="1"><i class="fa fa-plus"></i></button>
-																		</div>
-			                                                        </div>
-																</div>
-															</div>
-															<span class="form-text text-muted kt-hidden"></span>
-	                                                    </div>
-	                                                </div>
-												</div>
-												<div class="form-group justify-end">
-													<button type="button" class="btn btn-link" style="padding-right:0px;" id="treatment_add"><i class="flaticon-add"></i>Tambah Treatment</button>
-												</div>
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-4 col-form-label">Foto</label>
+                                                    <label for="example-text-input" class="col-4 col-form-label">Tanggal</label>
                                                     <div class="col-8">
-														<div class="custom-file">
-															<input type="file" class="custom-file-input request_required" name="treatment_foto" id="treatment_foto" accept="image/*">
-															<label class="custom-file-label" for="treatment_foto">Choose file</label>
-														</div>
+                                                        <div class="input-group date">
+                                                            <input type="text" name="complaint_tanggal" class="form-control" readonly="" placeholder="Tanggal" id="kt_datepicker_modal_complaint">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">
+                                                                    <i class="la la-calendar-check-o"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+														<span class="form-text text-muted kt-hidden">Select a date</span>
                                                     </div>
                                                 </div>
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-4 col-form-label">Tipe</label>
+                                                    <div class="col-8">
+                                                        <input type="text" class="form-control" name="complaint_tipe" placeholder="Tipe">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-4 col-form-label">Complaint</label>
+                                                    <div class="col-8">
+                                                        <textarea class="form-control" id="exampleTextarea" rows="3" name="complaint_text" placeholder="Complaint..."></textarea>
+                                                    </div>
+                                                </div>
+												<div class="form-group row">
+													<div class="col-8 offset-4">
+														<label class="kt-checkbox">
+															<input type="checkbox" id="complaint_garansi" name="complaint_garansi"> Gunakan garansi
+															<span></span>
+														</label><br>
+													</div>
+													<div class="col-8 offset-4">
+														<div id="garansi-alert-gagal" class="alert alert-danger garansi-alert" style="display: none" role="alert">
+															<div class="alert-text"> <i class="fa fa-minus-circle"></i> Maaf, Garansi Tidak Berlaku</div>
+														</div>
+														<div id="garansi-alert-berhasil" class="alert alert-success garansi-alert" style="display: none" role="alert">
+															<div class="alert-text"> <i class="fa fa-star"></i> Garansi Berhasil Digunakan</div>
+														</div>
+													</div>
+												</div>
 	                                        </div>
 	                                        <div class="modal-footer" style="justify-content:center;">
 	                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	                                            <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil">Submit</button>
+	                                            <button type="submit" class="btn btn-success" id="kt_sweetalert_berhasil_complaint">Submit</button>
 	                                        </div>
 										</form>
                                     </div>
                                 </div>
                             </div>
-
                             <!--end::Modal-->
-
 						</div>
 
 						<!-- end:: Content -->

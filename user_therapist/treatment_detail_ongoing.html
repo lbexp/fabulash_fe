@@ -457,13 +457,14 @@ License: You must have a valid license purchased only from themeforest(the above
 																<button type="button" class="btn btn-success treatment_barang_add" id="1" data-counter="1"><i class="fa fa-plus"></i>Pemakaian</button>
 															</div>
 														</div>
-													</div>\
+													</div>
 												<span class="form-text text-muted kt-hidden"></span>
 											</div>
 										</div>
 									</div>
 									<div class="form-group justify-end">
-										<button type="button" class="btn btn-link" style="padding-right:0px;" id="treatment_add"><i class="flaticon-add"></i>Tambah Treatment</button>
+										<button type="button" class="btn btn-outline-hover-info" id="treatment_add"><i class="fa fa-plus-square"></i>Tambah Treatment</button>
+										<button type="button" class="btn btn-outline-hover-danger" id="treatment_delete"><i class="fa fa-minus-square"></i>Hapus Treatment</button>
 									</div>
 									<div class="form-group">
 										<label for="example-text-input" class="col-form-label">Foto</label>
@@ -572,7 +573,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				i++;
 				document.querySelector('#treatment_list').insertAdjacentHTML (
 					'beforeend',
-					`<div class="kt-separator  kt-separator--space-lg"></div>
+					`<div class="treatment-list" data-id="`+ i +`"><div class="kt-separator  kt-separator--space-lg"></div>
 					<div class="form-group row kt-margin-b-10">
 					<label for="example-text-input" class="col-sm-4 col-form-label">Treatment : </label>
 					<div class="col-sm-8">
@@ -611,7 +612,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					</div>
 					<span class="form-text text-muted kt-hidden"></span>
 					</div>
-					</div>`
+					</div></div>`
 					)
 			});
 
@@ -654,6 +655,13 @@ License: You must have a valid license purchased only from themeforest(the above
 			$('#container-treatment').on('click','.treatment_barang_hapus', function (e) {
 				let id = $(this).data('id');
 				$('.input_pemakaian[data-id="' + id + '"]').remove();
+			});
+
+			$('#treatment_delete').click(function(e){
+				let v = document.querySelectorAll(".treatment-list:last-child");
+				let id = $(v).data('id');
+				$('.treatment-list[data-id="' + id + '"]').remove();
+				// console.log(id)
 			});
 
 			// Sweetalert
