@@ -27,6 +27,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<!--begin::Global Theme Styles(used by all pages) -->
 	<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 	<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css">
 	<!--end::Global Theme Styles -->
 	<!--begin::Layout Skins(used by all pages) -->
 	<link href="assets/css/skins/header/base/light.css" rel="stylesheet" type="text/css" />
@@ -565,6 +566,28 @@ License: You must have a valid license purchased only from themeforest(the above
 							</div>
 						</div>
 					</div>
+					<div class="kt-separator kt-separator--space-lg kt-separator--border-dashed"></div>
+					<div class="row">
+						<div class="col">
+							<div class="kt-portlet" style="padding: 15px">
+								<h5>Item Summary</h5>
+								 <table class="table table-bordered table-hover table-checkable" id="table_data_summary"></table>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<div class="kt-portlet" style="padding: 15px">
+								<h5>Category by Volume</h5>
+								 
+							</div>
+						</div>
+						<div class="col">
+							<div class="kt-portlet" style="padding: 15px">
+								<h5>Category by Sales</h5>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="kt-portlet__body">
 					
@@ -633,6 +656,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 <!--end::Page Vendors -->
 <!--begin::Page Scripts(used by this page) -->
+<script src="assets/plugins/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
+<script src="assets/js/script/datatable_superadmin.js"></script>
 <script src="assets/js/custom/datepicker.js" type="text/javascript"></script>
 <script>
 	var KTBootstrapDaterangepicker = function () {

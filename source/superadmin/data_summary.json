@@ -1,0 +1,63 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "no": 1,
+        "item": "Korea",
+        "itemSold": "346",
+        "grossSales": "Rp. 32.000.000",
+        "netSales": "Rp. 31.000.000",
+        "grossProfit": "Rp. 31.000.000"
+    }, {
+        "no": 2,
+        "item": "Mancure Deluxe",
+        "itemSold": "346",
+        "grossSales": "Rp. 32.000.000",
+        "netSales": "Rp. 31.000.000",
+        "grossProfit": "Rp. 31.000.000"
+    }, {
+        "no": 3,
+        "item": "Double Set",
+        "itemSold": "346",
+        "grossSales": "Rp. 32.000.000",
+        "netSales": "Rp. 31.000.000",
+        "grossProfit": "Rp. 31.000.000"
+    }, {
+        "no": 4,
+        "item": "Nail Art",
+        "itemSold": "346",
+        "grossSales": "Rp. 32.000.000",
+        "netSales": "Rp. 31.000.000",
+        "grossProfit": "Rp. 31.000.000"
+    }, {
+        "no": 5,
+        "item": "Classic Premium",
+        "itemSold": "346",
+        "grossSales": "Rp. 32.000.000",
+        "netSales": "Rp. 31.000.000",
+        "grossProfit": "Rp. 31.000.000"
+    }, {
+        "no": 6,
+        "item": "Nail Art",
+        "itemSold": "346",
+        "grossSales": "Rp. 32.000.000",
+        "netSales": "Rp. 31.000.000",
+        "grossProfit": "Rp. 31.000.000"
+    }, {
+        "no": 7,
+        "item": "Remove Get Polish",
+        "itemSold": "346",
+        "grossSales": "Rp. 32.000.000",
+        "netSales": "Rp. 31.000.000",
+        "grossProfit": "Rp. 31.000.000"
+    }, {
+        "no": 8,
+       "item": "Korea",
+        "itemSold": "346",
+        "grossSales": "Rp. 32.000.000",
+        "netSales": "Rp. 31.000.000",
+        "grossProfit": "Rp. 31.000.000"
+    }]
+}
