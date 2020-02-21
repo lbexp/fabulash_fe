@@ -29,8 +29,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: {
                     // parameters for custom backend script demo
                     columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
+                    'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                    'tanggal', 'status', 'aksi',
                     ],
                 },
             },
@@ -116,49 +116,49 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }],
         });
 
-        table.on('order.dt search.dt', function() {
-            table.column(0, {
-                search: 'applied',
-                order: 'applied'
-            }).nodes().each(function(cell, i) {
-                cell.innerHTML = i + 1;
-            });
-        }).draw();
+table.on('order.dt search.dt', function() {
+    table.column(0, {
+        search: 'applied',
+        order: 'applied'
+    }).nodes().each(function(cell, i) {
+        cell.innerHTML = i + 1;
+    });
+}).draw();
 
-        $('#datepicker_treatment_active').on('change', function(e) {
-            e.preventDefault();
-            var params = {};
-            var i = $(this).data('col-index');
-            if (params[i]) {
-                params[i] += '|' + $(this).val();
-            } else {
-                params[i] = $(this).val();
-            }
-            $.each(params, function(i, val) {
+$('#datepicker_treatment_active').on('change', function(e) {
+    e.preventDefault();
+    var params = {};
+    var i = $(this).data('col-index');
+    if (params[i]) {
+        params[i] += '|' + $(this).val();
+    } else {
+        params[i] = $(this).val();
+    }
+    $.each(params, function(i, val) {
                 // apply search params to datatable
                 table.column(i).search(val ? val : '', false, false);
             });
-            table.table().draw();
-        });
+    table.table().draw();
+});
 
-        $('#search_treatment_active').on('keyup', function() {
-            table.search(this.value).draw();
-        });
+$('#search_treatment_active').on('keyup', function() {
+    table.search(this.value).draw();
+});
 
-        $('#datepicker_treatment_active').datepicker({
-            todayHighlight: true,
-            language: 'id',
-            rtl: KTUtil.isRTL(),
-            todayBtn: "linked",
-            clearBtn: true,
-            templates: {
-                leftArrow: '<i class="la la-angle-left"></i>',
-                rightArrow: '<i class="la la-angle-right"></i>',
-            },
-        })/*.datepicker("setDate", new Date());*/
-    };
+$('#datepicker_treatment_active').datepicker({
+    todayHighlight: true,
+    language: 'id',
+    rtl: KTUtil.isRTL(),
+    todayBtn: "linked",
+    clearBtn: true,
+    templates: {
+        leftArrow: '<i class="la la-angle-left"></i>',
+        rightArrow: '<i class="la la-angle-right"></i>',
+    },
+})/*.datepicker("setDate", new Date());*/
+};
 
-    var initTablePaidTreatment = function() {
+var initTablePaidTreatment = function() {
         // begin first table
         var table = $('#table_treatment_paid').DataTable({
             order: [],
@@ -180,8 +180,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: {
                     // parameters for custom backend script demo
                     columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
+                    'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                    'tanggal', 'status', 'aksi',
                     ],
                 },
             },
@@ -315,8 +315,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: {
                     // parameters for custom backend script demo
                     columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
+                    'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                    'tanggal', 'status', 'aksi',
                     ],
                 },
             },
@@ -372,12 +372,12 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, full, meta) {
                     return `
                     <button type="button" class="btn btn-clean btn-icon btn-sm btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<i class="flaticon-more"></i>
-					</button>
-					<div style="min-width:9rem;padding:5px;" class="dropdown-menu dropdown-menu-right">
+                    <i class="flaticon-more"></i>
+                    </button>
+                    <div style="min-width:9rem;padding:5px;" class="dropdown-menu dropdown-menu-right">
                     <a href="user_superadmin/treatment_detail_paid.html" class="dropdown-item btn btn-secondary"><i class="fa fa-info-circle" style="width: 22px;"></i> Rincian</a>
-					<button onClick="swalApprove();" class="dropdown-item btn btn-secondary kt-margin-b-5"><i class="fa fa-check" style="width: 22px;"></i> Approve</button>
-					<button onClick="swalReject();" class="dropdown-item btn btn-secondary"><i class="fa fa-times" style="width: 22px;"></i> Reject</button>
+                    <button onClick="swalApprove();" class="dropdown-item btn btn-secondary kt-margin-b-5"><i class="fa fa-check" style="width: 22px;"></i> Approve</button>
+                    <button onClick="swalReject();" class="dropdown-item btn btn-secondary"><i class="fa fa-times" style="width: 22px;"></i> Reject</button>
                     </div>
                     `;
                 },
@@ -389,50 +389,50 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }],
         });
 
-        table.on('order.dt search.dt', function() {
-            table.column(0, {
-                search: 'applied',
-                order: 'applied'
-            }).nodes().each(function(cell, i) {
-                cell.innerHTML = i + 1;
-            });
-        }).draw();
+table.on('order.dt search.dt', function() {
+    table.column(0, {
+        search: 'applied',
+        order: 'applied'
+    }).nodes().each(function(cell, i) {
+        cell.innerHTML = i + 1;
+    });
+}).draw();
 
-        $('#datepicker_treatment_void').on('change', function(e) {
-            e.preventDefault();
-            var params = {};
-            var i = $(this).data('col-index');
-            if (params[i]) {
-                params[i] += '|' + $(this).val();
-            } else {
-                params[i] = $(this).val();
-            }
-            $.each(params, function(i, val) {
+$('#datepicker_treatment_void').on('change', function(e) {
+    e.preventDefault();
+    var params = {};
+    var i = $(this).data('col-index');
+    if (params[i]) {
+        params[i] += '|' + $(this).val();
+    } else {
+        params[i] = $(this).val();
+    }
+    $.each(params, function(i, val) {
                 // apply search params to datatable
                 table.column(i).search(val ? val : '', false, false);
             });
-            table.table().draw();
-        });
+    table.table().draw();
+});
 
-        $('#search_treatment_void').on('keyup', function() {
-            table.search(this.value).draw();
-        });
+$('#search_treatment_void').on('keyup', function() {
+    table.search(this.value).draw();
+});
 
-        $('#datepicker_treatment_void').datepicker({
-            todayHighlight: true,
-            language: 'id',
-            rtl: KTUtil.isRTL(),
-            todayBtn: "linked",
-            clearBtn: true,
-            templates: {
-                leftArrow: '<i class="la la-angle-left"></i>',
-                rightArrow: '<i class="la la-angle-right"></i>',
-            },
-        })/*.datepicker("setDate", new Date());*/
-    };
+$('#datepicker_treatment_void').datepicker({
+    todayHighlight: true,
+    language: 'id',
+    rtl: KTUtil.isRTL(),
+    todayBtn: "linked",
+    clearBtn: true,
+    templates: {
+        leftArrow: '<i class="la la-angle-left"></i>',
+        rightArrow: '<i class="la la-angle-right"></i>',
+    },
+})/*.datepicker("setDate", new Date());*/
+};
 
-    var initTableTreatmentDetail = function() {
-        var table = $('#table_treatment_detail');
+var initTableTreatmentDetail = function() {
+    var table = $('#table_treatment_detail');
         // begin first table
         table.DataTable({
             order: [],
@@ -803,8 +803,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 175,
                 render: function(data, type, full, meta) {
                     return `
-                        <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_edit_kategori_treatment"><i class="fa fa-edit"></i> Edit</button>&nbsp;
-                        <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
+                    <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_edit_kategori_treatment"><i class="fa fa-edit"></i> Edit</button>&nbsp;
+                    <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
                 },
             }, ],
             columnDefs: [{
@@ -822,6 +822,51 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 cell.innerHTML = i + 1;
             });
         }).draw();
+    };
+
+    var initTableSummarry = function() {
+        var table = $('#table_data_summary');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            info: true,
+            paging: true,
+            lengthChange: true,
+            searching: true,
+            responsive: true,
+            ajax: {
+                url: 'source/superadmin/data_summary.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'item',
+                title: 'Item'
+            },{
+                data: 'itemSold',
+                title: 'Item Sold'
+            },{
+                data: 'grossSales',
+                title: 'Gross Sales'
+            },{
+                data: 'netSales',
+                title: 'Net Sales'
+            },{
+                data: 'grossProfit',
+                title: 'Gross Profit'
+            }],
+            columnDefs: [{
+                targets: [0, 1, 2, 3, 4],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        
     };
 
     var initTableDataTreatment = function() {
@@ -869,8 +914,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 175,
                 render: function(data, type, full, meta) {
                     return `
-                        <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_edit_treatment"><i class="fa fa-edit"></i> Edit</button>&nbsp;
-                        <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
+                    <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_edit_treatment"><i class="fa fa-edit"></i> Edit</button>&nbsp;
+                    <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
                 },
             }, ],
             columnDefs: [{
@@ -932,8 +977,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 175,
                 render: function(data, type, full, meta) {
                     return `
-                        <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_edit_complaint"><i class="fa fa-edit"></i> Edit</button>&nbsp;
-                        <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
+                    <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_edit_complaint"><i class="fa fa-edit"></i> Edit</button>&nbsp;
+                    <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
                 },
             }, ],
             columnDefs: [{
@@ -995,8 +1040,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 175,
                 render: function(data, type, full, meta) {
                     return `
-                        <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_edit_komisi"><i class="fa fa-edit"></i> Edit</button>&nbsp;
-                        <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
+                    <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_edit_komisi"><i class="fa fa-edit"></i> Edit</button>&nbsp;
+                    <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
                 },
             }, ],
             columnDefs: [{
@@ -1064,8 +1109,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 175,
                 render: function(data, type, full, meta) {
                     return `
-                        <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_edit_studio"><i class="fa fa-edit"></i> Edit</button>&nbsp;
-                        <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
+                    <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_edit_studio"><i class="fa fa-edit"></i> Edit</button>&nbsp;
+                    <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
                 },
             }, ],
             columnDefs: [{
@@ -1124,8 +1169,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 width: 175,
                 render: function(data, type, full, meta) {
                     return `
-                        <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_edit_tipe"><i class="fa fa-edit"></i> Edit</button>&nbsp;
-                        <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
+                    <button type="button" class="btn btn-pill btn-sm btn-success" data-toggle="modal" data-target="#kt_modal_edit_tipe"><i class="fa fa-edit"></i> Edit</button>&nbsp;
+                    <button type="button" class="btn btn-pill btn-sm btn-danger" onClick="swalDelete();"><i class="fa fa-trash-alt"></i> Delete</button>`;
                 },
             }, ],
             columnDefs: [{
@@ -1308,7 +1353,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             },  {
                 data: 'status',
                 title: 'Status',
-                 render: function(data, type, row, meta) {
+                render: function(data, type, row, meta) {
                     var status = {
                         used: {
                             'title': 'Used',
@@ -1373,8 +1418,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: {
                     // parameters for custom backend script demo
                     columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
+                    'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                    'tanggal', 'status', 'aksi',
                     ],
                 },
             },
@@ -1488,8 +1533,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: {
                     // parameters for custom backend script demo
                     columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
+                    'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                    'tanggal', 'status', 'aksi',
                     ],
                 },
             },
@@ -1597,8 +1642,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: {
                     // parameters for custom backend script demo
                     columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
+                    'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                    'tanggal', 'status', 'aksi',
                     ],
                 },
             },
@@ -1699,8 +1744,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: {
                     // parameters for custom backend script demo
                     columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
+                    'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                    'tanggal', 'status', 'aksi',
                     ],
                 },
             },
@@ -1863,8 +1908,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: {
                     // parameters for custom backend script demo
                     columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
+                    'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                    'tanggal', 'status', 'aksi',
                     ],
                 },
             },
@@ -1969,8 +2014,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: {
                     // parameters for custom backend script demo
                     columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
+                    'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                    'tanggal', 'status', 'aksi',
                     ],
                 },
             },
@@ -2072,8 +2117,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: {
                     // parameters for custom backend script demo
                     columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
+                    'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                    'tanggal', 'status', 'aksi',
                     ],
                 },
             },
@@ -2159,49 +2204,49 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             }],
         });
 
-        table.on('order.dt search.dt', function() {
-            table.column(0, {
-                search: 'applied',
-                order: 'applied'
-            }).nodes().each(function(cell, i) {
-                cell.innerHTML = i + 1;
-            });
-        }).draw();
+table.on('order.dt search.dt', function() {
+    table.column(0, {
+        search: 'applied',
+        order: 'applied'
+    }).nodes().each(function(cell, i) {
+        cell.innerHTML = i + 1;
+    });
+}).draw();
 
-        $('#datepicker_karyawan_dayoff').on('change', function(e) {
-            e.preventDefault();
-            var params = {};
-            var i = $(this).data('col-index');
-            if (params[i]) {
-                params[i] += '|' + $(this).val();
-            } else {
-                params[i] = $(this).val();
-            }
-            $.each(params, function(i, val) {
+$('#datepicker_karyawan_dayoff').on('change', function(e) {
+    e.preventDefault();
+    var params = {};
+    var i = $(this).data('col-index');
+    if (params[i]) {
+        params[i] += '|' + $(this).val();
+    } else {
+        params[i] = $(this).val();
+    }
+    $.each(params, function(i, val) {
                 // apply search params to datatable
                 table.column(i).search(val ? val : '', false, false);
             });
-            table.table().draw();
-        });
+    table.table().draw();
+});
 
-        $('#search_karyawan_dayoff').on('keyup', function() {
-            table.search(this.value).draw();
-        });
+$('#search_karyawan_dayoff').on('keyup', function() {
+    table.search(this.value).draw();
+});
 
-        $('#datepicker_karyawan_dayoff').datepicker({
-            todayHighlight: true,
-            language: 'id',
-            rtl: KTUtil.isRTL(),
-            todayBtn: "linked",
-            clearBtn: true,
-            templates: {
-                leftArrow: '<i class="la la-angle-left"></i>',
-                rightArrow: '<i class="la la-angle-right"></i>',
-            },
-        })/*.datepicker("setDate", new Date());*/
-    };
+$('#datepicker_karyawan_dayoff').datepicker({
+    todayHighlight: true,
+    language: 'id',
+    rtl: KTUtil.isRTL(),
+    todayBtn: "linked",
+    clearBtn: true,
+    templates: {
+        leftArrow: '<i class="la la-angle-left"></i>',
+        rightArrow: '<i class="la la-angle-right"></i>',
+    },
+})/*.datepicker("setDate", new Date());*/
+};
 
-    var initTableKaryawanRequestPinjaman = function () {
+var initTableKaryawanRequestPinjaman = function () {
         // begin first table
         var table = $('#table_karyawan_pinjaman').DataTable({
             order: [],
@@ -2223,8 +2268,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: {
                     // parameters for custom backend script demo
                     columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
+                    'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                    'tanggal', 'status', 'aksi',
                     ],
                 },
             },
@@ -2267,11 +2312,11 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 render: function(data, type, full, meta) {
                     return `
                     <button type="button" class="btn btn-clean btn-icon btn-sm btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<i class="flaticon-more"></i>
-					</button>
-					<div style="min-width:9rem;padding:5px;" class="dropdown-menu dropdown-menu-right">
-					<button data-toggle="modal" data-target="#kt_modal_approve" class="dropdown-item btn btn-secondary kt-margin-b-5"> <i class="fa fa-check" style="width: 22px;"></i> Approve</button>
-					<button onClick="swalReject();" class="dropdown-item btn btn-secondary"> <i class="fa fa-times" style="width: 22px;"></i> Reject</button>
+                    <i class="flaticon-more"></i>
+                    </button>
+                    <div style="min-width:9rem;padding:5px;" class="dropdown-menu dropdown-menu-right">
+                    <button data-toggle="modal" data-target="#kt_modal_approve" class="dropdown-item btn btn-secondary kt-margin-b-5"> <i class="fa fa-check" style="width: 22px;"></i> Approve</button>
+                    <button onClick="swalReject();" class="dropdown-item btn btn-secondary"> <i class="fa fa-times" style="width: 22px;"></i> Reject</button>
                     </div>`;
                 },
             }],
@@ -2493,8 +2538,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             order: [],
             responsive: true,
             buttons: [
-                'print',
-                'excelHtml5',
+            'print',
+            'excelHtml5',
             ],
             // Pagination settings
             dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-3'i><'col-sm-12 col-md-6 text-center dataTables_pager'lp><'col-sm-12 col-md-3 text-right'B>>`,
@@ -2513,8 +2558,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: {
                     // parameters for custom backend script demo
                     columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
+                    'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                    'tanggal', 'status', 'aksi',
                     ],
                 },
             },
@@ -2630,8 +2675,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             order: [],
             responsive: true,
             buttons: [
-                'print',
-                'excelHtml5',
+            'print',
+            'excelHtml5',
             ],
             // Pagination settings
             dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-3'i><'col-sm-12 col-md-6 text-center dataTables_pager'lp><'col-sm-12 col-md-3 text-right'B>>`,
@@ -2650,8 +2695,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: {
                     // parameters for custom backend script demo
                     columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
+                    'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                    'tanggal', 'status', 'aksi',
                     ],
                 },
             },
@@ -2893,8 +2938,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: {
                     // parameters for custom backend script demo
                     columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
+                    'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                    'tanggal', 'status', 'aksi',
                     ],
                 },
             },
@@ -3076,8 +3121,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: {
                     // parameters for custom backend script demo
                     columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
+                    'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                    'tanggal', 'status', 'aksi',
                     ],
                 },
             },
@@ -3173,8 +3218,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: {
                     // parameters for custom backend script demo
                     columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
+                    'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                    'tanggal', 'status', 'aksi',
                     ],
                 },
             },
@@ -3395,8 +3440,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: {
                     // parameters for custom backend script demo
                     columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
+                    'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                    'tanggal', 'status', 'aksi',
                     ],
                 },
             },
@@ -3495,8 +3540,8 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 data: {
                     // parameters for custom backend script demo
                     columnsDef: [
-                        'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
-                        'tanggal', 'status', 'aksi',
+                    'no', 'depot', 'vendor', 'pekerjaan', 'sifat',
+                    'tanggal', 'status', 'aksi',
                     ],
                 },
             },
@@ -3733,6 +3778,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
             initTableInventoryTherapistView();
             initTableVoucher();
             initTableDetailVoucher();
+            initTableSummarry();
         },
     };
 }();
