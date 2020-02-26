@@ -1444,6 +1444,9 @@ var initTableTreatmentDetail = function() {
                 data: 'waktu_mulai',
                 title: 'Waktu Mulai'
             }, {
+                data: 'kategoriTreatment',
+                title: 'Kategori Treatment'
+            }, {
                 data: 'treatment',
                 title: 'Treatment'
             }, {
@@ -1460,7 +1463,7 @@ var initTableTreatmentDetail = function() {
                 title: 'Komisi'
             }],
             columnDefs: [{
-                targets: [0, 1, 2, 3, 4, 5, 6,7],
+                targets: [0, 1, 2, 3, 4, 5, 6,7,8],
                 className: 'text-center',
                 orderable: true,
             }],
@@ -1491,6 +1494,22 @@ var initTableTreatmentDetail = function() {
             table.table().draw();
         });
 
+        $('#datepicker_karyawan_treatment').on('change', function(e) {
+            e.preventDefault();
+            var params = {};
+            var i = $(this).data('col-index');
+            if (params[i]) {
+                params[i] += '|' + $(this).val();
+            } else {
+                params[i] = $(this).val();
+            }
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        });
+
         $('#search_karyawan_treatment').on('keyup', function() {
             table.search(this.value).draw();
         });
@@ -1504,6 +1523,19 @@ var initTableTreatmentDetail = function() {
             minViewMode: "months",
             clearBtn: true,
             rtl: KTUtil.isRTL(),
+            templates: {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>',
+            },
+        })/*.datepicker("setDate", new Date());*/
+
+
+        $('#datepicker_karyawan_treatment').datepicker({
+            todayHighlight: true,
+            language: 'id',
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
             templates: {
                 leftArrow: '<i class="la la-angle-left"></i>',
                 rightArrow: '<i class="la la-angle-right"></i>',

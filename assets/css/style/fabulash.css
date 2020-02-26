@@ -366,6 +366,13 @@ body {
     margin-bottom: 15px;
 }
 
+.costume-group-text{
+    background-color: #62cec9;
+    color: white;
+    border-radius: 5px 0px 0px 5px !important;
+    border: transparent;
+}
+
 
 
 @media (max-width: 1024px) {
