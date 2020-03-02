@@ -59,7 +59,7 @@ var datepickerIndonesia = function () {
 var timepicker = function () {
 	$('.kt-timepicker').timepicker({
 		minuteStep: 15,
-		defaultTime: '',
+		defaultTime: '08:00',
 		showSeconds: false,
 		showMeridian: false,
 		snapToStep: true
