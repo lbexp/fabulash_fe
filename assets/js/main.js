@@ -20,7 +20,7 @@
 		this.coverLayer = this.element.getElementsByClassName('cd-schedule__cover-layer')[0];
 
 		this.modalMaxWidth = 800;
-		this.modalMaxHeight = 480;
+		this.modalMaxHeight = 1600;
 
 		this.animating = false;
 		this.supportAnimation = Util.cssSupports('transition');
