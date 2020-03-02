@@ -869,6 +869,78 @@ var initTableTreatmentDetail = function() {
         
     };
 
+    var initTableKategoriTreatment = function() {
+        var table = $('#table_kategori_treatment');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            info: true,
+            paging: true,
+            lengthChange: true,
+            searching: true,
+            responsive: true,
+            ajax: {
+                url: 'source/superadmin/data_summary.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'kategori',
+                title: 'Kategori'
+            },{
+                data: 'jumlahKategori',
+                title: 'Jumlah Kategori'
+            }],
+            columnDefs: [{
+                targets: [0, 1],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        
+    };
+
+    var initTableListTreatment = function() {
+        var table = $('#table_list_treatment');
+        // begin first table
+        var datatable = table.DataTable({
+            order: [],
+            info: true,
+            paging: true,
+            lengthChange: true,
+            searching: true,
+            responsive: true,
+            ajax: {
+                url: 'source/superadmin/data_summary.json',
+                type: 'POST',
+                data: {
+                    pagination: {
+                        perpage: 50,
+                    },
+                },
+            },
+            columns: [{
+                data: 'treatment',
+                title: 'Treatment'
+            },{
+                data: 'jumlahTreatment',
+                title: 'Jumlah Treatment'
+            }],
+            columnDefs: [{
+                targets: [0, 1],
+                className: 'text-center',
+                orderable: true,
+            }],
+        });
+
+        
+    };
+
     var initTableDataTreatment = function() {
         var table = $('#table_data_treatment');
         // begin first table
@@ -3811,6 +3883,8 @@ var initTableKaryawanRequestPinjaman = function () {
             initTableVoucher();
             initTableDetailVoucher();
             initTableSummarry();
+            initTableKategoriTreatment();
+            initTableListTreatment();
         },
     };
 }();
