@@ -1,210 +1,221 @@
 .clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+	content: "";
+	display: table;
+	clear: both;
 }
 
 a {
-  color: #5D6975;
-  text-decoration: underline;
+	color: #5D6975;
+	text-decoration: underline;
 }
+
 body {
-  position: relative;
-  width: 21cm;  
-  height: 29.7cm; 
-  margin: 0 auto; 
-  color: #001028;
-  background: #FFFFFF; 
-  font-family: Arial, sans-serif; 
-  font-size: 12px; 
-  font-family: Arial;
+	position: relative;
+	width: 21cm;
+	height: 29.7cm;
+	margin: 0 auto;
+	color: #001028;
+	background: #FFFFFF;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-family: Arial;
 }
 
 header {
- /* padding: 10px 0;*/
- padding: 5px;
- margin-bottom: 30px;
+	/* padding: 10px 0;*/
+	padding: 5px;
+	margin-bottom: 30px;
 }
 
 #logo {
-  text-align: center;
-  margin-bottom: 10px;
+	text-align: center;
+	margin-bottom: 10px;
 }
 
 #logo img {
-  width: 100%;
+	width: 100%;
 }
 
-h3{
-  font-family: Poppins, Helvetica, sans-serif;
-  font-size: 1.5rem;
+h3 {
+	font-family: Poppins, Helvetica, sans-serif;
+	font-size: 1.5rem;
 }
 
-h4{
-  font-family: Poppins, Helvetica, sans-serif;
-  font-size: 1.2rem;
+h4 {
+	font-family: Poppins, Helvetica, sans-serif;
+	font-size: 1.2rem;
 }
 
-#id_invoice{
-  color: white;
-  border-top: none;
-  border-bottom: none
+#id_invoice {
+	color: white;
+	border-top: none;
+	border-bottom: none
 }
 
 #project {
-  float: left;
+	float: left;
 }
 
 #project span {
-  color: #5D6975;
-  text-align: right;
-  width: 52px;
-  margin-right: 10px;
-  display: inline-block;
-  font-size: 0.8em;
+	color: #5D6975;
+	text-align: right;
+	width: 52px;
+	margin-right: 10px;
+	display: inline-block;
+	font-size: 0.8em;
 }
 
 #company {
-  float: right;
-  text-align: right;
+	float: right;
+	text-align: right;
 }
 
 #project div,
 #company div {
-  white-space: nowrap;        
+	white-space: nowrap;
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-  margin-bottom: 20px;
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-bottom: 20px;
 }
 
 table tr:nth-child(2n-1) td {
-  background: white;
+	background: white;
 }
 
 table th,
 table td {
-  text-align: center;
+	text-align: center;
 }
 
 table th {
-  padding: 10px 20px;
-  color: #5D6975;
-  border-bottom: 2px solid #C1CED9;
-  white-space: nowrap;        
-  font-weight: normal;
+	padding: 10px 20px;
+	color: #5D6975;
+	border-bottom: 2px solid #C1CED9;
+	white-space: nowrap;
+	font-weight: normal;
 }
 
 
 tr:last-child {
-  border-bottom: 2px solid #C1CED9;
+	/* border-bottom: 2px solid #C1CED9; */
 }
 
 table .service,
 table .desc,
 table .isi {
-  text-align: center;
+	text-align: center;
 }
 
 
 
 table td {
-  padding: 20px;
-  text-align: right;
-  font-size: 1.1rem;
-  font-weight: 400;
-  font-family: Poppins, Helvetica, sans-serif;
+	padding: 20px;
+	text-align: center;
+	font-size: 1.1rem;
+	font-weight: 400;
+	font-family: Poppins, Helvetica, sans-serif;
 }
 
 table td.service,
 table td.desc,
 table .isi {
-  vertical-align: top;
+	vertical-align: top;
 }
 
 table td.unit,
 table td.qty,
 table td.total {
-  font-size: 1.2em;
+	font-size: 1.2em;
 }
 
 table td.grand {
-  border-top: 1px solid #5D6975;;
+	border-top: 1px solid #5D6975;
+	;
 }
 
 #notices .notice {
-  color: #5D6975;
-  font-size: 1.2em;
+	color: #5D6975;
+	font-size: 1.2em;
 }
 
 footer {
-  color: #5D6975;
-  width: 100%;
-  height: 30px;
-  position: absolute;
-  bottom: 0;
-  border-top: 1px solid #C1CED9;
-  padding: 8px 0;
-  text-align: center;
+	color: #5D6975;
+	width: 100%;
+	height: 30px;
+	position: absolute;
+	bottom: 0;
+	border-top: 1px solid #C1CED9;
+	padding: 8px 0;
+	text-align: center;
 }
 
-.head-table{
-  font-family: Poppins, Helvetica, sans-serif;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #41A39C;
+.head-table {
+	font-family: Poppins, Helvetica, sans-serif;
+	font-size: 1.2rem;
+	font-weight: 500;
+	color: #41A39C;
 }
 
-.row-total h4{
-  font-weight: 600;
+.row-total h4 {
+	font-weight: 600;
 }
 
 
 .pengirim-penerima h4,
 .catatan h4 {
-  font-size: 1.15rem;
-  font-weight: 400;
+	font-size: 1.15rem;
+	font-weight: 400;
 }
 
 .head-penerima,
 .head-pengirim,
-{
-  color: #41A39C;
-  font-weight: 600;
+	{
+	color: #41A39C;
+	font-weight: 600;
 }
 
 .background {
-  border: 2px solid #E0E0E0;
-  padding: 5px;
+	border: 2px solid #E0E0E0;
+	padding: 5px;
 }
 
-.total{
-  font-size: 1.4rem;
+.total {
+	font-size: 1.4rem;
 }
 
 .line-therapist {
-    border-top: 2px solid #BDBDBD;
-    /*border-bottom: 2px solid #BDBDBD;*/
+	border-top: 2px solid #BDBDBD;
+	/*border-bottom: 2px solid #BDBDBD;*/
 }
 
 
-@media print{
-  @page { margin: 0; }
-  body { padding: 0.5cm; }
-  .custom-margin-jadwal {
-    margin-left: 0px !important;
-  }
-  #noInvoice,#tanggalInvoice,#waktuPengerjaan{
-    margin-right: -20vw;
-  }
+@media print {
+	@page {
+		margin: 0;
+	}
 
-  .invoice-email #noInvoice,
-  .invoice-email #tanggalInvoice,
-  .invoice-email #waktuPengerjaan {
-    margin-right: -19vw;
-  }
+	body {
+		padding: 0.5cm;
+	}
+
+	.custom-margin-jadwal {
+		margin-left: 0px !important;
+	}
+
+	#noInvoice,
+	#tanggalInvoice,
+	#waktuPengerjaan {
+		margin-right: -20vw;
+	}
+
+	.invoice-email #noInvoice,
+	.invoice-email #tanggalInvoice,
+	.invoice-email #waktuPengerjaan {
+		margin-right: -19vw;
+	}
 
 }
