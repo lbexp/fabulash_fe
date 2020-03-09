@@ -1423,6 +1423,9 @@ var initTableTreatmentDetail = function() {
                 data: 'kode',
                 title: 'Kode'
             },  {
+                data: 'expired',
+                title: 'Expired Date'
+            }, {
                 data: 'status',
                 title: 'Status',
                 render: function(data, type, row, meta) {
