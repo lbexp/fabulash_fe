@@ -374,7 +374,13 @@ License: You must have a valid license purchased only from themeforest(the above
 													<label for="nominalVoucher" class="col-sm-4 col-form-label">Nominal :</label>
 													<div class="col-sm-8">
 														<div class="input-group">
-															<div class="input-group-prepend"><span class="input-group-text">Rp</span></div>
+															<!-- <div class="input-group-prepend"><span class="input-group-text">Rp</span></div> -->
+															<div class="input-group-prepend">
+																<select class="custom-select form-control" id="jenisNominal" name="jenisNominal">
+																	<option value="rp">Rp</option>
+																	<option value="percent">%</option>
+																</select>
+															</div>
 															<input type="number" min="0" class="form-control" placeholder="input nominal voucher" id="nominalVoucher" name="nominalVoucher">
 														</div>
 													</div>
