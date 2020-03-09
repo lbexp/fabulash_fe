@@ -15,7 +15,6 @@ var datepickerIndonesia = function () {
 
 	$('.kt-datepicker').datepicker({
 		todayHighlight: true,
-		startView: 2,
 		language: 'id',
 		rtl: KTUtil.isRTL(),
 		todayBtn: "linked",
