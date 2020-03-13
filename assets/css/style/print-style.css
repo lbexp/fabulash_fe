@@ -86,10 +86,10 @@ table tr:nth-child(2n-1) td {
 	background: white;
 }
 
-table th,
+/* table th,
 table td {
 	text-align: center;
-}
+} */
 
 table th {
 	padding: 10px 20px;
@@ -114,7 +114,6 @@ table .isi {
 
 table td {
 	padding: 20px;
-	text-align: center;
 	font-size: 1.1rem;
 	font-weight: 400;
 	font-family: Poppins, Helvetica, sans-serif;
