@@ -650,6 +650,13 @@ body {
     background-color: #C2185B
 }
 
+.list-hapus{
+    color: salmon;
+}
+.list-hapus:hover{
+    color: tomato !important;
+}
+
 
 
 
