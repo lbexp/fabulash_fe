@@ -328,7 +328,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											<form id="kt_form_request_barang">
 												<div class="kt-margin-b-20">
 													<label class="kt-margin-b-15" style="font-size: 1rem;font-weight: 400;">Item List : </label>
-													<div class="table-responsive">
+													<div class="table-responsive" id="container-request">
 														<table class="table table-bordered table-hover well-align-table table-mobile" role="grid" id="table_request_inventory_new">
 			                                                <thead>
 			                                                    <tr role="row">
@@ -336,9 +336,10 @@ License: You must have a valid license purchased only from themeforest(the above
 			                                                        <th style="width: 15%">Jenis</th>
 			                                                        <th style="width: 25%">Barang</th>
 			                                                        <th style="width: 15%">Satuan</th>
-			                                                        <th style="width: 12.5%">Request</th>
+			                                                        <th style="width: 10%">Request</th>
 			                                                        <th style="width: 12.5%">Disetujui</th>
-			                                                        <th style="width: 15%">Upload Foto</th>
+			                                                        <th style="width: 12.5%">Upload Foto</th>
+			                                                        <th style="width: 5%">Aksi</th>
 			                                                    </tr>
 			                                                </thead>
 			                                                <tbody id="item_list">
@@ -448,17 +449,17 @@ License: You must have a valid license purchased only from themeforest(the above
 	        $('#item_add').click(function() {
 				document.querySelector('#item_list').insertAdjacentHTML (
 					'beforeend',
-					`<tr role="row">
+					`<tr role="row" class="item-list" data-id="`+ i +`">
                         <td>`+ i +`</td>
                         <td class="text-center">
-                            <select name="request_type`+ i +`" class="form-control request_required">
+                            <select name="request_type`+ i +`" class="custom-select  form-control request_required">
                                 <option value="" selected disabled>Jenis</option>
                                 <option>Alat</option>
                                 <option>Bahan</option>
                             </select>
                         </td>
                         <td class="text-center">
-                            <select name="request_barang`+ i +`" class="form-control request_required" >
+                            <select name="request_barang`+ i +`" class="custom-select  form-control request_required" >
                                 <option value="" selected disabled>Barang</option>
                                 <option>Eyelash Size 12</option>
                                 <option>Eyelash Size 12</option>
@@ -466,7 +467,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             </select>
                         </td>
                         <td class="text-center">
-                            <select name="request_satuan`+ i +`" class="form-control request_required" >
+                            <select name="request_satuan`+ i +`" class="custom-select  form-control request_required" >
                                 <option value="" selected disabled>Satuan</option>
                                 <option>Box</option>
                                 <option>Box</option>
@@ -483,6 +484,9 @@ License: You must have a valid license purchased only from themeforest(the above
 							<label for="request_foto`+ i +`"  class="btn btn-link" style="padding:0px;" id="request_foto`+ i +`-label"><i class="flaticon2-photo-camera"></i> Upload</label>
                             <input class="kt-hidden request_required" name="request_foto`+ i +`" type="file" accept="image/*" id="request_foto`+ i +`" >
                         </td>
+                        <td class="text-center">
+							<button type="button" class="btn btn-link list-hapus" id="btn_hapus" data-id="`+i+`"> <span class="fa fa-times"></span> </button>
+						</td>
                     </tr>`
 				);
 				i++;
@@ -490,6 +494,14 @@ License: You must have a valid license purchased only from themeforest(the above
 
 			$('document').ready(function () {
 				$('#item_add').click();
+			});
+
+			$('#container-request').on('click','.list-hapus', function (e) {
+				let id = $(this).data('id');
+				// if (id > 1) {
+					$('.item-list[data-id="' + id + '"]').remove();
+				// }
+				
 			});
 
             // Sweetalert
