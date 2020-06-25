@@ -151,7 +151,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 											<div class="kt-portlet__foot">
 												<div class="horizontal-centered kt-margin-0" style="padding: 0px 0px;">
-													<button type="submit" class="btn btn-success" style="margin-right: 0.25rem">Submit</buttton>
+													<button type="button" class="btn btn-success btn-custom" id="btnSubmit"> <i class=" flaticon-paper-plane-1"></i> Kirim</button>
 												</div>
 											</div>
 										</form>
@@ -360,209 +360,6 @@ License: You must have a valid license purchased only from themeforest(the above
 		<script src="assets/js/custom/datepicker.js" type="text/javascript"></script>
 		<!-- <script src="assets/js/pages/crud/forms/widgets/select2.js" type="text/javascript"></script> -->
 		<!-- <script src="assets/js/pages/crud/forms/widgets/typeahead.js" type="text/javascript"></script> -->
-
-		<script>
-			// Bloodhound Remote
-			var bloodhound = new Bloodhound({
-				datumTokenizer: Bloodhound.tokenizers.whitespace,
-				queryTokenizer: Bloodhound.tokenizers.whitespace,
-				remote: {
-				   wildcard: '%QUERY',
-				   url: 'source/admin/customer_terdaftar.php?query=%QUERY',
-				   transform: function(response) {
-					   // Map the remote source JSON array to a JavaScript object array
-					   return $.map(response, function(customer) {
-						   return {
-							   no_hp: customer.number,
-							   nama: customer.nama
-						   };
-					   });
-				   }
-				}
-			});
-
-			$('#treatment_customer_nohp').typeahead({
-	            hint: true,
-	            highlight: true,
-	            minLength: 1
-	        }, {
-				display: 'no_hp',
-				source: bloodhound,
-				templates : {
-					empty: [
-						'<div style="padding: 0px 10px">Customer tidak ditemukan</div>'
-					],
-					suggestion: Handlebars.compile('<div>{{no_hp}} - {{nama}}</div>')
-				}
-			});
-
-			$('#treatment_customer_nohp').on('typeahead:autocompleted typeahead:select', function (e, data) {
-			    $('#treatment_customer_nama').val(data.nama);
-			});
-
-			// Sweetalert
-			$('.kt_sweetalert_berhasil').click(function(e) {
-				swal.fire({
-					title: "Berhasil",
-					text: "Treatment berhasil ditambahkan.",
-					type: "success",
-					confirmButtonText: "Ok",
-					confirmButtonClass: "btn btn-brand"
-				}).then(function(result) {
-					// location.reload();
-				});
-			});
-
-			$('#kt_sweetalert_berhasil_modal').click(function(e) {
-				swal.fire({
-					title: "Berhasil",
-					text: "Pelanggan berhasil ditambahkan.",
-					type: "success",
-					confirmButtonText: "Ok",
-					confirmButtonClass: "btn btn-brand"
-				});
-			});
-
-			// Toastr
-			$('#showtoast').click(function() {
-				toastr.options = {
-					"closeButton": false,
-					"debug": false,
-					"newestOnTop": false,
-					"progressBar": false,
-					"positionClass": "toast-top-right",
-					"preventDuplicates": false,
-					"onclick": null,
-					"showDuration": "300",
-					"hideDuration": "1000",
-					"timeOut": "2500",
-					"extendedTimeOut": "1000",
-					"showEasing": "swing",
-					"hideEasing": "linear",
-					"showMethod": "fadeIn",
-					"hideMethod": "fadeOut"
-				}
-				toastr.info("Persetujuan terkirim");
-			});
-
-			$('#showtoast').click(function() {
-				toastr.options = {
-					"closeButton": false,
-					"debug": false,
-					"newestOnTop": false,
-					"progressBar": false,
-					"positionClass": "toast-top-right",
-					"preventDuplicates": false,
-					"onclick": null,
-					"showDuration": "300",
-					"hideDuration": "1000",
-					"timeOut": "2500",
-					"extendedTimeOut": "1000",
-					"showEasing": "swing",
-					"hideEasing": "linear",
-					"showMethod": "fadeIn",
-					"hideMethod": "fadeOut"
-				}
-				toastr.success("Persetujuan diterima");
-			});
-
-			$('#showtoast').click(function() {
-				toastr.options = {
-					"closeButton": false,
-					"debug": false,
-					"newestOnTop": false,
-					"progressBar": false,
-					"positionClass": "toast-top-right",
-					"preventDuplicates": false,
-					"onclick": null,
-					"showDuration": "300",
-					"hideDuration": "1000",
-					"timeOut": "2500",
-					"extendedTimeOut": "1000",
-					"showEasing": "swing",
-					"hideEasing": "linear",
-					"showMethod": "fadeIn",
-					"hideMethod": "fadeOut"
-				}
-				toastr.error("Persetujuan ditolak");
-			});
-
-			// Form Validation
-			$("#kt_form_treatment").validate({
-	            // define validation rules
-	            rules: {
-	                treatment_customer_nohp: {
-	                    required: true,
-	                    digits: true
-	                },
-	                treatment_customer_nama: {
-	                    required: false
-	                },
-	                treatment_type: {
-	                    required: true
-	                },
-					treatment_place: {
-						required: true
-					}
-	            },
-
-	            invalidHandler: function(event, validator) {
-	                KTUtil.scrollTop();
-	            },
-	            submitHandler: function(form) {
-	                //form[0].submit(); // submit the form
-	            }
-        	});
-
-			$("#kt_form_jadwal").validate({
-				// define validation rules
-				rules : {
-					jadwal_tanggal : {
-						required: true
-					},
-					jadwal_waktu : {
-						required: true
-					}
-				},
-
-	            invalidHandler: function(event, validator) {
-	                KTUtil.scrollTop();
-	            },
-	            submitHandler: function(form) {
-	                //form[0].submit(); // submit the form
-	            }
-			});
-
-			$("#kt_form_customer").validate({
-	            // define validation rules
-	            rules: {
-					customer_nama : {
-						required: true
-					},
-					customer_lahir : {
-						required: true
-					},
-					customer_nohp : {
-						required: true,
-						digits: true
-					},
-					customer_email : {
-						required: true,
-						email: true
-					},
-					customer_alamat : {
-						required: true
-					}
-	            },
-
-	            invalidHandler: function(event, validator) {
-	                KTUtil.scrollTop();
-	            },
-	            submitHandler: function(form) {
-	                //form[0].submit(); // submit the form
-	            }
-        	});
-		</script>
 		<script>
 			// Class definition
 			var KTSelect2 = function() {
@@ -589,6 +386,35 @@ License: You must have a valid license purchased only from themeforest(the above
 			jQuery(document).ready(function() {
 			    KTSelect2.init();
 			});
+		</script>
+		<script>
+			"use strict";
+
+			// Class definition
+			var KTSweetAlert2Demo = function() {
+
+			    // Demos
+			    var initDemos = function() {
+			        // Sweetalert Demo 3
+			        $('#btnSubmit').click(function(e) {
+			            swal.fire("Berhasil!", "Komplain berhasil terkirim!", "success");
+			        });;
+
+			     };
+
+			    return {
+			        // Init
+			        init: function() {
+			            initDemos();
+			        },
+			    };
+			}();
+
+			// Class Initialization
+			jQuery(document).ready(function() {
+			    KTSweetAlert2Demo.init();
+			});
+
 		</script>
 		<!--end::Page Scripts -->
 	</body>
